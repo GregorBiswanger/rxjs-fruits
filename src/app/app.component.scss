@@ -1,0 +1,35 @@
+ngx-monaco-editor {
+  width: 100%;
+  height: 260px;
+  padding: 10px 10px 10px 40px;
+}
+
+.task {
+  z-index: 1;
+  background-color: #43a047;
+}
+
+.board {
+  height: 50vw;
+  width: 50vw;
+  background-color: #1f5768;
+  border-radius: 0 0 0 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.board > :first-child ~ * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#conveyor-belt {
+  width: 60vw;
+  height: 5vw;
+  left: -25vw;
+  top: 10vh;
+  position: absolute;
+}
