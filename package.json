@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href=\"https://GregorBiswanger.github.io/rxjs-fruits/\"",
+    "build": "ng build --prod --base-href=\"https://gregorbiswanger.github.io/rxjs-fruits/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
