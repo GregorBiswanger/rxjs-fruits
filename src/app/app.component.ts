@@ -20,7 +20,8 @@ export class AppComponent {
     fontSize: 16,
     minimap: {
       enabled: false
-    }
+    },
+    fixedOverflowWidgets: true
   };
 
   @ViewChild('conveyorbelt', { static: true })
