@@ -34,7 +34,7 @@ export class AppComponent {
     "fresh-banana", 
     "fresh-apple"]);
 fruits.pipe(
-\t\t
+\t
 );`;
   task = '';
 
