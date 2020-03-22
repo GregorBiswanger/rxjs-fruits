@@ -10,7 +10,11 @@ export class ExerciseService {
   currentExercise: Exercise = {
     code: '',
     fruits: [],
-    expectedFruits: []
+    expectedFruits: [],
+    minPositionLineNumber: 0,
+    maxPositionLineNumber: 0,
+    codeLineLength: 0,
+    positionColumnNumber: 0
   };
 
   assertionChecked$ = new Subject<boolean>();

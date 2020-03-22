@@ -1,5 +1,9 @@
 export interface Exercise {
-    readonly fruits: string[];
-    readonly expectedFruits: string[];
+    fruits: string[];
+    expectedFruits: string[];
     code: string;
+    minPositionLineNumber: number;
+    maxPositionLineNumber: number;
+    positionColumnNumber: number;
+    codeLineLength: number;
 }

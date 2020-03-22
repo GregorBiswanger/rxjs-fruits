@@ -1,4 +1,4 @@
-import { Exercise } from './../shared/exercise';
+import { Exercise } from '../shared/exercise';
 
 export class TakeExercise implements Exercise {
     readonly fruits = ['fresh-banana',
@@ -7,7 +7,7 @@ export class TakeExercise implements Exercise {
         'fresh-banana'];
     readonly expectedFruits = ['fresh-banana',
         'fresh-banana'];
-    code = `const fruits = from([
+    readonly code = `const fruits = from([
     "fresh-banana",
     "fresh-banana",
     "fresh-banana",
@@ -15,4 +15,8 @@ export class TakeExercise implements Exercise {
 fruits.pipe(
 \t
 );`;
+    readonly minPositionLineNumber = 7;
+    readonly maxPositionLineNumber = 7;
+    readonly positionColumnNumber = 2;
+    readonly codeLineLength = 8;
 }

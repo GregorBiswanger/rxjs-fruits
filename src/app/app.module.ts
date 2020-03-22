@@ -11,13 +11,15 @@ import { InitDirective } from './init.directive';
 
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InitDirective,
     DistinctComponent,
-    TakeComponent
+    TakeComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +29,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: DistinctComponent },
-      { path: 'take', component: TakeComponent }
-    ])
+      { path: 'take', component: TakeComponent },
+      { path: 'filter', component: FilterComponent }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

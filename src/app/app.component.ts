@@ -1,8 +1,10 @@
 import { ExerciseService } from './shared/exercise.service';
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { of, from, Observable } from 'rxjs';
-import { distinct as distinctX, map as mapX, take as takeX, delay, tap, concatMap, take, filter } from 'rxjs/operators';
+import { of, Observable } from 'rxjs';
+import { from as fromX } from 'rxjs';
+import { delay, tap, concatMap, take, filter } from 'rxjs/operators';
+import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
 import * as monaco from 'monaco-editor';
@@ -34,13 +36,16 @@ export class AppComponent {
   isNextExerciseAviable = false;
 
   constructor(private exerciseService: ExerciseService,
-              private router: Router,
-              monacoLoader: MonacoEditorLoaderService,
-              httpClient: HttpClient) {
+    private router: Router,
+    monacoLoader: MonacoEditorLoaderService,
+    httpClient: HttpClient) {
     exerciseService.codeChanged$.pipe(
       delay(0)
     ).subscribe({
-      next: (code) => this.code = code
+      next: (code) => {
+        this.code = code;
+        this.changeMonacoSettings();
+      }
     });
 
     exerciseService.assertionChecked$.subscribe({
@@ -57,43 +62,62 @@ export class AppComponent {
             }
           });
 
+          this.setupMonacoSettings();
           this.changeMonacoSettings();
         }
       });
   }
 
-  changeMonacoSettings() {
+  setupMonacoSettings() {
     setTimeout(() => {
       this.editor.editor.onDidChangeCursorPosition((e) => {
-        if (e.position.lineNumber < 7 || e.position.lineNumber > 7) {
+        const minPositionLineNumber = this.exerciseService.currentExercise.minPositionLineNumber;
+        const maxPositionLineNumber = this.exerciseService.currentExercise.maxPositionLineNumber;
+        const positionColumnNumber = this.exerciseService.currentExercise.positionColumnNumber;
+
+        if (e.position.lineNumber < minPositionLineNumber ||
+          e.position.lineNumber > maxPositionLineNumber) {
           this.editor.editor.setPosition({
-            lineNumber: 7,
-            column: 2
+            lineNumber: minPositionLineNumber,
+            column: positionColumnNumber
           });
         }
       });
 
-      this.editor.editor.setPosition({
-        lineNumber: 7,
-        column: 2
-      });
-
-      this.editor.editor.deltaDecorations([], [
-        { range: new monaco.Range(1, 1, 6, 24), options: { inlineClassName: 'myInlineDecoration' } },
-        { range: new monaco.Range(8, 1, 8, 24), options: { inlineClassName: 'myInlineDecoration' } },
-      ]);
-
       this.editor.editor.onDidChangeModelContent((e) => {
+        const minPositionLineNumber = this.exerciseService.currentExercise.minPositionLineNumber;
+        const maxPositionLineNumber = this.exerciseService.currentExercise.maxPositionLineNumber;
+        const codeLineLength = this.exerciseService.currentExercise.codeLineLength;
+
         this.editor.editor.deltaDecorations([], [
-          { range: new monaco.Range(1, 1, 6, 24), options: { inlineClassName: 'myInlineDecoration' } },
-          { range: new monaco.Range(8, 1, 8, 24), options: { inlineClassName: 'myInlineDecoration' } },
+          { range: new monaco.Range(1, 1, minPositionLineNumber - 1, 24), options: { inlineClassName: 'myInlineDecoration' } },
+          { range: new monaco.Range(maxPositionLineNumber + 1, 1, codeLineLength, 24), options: { inlineClassName: 'myInlineDecoration' } },
         ]);
 
         const lineCount = this.editor.editor.getModel().getLineCount();
-        if (lineCount < 8) {
+        if (lineCount !== codeLineLength) {
           this.editor.editor.trigger('', 'undo', '');
         }
       });
+    }, 0);
+  }
+
+  changeMonacoSettings() {
+    setTimeout(() => {
+      const minPositionLineNumber = this.exerciseService.currentExercise.minPositionLineNumber;
+      const maxPositionLineNumber = this.exerciseService.currentExercise.maxPositionLineNumber;
+      const positionColumnNumber = this.exerciseService.currentExercise.positionColumnNumber;
+      const codeLineLength = this.exerciseService.currentExercise.codeLineLength;
+
+      this.editor.editor.setPosition({
+        lineNumber: minPositionLineNumber,
+        column: positionColumnNumber
+      });
+
+      this.editor.editor.deltaDecorations([], [
+        { range: new monaco.Range(1, 1, minPositionLineNumber - 1, 24), options: { inlineClassName: 'myInlineDecoration' } },
+        { range: new monaco.Range(maxPositionLineNumber + 1, 1, codeLineLength, 24), options: { inlineClassName: 'myInlineDecoration' } },
+      ]);
 
       this.editor.editor.focus();
     }, 0);
@@ -101,16 +125,17 @@ export class AppComponent {
 
   run() {
     this.fruits = [];
+    // tslint:disable-next-line: no-shadowed-variable
+    // tslint:disable-next-line: deprecation
+    const from = fromX;
     const distinct = distinctX;
     const map = mapX;
     // tslint:disable-next-line: no-shadowed-variable
     const take = takeX;
+    // tslint:disable-next-line: no-shadowed-variable
+    const filter = filterX;
 
-    const fruits = from(this.exerciseService.currentExercise.fruits);
-    const userPipe: Observable<string> = eval(`fruits.pipe(
-      ${this.code.split('\n')[6]}
-    );`);
-
+    const userPipe: Observable<string> = eval(this.code);
     userPipe.pipe(
       concatMap(item => of(item).pipe(delay(1000))),
       tap(x => console.log(x)),
@@ -164,6 +189,8 @@ export class AppComponent {
   nextExercise() {
     if (this.router.url === '/') {
       this.router.navigate(['take']);
+    } else if (this.router.url === '/take') {
+      this.router.navigate(['filter']);
     }
 
     this.isNextExerciseAviable = false;

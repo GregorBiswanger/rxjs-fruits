@@ -7,7 +7,7 @@ export class DistinctExercise implements Exercise {
         'fresh-apple'];
     readonly expectedFruits = ['fresh-apple',
         'fresh-banana'];
-    code = `const fruits = from([
+    readonly code = `const fruits = from([
     "fresh-apple",
     "fresh-apple",
     "fresh-banana",
@@ -15,4 +15,8 @@ export class DistinctExercise implements Exercise {
 fruits.pipe(
 \t
 );`;
+    readonly minPositionLineNumber = 7;
+    readonly maxPositionLineNumber = 7;
+    readonly positionColumnNumber = 2;
+    readonly codeLineLength = 8;
 }

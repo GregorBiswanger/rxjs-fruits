@@ -1,6 +1,6 @@
 import { ExerciseService } from '../shared/exercise.service';
 import { Component, OnInit } from '@angular/core';
-import { DistinctExercise } from './distinct.exercise';
+import { DistinctExercise } from './distinct-exercise';
 
 @Component({
   selector: 'app-distinct',
