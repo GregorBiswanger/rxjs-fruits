@@ -1,5 +1,6 @@
-import { ExerciseService } from './../exercise.service';
+import { ExerciseService } from '../shared/exercise.service';
 import { Component, OnInit } from '@angular/core';
+import { DistinctExercise } from './distinct.exercise';
 
 @Component({
   selector: 'app-distinct',
@@ -8,27 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DistinctComponent implements OnInit {
   task = 'Distinct';
-  readonly fruits = ['fresh-apple',
-    'fresh-apple',
-    'fresh-banana',
-    'fresh-apple'];
-  readonly expectedFruits = ['fresh-apple',
-    'fresh-banana'];
-  code = `const fruits = from([
-    "fresh-apple",
-    "fresh-apple",
-    "fresh-banana",
-    "fresh-apple"]);
-fruits.pipe(
-\t
-);`;
 
-  constructor(private exerciseService: ExerciseService) {
-  }
+  constructor(private exerciseService: ExerciseService) {}
 
   ngOnInit() {
-    this.exerciseService.code$.next(this.code);
-    this.exerciseService.expectedFruits = this.expectedFruits;
-    this.exerciseService.addFruits(this.fruits);
+    this.exerciseService.newExercise(new DistinctExercise());
   }
 }

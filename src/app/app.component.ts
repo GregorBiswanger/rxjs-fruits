@@ -1,7 +1,7 @@
-import { ExerciseService } from './exercise.service';
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { ExerciseService } from './shared/exercise.service';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { of, Observable } from 'rxjs';
+import { of, from, Observable } from 'rxjs';
 import { distinct as distinctX, map as mapX, take as takeX, delay, tap, concatMap, take, filter } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
@@ -37,7 +37,7 @@ export class AppComponent {
               private router: Router,
               monacoLoader: MonacoEditorLoaderService,
               httpClient: HttpClient) {
-    exerciseService.code$.pipe(
+    exerciseService.codeChanged$.pipe(
       delay(0)
     ).subscribe({
       next: (code) => this.code = code
@@ -106,7 +106,7 @@ export class AppComponent {
     // tslint:disable-next-line: no-shadowed-variable
     const take = takeX;
 
-    const fruits = this.exerciseService.fruits$;
+    const fruits = from(this.exerciseService.currentExercise.fruits);
     const userPipe: Observable<string> = eval(`fruits.pipe(
       ${this.code.split('\n')[6]}
     );`);
