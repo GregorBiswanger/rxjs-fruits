@@ -1,10 +1,12 @@
+import { ExerciseService } from './exercise.service';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Observable } from 'rxjs';
-import { distinct as distinctX, map as mapX, delay, tap, concatMap, take, filter } from 'rxjs/operators';
+import { distinct as distinctX, map as mapX, take as takeX, delay, tap, concatMap, take, filter } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
 import * as monaco from 'monaco-editor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -28,18 +30,23 @@ export class AppComponent {
   conveyorBelt: ElementRef<HTMLObjectElement>;
 
   fruits: Fruit[] = [];
-  code = `const fruits = from([
-    "fresh-apple", 
-    "fresh-apple", 
-    "fresh-banana", 
-    "fresh-apple"]);
-fruits.pipe(
-\t
-);`;
-  task = '';
+  code = '';
+  isNextExerciseAviable = false;
 
-  constructor(monacoLoader: MonacoEditorLoaderService,
+  constructor(private exerciseService: ExerciseService,
+              private router: Router,
+              monacoLoader: MonacoEditorLoaderService,
               httpClient: HttpClient) {
+    exerciseService.code$.pipe(
+      delay(0)
+    ).subscribe({
+      next: (code) => this.code = code
+    });
+
+    exerciseService.assertionChecked$.subscribe({
+      next: (valid) => this.isNextExerciseAviable = valid
+    });
+
     monacoLoader.isMonacoLoaded$
       .pipe(filter(isLoaded => isLoaded === true), take(1))
       .subscribe({
@@ -50,45 +57,56 @@ fruits.pipe(
             }
           });
 
-          setTimeout(() => {
-            this.editor.editor.onDidChangeCursorPosition((e) => {
-              if (e.position.lineNumber < 7 || e.position.lineNumber > 7) {
-                this.editor.editor.setPosition({
-                  lineNumber: 7,
-                  column: 2
-                });
-              }
-            });
-
-            this.editor.editor.setPosition({
-              lineNumber: 7,
-              column: 2
-            });
-
-            this.editor.editor.deltaDecorations([], [
-              { range: new monaco.Range(1, 1, 6, 24), options: { inlineClassName: 'myInlineDecoration' } },
-              { range: new monaco.Range(8, 1, 8, 24), options: { inlineClassName: 'myInlineDecoration' } },
-            ]);
-
-            this.editor.editor.onDidChangeModelContent((e) => {
-              const lineCount = this.editor.editor.getModel().getLineCount();
-              if (lineCount < 8) {
-                this.editor.editor.trigger('', 'undo', '');
-              }
-            });
-
-            this.editor.editor.focus();
-          }, 0);
+          this.changeMonacoSettings();
         }
       });
+  }
+
+  changeMonacoSettings() {
+    setTimeout(() => {
+      this.editor.editor.onDidChangeCursorPosition((e) => {
+        if (e.position.lineNumber < 7 || e.position.lineNumber > 7) {
+          this.editor.editor.setPosition({
+            lineNumber: 7,
+            column: 2
+          });
+        }
+      });
+
+      this.editor.editor.setPosition({
+        lineNumber: 7,
+        column: 2
+      });
+
+      this.editor.editor.deltaDecorations([], [
+        { range: new monaco.Range(1, 1, 6, 24), options: { inlineClassName: 'myInlineDecoration' } },
+        { range: new monaco.Range(8, 1, 8, 24), options: { inlineClassName: 'myInlineDecoration' } },
+      ]);
+
+      this.editor.editor.onDidChangeModelContent((e) => {
+        this.editor.editor.deltaDecorations([], [
+          { range: new monaco.Range(1, 1, 6, 24), options: { inlineClassName: 'myInlineDecoration' } },
+          { range: new monaco.Range(8, 1, 8, 24), options: { inlineClassName: 'myInlineDecoration' } },
+        ]);
+
+        const lineCount = this.editor.editor.getModel().getLineCount();
+        if (lineCount < 8) {
+          this.editor.editor.trigger('', 'undo', '');
+        }
+      });
+
+      this.editor.editor.focus();
+    }, 0);
   }
 
   run() {
     this.fruits = [];
     const distinct = distinctX;
     const map = mapX;
+    // tslint:disable-next-line: no-shadowed-variable
+    const take = takeX;
 
-    const fruits = of('fresh-apple', 'fresh-apple', 'fresh-banana', 'fresh-apple');
+    const fruits = this.exerciseService.fruits$;
     const userPipe: Observable<string> = eval(`fruits.pipe(
       ${this.code.split('\n')[6]}
     );`);
@@ -97,7 +115,7 @@ fruits.pipe(
       concatMap(item => of(item).pipe(delay(1000))),
       tap(x => console.log(x)),
       tap((fruit: string) => this.addFruitToView(fruit))
-    ).subscribe();
+    ).subscribe(this.exerciseService.assertExerciseOutput());
   }
 
   addFruitToView(fruit: string): void {
@@ -141,6 +159,14 @@ fruits.pipe(
       ease: Power0.easeNone,
       repeat: -1
     }, 0);
+  }
+
+  nextExercise() {
+    if (this.router.url === '/') {
+      this.router.navigate(['take']);
+    }
+
+    this.isNextExerciseAviable = false;
   }
 }
 
