@@ -1,6 +1,6 @@
 import { LevelService, Level } from './level.service';
 import { ExerciseService } from './shared/exercise.service';
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Observable } from 'rxjs';
 import { from as fromX } from 'rxjs';
@@ -14,7 +14,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   @ViewChild(MonacoEditorComponent, { static: false })

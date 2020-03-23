@@ -12,6 +12,8 @@ import { InitDirective } from './init.directive';
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FilterComponent } from './filter/filter.component';
+import { FruitPipe } from './shared/fruit.pipe';
+import { TooltipDirective } from './shared/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FilterComponent } from './filter/filter.component';
     InitDirective,
     DistinctComponent,
     TakeComponent,
-    FilterComponent
+    FilterComponent,
+    FruitPipe,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,

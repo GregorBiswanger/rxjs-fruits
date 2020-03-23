@@ -1,2 +1,18 @@
-<h3>Task: {{task}}</h3>
-<p>The distinct operator returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from previous items.</p>
+<h3>Übung: {{exerciseTitle}}</h3>
+<p>The <code class="help" [appTooltip]="tooltip">distinct</code> operator returns an Observable that emits all items emitted by the source Observable that are distinct
+    by comparison from previous items.</p>
+
+<div #tooltip class="tooltip codeTooltip">
+    Lorem, ipsum dolor.
+</div>
+
+<div class="recipe">
+    <h3>Rezept:</h3>
+    <p>Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)</p>
+
+    <ol>
+        <li *ngFor="let fruitName of exerciseService.currentExercise.expectedFruits">
+            {{ fruitName | fruit }}
+        </li>
+    </ol>
+</div>

@@ -231,3 +231,30 @@ button[disabled] {
   background-color: #228b24;
   background-color: #5da449;
 }
+
+.recipe {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+code {
+  padding: 0 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-family: "Source Code Pro", monospace;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+.help {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.codeTooltip {
+  visibility: collapse;
+  padding: 1em 0.5em;
+}

@@ -8,9 +8,9 @@ import { DistinctExercise } from './distinct-exercise';
   styleUrls: ['./distinct.component.scss']
 })
 export class DistinctComponent implements OnInit {
-  task = 'Distinct';
+  exerciseTitle = 'Distinct';
 
-  constructor(private exerciseService: ExerciseService) {}
+  constructor(public exerciseService: ExerciseService) { }
 
   ngOnInit() {
     this.exerciseService.newExercise(new DistinctExercise());
