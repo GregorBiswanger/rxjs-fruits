@@ -91,6 +91,13 @@ export class AppComponent {
     };
   }
 
+  buttonAnimationStyle() {
+    return {
+      animated: this.isNextExerciseAviable,
+      nextButtonAnimation: this.isNextExerciseAviable
+    };
+  }
+
   toggleLevelsWrapper() {
     this.clickedByToggle = !this.clickedByToggle;
     this.isLevelsWrapperOpen = !this.isLevelsWrapperOpen;

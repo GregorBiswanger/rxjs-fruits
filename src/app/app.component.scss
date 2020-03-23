@@ -1,7 +1,6 @@
 ngx-monaco-editor {
   width: 100%;
   height: 50%;
-  padding: 10px 10px 10px 40px;
 }
 
 .instructions {
@@ -12,6 +11,7 @@ ngx-monaco-editor {
 .task {
   z-index: 1;
   background-color: #43a047;
+  padding: 2em;
 }
 
 .board {
@@ -44,6 +44,46 @@ ngx-monaco-editor {
   font-size: 30px;
 }
 
+// button animations
+.nextButtonAnimation {
+  animation: tada 1s, pulse 2s infinite 2s;
+}
+
+// button
+
+button {
+  display: inline-block;
+  padding: 0.4em 2em;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  background-color: #da931e;
+  border: none;
+  border-radius: 4px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button:active {
+  outline: none;
+}
+
+button:not(.disabled):hover {
+  background-color: #c97b00;
+}
+
+button[disabled] {
+  opacity: 0.5;
+}
+
 // LEVEL INDICATOR
 
 #level-counter {
@@ -69,7 +109,8 @@ ngx-monaco-editor {
   display: inline-block;
   width: 160px;
   line-height: 30px;
-  text-align: center;  padding: 0.25em 0.4em 0em;
+  text-align: center;
+  padding: 0.25em 0.4em 0em;
   cursor: pointer;
 }
 
