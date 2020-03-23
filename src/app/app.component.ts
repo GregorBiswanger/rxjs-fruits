@@ -32,6 +32,8 @@ export class AppComponent {
   @ViewChild('conveyorbelt', { static: true })
   conveyorBelt: ElementRef<HTMLObjectElement>;
 
+  isLevelsWrapperOpen = false;
+  clickedByToggle = false;
   fruits: Fruit[] = [];
   code = '';
   isNextExerciseAviable = false;
@@ -70,11 +72,36 @@ export class AppComponent {
       });
   }
 
+  previousLevelStyle() {
+    return {
+      disabled: this.levelService.currentLevelIndex === 0
+    };
+  }
+
+  nextLevelStyle() {
+    return {
+      disabled: this.levelService.levels.length === this.levelService.currentLevel.number
+    };
+  }
+
   levelStateStyle(level: Level) {
     return {
       current: this.levelService.isCurrentLevel(level),
       solved: level.solved
     };
+  }
+
+  toggleLevelsWrapper() {
+    this.clickedByToggle = !this.clickedByToggle;
+    this.isLevelsWrapperOpen = !this.isLevelsWrapperOpen;
+  }
+
+  closeLevelsWrapper() {
+    if (this.isLevelsWrapperOpen && !this.clickedByToggle) {
+      this.isLevelsWrapperOpen = false;
+    } else {
+      this.clickedByToggle = false;
+    }
   }
 
   setupMonacoSettings() {
@@ -131,6 +158,7 @@ export class AppComponent {
       this.editor.editor.focus();
     }, 0);
   }
+
   run() {
     this.fruits = [];
     // tslint:disable-next-line: no-shadowed-variable
@@ -194,8 +222,15 @@ export class AppComponent {
     }, 0);
   }
 
-  nextExercise() {
-    this.levelService.nextLevel();
+  nextExercise(currentLevelSolved: boolean) {
+    this.levelService.nextLevel(currentLevelSolved);
+    this.router.navigate([this.levelService.currentLevel.urlPath]);
+
+    this.isNextExerciseAviable = false;
+  }
+
+  previousExercise() {
+    this.levelService.previousLevel();
     this.router.navigate([this.levelService.currentLevel.urlPath]);
 
     this.isNextExerciseAviable = false;
@@ -203,7 +238,6 @@ export class AppComponent {
 
   goToExercise(level: Level) {
     this.levelService.currentLevel = level;
-
     this.router.navigate([level.urlPath]);
   }
 }

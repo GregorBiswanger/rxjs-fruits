@@ -49,13 +49,23 @@ export class LevelService {
     }
   }
 
-  nextLevel() {
-    this.currentLevel.solved = true;
+  nextLevel(currentLevelSolved: boolean) {
+    if (currentLevelSolved) {
+      this.currentLevel.solved = currentLevelSolved;
+    }
 
     const nextLevelIndex = this.currentLevelIndex + 1;
 
     if (nextLevelIndex <= this.levels.length - 1) {
       this.currentLevelIndex = nextLevelIndex;
+    }
+  }
+
+  previousLevel() {
+    const previousIndex = this.currentLevelIndex - 1;
+
+    if (previousIndex >= 0) {
+      this.currentLevelIndex = previousIndex;
     }
   }
 }

@@ -1,21 +1,22 @@
-<div fxLayout>
+<div fxLayout (click)="closeLevelsWrapper()">
   <div class="task" fxFlex="60%">
     <div fxLayout fxLayoutAlign="space-between">
       <h1 class="title">RxJS-fruits</h1>
       <div id="level-counter">
-        <span class="arrow left">◀</span>
-        <span id="level-indicator">
+        <span class="arrow left" [ngClass]="previousLevelStyle()" (click)="previousExercise()">◀</span>
+        <span id="level-indicator" (click)="toggleLevelsWrapper()">
           <span id="labelLevel">Level </span>
           <span>{{ levelService.currentLevel.number }}</span>
           <span> von </span>
           <span>{{ levelService.levels.length }}</span>
           <span class="caret">▾</span>
         </span>
-        <span class="arrow right">▶</span>
-        <div id="levelsWrapper" class="tooltip">
+        <span class="arrow right" [ngClass]="nextLevelStyle()" (click)="nextExercise(false)">▶</span>
+        <div id="levelsWrapper" class="tooltip" *ngIf="isLevelsWrapperOpen">
           <div id="levels">
             <span *ngFor="let level of levelService.levels; let i = index;" class="level-marker"
-              [ngClass]="levelStateStyle(level)" [title]="level.title" (click)="goToExercise(level)">{{ level.number }}</span>
+              [ngClass]="levelStateStyle(level)" [title]="level.title"
+              (click)="goToExercise(level)">{{ level.number }}</span>
 
             <div id="labelReset">Zurücksetzen</div>
           </div>
@@ -29,7 +30,7 @@
 
     <div fyLayout fxLayoutAlign="end">
       <button (click)="run()">Subscribe (Start)</button>
-      <button [disabled]="!isNextExerciseAviable" (click)="nextExercise()">Weiter</button>
+      <button [disabled]="!isNextExerciseAviable" (click)="nextExercise(true)">Weiter</button>
     </div>
   </div>
   <div class="board" fxFlex="40%">
