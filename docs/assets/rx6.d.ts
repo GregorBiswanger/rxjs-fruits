@@ -690,3 +690,6 @@ declare function iif<T, F>(condition: () => boolean, trueResult?: SubscribableOr
  * @owner Observable
  */
 declare function take<T>(count: number): MonoTypeOperatorFunction<T>;
+
+declare function filter<T, S extends T>(predicate: (value: T, index: number) => value is S, thisArg?: any): OperatorFunction<T, S>;
+declare function filter<T>(predicate: (value: T, index: number) => boolean, thisArg?: any): MonoTypeOperatorFunction<T>;
