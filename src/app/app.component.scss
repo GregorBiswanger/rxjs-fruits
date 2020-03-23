@@ -38,3 +38,155 @@ ngx-monaco-editor {
   top: 10vh;
   position: absolute;
 }
+
+.title {
+  margin: 0.5rem 0 0;
+  font-size: 30px;
+}
+
+// LEVEL INDICATOR
+
+#level-counter {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  margin-top: 0.5rem;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#level-indicator,
+.arrow {
+  float: left;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#level-indicator {
+  display: inline-block;
+  width: 160px;
+  line-height: 30px;
+  text-align: center;  padding: 0.25em 0.4em 0em;
+  cursor: pointer;
+}
+
+#level-indicator:hover,
+.arrow:not(.disabled):hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#labelLevel {
+  margin-left: 5px;
+}
+
+.caret {
+  display: inline-block;
+  margin-left: 2px;
+}
+
+#labelReset {
+  margin-top: 1em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.arrow {
+  display: inline-block;
+  font-family: "Comic Sans MS";
+  padding: 0.25em 0.4em 0em;
+  cursor: pointer;
+}
+
+.arrow.left {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px 0 0 4px;
+}
+
+.arrow.right {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 4px 4px 0;
+}
+
+.arrow.left:not(.disabled):hover,
+.arrow.right:not(.disabled):hover {
+  border-color: transparent;
+}
+
+.arrow.disabled {
+  opacity: 0.5;
+}
+
+#levelsWrapper {
+  top: 34px;
+  right: 25px;
+  max-width: 160px;
+  padding: 1em 0.5em;
+  margin-top: 12px;
+  z-index: 80;
+}
+
+#levelsWrapper:after {
+  left: calc(50% - 12px);
+}
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  max-width: 300px;
+  padding: 0 1em 1em;
+  background-color: #2c3e50;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+  z-index: 60;
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #2c3e50;
+}
+
+#levels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#labelReset {
+  margin-top: 1em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.level-marker {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  line-height: 26px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.level-marker.current,
+.level-marker:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.level-marker.solved {
+  background-color: #228b24;
+  background-color: #5da449;
+}

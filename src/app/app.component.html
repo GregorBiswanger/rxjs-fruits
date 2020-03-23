@@ -1,13 +1,42 @@
 <div fxLayout>
   <div class="task" fxFlex="60%">
-      <router-outlet class="instructions"></router-outlet>
-      <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
-      <button (click)="run()">Start</button>
+    <div fxLayout fxLayoutAlign="space-between">
+      <h1 class="title">RxJS-fruits</h1>
+      <div id="level-counter">
+        <span class="arrow left">◀</span>
+        <span id="level-indicator">
+          <span id="labelLevel">Level </span>
+          <span>{{ levelService.currentLevel.number }}</span>
+          <span> von </span>
+          <span>{{ levelService.levels.length }}</span>
+          <span class="caret">▾</span>
+        </span>
+        <span class="arrow right">▶</span>
+        <div id="levelsWrapper" class="tooltip">
+          <div id="levels">
+            <span *ngFor="let level of levelService.levels; let i = index;" class="level-marker"
+              [ngClass]="levelStateStyle(level)" [title]="level.title" (click)="goToExercise(level)">{{ level.number }}</span>
+
+            <div id="labelReset">Zurücksetzen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet class="instructions"></router-outlet>
+
+    <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+
+    <div fyLayout fxLayoutAlign="end">
+      <button (click)="run()">Subscribe (Start)</button>
       <button [disabled]="!isNextExerciseAviable" (click)="nextExercise()">Weiter</button>
+    </div>
   </div>
   <div class="board" fxFlex="40%">
-      <img [id]="imageSource.id" *ngFor="let imageSource of fruits" [src]="imageSource.url" (appInit)="startFruitAnimation(imageSource.id)">
-      
-      <object #conveyorbelt id="conveyor-belt" data="assets/conveyor-belt.svg" type="image/svg+xml" (appInit)="startConveyorBeltAnimation()"></object>
+    <img [id]="imageSource.id" *ngFor="let imageSource of fruits" [src]="imageSource.url"
+      (appInit)="startFruitAnimation(imageSource.id)">
+
+    <object #conveyorbelt id="conveyor-belt" data="assets/conveyor-belt.svg" type="image/svg+xml"
+      (appInit)="startConveyorBeltAnimation()"></object>
   </div>
 </div>

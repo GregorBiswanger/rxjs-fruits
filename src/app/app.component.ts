@@ -1,3 +1,4 @@
+import { LevelService, Level } from './level.service';
 import { ExerciseService } from './shared/exercise.service';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -35,10 +36,11 @@ export class AppComponent {
   code = '';
   isNextExerciseAviable = false;
 
-  constructor(private exerciseService: ExerciseService,
-    private router: Router,
-    monacoLoader: MonacoEditorLoaderService,
-    httpClient: HttpClient) {
+  constructor(public levelService: LevelService,
+              private exerciseService: ExerciseService,
+              private router: Router,
+              monacoLoader: MonacoEditorLoaderService,
+              httpClient: HttpClient) {
     exerciseService.codeChanged$.pipe(
       delay(0)
     ).subscribe({
@@ -66,6 +68,13 @@ export class AppComponent {
           this.changeMonacoSettings();
         }
       });
+  }
+
+  levelStateStyle(level: Level) {
+    return {
+      current: this.levelService.isCurrentLevel(level),
+      solved: level.solved
+    };
   }
 
   setupMonacoSettings() {
@@ -122,7 +131,6 @@ export class AppComponent {
       this.editor.editor.focus();
     }, 0);
   }
-
   run() {
     this.fruits = [];
     // tslint:disable-next-line: no-shadowed-variable
@@ -187,13 +195,16 @@ export class AppComponent {
   }
 
   nextExercise() {
-    if (this.router.url === '/') {
-      this.router.navigate(['take']);
-    } else if (this.router.url === '/take') {
-      this.router.navigate(['filter']);
-    }
+    this.levelService.nextLevel();
+    this.router.navigate([this.levelService.currentLevel.urlPath]);
 
     this.isNextExerciseAviable = false;
+  }
+
+  goToExercise(level: Level) {
+    this.levelService.currentLevel = level;
+
+    this.router.navigate([level.urlPath]);
   }
 }
 
