@@ -6,7 +6,6 @@ import { Subject, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ExerciseService {
-  codeChanged$ = new BehaviorSubject<string>('');
   currentExercise: Exercise = {
     code: '',
     fruits: [],
@@ -18,10 +17,11 @@ export class ExerciseService {
   };
 
   assertionChecked$ = new Subject<boolean>();
+  exerciseChanged$ = new Subject<Exercise>();
 
   newExercise(exercise: Exercise) {
     this.currentExercise = exercise;
-    this.codeChanged$.next(exercise.code);
+    this.exerciseChanged$.next(exercise);
   }
 
   assertExerciseOutput() {

@@ -26,17 +26,34 @@
 
     <router-outlet class="instructions"></router-outlet>
 
-    <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+    <div fxLayout style="height: 50%;">
+      <div class="recipe" [ngClass]="recipeAnimationStyle()">
+        <h3>Rezept:</h3>
+        <p>Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)</p>
+  
+        <ol>
+          <li *ngFor="let fruitName of currentExercise.expectedFruits; let i = index;">
+                {{ fruitName | fruit }} {{ assertFruitPipeIcon(i) }}
+            </li>
+        </ol>
+
+        <p *ngIf="isToMuchFruits">❌ Mehr Früchte als im Rezept angegeben sind!</p>
+      </div>
+        <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+    </div>
 
     <div fyLayout fxLayoutAlign="end">
-      <button (click)="run()">Subscribe 
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;" viewBox="0 0 24 24">
+      <button (click)="run()">Subscribe
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;"
+          viewBox="0 0 24 24">
           <g>
-            <path transform="rotate(0,12,12) translate(0,0) scale(0.75,0.75)" fill="#FFF5F5" d="M12.5,9.2999878L22,16 12.5,22.700012z M16,3.1000061C8.9000244,3.1000061 3.1000061,8.8999939 3.1000061,16 3.1000061,23.100006 8.9000244,28.899994 16,28.899994 23.100037,28.899994 28.900024,23.100006 28.900024,16 28.900024,8.8999939 23.100037,3.1000061 16,3.1000061z M16,0C24.799988,0 32,7.2000122 32,16 32,24.799988 24.799988,32 16,32 7.2000122,32 0,24.799988 0,16 0,7.2000122 7.2000122,0 16,0z" />
+            <path transform="rotate(0,12,12) translate(0,0) scale(0.75,0.75)" fill="#FFF5F5"
+              d="M12.5,9.2999878L22,16 12.5,22.700012z M16,3.1000061C8.9000244,3.1000061 3.1000061,8.8999939 3.1000061,16 3.1000061,23.100006 8.9000244,28.899994 16,28.899994 23.100037,28.899994 28.900024,23.100006 28.900024,16 28.900024,8.8999939 23.100037,3.1000061 16,3.1000061z M16,0C24.799988,0 32,7.2000122 32,16 32,24.799988 24.799988,32 16,32 7.2000122,32 0,24.799988 0,16 0,7.2000122 7.2000122,0 16,0z" />
           </g>
         </svg>
       </button>
-      <button [ngClass]="buttonAnimationStyle()" [disabled]="!isNextExerciseAviable" (click)="nextExercise(true)">Weiter</button>
+      <button [ngClass]="buttonAnimationStyle()" [disabled]="!isNextExerciseAviable"
+        (click)="nextExercise(true)">Weiter</button>
     </div>
   </div>
   <div class="board" fxFlex="40%">

@@ -5,14 +5,3 @@
 <div #tooltip class="tooltip codeTooltip">
     Lorem, ipsum dolor.
 </div>
-
-<div class="recipe">
-    <h3>Rezept:</h3>
-    <p>Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)</p>
-
-    <ol>
-        <li *ngFor="let fruitName of exerciseService.currentExercise.expectedFruits">
-            {{ fruitName | fruit }}
-        </li>
-    </ol>
-</div>
