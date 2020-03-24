@@ -192,17 +192,17 @@ export class AppComponent {
       const positionColumnNumber = this.currentExercise.positionColumnNumber;
       const codeLineLength = this.currentExercise.codeLineLength;
 
-      this.editor.editor.setPosition({
+      this.editor.editor?.setPosition({
         lineNumber: minPositionLineNumber,
         column: positionColumnNumber
       });
 
-      this.editor.editor.deltaDecorations([], [
+      this.editor.editor?.deltaDecorations([], [
         { range: new monaco.Range(1, 1, minPositionLineNumber - 1, 24), options: { inlineClassName: 'myInlineDecoration' } },
         { range: new monaco.Range(maxPositionLineNumber + 1, 1, codeLineLength, 24), options: { inlineClassName: 'myInlineDecoration' } },
       ]);
 
-      this.editor.editor.focus();
+      this.editor.editor?.focus();
     }, 0);
   }
 
