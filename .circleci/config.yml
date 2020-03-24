@@ -1,0 +1,19 @@
+# circleci/config.yml
+
+version: 2.1
+orbs:
+  # This Orb includes the following:
+  # - checkout current repository
+  # - npm install with caching
+  # - start the server
+  # - wait for the server to respond
+  # - run Cypress tests
+  # - store videos and screenshots as artifacts on CircleCI
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    jobs:
+      - cypress/run:
+          start: npm start
+          wait-on: 'http://localhost:4200'
+          store_artifacts: true

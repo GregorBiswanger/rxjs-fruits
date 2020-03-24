@@ -71,7 +71,7 @@ export class AppComponent {
     });
 
     exerciseService.assertionChecked$.subscribe({
-      next: valid => (this.isNextExerciseAviable = valid)
+      next: valid => this.isNextExerciseAviable = valid
     });
 
     monacoLoader.isMonacoLoaded$

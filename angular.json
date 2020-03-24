@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "rxjs-fruits": {
@@ -48,18 +48,17 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              { 
-                "glob": "**/*", 
-                "input": "node_modules/monaco-editor", 
-                "output": "assets/monaco-editor/" 
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor",
+                "output": "assets/monaco-editor/"
               }
             ],
             "styles": [
               "./node_modules/animate.css/animate.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -140,10 +139,35 @@
           }
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@briebug/cypress-schematic:cypress",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "rxjs-fruits:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rxjs-fruits:serve:production"
+            }
+          }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
             "devServerTarget": "rxjs-fruits:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rxjs-fruits:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "rxjs-fruits:serve",
+            "watch": true,
+            "headless": false
           },
           "configurations": {
             "production": {
@@ -152,6 +176,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "rxjs-fruits"
 }
