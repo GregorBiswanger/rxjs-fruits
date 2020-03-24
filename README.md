@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/GregorBiswanger/rxjs-fruits.svg?style=svg)](https://circleci.com/gh/GregorBiswanger/rxjs-fruits)
+
 # RxjsFruits
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
