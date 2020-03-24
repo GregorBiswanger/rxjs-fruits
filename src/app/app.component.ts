@@ -1,3 +1,5 @@
+// tslint:disable: no-shadowed-variable deprecation
+import { ConfettiService } from './confetti.service';
 import { LevelService, Level } from './level.service';
 import { ExerciseService } from './shared/exercise.service';
 import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
@@ -51,15 +53,16 @@ export class AppComponent {
     positionColumnNumber: 0
   };
 
-  constructor(public levelService: LevelService,
-              private router: Router,
-              private exerciseService: ExerciseService,
-              monacoLoader: MonacoEditorLoaderService,
-              httpClient: HttpClient) {
-    exerciseService.exerciseChanged$.pipe(
-      delay(0)
-    ).subscribe({
-      next: (exercise) => {
+  constructor(
+    public levelService: LevelService,
+    private router: Router,
+    private exerciseService: ExerciseService,
+    confettiService: ConfettiService,
+    monacoLoader: MonacoEditorLoaderService,
+    httpClient: HttpClient
+  ) {
+    exerciseService.exerciseChanged$.pipe(delay(0)).subscribe({
+      next: exercise => {
         this.currentExercise = exercise;
         this.code = exercise.code;
         this.changeMonacoSettings();
@@ -67,23 +70,35 @@ export class AppComponent {
     });
 
     exerciseService.assertionChecked$.subscribe({
-      next: (valid) => this.isNextExerciseAviable = valid
+      next: valid => (this.isNextExerciseAviable = valid)
     });
 
     monacoLoader.isMonacoLoaded$
-      .pipe(filter(isLoaded => isLoaded === true), take(1))
+      .pipe(
+        filter(isLoaded => isLoaded === true),
+        take(1)
+      )
       .subscribe({
         next: () => {
-          httpClient.get('assets/rx6.d.ts', { responseType: 'text' }).subscribe({
-            next: (data) => {
-              ((window as any).monaco).languages.typescript.typescriptDefaults.addExtraLib(data, '');
-            }
-          });
+          httpClient
+            .get('assets/rx6.d.ts', { responseType: 'text' })
+            .subscribe({
+              next: data => {
+                (window as any).monaco.languages.typescript.typescriptDefaults.addExtraLib(
+                  data,
+                  ''
+                );
+              }
+            });
 
           this.setupMonacoSettings();
           this.changeMonacoSettings();
         }
       });
+
+    levelService.gameOver$.subscribe({
+      next: () => confettiService.start()
+    });
   }
 
   previousLevelStyle() {
@@ -94,7 +109,9 @@ export class AppComponent {
 
   nextLevelStyle() {
     return {
-      disabled: this.levelService.levels.length === this.levelService.currentLevel.number
+      disabled:
+        this.levelService.levels.length ===
+        this.levelService.currentLevel.number
     };
   }
 
@@ -140,11 +157,16 @@ export class AppComponent {
   }
 
   assertFruitPipeIcon(index: number) {
-    if (this.fruitsInPipe.length === 0 || typeof this.fruitsInPipe[index] === 'undefined') {
+    if (
+      this.fruitsInPipe.length === 0 ||
+      typeof this.fruitsInPipe[index] === 'undefined'
+    ) {
       return '';
     }
 
-    if (this.currentExercise.expectedFruits[index] === this.fruitsInPipe[index]) {
+    if (
+      this.currentExercise.expectedFruits[index] === this.fruitsInPipe[index]
+    ) {
       return '✔';
     }
 
@@ -153,13 +175,17 @@ export class AppComponent {
 
   setupMonacoSettings() {
     setTimeout(() => {
-      this.editor.editor.onDidChangeCursorPosition((e) => {
-        const minPositionLineNumber = this.currentExercise.minPositionLineNumber;
-        const maxPositionLineNumber = this.currentExercise.maxPositionLineNumber;
+      this.editor.editor.onDidChangeCursorPosition(e => {
+        const minPositionLineNumber = this.currentExercise
+          .minPositionLineNumber;
+        const maxPositionLineNumber = this.currentExercise
+          .maxPositionLineNumber;
         const positionColumnNumber = this.currentExercise.positionColumnNumber;
 
-        if (e.position.lineNumber < minPositionLineNumber ||
-          e.position.lineNumber > maxPositionLineNumber) {
+        if (
+          e.position.lineNumber < minPositionLineNumber ||
+          e.position.lineNumber > maxPositionLineNumber
+        ) {
           this.editor.editor.setPosition({
             lineNumber: minPositionLineNumber,
             column: positionColumnNumber
@@ -167,15 +193,31 @@ export class AppComponent {
         }
       });
 
-      this.editor.editor.onDidChangeModelContent((e) => {
-        const minPositionLineNumber = this.currentExercise.minPositionLineNumber;
-        const maxPositionLineNumber = this.currentExercise.maxPositionLineNumber;
+      this.editor.editor.onDidChangeModelContent(e => {
+        const minPositionLineNumber = this.currentExercise
+          .minPositionLineNumber;
+        const maxPositionLineNumber = this.currentExercise
+          .maxPositionLineNumber;
         const codeLineLength = this.currentExercise.codeLineLength;
 
-        this.editor.editor.deltaDecorations([], [
-          { range: new monaco.Range(1, 1, minPositionLineNumber - 1, 24), options: { inlineClassName: 'myInlineDecoration' } },
-          { range: new monaco.Range(maxPositionLineNumber + 1, 1, codeLineLength, 24), options: { inlineClassName: 'myInlineDecoration' } },
-        ]);
+        this.editor.editor.deltaDecorations(
+          [],
+          [
+            {
+              range: new monaco.Range(1, 1, minPositionLineNumber - 1, 24),
+              options: { inlineClassName: 'myInlineDecoration' }
+            },
+            {
+              range: new monaco.Range(
+                maxPositionLineNumber + 1,
+                1,
+                codeLineLength,
+                24
+              ),
+              options: { inlineClassName: 'myInlineDecoration' }
+            }
+          ]
+        );
 
         const lineCount = this.editor.editor.getModel().getLineCount();
         if (lineCount !== codeLineLength) {
@@ -197,10 +239,24 @@ export class AppComponent {
         column: positionColumnNumber
       });
 
-      this.editor.editor?.deltaDecorations([], [
-        { range: new monaco.Range(1, 1, minPositionLineNumber - 1, 24), options: { inlineClassName: 'myInlineDecoration' } },
-        { range: new monaco.Range(maxPositionLineNumber + 1, 1, codeLineLength, 24), options: { inlineClassName: 'myInlineDecoration' } },
-      ]);
+      this.editor.editor?.deltaDecorations(
+        [],
+        [
+          {
+            range: new monaco.Range(1, 1, minPositionLineNumber - 1, 24),
+            options: { inlineClassName: 'myInlineDecoration' }
+          },
+          {
+            range: new monaco.Range(
+              maxPositionLineNumber + 1,
+              1,
+              codeLineLength,
+              24
+            ),
+            options: { inlineClassName: 'myInlineDecoration' }
+          }
+        ]
+      );
 
       this.editor.editor?.focus();
     }, 0);
@@ -211,29 +267,30 @@ export class AppComponent {
     this.fruitsInPipe = [];
     this.isToMuchFruits = false;
 
-    // tslint:disable-next-line: no-shadowed-variable
-    // tslint:disable-next-line: deprecation
     const from = fromX;
     const distinct = distinctX;
     const map = mapX;
-    // tslint:disable-next-line: no-shadowed-variable
     const take = takeX;
-    // tslint:disable-next-line: no-shadowed-variable
     const filter = filterX;
 
     const userPipe: Observable<string> = eval(this.code);
-    userPipe.pipe(
-      concatMap(item => of(item).pipe(delay(1000))),
-      tap(x => console.log(x)),
-      tap((fruit) => {
-        this.fruitsInPipe.push(fruit);
+    userPipe
+      .pipe(
+        concatMap(item => of(item).pipe(delay(1000))),
+        tap(x => console.log(x)),
+        tap(fruit => {
+          this.fruitsInPipe.push(fruit);
 
-        if (this.fruitsInPipe.length > this.currentExercise.expectedFruits.length) {
-          this.isToMuchFruits = true;
-        }
-      }),
-      tap((fruit: string) => this.addFruitToView(fruit))
-    ).subscribe(this.exerciseService.assertExerciseOutput());
+          if (
+            this.fruitsInPipe.length >
+            this.currentExercise.expectedFruits.length
+          ) {
+            this.isToMuchFruits = true;
+          }
+        }),
+        tap((fruit: string) => this.addFruitToView(fruit))
+      )
+      .subscribe(this.exerciseService.assertExerciseOutput());
   }
 
   addFruitToView(fruit: string): void {
@@ -262,21 +319,29 @@ export class AppComponent {
     const width = this.conveyorBelt.nativeElement.offsetWidth;
 
     const timeline = new TimelineLite();
-    timeline.to(fruitSelector, 3, { x: '15vw', ease: Power0.easeNone })
+    timeline
+      .to(fruitSelector, 3, { x: '15vw', ease: Power0.easeNone })
       .to(fruitSelector, 2, { y: '40vw', ease: Bounce.easeOut })
       .to(fruitSelector, 1, { x: 0, y: 0, visibility: 'hidden' });
   }
 
   startConveyorBeltAnimation() {
-    const wheels = this.conveyorBelt.nativeElement.contentDocument.querySelectorAll('[id^=wheel]');
+    const wheels = this.conveyorBelt.nativeElement.contentDocument.querySelectorAll(
+      '[id^=wheel]'
+    );
 
     const timeline = new TimelineLite();
-    timeline.to(wheels, 3, {
-      rotation: 360,
-      transformOrigin: 'center',
-      ease: Power0.easeNone,
-      repeat: -1
-    }, 0);
+    timeline.to(
+      wheels,
+      3,
+      {
+        rotation: 360,
+        transformOrigin: 'center',
+        ease: Power0.easeNone,
+        repeat: -1
+      },
+      0
+    );
   }
 
   nextExercise(currentLevelSolved: boolean) {

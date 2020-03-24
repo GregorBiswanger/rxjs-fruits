@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LevelService {
+  gameOver$ = new Subject();
   levels: Level[] = [];
   currentLevelIndex = 0;
 
@@ -58,6 +60,14 @@ export class LevelService {
 
     if (nextLevelIndex <= this.levels.length - 1) {
       this.currentLevelIndex = nextLevelIndex;
+    }
+
+    this.checkOfGameOver();
+  }
+
+  checkOfGameOver() {
+    if (this.levels.every(level => level.solved)) {
+      this.gameOver$.next();
     }
   }
 
