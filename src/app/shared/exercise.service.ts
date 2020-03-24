@@ -13,7 +13,8 @@ export class ExerciseService {
     minPositionLineNumber: 0,
     maxPositionLineNumber: 0,
     codeLineLength: 0,
-    positionColumnNumber: 0
+    positionColumnNumber: 0,
+    recipeDescription: ''
   };
 
   assertionChecked$ = new Subject<boolean>();

@@ -39,4 +39,5 @@ fruits.pipe(
     readonly maxPositionLineNumber = 13;
     readonly positionColumnNumber = 2;
     readonly codeLineLength = 14;
+    readonly recipeDescription = 'Es sollen alle frischen Äpfel und Bananen gemixt werden. (Hinweis: Verwende filter)';
 }

@@ -50,7 +50,8 @@ export class AppComponent {
     fruits: [],
     maxPositionLineNumber: 0,
     minPositionLineNumber: 0,
-    positionColumnNumber: 0
+    positionColumnNumber: 0,
+    recipeDescription: ''
   };
 
   constructor(

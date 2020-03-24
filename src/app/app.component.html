@@ -29,7 +29,7 @@
     <div fxLayout style="height: 50%;">
       <div class="recipe" [ngClass]="recipeAnimationStyle()">
         <h3>Rezept:</h3>
-        <p>Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)</p>
+        <p>{{ currentExercise.recipeDescription }}</p>
   
         <ol>
           <li *ngFor="let fruitName of currentExercise.expectedFruits; let i = index;">

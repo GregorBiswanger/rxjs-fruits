@@ -19,4 +19,5 @@ fruits.pipe(
     readonly maxPositionLineNumber = 7;
     readonly positionColumnNumber = 2;
     readonly codeLineLength = 8;
+    readonly recipeDescription = 'Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)';
 }

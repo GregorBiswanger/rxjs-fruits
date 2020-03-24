@@ -6,4 +6,5 @@ export interface Exercise {
     maxPositionLineNumber: number;
     positionColumnNumber: number;
     codeLineLength: number;
+    recipeDescription: string;
 }
