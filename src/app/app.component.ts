@@ -240,8 +240,7 @@ export class AppComponent {
         column: positionColumnNumber
       });
 
-      this.editor.editor?.deltaDecorations(
-        [],
+      this.editor.editor?.deltaDecorations([],
         [
           {
             range: new monaco.Range(1, 1, minPositionLineNumber - 1, 24),
