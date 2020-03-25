@@ -1,7 +1,7 @@
-[![CircleCI](https://circleci.com/gh/GregorBiswanger/rxjs-fruits.svg?style=svg)](https://circleci.com/gh/GregorBiswanger/rxjs-fruits)
 
 RxJS-fruits
 =======
+[![CircleCI](https://circleci.com/gh/GregorBiswanger/rxjs-fruits.svg?style=svg)](https://circleci.com/gh/GregorBiswanger/rxjs-fruits)
 
 RxJS-fruits is a game for learning RxJS (Reactive Extensions for JavaScript). Check it out at [rxjs-fruits.com](https://www.rxjs-fruits.com).
 
