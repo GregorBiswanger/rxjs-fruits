@@ -53,7 +53,7 @@ jobs:
             git config user.name "GregorBiswanger"
       - run:
           name: Deploy to gh-pages branch
-          command: gh-pages --message "[ci skip]" -d docs
+          command: gh-pages --message "update web app [ci skip]" --dist docs --dest docs --branch master
 
 workflows:
   test-build-deploy:
