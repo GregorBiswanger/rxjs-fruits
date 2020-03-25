@@ -43,7 +43,7 @@
     </div>
 
     <div fyLayout fxLayoutAlign="end">
-      <button (click)="run()">Subscribe
+      <button id="subscribeButton" (click)="run()">Subscribe
         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;"
           viewBox="0 0 24 24">
           <g>
@@ -52,7 +52,7 @@
           </g>
         </svg>
       </button>
-      <button [ngClass]="buttonAnimationStyle()" [disabled]="!isNextExerciseAviable"
+      <button id="nextButton" [ngClass]="buttonAnimationStyle()" [disabled]="!isNextExerciseAviable"
         (click)="nextExercise(true)">Weiter</button>
     </div>
   </div>
