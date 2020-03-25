@@ -18,4 +18,4 @@ Gregor Biswanger
 
 ## Copyright and License
 
-Copyright 2020 Gregor Biswanger. Code released under [the MIT License](https://github.com/thomaspark/flexboxfroggy/blob/gh-pages/LICENSE). Images released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/legalcode.txt).
+Copyright 2020 Gregor Biswanger. Code released under [the MIT License](https://github.com/GregorBiswanger/rxjs-fruits/blob/master/LICENSE.md). Images released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/legalcode.txt).
