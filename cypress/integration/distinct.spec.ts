@@ -1,6 +1,9 @@
 describe('The distinct level 1', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('/', {
+      retryOnStatusCodeFailure: true,
+      retryOnNetworkFailure: true
+    });
   });
 
   it('should failed on wrong solution', () => {
