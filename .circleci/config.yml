@@ -26,9 +26,7 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            npm run build
+      - run: npm run build
       - persist_to_workspace:
           root: ~/myapp
           paths:

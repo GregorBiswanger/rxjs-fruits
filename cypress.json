@@ -1,6 +1,6 @@
 {
   "baseUrl": "http://localhost:4200",
   "supportFile": "cypress/support/index.ts",
-  "requestTimeout": 60000,
-  "responseTimeout": 60000
+  "requestTimeout": 70000,
+  "responseTimeout": 70000
 }
