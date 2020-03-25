@@ -19,6 +19,7 @@ describe('The filter level 3', () => {
   });
 
   it('should success on valid solution', () => {
+    cy.wait(1000);
     cy.get('[style="top:132px;height:22px;"]').type('filter(fruit => fruit.startsWith(\'fresh\'))');
     cy.get('#subscribeButton').click();
     cy.wait(2500);
