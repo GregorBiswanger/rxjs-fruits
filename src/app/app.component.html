@@ -30,16 +30,16 @@
       <div class="recipe" [ngClass]="recipeAnimationStyle()">
         <h3>Rezept:</h3>
         <p>{{ currentExercise.recipeDescription }}</p>
-  
+
         <ol>
           <li *ngFor="let fruitName of currentExercise.expectedFruits; let i = index;">
-                {{ fruitName | fruit }} {{ assertFruitPipeIcon(i) }}
-            </li>
+            {{ fruitName | fruit }} {{ assertFruitPipeIcon(i) }}
+          </li>
         </ol>
 
         <p *ngIf="isToMuchFruits">❌ Mehr Früchte als im Rezept angegeben sind!</p>
       </div>
-        <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+      <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
     </div>
 
     <div fyLayout fxLayoutAlign="end">
@@ -62,5 +62,11 @@
 
     <object #conveyorbelt id="conveyor-belt" data="assets/conveyor-belt.svg" type="image/svg+xml"
       (appInit)="startConveyorBeltAnimation()"></object>
+
+    <div fyLayout fxLayoutAlign="center center" *ngIf="isErrorInConsole">
+      <div class="output">
+        Es gab einen Fehler mit deinem Code. Bitte mit F12 die Ausgabe in der Console überprüfen.
+      </div>
+    </div>
   </div>
 </div>

@@ -53,6 +53,7 @@ export class AppComponent {
     positionColumnNumber: 0,
     recipeDescription: ''
   };
+  isErrorInConsole = false;
 
   constructor(
     public levelService: LevelService,
@@ -266,6 +267,8 @@ export class AppComponent {
     this.fruits = [];
     this.fruitsInPipe = [];
     this.isToMuchFruits = false;
+    this.isErrorInConsole = false;
+    console.clear();
 
     const from = fromX;
     const distinct = distinctX;
@@ -273,24 +276,29 @@ export class AppComponent {
     const take = takeX;
     const filter = filterX;
 
-    const userPipe: Observable<string> = eval(this.code);
-    userPipe
-      .pipe(
-        concatMap(item => of(item).pipe(delay(1000))),
-        tap(x => console.log(x)),
-        tap(fruit => {
-          this.fruitsInPipe.push(fruit);
+    try {
+      const userPipe: Observable<string> = eval(this.code);
+      userPipe
+        .pipe(
+          concatMap(item => of(item).pipe(delay(1000))),
+          tap(x => console.log('Into the pipe: ' + x)),
+          tap(fruit => {
+            this.fruitsInPipe.push(fruit);
 
-          if (
-            this.fruitsInPipe.length >
-            this.currentExercise.expectedFruits.length
-          ) {
-            this.isToMuchFruits = true;
-          }
-        }),
-        tap((fruit: string) => this.addFruitToView(fruit))
-      )
-      .subscribe(this.exerciseService.assertExerciseOutput());
+            if (
+              this.fruitsInPipe.length >
+              this.currentExercise.expectedFruits.length
+            ) {
+              this.isToMuchFruits = true;
+            }
+          }),
+          tap((fruit: string) => this.addFruitToView(fruit))
+        )
+        .subscribe(this.exerciseService.assertExerciseOutput());
+    } catch (error) {
+      console.error(error);
+      this.isErrorInConsole = true;
+    }
   }
 
   addFruitToView(fruit: string): void {

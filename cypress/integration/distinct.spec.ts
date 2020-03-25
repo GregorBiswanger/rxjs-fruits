@@ -25,4 +25,13 @@ describe('The distinct level 1', () => {
     cy.get('.recipe > :nth-child(4)').should('not.exist');
     cy.get('#nextButton').should('not.have.attr', 'disabled');
   });
+
+  it('should show a error info dialog on borad with failed code', () => {
+    cy.get('[style="top:132px;height:22px;"]').type('distinct((f: string) => f.substring(6))');
+    cy.get('#subscribeButton').click();
+    cy.wait(2500);
+
+    cy.get('.output').should('exist');
+    cy.get('#nextButton').should('have.attr', 'disabled');
+  });
 });
