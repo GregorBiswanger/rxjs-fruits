@@ -38,7 +38,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - $GH_FINGERPRINT
+            - "65:fa:3b:52:53:9b:19:28:29:fa:77:0b:79:18:e5:bc"
       - checkout
       - attach_workspace:
           at: ~/myapp
@@ -50,7 +50,7 @@ jobs:
           name: Configure git
           command: |
             git config user.email "gregor.biswanger@web-enliven.de"
-            git config user.name "Gregor Biswanger"
+            git config user.name "GregorBiswanger"
       - run:
           name: Deploy to gh-pages branch
           command: gh-pages --message "[ci skip]" -d docs
