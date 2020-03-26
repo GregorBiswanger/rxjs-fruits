@@ -1,2 +1,9 @@
 <h3>Task: {{task}}</h3>
-<p>The take operator emits only the first count values emitted by the source Observable.</p>
+<p>The <code class="help" [appTooltip]="tooltip">take</code> operator emits only the first count values emitted by the
+    source Observable. <a href="https://rxjs.dev/api/operators/take" target="_blank">Mehr Infos zu take.</a></p>
+
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="takeCode"></code>
+    </pre>
+</div>

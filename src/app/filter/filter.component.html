@@ -1,2 +1,8 @@
 <h3>Task: {{task}}</h3>
-<p>The filter operator filter items emitted by the source Observable by only emitting those that satisfy a specified predicate.</p>
+<p>The <code class="help" [appTooltip]="tooltip">filter</code> operator filter items emitted by the source Observable by only emitting those that satisfy a specified predicate. <a href="https://rxjs.dev/api/operators/filter" target="_blank">Mehr Infos zu filter.</a></p>
+
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="filterCode"></code>
+    </pre>
+</div>

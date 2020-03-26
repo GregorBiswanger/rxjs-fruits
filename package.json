@@ -29,6 +29,7 @@
     "animate.css": "^3.7.2",
     "gsap": "^3.2.5",
     "monaco-editor": "^0.20.0",
+    "ngx-highlightjs": "^4.1.0-beta",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

@@ -8,12 +8,13 @@ import { AppComponent } from './app.component';
 import { DistinctComponent } from './distinct/distinct.component';
 import { TakeComponent } from './take/take.component';
 import { InitDirective } from './init.directive';
-
-import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { FilterComponent } from './filter/filter.component';
 import { FruitPipe } from './shared/fruit.pipe';
 import { TooltipDirective } from './shared/tooltip.directive';
+
+import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,31 @@ import { TooltipDirective } from './shared/tooltip.directive';
     MonacoEditorModule,
     FlexLayoutModule,
     HttpClientModule,
+    HighlightModule,
     RouterModule.forRoot([
       { path: '', component: DistinctComponent },
       { path: 'take', component: TakeComponent },
       { path: 'filter', component: FilterComponent }
     ]),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        languages: getHighlightLanguages()
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/**
+ * Import specific languages to avoid importing everything
+ * The following will lazy load highlight.js core script (~9.6KB) + the selected languages bundle (each lang. ~1kb)
+ */
+export function getHighlightLanguages() {
+  return {
+    typescript: () => import('highlight.js/lib/languages/javascript')
+  };
+}

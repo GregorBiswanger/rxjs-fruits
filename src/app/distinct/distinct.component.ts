@@ -9,6 +9,11 @@ import { DistinctExercise } from './distinct-exercise';
 })
 export class DistinctComponent implements OnInit {
   exerciseTitle = 'Distinct';
+  distinctCode = `
+  of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1).pipe(
+    distinct()
+  ).subscribe(x => console.log(x)); // 1, 2, 3, 4
+  `;
 
   constructor(public exerciseService: ExerciseService) { }
 
