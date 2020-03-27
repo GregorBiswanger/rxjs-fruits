@@ -8,7 +8,7 @@ import { ExerciseService } from '../shared/exercise.service';
   styleUrls: ['./take.component.scss']
 })
 export class TakeComponent implements OnInit {
-  task = 'Take';
+  task = 'take';
   takeCode = `
 import { interval } from 'rxjs';
 import { take } from 'rxjs/operators';

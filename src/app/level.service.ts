@@ -43,6 +43,13 @@ export class LevelService {
       solved: false
     });
 
+    this.levels.push({
+      title: 'map',
+      number: 4,
+      urlPath: '/map',
+      solved: false
+    });
+
     for (let index = 0; index < this.levels.length; index++) {
       const level = this.levels[index];
       if (level.urlPath === window.location.pathname) {

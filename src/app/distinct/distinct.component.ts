@@ -8,7 +8,7 @@ import { DistinctExercise } from './distinct-exercise';
   styleUrls: ['./distinct.component.scss']
 })
 export class DistinctComponent implements OnInit {
-  exerciseTitle = 'Distinct';
+  exerciseTitle = 'distinct';
   distinctCode = `
   of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1).pipe(
     distinct()

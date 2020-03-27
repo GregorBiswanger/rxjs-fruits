@@ -15,6 +15,7 @@ import { TooltipDirective } from './shared/tooltip.directive';
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
     TakeComponent,
     FilterComponent,
     FruitPipe,
-    TooltipDirective
+    TooltipDirective,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
     RouterModule.forRoot([
       { path: '', component: DistinctComponent },
       { path: 'take', component: TakeComponent },
-      { path: 'filter', component: FilterComponent }
+      { path: 'filter', component: FilterComponent },
+      { path: 'map', component: MapComponent }
     ]),
   ],
   providers: [
