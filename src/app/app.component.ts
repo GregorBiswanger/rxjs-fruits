@@ -307,12 +307,12 @@ export class AppComponent {
     switch (fruit) {
       case 'fresh-apple':
         fruitSelector = 'fruit-apple-' + this.fruits.length;
-        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Apple.png' });
+        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Apple.svg' });
         break;
 
       case 'fresh-banana':
         fruitSelector = 'fruit-banana-' + this.fruits.length;
-        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Banana.png' });
+        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Banana.svg' });
         break;
 
       default:
@@ -324,11 +324,12 @@ export class AppComponent {
     fruitSelector = '#' + fruitSelector;
 
     // const width = this.conveyorBelt.nativeElement.contentDocument.querySelectorAll('#conveyor-belt')[0].getBBox().width;
-    const width = this.conveyorBelt.nativeElement.offsetWidth;
+    const width = this.conveyorBelt.nativeElement.offsetTop - (this.conveyorBelt.nativeElement.offsetHeight / 100) * 70;
 
     const timeline = new TimelineLite();
     timeline
-      .to(fruitSelector, 3, { x: '15vw', ease: Power0.easeNone })
+      .to(fruitSelector, 0, { y: width })
+      .to(fruitSelector, 3, { x: '18.5vw', ease: Power0.easeNone })
       .to(fruitSelector, 2, { y: '40vw', ease: Bounce.easeOut })
       .to(fruitSelector, 1, { x: 0, y: 0, visibility: 'hidden' });
   }

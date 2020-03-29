@@ -10,12 +10,12 @@ ngx-monaco-editor {
 
 .task {
   z-index: 1;
-  background-color: #43a047;
+  background-color: #0b7c99;
   padding: 2em;
 }
 
 .board {
-  background-color: #1f5768;
+  background-color: #384b64;
   height: 100vh;
   width: 50vw;
   display: inline-block;
@@ -38,9 +38,30 @@ ngx-monaco-editor {
   position: absolute;
 }
 
+img[src="assets/Fruit-Apple.svg"] {
+  width: 10%;
+  top: 5vh;
+}
+
+img[src="assets/Fruit-Cherry.svg"] {
+  width: 5%;
+  top: 4.5vh;
+}
+
+img[src="assets/Fruit-Banana.svg"] {
+  width: 8%;
+  top: 2.8vh;
+}
+
 .title {
-  margin: 0.5rem 0 0;
+  margin: 0.5rem 10px 0;
   font-size: 30px;
+  display: inline;
+}
+
+.logo {
+  width: 20%;
+  vertical-align: bottom;
 }
 
 // button animations
@@ -55,7 +76,7 @@ button {
   padding: 0.4em 2em;
   margin-top: 0.5em;
   margin-left: 0.5em;
-  background-color: #da931e;
+  background-color: #82267b;
   border: none;
   border-radius: 4px;
   font-family: "PT Sans", sans-serif;
@@ -76,7 +97,7 @@ button:active {
 }
 
 button:not(.disabled):hover {
-  background-color: #c97b00;
+  background-color: rgb(87, 26, 82);
 }
 
 button[disabled] {
@@ -240,7 +261,7 @@ button[disabled] {
   overflow: auto;
 }
 
-code.help  {
+code.help {
   padding: 0 2px;
   background-color: rgba(255, 255, 255, 0.2);
   font-family: "Source Code Pro", monospace;

@@ -1,7 +1,10 @@
 <div fxLayout (click)="closeLevelsWrapper()">
   <div class="task" fxFlex="60%">
     <div fxLayout fxLayoutAlign="space-between">
-      <h1 class="title">RxJS-fruits</h1>
+      <div fyLayout>
+        <img class="logo" src="assets/Rx_Logo_S.png" alt="RxJS Logo">
+        <h1 class="title">RxJS-fruits</h1>
+      </div>
       <div id="level-counter">
         <span class="arrow left" [ngClass]="previousLevelStyle()" (click)="previousExercise()">◀</span>
         <span id="level-indicator" (click)="toggleLevelsWrapper()">
@@ -59,6 +62,10 @@
   <div class="board" fxFlex="40%">
     <img [id]="imageSource.id" *ngFor="let imageSource of fruits" [src]="imageSource.url"
       (appInit)="startFruitAnimation(imageSource.id)">
+
+      <!-- <img style="width: 10%; top: 5vh;" src="assets/Fruit-Apple.svg">
+      <img style="width: 5%; top: 4.5vh;" src="assets/Fruit-Cherry.svg">
+      <img style="width: 10%; top: 2.8vh;" src="assets/Fruit-Banana.svg"> -->
 
     <object #conveyorbelt id="conveyor-belt" data="assets/conveyor-belt.svg" type="image/svg+xml"
       (appInit)="startConveyorBeltAnimation()"></object>
