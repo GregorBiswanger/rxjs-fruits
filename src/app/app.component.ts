@@ -223,6 +223,10 @@ export class AppComponent {
           || lineCount < minPositionLineNumber
           || lineCount < codeLineLength && this.levelService.currentLevel.number > 2) {
           this.editor.editor.trigger('', 'undo', '');
+
+          // workaround for monaco to accept the style update
+          this.code = this.code + ' ';
+          this.changeMonacoSettings();
         }
       });
     }, 0);
