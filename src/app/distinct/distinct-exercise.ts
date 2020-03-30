@@ -1,23 +1,27 @@
 import { Exercise } from '../shared/exercise';
 
 export class DistinctExercise implements Exercise {
-    readonly fruits = ['fresh-apple',
-        'fresh-apple',
-        'fresh-banana',
-        'fresh-apple'];
-    readonly expectedFruits = ['fresh-apple',
-        'fresh-banana'];
+    readonly fruits = ['apple',
+        'apple',
+        'banana',
+        'apple'];
+    readonly expectedFruits = ['apple',
+        'banana'];
     readonly code = `const fruits = from([
-    "fresh-apple",
-    "fresh-apple",
-    "fresh-banana",
-    "fresh-apple"]);
+    "apple",
+    "apple",
+    "banana",
+    "apple"]);
+
 fruits.pipe(
 \t
-);`;
-    readonly minPositionLineNumber = 7;
-    readonly maxPositionLineNumber = 7;
+).subscribe({
+    next: fruit => toConveyorBelt(fruit)
+});
+`;
+    readonly minPositionLineNumber = 8;
+    readonly maxPositionLineNumber = 8;
     readonly positionColumnNumber = 2;
-    readonly codeLineLength = 8;
+    readonly codeLineLength = 12;
     readonly recipeDescription = 'Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)';
 }

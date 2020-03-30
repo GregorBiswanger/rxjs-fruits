@@ -2,27 +2,29 @@ import { Exercise } from '../shared/exercise';
 
 export class MapExercise implements Exercise {
     fruits: [
-        'dirty-fresh-apple',
-        'fresh-apple',
-        'dirty-fresh-banana',
-        'fresh-banana'];
+        'dirty-apple',
+        'apple',
+        'dirty-banana',
+        'banana'];
     expectedFruits = [
-        'fresh-apple',
-        'fresh-apple',
-        'fresh-banana',
-        'fresh-banana'
+        'apple',
+        'apple',
+        'banana',
+        'banana'
     ];
     code = `const fruits = from([
-        "dirty-fresh-apple",
-        "fresh-apple",
-        "dirty-fresh-banana",
-        "fresh-banana"]);
+    "dirty-apple",
+    "apple",
+    "dirty-banana",
+    "banana"]);
 fruits.pipe(
 \t
-);`;
+).subscribe({
+    next: fruit => toConveyorBelt(fruit)
+});`;
     minPositionLineNumber = 7;
     maxPositionLineNumber = 7;
     positionColumnNumber = 2;
-    codeLineLength = 8;
+    codeLineLength = 10;
     recipeDescription = 'Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)';
 }

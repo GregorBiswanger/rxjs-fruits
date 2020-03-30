@@ -30,7 +30,7 @@
     <router-outlet class="instructions"></router-outlet>
 
     <div fxLayout style="height: 50%;">
-      <div class="recipe" [ngClass]="recipeAnimationStyle()">
+      <div class="recipe" [ngClass]="recipeAnimationStyle()" *ngIf="currentExercise.recipeDescription">
         <h3>🧾 Rezept:</h3>
         <p>{{ currentExercise.recipeDescription }}</p>
 
@@ -67,8 +67,7 @@
       <img style="width: 5%; top: 4.5vh;" src="assets/Fruit-Cherry.svg">
       <img style="width: 10%; top: 2.8vh;" src="assets/Fruit-Banana.svg"> -->
 
-    <object #conveyorbelt id="conveyor-belt" data="assets/conveyor-belt.svg" type="image/svg+xml"
-      (appInit)="startConveyorBeltAnimation()"></object>
+    <object #conveyorbelt id="conveyor-belt" data="assets/conveyor-belt.svg" type="image/svg+xml"></object>
 
     <div fyLayout fxLayoutAlign="center center" *ngIf="isErrorInConsole">
       <div class="output">

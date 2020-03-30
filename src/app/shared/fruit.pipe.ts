@@ -7,12 +7,16 @@ export class FruitPipe implements PipeTransform {
 
   transform(value: string, ...args: unknown[]): string {
 
-    if (value === 'fresh-apple') {
-      return 'Frischen Apfel';
+    if (value === 'apple') {
+      return 'Apfel';
     }
 
-    if (value === 'fresh-banana') {
-      return 'Frische Banane';
+    if (value === 'banana') {
+      return 'Banane';
+    }
+
+    if (value === 'cherry') {
+      return 'Kirsche';
     }
 
     return null;

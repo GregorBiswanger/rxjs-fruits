@@ -16,6 +16,9 @@ import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { MapComponent } from './map/map.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
+import { SubscribeNextComponent } from './subscribe-next/subscribe-next.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { MapComponent } from './map/map.component';
     FilterComponent,
     FruitPipe,
     TooltipDirective,
-    MapComponent
+    MapComponent,
+    SubscribeComponent,
+    SubscribeNextComponent,
+    PipeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,11 @@ import { MapComponent } from './map/map.component';
     HttpClientModule,
     HighlightModule,
     RouterModule.forRoot([
-      { path: '', component: DistinctComponent },
+      { path: '', redirectTo: 'subscribe', pathMatch: 'full' },
+      { path: 'subscribe', component: SubscribeComponent },
+      { path: 'subscribe-next', component: SubscribeNextComponent },
+      { path: 'pipe', component: PipeComponent },
+      { path: 'distinct', component: DistinctComponent },
       { path: 'take', component: TakeComponent },
       { path: 'filter', component: FilterComponent },
       { path: 'map', component: MapComponent }

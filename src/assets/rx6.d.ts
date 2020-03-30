@@ -693,3 +693,11 @@ declare function take<T>(count: number): MonoTypeOperatorFunction<T>;
 
 declare function filter<T, S extends T>(predicate: (value: T, index: number) => value is S, thisArg?: any): OperatorFunction<T, S>;
 declare function filter<T>(predicate: (value: T, index: number) => boolean, thisArg?: any): MonoTypeOperatorFunction<T>;
+
+/**
+ * The same Observable instance returned by any call to {@link empty} without a
+ * `scheduler`. It is preferrable to use this over `empty()`.
+ */
+declare const EMPTY: Observable<never>;
+
+declare function toConveyorBelt(fruit: string): void;
