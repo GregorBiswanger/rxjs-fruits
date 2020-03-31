@@ -46,10 +46,8 @@ export class AppComponent {
   isToMuchFruits = false;
   currentExercise: Exercise = {
     code: '',
-    codeLineLength: 0,
     expectedFruits: [],
     fruits: [],
-    maxPositionLineNumber: 0,
     minPositionLineNumber: 0,
     positionColumnNumber: 0,
     recipeDescription: ''
