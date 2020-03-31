@@ -19,9 +19,7 @@ fruits.pipe(
     next: fruit => toConveyorBelt(fruit)
 });
 `;
-    readonly minPositionLineNumber = 8;
-    readonly maxPositionLineNumber = 8;
+    readonly minPositionLineNumber = 7;
     readonly positionColumnNumber = 2;
-    readonly codeLineLength = 12;
     readonly recipeDescription = 'Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)';
 }

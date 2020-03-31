@@ -188,7 +188,7 @@ export class AppComponent {
           e.position.lineNumber > maxPositionLineNumber
         ) {
           this.editor.editor.setPosition({
-            lineNumber: minPositionLineNumber,
+            lineNumber: minPositionLineNumber + 1,
             column: positionColumnNumber
           });
         }
@@ -196,8 +196,6 @@ export class AppComponent {
 
       this.editor.editor.onDidChangeModelContent(e => {
         const minPositionLineNumber = this.currentExercise.minPositionLineNumber;
-        const maxPositionLineNumber = this.currentExercise.maxPositionLineNumber;
-        const codeLineLength = this.currentExercise.codeLineLength;
 
         this.editor.editor.deltaDecorations(
           [],
@@ -205,27 +203,16 @@ export class AppComponent {
             {
               range: new monaco.Range(1, 1, minPositionLineNumber - 1, 100),
               options: { inlineClassName: 'myInlineDecoration' }
-            },
-            {
-              range: new monaco.Range(
-                maxPositionLineNumber + 1,
-                1,
-                codeLineLength,
-                100
-              ),
-              options: { inlineClassName: 'myInlineDecoration' }
             }
           ]
         );
 
         const lineCount = this.editor.editor.getModel().getLineCount();
-        if (lineCount > codeLineLength
-          || lineCount < minPositionLineNumber
-          || lineCount < codeLineLength && this.levelService.currentLevel.number > 2) {
+        if (lineCount < minPositionLineNumber) {
           this.editor.editor.trigger('', 'undo', '');
 
           // workaround for monaco to accept the style update
-          this.code = this.code + ' ';
+          this.code = this.currentExercise.code + ' ';
           this.changeMonacoSettings();
         }
       });
@@ -235,12 +222,10 @@ export class AppComponent {
   changeMonacoSettings() {
     setTimeout(() => {
       const minPositionLineNumber = this.currentExercise.minPositionLineNumber;
-      const maxPositionLineNumber = this.currentExercise.maxPositionLineNumber;
       const positionColumnNumber = this.currentExercise.positionColumnNumber;
-      const codeLineLength = this.currentExercise.codeLineLength;
 
       this.editor.editor?.setPosition({
-        lineNumber: minPositionLineNumber,
+        lineNumber: minPositionLineNumber + 1,
         column: positionColumnNumber
       });
 
@@ -248,15 +233,6 @@ export class AppComponent {
         [
           {
             range: new monaco.Range(1, 1, minPositionLineNumber - 1, 100),
-            options: { inlineClassName: 'myInlineDecoration' }
-          },
-          {
-            range: new monaco.Range(
-              maxPositionLineNumber + 1,
-              1,
-              codeLineLength,
-              100
-            ),
             options: { inlineClassName: 'myInlineDecoration' }
           }
         ]

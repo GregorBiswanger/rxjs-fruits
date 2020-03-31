@@ -17,9 +17,7 @@ fruits.pipe(
 ).subscribe({
     next: fruit => toConveyorBelt(fruit)
 });`;
-    readonly minPositionLineNumber = 7;
-    readonly maxPositionLineNumber = 7;
+    readonly minPositionLineNumber = 6;
     readonly positionColumnNumber = 2;
-    readonly codeLineLength = 10;
     readonly recipeDescription = 'Es sollen nur zwei Bananen gemixt werden. (Hinweis: Verwende take)';
 }

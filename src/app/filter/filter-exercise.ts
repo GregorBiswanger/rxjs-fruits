@@ -37,9 +37,7 @@ fruits.pipe(
 ).subscribe({
     next: fruit => toConveyorBelt(fruit)
 });`;
-    readonly minPositionLineNumber = 13;
-    readonly maxPositionLineNumber = 13;
+    readonly minPositionLineNumber = 12;
     readonly positionColumnNumber = 2;
-    readonly codeLineLength = 16;
     readonly recipeDescription = 'Es sollen alle frischen Äpfel und Bananen gemixt werden. (Hinweis: Verwende filter)';
 }

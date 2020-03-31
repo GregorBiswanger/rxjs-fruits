@@ -14,9 +14,7 @@ export class SubscibeNextExercise implements Exercise {
 
 
 `;
-    readonly minPositionLineNumber = 6;
-    readonly maxPositionLineNumber = 25;
+    readonly minPositionLineNumber = 5;
     readonly positionColumnNumber = 1;
-    readonly codeLineLength = 25;
     readonly recipeDescription = 'Es soll jede Frucht gemixt werden. (Hinweis: subscribe mit next)';
 }

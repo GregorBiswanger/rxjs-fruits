@@ -3,8 +3,6 @@ export interface Exercise {
     expectedFruits: string[];
     code: string;
     minPositionLineNumber: number;
-    maxPositionLineNumber: number;
     positionColumnNumber: number;
-    codeLineLength: number;
     recipeDescription: string;
 }
