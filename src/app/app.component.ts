@@ -178,13 +178,9 @@ export class AppComponent {
     setTimeout(() => {
       this.editor.editor.onDidChangeCursorPosition(e => {
         const minPositionLineNumber = this.currentExercise.minPositionLineNumber;
-        const maxPositionLineNumber = this.currentExercise.maxPositionLineNumber;
         const positionColumnNumber = this.currentExercise.positionColumnNumber;
 
-        if (
-          e.position.lineNumber < minPositionLineNumber ||
-          e.position.lineNumber > maxPositionLineNumber
-        ) {
+        if (e.position.lineNumber < minPositionLineNumber) {
           this.editor.editor.setPosition({
             lineNumber: minPositionLineNumber + 1,
             column: positionColumnNumber

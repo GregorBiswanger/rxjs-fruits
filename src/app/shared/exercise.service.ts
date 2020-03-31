@@ -11,8 +11,6 @@ export class ExerciseService {
     fruits: [],
     expectedFruits: [],
     minPositionLineNumber: 0,
-    maxPositionLineNumber: 0,
-    codeLineLength: 0,
     positionColumnNumber: 0,
     recipeDescription: ''
   };
