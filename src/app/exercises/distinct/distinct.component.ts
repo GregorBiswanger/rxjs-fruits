@@ -1,4 +1,4 @@
-import { ExerciseService } from '../shared/exercise.service';
+import { ExerciseService } from '../../shared/exercise.service';
 import { Component, OnInit } from '@angular/core';
 import { DistinctExercise } from './distinct-exercise';
 

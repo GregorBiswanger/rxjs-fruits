@@ -1,5 +1,5 @@
 import { FilterExercise } from './filter-exercise';
-import { ExerciseService } from '../shared/exercise.service';
+import { ExerciseService } from '../../shared/exercise.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

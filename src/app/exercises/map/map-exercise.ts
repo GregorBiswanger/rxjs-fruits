@@ -1,4 +1,4 @@
-import { Exercise } from '../shared/exercise';
+import { Exercise } from '../../shared/exercise';
 
 export class MapExercise implements Exercise {
     fruits: [

@@ -1,6 +1,6 @@
 import { TakeExercise } from './take-exercise';
 import { Component, OnInit } from '@angular/core';
-import { ExerciseService } from '../shared/exercise.service';
+import { ExerciseService } from '../../shared/exercise.service';
 
 @Component({
   selector: 'app-take',
