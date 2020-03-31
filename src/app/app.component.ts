@@ -4,10 +4,11 @@ import { LevelService, Level } from './level.service';
 import { ExerciseService } from './shared/exercise.service';
 import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { of, Observable, Subject } from 'rxjs';
+import { of, Subject } from 'rxjs';
 import { from as fromX, EMPTY as EMPTYX } from 'rxjs';
-import { delay, tap, concatMap, take, filter } from 'rxjs/operators';
+import { delay, concatMap, take, filter } from 'rxjs/operators';
 import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } from 'rxjs/operators';
+import { tap as tapX } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
 import * as monaco from 'monaco-editor';
@@ -251,6 +252,7 @@ export class AppComponent {
     const map = mapX;
     const take = takeX;
     const filter = filterX;
+    const tap = tapX;
     const toConveyorBeltX = toConveyorBelt;
 
     function toConveyorBelt(fruit: string) {

@@ -701,3 +701,6 @@ declare function filter<T>(predicate: (value: T, index: number) => boolean, this
 declare const EMPTY: Observable<never>;
 
 declare function toConveyorBelt(fruit: string): void;
+
+declare function tap<T>(next: (x: T) => void): MonoTypeOperatorFunction<T>;
+declare function tap<T>(observer: PartialObserver<T>): MonoTypeOperatorFunction<T>;
