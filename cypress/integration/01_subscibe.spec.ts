@@ -1,18 +1,23 @@
+import { AppPage } from './app.po';
+
 describe('The subscribe level 1', () => {
+  let page: AppPage;
+
   beforeEach(() => {
-    cy.visit('/');
+    page = new AppPage();
+    page.navigateTo('/');
   });
 
   it('should failed on wrong solution', () => {
-    cy.get('#subscribeButton').click();
-    cy.get('#nextButton').should('have.attr', 'disabled');
+    page.getStartButton().click();
+    page.getNextButton().should('have.attr', 'disabled');
   });
 
   it('should success on valid solution', () => {
-    cy.get('[style="top:26px;height:26px;"]').type('conveyorBelt.subscribe();');
-    cy.get('#subscribeButton').click();
+    page.getCodeEditor().type('conveyorBelt.subscribe();');
+    page.getStartButton().click();
 
-    cy.get('#nextButton').should('not.have.attr', 'disabled');
+    page.getNextButton().should('not.have.attr', 'disabled');
   });
 
 });

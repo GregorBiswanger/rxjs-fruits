@@ -2,5 +2,7 @@
   "baseUrl": "http://localhost:4200",
   "supportFile": "cypress/support/index.ts",
   "requestTimeout": 70000,
-  "responseTimeout": 70000
+  "responseTimeout": 70000,
+  "chromeWebSecurity": false,
+  "ignoreTestFiles": "**/*.po.js"
 }
