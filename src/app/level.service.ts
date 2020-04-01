@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import levels from './exercises/levels.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LevelService {
   gameOver$ = new Subject();
-  levels: Level[] = [];
+  levels: Level[] = levels;
   currentLevelIndex = 0;
 
   get currentLevel() {
@@ -22,48 +23,6 @@ export class LevelService {
   }
 
   constructor() {
-    this.levels.push({
-      title: 'subscribe',
-      number: 1,
-      urlPath: '/subscribe',
-      solved: false
-    });
- 
-    this.levels.push({
-      title: 'subscribe-next',
-      number: 2,
-      urlPath: '/subscribe-next',
-      solved: false
-    });
-
-    this.levels.push({
-      title: 'distinct',
-      number: 3,
-      urlPath: '/distinct',
-      solved: false
-    });
-
-    this.levels.push({
-      title: 'take',
-      number: 4,
-      urlPath: '/take',
-      solved: false
-    });
-
-    this.levels.push({
-      title: 'filter',
-      number: 5,
-      urlPath: '/filter',
-      solved: false
-    });
-
-    this.levels.push({
-      title: 'map',
-      number: 6,
-      urlPath: '/map',
-      solved: false
-    });
-
     for (let index = 0; index < this.levels.length; index++) {
       const level = this.levels[index];
       if (level.urlPath === window.location.pathname) {
