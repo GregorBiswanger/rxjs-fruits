@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     InitDirective,
     FruitPipe,
     SubscribeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
