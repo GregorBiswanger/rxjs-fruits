@@ -10,7 +10,7 @@
         <span id="level-indicator" (click)="toggleLevelsWrapper()">
           <span id="labelLevel">Level </span>
           <span>{{ levelService.currentLevel.number }}</span>
-          <span> von </span>
+          <span>{{ 'APP.LABELLEVEL' | translate }}</span>
           <span>{{ levelService.levels.length }}</span>
           <span class="caret">▾</span>
         </span>
@@ -21,7 +21,7 @@
               [ngClass]="levelStateStyle(level)" [title]="level.title"
               (click)="goToExercise(level)">{{ level.number }}</span>
 
-            <div id="labelReset">Zurücksetzen</div>
+            <div id="labelReset">{{ 'APP.LABELRESET' | translate }}</div>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
     </div>
 
     <div fyLayout fxLayoutAlign="end">
-      <button id="subscribeButton" (click)="run()">Start
+      <button id="subscribeButton" (click)="run()">{{ 'APP.STARTBUTTON' | translate }}
         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;"
           viewBox="0 0 24 24">
           <g>
@@ -56,7 +56,7 @@
         </svg>
       </button>
       <button id="nextButton" [ngClass]="buttonAnimationStyle()" [disabled]="!isNextExerciseAviable"
-        (click)="nextExercise(true)">Weiter</button>
+        (click)="nextExercise(true)">{{ 'APP.NEXTBUTTON' | translate }}</button>
     </div>
   </div>
   <div class="board" fxFlex="40%">

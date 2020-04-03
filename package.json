@@ -26,6 +26,8 @@
     "@angular/router": "~9.1.0",
     "@briebug/cypress-schematic": "^3.3.0",
     "@materia-ui/ngx-monaco-editor": "^4.0.1",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "animate.css": "^3.7.2",
     "gsap": "^3.2.5",
     "monaco-editor": "^0.20.0",

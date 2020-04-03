@@ -14,6 +14,7 @@ import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ng
 import * as monaco from 'monaco-editor';
 import { Router } from '@angular/router';
 import { Exercise } from './shared/exercise';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -59,10 +60,17 @@ export class AppComponent {
     public levelService: LevelService,
     private router: Router,
     private exerciseService: ExerciseService,
+    private translate: TranslateService,
     confettiService: ConfettiService,
     monacoLoader: MonacoEditorLoaderService,
     httpClient: HttpClient
   ) {
+    translate.addLangs(['en', 'de']);
+    translate.setDefaultLang('en');
+
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|de/) ? browserLang : 'en');
+
     exerciseService.exerciseChanged$.pipe(delay(0)).subscribe({
       next: exercise => {
         this.currentExercise = exercise;
