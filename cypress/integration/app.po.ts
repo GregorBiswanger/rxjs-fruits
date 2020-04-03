@@ -4,7 +4,7 @@ export class AppPage {
   }
 
   getStartButton() {
-    return cy.get('#subscribeButton');
+    return cy.get('#startButton');
   }
 
   getNextButton() {

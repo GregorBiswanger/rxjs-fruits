@@ -1,8 +1,22 @@
 {
-    "APP": {
-        "LABELLEVEL": " von ",
-        "LABELRESET": "Zurücksetzen",
-        "STARTBUTTON": "Start",
-        "NEXTBUTTON": "Weiter"
-    }
+	"APP": {
+		"LABELLEVEL": " von ",
+		"LABELRESET": "Zurücksetzen",
+		"NEXTBUTTON": "Weiter",
+		"RECIPETITLE": "Rezept",
+		"ISTOMUCHFRUITS": "❌ Mehr Früchte als im Rezept angegeben sind!",
+		"STARTBUTTON": "Start",
+		"OUTPUT": "Es gab einen Fehler mit deinem Code. Bitte mit F12 die Ausgabe in der Console überprüfen.",
+		"FRUITS": {
+			"APPLE": "Apfel",
+			"BANANA": "Banane",
+			"CHERRY": "Kirsche"
+		}
+	},
+	"EXERCISES": {
+		"EXERCISETITLE": "Übung",
+		"DISTINCT": {
+			"RECIPEDESCRIPTION": "Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)"
+		}
+	}
 }

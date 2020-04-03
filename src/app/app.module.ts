@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InitDirective } from './init.directive';
-import { FruitPipe } from './fruit.pipe';
 import { SubscribeComponent } from './exercises/subscribe/subscribe.component';
 import { SharedModule } from './shared/shared.module';
 import { AppTranslateModule } from './app-translate.module';
@@ -19,7 +18,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
   declarations: [
     AppComponent,
     InitDirective,
-    FruitPipe,
     SubscribeComponent,
     NotFoundComponent,
   ],

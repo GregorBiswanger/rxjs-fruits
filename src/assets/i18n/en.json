@@ -1,8 +1,12 @@
 {
-    "APP": {
-        "LABELLEVEL": " of ",
-        "LABELRESET": "Reset",
-        "STARTBUTTON": "Play",
-        "NEXTBUTTON": "Next"
-    }
+	"APP": {
+		"LABELLEVEL": " of ",
+		"LABELRESET": "Reset",
+		"NEXTBUTTON": "Next",
+		"RECIPETITLE": "Recipe",
+		"STARTBUTTON": "Play"
+	},
+	"EXERCISES": {
+		"EXERCISETITLE": ""
+	}
 }

@@ -30,23 +30,23 @@
     <router-outlet class="instructions"></router-outlet>
 
     <div fxLayout style="height: 50%;">
-      <div class="recipe" [ngClass]="recipeAnimationStyle()" *ngIf="currentExercise.recipeDescription">
-        <h3>🧾 Rezept:</h3>
-        <p>{{ currentExercise.recipeDescription }}</p>
+      <div class="recipe" [ngClass]="recipeAnimationStyle()" *ngIf="'EXERCISES.DISTINCT.RECIPEDESCRIPTION' | translate">
+        <h3>🧾 {{ 'APP.RECIPETITLE' | translate }}:</h3>
+        <p>{{ 'EXERCISES.DISTINCT.RECIPEDESCRIPTION' | translate }}</p>
 
         <ol>
           <li *ngFor="let fruitName of currentExercise.expectedFruits; let i = index;">
-            {{ fruitName | fruit }} {{ assertFruitPipeIcon(i) }}
+            {{ 'APP.FRUITS.' + fruitName | uppercase | translate }} {{ assertFruitPipeIcon(i) }}
           </li>
         </ol>
 
-        <p *ngIf="isToMuchFruits">❌ Mehr Früchte als im Rezept angegeben sind!</p>
+        <p *ngIf="isToMuchFruits">{{ 'APP.ISTOMUCHFRUITS' | translate }}</p>
       </div>
       <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
     </div>
 
     <div fyLayout fxLayoutAlign="end">
-      <button id="subscribeButton" (click)="run()">{{ 'APP.STARTBUTTON' | translate }}
+      <button id="startButton" (click)="run()">{{ 'APP.STARTBUTTON' | translate }}
         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;"
           viewBox="0 0 24 24">
           <g>
@@ -71,7 +71,7 @@
 
     <div fyLayout fxLayoutAlign="center center" *ngIf="isErrorInConsole">
       <div class="output">
-        Es gab einen Fehler mit deinem Code. Bitte mit F12 die Ausgabe in der Console überprüfen.
+        {{ 'APP.OUTPUT' | translate }}
       </div>
     </div>
   </div>

@@ -1,11 +1,24 @@
-<h3>Übung: {{exerciseTitle}}</h3>
-<p>The <code class="help" [appTooltip]="tooltip">distinct</code> operator returns an Observable that emits all items
-    emitted by the source Observable that are distinct
-    by comparison from previous items. <a href="https://rxjs.dev/api/operators/distinct" target="_blank">Mehr Infos zu
-        distinct.</a></p>
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
 
-<div #tooltip class="tooltip codeTooltip">
-    <pre>
-        <code [highlight]="distinctCode"></code>
-   </pre>
+<div *ngIf="currentLanguage === 'de'">
+    <p>The <code class="help" [appTooltip]="tooltip">distinct</code> operator returns an Observable that emits all items
+        emitted by the source Observable that are distinct by comparison from previous items. 
+        <a href="https://rxjs.dev/api/operators/distinct" target="_blank">Mehr Infos zu distinct.</a></p>
+
+    <div #tooltip class="tooltip codeTooltip">
+        <pre>
+            <code [highlight]="distinctCode"></code>
+       </pre>
+    </div>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>The <code class="help" [appTooltip]="tooltip">distinct</code> operator returns an Observable that emits all items
+        emitted by the source Observable that are distinct by comparison from previous items. 
+        <a href="https://rxjs.dev/api/operators/distinct" target="_blank">Mehr Infos zu distinct.</a></p>
+
+    <div #tooltip class="tooltip codeTooltip">
+        <pre>
+            <code [highlight]="distinctCode"></code>
+       </pre>
+    </div>
 </div>
