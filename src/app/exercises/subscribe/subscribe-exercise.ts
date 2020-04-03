@@ -7,5 +7,4 @@ export class SubscribeExercise implements Exercise {
 `;
     readonly minPositionLineNumber = 2;
     readonly positionColumnNumber = 1;
-    readonly recipeDescription = '';
 }

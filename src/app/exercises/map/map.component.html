@@ -1,8 +1,20 @@
-<h3>Task: {{task}}</h3>
-<p>The <code class="help" [appTooltip]="tooltip">map</code> operator applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable. <a href="https://rxjs.dev/api/operators/map" target="_blank">Mehr Infos zu map.</a></p>
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{task}}</h3>
 
-<div #tooltip class="tooltip codeTooltip">
-    <pre>
-        <code [highlight]="mapCode"></code>
-    </pre>
+<div *ngIf="currentLanguage === 'de'">
+    <p>The <code class="help" [appTooltip]="tooltip">map</code> operator applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable. <a href="https://rxjs.dev/api/operators/map" target="_blank">Mehr Infos zu map.</a></p>
+    
+    <div #tooltip class="tooltip codeTooltip">
+        <pre>
+            <code [highlight]="mapCode"></code>
+        </pre>
+    </div>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>The <code class="help" [appTooltip]="tooltip">map</code> operator applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable. <a href="https://rxjs.dev/api/operators/map" target="_blank">Mehr Infos zu map.</a></p>
+    
+    <div #tooltip class="tooltip codeTooltip">
+        <pre>
+            <code [highlight]="mapCode"></code>
+        </pre>
+    </div>
 </div>

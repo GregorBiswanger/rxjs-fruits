@@ -19,5 +19,4 @@ fruits.pipe(
 });`;
     readonly minPositionLineNumber = 6;
     readonly positionColumnNumber = 2;
-    readonly recipeDescription = 'Es sollen nur zwei Bananen gemixt werden. (Hinweis: Verwende take)';
 }

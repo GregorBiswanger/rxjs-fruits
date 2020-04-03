@@ -1,13 +1,15 @@
 import { TakeExercise } from './take-exercise';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ExerciseService } from '../../shared/exercise.service';
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-take',
   templateUrl: './take.component.html',
   styleUrls: ['./take.component.scss']
 })
-export class TakeComponent implements OnInit {
+export class TakeComponent implements OnInit, OnDestroy {
   task = 'take';
   takeCode = `
 import { interval } from 'rxjs';
@@ -25,9 +27,23 @@ takeFive.subscribe(x => console.log(x));
 // 4
   `;
 
-  constructor(private exerciseService: ExerciseService) { }
+  currentLanguage = '';
+  onLangChangeSubscription: Subscription;
+
+  constructor(private exerciseService: ExerciseService,
+              private translateService: TranslateService) { }
 
   ngOnInit() {
     this.exerciseService.newExercise(new TakeExercise());
+    this.currentLanguage = this.translateService.currentLang;
+    this.onLangChangeSubscription = this.translateService.onLangChange.subscribe({
+      next: () => {
+        this.currentLanguage = this.translateService.currentLang;
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.onLangChangeSubscription.unsubscribe();
   }
 }

@@ -1,12 +1,37 @@
 {
 	"APP": {
+		"FRUITS": {
+			"APPLE": "",
+			"BANANA": "",
+			"CHERRY": ""
+		},
+		"ISTOMUCHFRUITS": "",
 		"LABELLEVEL": " of ",
 		"LABELRESET": "Reset",
 		"NEXTBUTTON": "Next",
+		"OUTPUT": "",
 		"RECIPETITLE": "Recipe",
 		"STARTBUTTON": "Play"
 	},
 	"EXERCISES": {
-		"EXERCISETITLE": ""
+		"DISTINCT": {
+			"RECIPEDESCRIPTION": ""
+		},
+		"EXERCISETITLE": "",
+		"FILTER": {
+			"RECIPEDESCRIPTION": ""
+		},
+		"MAP": {
+			"RECIPEDESCRIPTION": ""
+		},
+		"SUBSCRIBE": {
+			"RECIPEDESCRIPTION": ""
+		},
+		"SUBSCRIBE-NEXT": {
+			"RECIPEDESCRIPTION": ""
+		},
+		"TAKE": {
+			"RECIPEDESCRIPTION": ""
+		}
 	}
 }

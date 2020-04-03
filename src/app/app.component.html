@@ -30,9 +30,9 @@
     <router-outlet class="instructions"></router-outlet>
 
     <div fxLayout style="height: 50%;">
-      <div class="recipe" [ngClass]="recipeAnimationStyle()" *ngIf="'EXERCISES.DISTINCT.RECIPEDESCRIPTION' | translate">
+      <div class="recipe" [ngClass]="recipeAnimationStyle()" *ngIf="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
         <h3>🧾 {{ 'APP.RECIPETITLE' | translate }}:</h3>
-        <p>{{ 'EXERCISES.DISTINCT.RECIPEDESCRIPTION' | translate }}</p>
+        <p>{{ 'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate }}</p>
 
         <ol>
           <li *ngFor="let fruitName of currentExercise.expectedFruits; let i = index;">

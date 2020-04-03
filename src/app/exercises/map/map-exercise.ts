@@ -24,5 +24,4 @@ fruits.pipe(
 });`;
     minPositionLineNumber = 6;
     positionColumnNumber = 2;
-    recipeDescription = 'Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)';
 }

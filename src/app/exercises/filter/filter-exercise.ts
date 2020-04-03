@@ -39,5 +39,4 @@ fruits.pipe(
 });`;
     readonly minPositionLineNumber = 12;
     readonly positionColumnNumber = 2;
-    readonly recipeDescription = 'Es sollen alle frischen Äpfel und Bananen gemixt werden. (Hinweis: Verwende filter)';
 }

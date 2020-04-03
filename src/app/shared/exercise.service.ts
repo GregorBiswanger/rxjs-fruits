@@ -11,8 +11,7 @@ export class ExerciseService {
     fruits: [],
     expectedFruits: [],
     minPositionLineNumber: 0,
-    positionColumnNumber: 0,
-    recipeDescription: ''
+    positionColumnNumber: 0
   };
 
   assertionChecked$ = new Subject<boolean>();

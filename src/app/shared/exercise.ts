@@ -4,5 +4,4 @@ export interface Exercise {
     code: string;
     minPositionLineNumber: number;
     positionColumnNumber: number;
-    recipeDescription: string;
 }

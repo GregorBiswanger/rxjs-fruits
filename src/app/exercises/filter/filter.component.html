@@ -1,8 +1,20 @@
-<h3>Task: {{task}}</h3>
-<p>The <code class="help" [appTooltip]="tooltip">filter</code> operator filter items emitted by the source Observable by only emitting those that satisfy a specified predicate. <a href="https://rxjs.dev/api/operators/filter" target="_blank">Mehr Infos zu filter.</a></p>
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{task}}</h3>
 
-<div #tooltip class="tooltip codeTooltip">
-    <pre>
-        <code [highlight]="filterCode"></code>
-    </pre>
+<div *ngIf="currentLanguage === 'de'">
+    <p>The <code class="help" [appTooltip]="tooltip">filter</code> operator filter items emitted by the source Observable by only emitting those that satisfy a specified predicate. <a href="https://rxjs.dev/api/operators/filter" target="_blank">Mehr Infos zu filter.</a></p>
+    
+    <div #tooltip class="tooltip codeTooltip">
+        <pre>
+            <code [highlight]="filterCode"></code>
+        </pre>
+    </div>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>The <code class="help" [appTooltip]="tooltip">filter</code> operator filter items emitted by the source Observable by only emitting those that satisfy a specified predicate. <a href="https://rxjs.dev/api/operators/filter" target="_blank">Mehr Infos zu filter.</a></p>
+    
+    <div #tooltip class="tooltip codeTooltip">
+        <pre>
+            <code [highlight]="filterCode"></code>
+        </pre>
+    </div>
 </div>

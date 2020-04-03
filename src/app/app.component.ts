@@ -51,8 +51,7 @@ export class AppComponent {
     expectedFruits: [],
     fruits: [],
     minPositionLineNumber: 0,
-    positionColumnNumber: 0,
-    recipeDescription: ''
+    positionColumnNumber: 0
   };
   isErrorInConsole = false;
 
@@ -60,7 +59,7 @@ export class AppComponent {
     public levelService: LevelService,
     private router: Router,
     private exerciseService: ExerciseService,
-    private translate: TranslateService,
+    translate: TranslateService,
     confettiService: ConfettiService,
     monacoLoader: MonacoEditorLoaderService,
     httpClient: HttpClient
