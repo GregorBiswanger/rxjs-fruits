@@ -32,7 +32,7 @@
     <div fxLayout style="height: 50%;">
       <div class="recipe" [ngClass]="recipeAnimationStyle()"
         *ngIf="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
-        <h3>🧾 {{ 'APP.RECIPETITLE' | translate }}:</h3>
+        <h3>🧾 {{ 'APP.RECIPETITLE' | translate }}</h3>
         <p>{{ 'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate }}</p>
 
         <ol>
@@ -59,11 +59,13 @@
         (click)="nextExercise(true)">{{ 'APP.NEXTBUTTON' | translate }}</button>
     </div>
     <div class="credits" fxLayout="row" fxLayoutAlign="center">
-      Gemacht mit ❤ von Gregor Biswanger • Grafiken von Bele Eisenmann • 
+      Gemacht mit ❤ von Gregor Biswanger • Grafiken von Bele Eisenmann 
       <span id="language">
-        <span class="toggle" (click)="toggleLanguageOptions()">Deutsch</span>
+        <span class="toggle" (click)="toggleLanguageOptions()">{{ translate.currentLang | language }}</span>
         <span class="tooltip" style="display: block;" *ngIf="isLanguageOptionsOpen">
-            <span class="language-marker" *ngFor="let language of translate.getLangs()">{{ language }}</span>
+            <span class="language-marker" *ngFor="let language of translate.getLangs()" (click)="changeLanguage(language)">
+              {{ language | language }}
+            </span>
         </span>
       </span>
     </div>

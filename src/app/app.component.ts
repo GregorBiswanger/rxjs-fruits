@@ -173,6 +173,10 @@ export class AppComponent {
     }
   }
 
+  changeLanguage(language: string) {
+    this.translate.use(language);
+  }
+
   assertFruitPipeIcon(index: number) {
     if (
       this.fruitsInPipe.length === 0 ||

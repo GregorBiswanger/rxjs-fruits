@@ -305,6 +305,7 @@ a:hover {
 
 #language {
   position: relative;
+  margin-left: 10px;
 }
 
 #language .toggle {
@@ -351,7 +352,6 @@ a:hover {
 }
 
 .language-marker {
-  display: inline-block;
   width: 30px;
   height: 30px;
   margin: 2px;

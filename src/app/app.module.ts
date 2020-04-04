@@ -13,6 +13,7 @@ import { AppTranslateModule } from './app-translate.module';
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LanguagePipe } from './language.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     InitDirective,
     SubscribeComponent,
     NotFoundComponent,
+    LanguagePipe,
   ],
   imports: [
     BrowserModule,
