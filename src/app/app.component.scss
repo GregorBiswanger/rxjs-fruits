@@ -294,3 +294,74 @@ a:hover {
   width: 50%;
   text-align: center;
 }
+
+.credits {
+  margin-top: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#language {
+  position: relative;
+}
+
+#language .toggle {
+  display: inline-block;
+  padding: 1px 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  user-select: none;
+}
+
+#language .toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#language .tooltip {
+  display: none;
+  bottom: 30px;
+  left: 0px;
+  width: 200px;
+  padding: 1em;
+  z-index: 80;
+}
+
+#language .tooltip:after {
+  top: auto;
+  bottom: -12px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #2c3e50;
+  border-bottom: none;
+}
+
+#language .tooltip a {
+  padding: 0 2px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+
+#language .tooltip a:hover {
+  color: #fff;
+}
+
+.language-marker {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.language-marker.current,
+.language-marker:hover {
+  color: white;
+  text-decoration: underline;
+}

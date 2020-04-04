@@ -40,6 +40,7 @@ export class AppComponent {
 
   conveyorBeltAnimationTimeline: TimelineLite;
   isLevelsWrapperOpen = false;
+  isLanguageOptionsOpen = false;
   clickedByToggle = false;
   fruits: Fruit[] = [];
   fruitsInPipe: string[] = [];
@@ -57,9 +58,9 @@ export class AppComponent {
 
   constructor(
     public levelService: LevelService,
+    public translate: TranslateService,
     private router: Router,
     private exerciseService: ExerciseService,
-    translate: TranslateService,
     confettiService: ConfettiService,
     monacoLoader: MonacoEditorLoaderService,
     httpClient: HttpClient
@@ -157,8 +158,15 @@ export class AppComponent {
     this.isLevelsWrapperOpen = !this.isLevelsWrapperOpen;
   }
 
-  closeLevelsWrapper() {
-    if (this.isLevelsWrapperOpen && !this.clickedByToggle) {
+  toggleLanguageOptions() {
+    this.clickedByToggle = !this.clickedByToggle;
+    this.isLanguageOptionsOpen = !this.isLanguageOptionsOpen;
+  }
+
+  closeTooltipWrapper() {
+    if (this.isLanguageOptionsOpen && !this.clickedByToggle) {
+      this.isLanguageOptionsOpen = false;
+    } else if (this.isLevelsWrapperOpen && !this.clickedByToggle) {
       this.isLevelsWrapperOpen = false;
     } else {
       this.clickedByToggle = false;

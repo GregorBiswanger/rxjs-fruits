@@ -1,4 +1,4 @@
-<div fxLayout (click)="closeLevelsWrapper()">
+<div fxLayout (click)="closeTooltipWrapper()">
   <div class="task" fxFlex="60%">
     <div fxLayout fxLayoutAlign="space-between">
       <div fyLayout>
@@ -30,7 +30,8 @@
     <router-outlet class="instructions"></router-outlet>
 
     <div fxLayout style="height: 50%;">
-      <div class="recipe" [ngClass]="recipeAnimationStyle()" *ngIf="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
+      <div class="recipe" [ngClass]="recipeAnimationStyle()"
+        *ngIf="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
         <h3>🧾 {{ 'APP.RECIPETITLE' | translate }}:</h3>
         <p>{{ 'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate }}</p>
 
@@ -44,7 +45,6 @@
       </div>
       <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
     </div>
-
     <div fyLayout fxLayoutAlign="end">
       <button id="startButton" (click)="run()">{{ 'APP.STARTBUTTON' | translate }}
         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;"
@@ -58,12 +58,21 @@
       <button id="nextButton" [ngClass]="buttonAnimationStyle()" [disabled]="!isNextExerciseAviable"
         (click)="nextExercise(true)">{{ 'APP.NEXTBUTTON' | translate }}</button>
     </div>
+    <div class="credits" fxLayout="row" fxLayoutAlign="center">
+      Gemacht mit ❤ von Gregor Biswanger • Grafiken von Bele Eisenmann • 
+      <span id="language">
+        <span class="toggle" (click)="toggleLanguageOptions()">Deutsch</span>
+        <span class="tooltip" style="display: block;" *ngIf="isLanguageOptionsOpen">
+            <span class="language-marker" *ngFor="let language of translate.getLangs()">{{ language }}</span>
+        </span>
+      </span>
+    </div>
   </div>
   <div class="board" fxFlex="40%">
     <img [id]="imageSource.id" *ngFor="let imageSource of fruits" [src]="imageSource.url"
       (appInit)="startFruitAnimation(imageSource.id)">
 
-      <!-- <img style="width: 10%; top: 5vh;" src="assets/Fruit-Apple.svg">
+    <!-- <img style="width: 10%; top: 5vh;" src="assets/Fruit-Apple.svg">
       <img style="width: 5%; top: 4.5vh;" src="assets/Fruit-Cherry.svg">
       <img style="width: 10%; top: 2.8vh;" src="assets/Fruit-Banana.svg"> -->
 
