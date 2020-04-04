@@ -11,7 +11,7 @@
     <preset_collections/>
     <framework>ngx-translate</framework>
     <filename>rxjs-fruits-babelEdit.babel</filename>
-    <source_root_dir></source_root_dir>
+    <source_root_dir>../../../</source_root_dir>
     <folder_node>
         <name></name>
         <children>

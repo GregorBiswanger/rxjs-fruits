@@ -1,3 +1,4 @@
+import { OnInit } from '@angular/core';
 // tslint:disable: no-shadowed-variable deprecation no-eval
 import { ConfettiService } from './confetti.service';
 import { LevelService, Level } from './level.service';
@@ -15,6 +16,7 @@ import * as monaco from 'monaco-editor';
 import { Router } from '@angular/router';
 import { Exercise } from './shared/exercise';
 import { TranslateService } from '@ngx-translate/core';
+import { ConsoleService } from './console.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +24,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChild(MonacoEditorComponent, { static: false })
   editor: MonacoEditorComponent;
   editorOptions = {
@@ -61,17 +63,20 @@ export class AppComponent {
     public translate: TranslateService,
     private router: Router,
     private exerciseService: ExerciseService,
-    confettiService: ConfettiService,
-    monacoLoader: MonacoEditorLoaderService,
-    httpClient: HttpClient
-  ) {
-    translate.addLangs(['en', 'de']);
-    translate.setDefaultLang('en');
+    private consoleService: ConsoleService,
+    private confettiService: ConfettiService,
+    private monacoLoader: MonacoEditorLoaderService,
+    private httpClient: HttpClient
+  ) { }
 
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|de/) ? browserLang : 'en');
+  ngOnInit() {
+    this.translate.addLangs(['en', 'de']);
+    this.translate.setDefaultLang('en');
 
-    exerciseService.exerciseChanged$.pipe(delay(0)).subscribe({
+    const browserLang = this.translate.getBrowserLang();
+    this.translate.use(browserLang.match(/en|de/) ? browserLang : 'en');
+
+    this.exerciseService.exerciseChanged$.pipe(delay(0)).subscribe({
       next: exercise => {
         this.currentExercise = exercise;
         this.code = exercise.code;
@@ -79,18 +84,18 @@ export class AppComponent {
       }
     });
 
-    exerciseService.assertionChecked$.subscribe({
+    this.exerciseService.assertionChecked$.subscribe({
       next: valid => this.isNextExerciseAviable = valid
     });
 
-    monacoLoader.isMonacoLoaded$
+    this.monacoLoader.isMonacoLoaded$
       .pipe(
         filter(isLoaded => isLoaded === true),
         take(1)
       )
       .subscribe({
         next: () => {
-          httpClient
+          this.httpClient
             .get('assets/rx6.d.ts', { responseType: 'text' })
             .subscribe({
               next: data => {
@@ -106,9 +111,11 @@ export class AppComponent {
         }
       });
 
-    levelService.gameOver$.subscribe({
-      next: () => confettiService.start()
+    this.levelService.gameOver$.subscribe({
+      next: () => this.confettiService.start()
     });
+
+    this.consoleService.showWelcomeMessage();
   }
 
   previousLevelStyle() {
@@ -262,7 +269,7 @@ export class AppComponent {
     this.isToMuchFruits = false;
     this.isErrorInConsole = false;
     const conveyorBeltSubject = new Subject<string>();
-    console.clear();
+    this.consoleService.showWelcomeMessage();
 
     // workaround for angular tree shaking
     const EMPTY = EMPTYX;
@@ -305,6 +312,7 @@ export class AppComponent {
         eval(this.code);
         conveyorBeltSubject.complete();
       } catch (error) {
+        this.consoleService.showRandomErrorImage();
         console.error(error);
         this.isErrorInConsole = true;
 
