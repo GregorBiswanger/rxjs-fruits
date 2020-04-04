@@ -1,0 +1,37 @@
+{
+	"APP": {
+		"FRUITS": {
+			"APPLE": "Apple",
+			"BANANA": "Banana",
+			"CHERRY": "Cherry"
+		},
+		"ISTOMUCHFRUITS": "❌ More fruits than specified in the recipe!",
+		"LABELLEVEL": " of ",
+		"LABELRESET": "Reset",
+		"NEXTBUTTON": "Next",
+		"OUTPUT": "There was an error with your code. Please use F12 to check the output in the console.",
+		"RECIPETITLE": "Recipe",
+		"STARTBUTTON": "Play"
+	},
+	"EXERCISES": {
+		"DISTINCT": {
+			"RECIPEDESCRIPTION": "Each fruit should only be mixed once. (Note: use distinct)"
+		},
+		"EXERCISETITLE": "Exercise",
+		"FILTER": {
+			"RECIPEDESCRIPTION": "All fresh apples and bananas should be mixed. (Note: use filter)"
+		},
+		"MAP": {
+			"RECIPEDESCRIPTION": "All apples and bananas should be cleared of dirt. (Note: use map)"
+		},
+		"SUBSCRIBE": {
+			"RECIPEDESCRIPTION": ""
+		},
+		"SUBSCRIBE-NEXT": {
+			"RECIPEDESCRIPTION": "Every fruit should be mixed. (Note: subscribe with next)"
+		},
+		"TAKE": {
+			"RECIPEDESCRIPTION": "Only two bananas should be mixed. (Note: use take)"
+		}
+	}
+}
