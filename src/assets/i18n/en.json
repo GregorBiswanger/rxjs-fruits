@@ -25,10 +25,10 @@
 			"RECIPEDESCRIPTION": "All apples and bananas should be cleared of dirt. (Note: use map)"
 		},
 		"SUBSCRIBE": {
-			"RECIPEDESCRIPTION": ""
+			"RECIPEDESCRIPTION": "In the source code we have an empty Observable with no data to expect. <p><b>Move the conveyor belt</b>, by subscribing to the empty observable with the subscribe function and click on the start button.</p>"
 		},
 		"SUBSCRIBE-NEXT": {
-			"RECIPEDESCRIPTION": "Every fruit should be mixed. (Note: subscribe with next)"
+			"RECIPEDESCRIPTION": "Subscribe to the Observable and put each fruit on the conveyor belt with the <b>toConveyorBelt</b> function.\n\n<p>Add only the fruits that are specified on the recipe. (Note: use subscribe with next)</p>"
 		},
 		"TAKE": {
 			"RECIPEDESCRIPTION": "Only two bananas should be mixed. (Note: use take)"

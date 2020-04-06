@@ -11,10 +11,15 @@ import { Subscription } from 'rxjs';
 })
 export class SubscribeComponent implements OnInit, OnDestroy {
   exerciseTitle = 'subscribe';
-  distinctCode = `
-  of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1).pipe(
-    distinct()
-  ).subscribe(x => console.log(x)); // 1, 2, 3, 4
+  observableCode = `
+  const observable = new Observable(subscriber => {
+    subscriber.next(1);
+    subscriber.next(2);
+    subscriber.next(3);
+  }).subscribe(x => console.log(x)); // 1, 2, 3
+  `;
+  subscribeCode = `
+observable.subscribe();
   `;
 
   currentLanguage = '';

@@ -25,10 +25,10 @@
 			"RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)"
 		},
 		"SUBSCRIBE": {
-			"RECIPEDESCRIPTION": ""
+			"RECIPEDESCRIPTION": "Im Source-Code haben wir ein Leeres-Observable ohne Daten zu erwarten. <p><b>Bewege das Fließband</b>, indem du das Leere-Observable conveyorBelt mit der subscribe-function abonnierst und auf den Start-Button klickst.</p>"
 		},
 		"SUBSCRIBE-NEXT": {
-			"RECIPEDESCRIPTION": "Es soll jede Frucht gemixt werden. (Hinweis: subscribe mit next)"
+			"RECIPEDESCRIPTION": "Abonniere das Observable und gebe jeweils eine Frucht auf das Fließband mit der <b>toConveyorBelt</b>-Funktion.\n\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende subscribe mit next)</p>"
 		},
 		"TAKE": {
 			"RECIPEDESCRIPTION": "Es sollen nur zwei Bananen gemixt werden. (Hinweis: Verwende take)"

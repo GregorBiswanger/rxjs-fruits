@@ -1,26 +1,31 @@
 <h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
 
 <div *ngIf="currentLanguage === 'de'">
-    <p>The <code class="help" [appTooltip]="tooltip">distinct</code> operator returns an Observable that emits all items
-        emitted by the source Observable that are distinct
-        by comparison from previous items. <a href="https://rxjs.dev/api/operators/distinct" target="_blank">Mehr Infos zu
-            distinct.</a></p>
-    
-    <div #tooltip class="tooltip codeTooltip">
-        <pre>
-            <code [highlight]="distinctCode"></code>
-       </pre>
-    </div>
+    <p>Willkommen bei RxJS-fruits, wo du JavaScript Code schreibst, um deinen Fruchtsaft zu mixen!</p>
+    <p>Die Basis von <b>Reactive Extensions</b> ist das <code class="help" [appTooltip]="tooltipObservableCode">Observable</code>. 
+        Es ist ein Gegenstück von einem Array. Anstatt die Daten zu behalten, gibt es diese asynchron als Datenströme an interessierte Abonnenten.
+        <a href="https://rxjs.dev/guide/observable" target="_blank">(Mehr Infos zum Observable)</a></p>
+
+    <p>Ein Observable ist somit erst aktiv, wenn es mit der <code class="help"
+            [appTooltip]="tooltipSubscribeCode">subscribe</code>-Funktion abonniert wird.
+        <a href="https://rxjs.dev/guide/subscription" target="_blank">(Mehr Infos zu Subscription)</a></p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
-    <p>The <code class="help" [appTooltip]="tooltip">distinct</code> operator returns an Observable that emits all items
-        emitted by the source Observable that are distinct
-        by comparison from previous items. <a href="https://rxjs.dev/api/operators/distinct" target="_blank">Mehr Infos zu
-            distinct.</a></p>
-    
-    <div #tooltip class="tooltip codeTooltip">
-        <pre>
-            <code [highlight]="distinctCode"></code>
-       </pre>
-    </div>
+    <p>Welcome to RxJS-fruits, where you write JavaScript code to mix your fruit juice!</p>
+    <p>The basis of <b>Reactive Extensions</b> is the <code class="help" [appTooltip]="tooltipObservableCode">Observable</code>. 
+        It is a counterpart of an array. Instead of that Retaining data is asynchronous as data streams to interested subscribers.
+        <a href="https://rxjs.dev/guide/observable" target="_blank">(More information about the Observable)</a></p>
+
+    <p>An Observable is therefore only active if it is subscribed to with the <code class="help" [appTooltip]="tooltipSubscribeCode">subscribe</code>-function.
+        <a href="https://rxjs.dev/guide/subscription" target="_blank">(More information about Subscription)</a></p>
+</div>
+<div #tooltipObservableCode class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="observableCode"></code>
+    </pre>
+</div>
+<div #tooltipSubscribeCode class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="subscribeCode"></code>
+    </pre>
 </div>
