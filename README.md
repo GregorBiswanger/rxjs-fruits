@@ -15,6 +15,13 @@ Gregor Biswanger
 * [Homepage](http://about.me/gregor.biswanger)
 * [GitHub](https://github.com/GregorBiswanger)
 
+## Sponsors
+
+Thank you to all sponsors! 🙏
+
+<p>
+  <a href="https://www.codeandweb.com/babeledit"><img src="https://www.rxjs-fruits.com/assets/images/sponsors/BabelEdit.jpg"></a>
+</p>
 
 ## Copyright and License
 
