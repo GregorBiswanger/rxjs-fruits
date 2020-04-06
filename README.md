@@ -20,7 +20,7 @@ Gregor Biswanger
 Thank you to all sponsors! 🙏
 
 <p>
-  <a href="https://www.codeandweb.com/babeledit"><img src="https://www.rxjs-fruits.com/assets/images/sponsors/BabelEdit.jpg"></a>
+  <a href="https://www.codeandweb.com/babeledit" target="_blank"><img src="https://www.rxjs-fruits.com/assets/images/sponsors/BabelEdit.jpg"></a>
 </p>
 
 ## Copyright and License
