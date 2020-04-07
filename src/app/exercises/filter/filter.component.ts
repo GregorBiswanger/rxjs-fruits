@@ -12,15 +12,15 @@ import { Subscription } from 'rxjs';
 export class FilterComponent implements OnInit, OnDestroy {
   task = 'filter';
   filterCode = `
-import { fromEvent } from 'rxjs';
-import { filter } from 'rxjs/operators';
+const source = from([1, 2, 3, 4, 5]);
+source.pipe(
+  filter(data => data === 3)
+).subscribe({
+  next: data => console.log(data)
+});
 
-const clicks = fromEvent(document, 'click');
-const clicksOnDivs = clicks.pipe(
-  filter(ev => ev.target.tagName === 'DIV')
-);
-
-clicksOnDivs.subscribe(x => console.log(x));
+// Logs:
+// 3
   `;
 
   currentLanguage = '';

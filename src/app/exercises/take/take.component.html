@@ -1,22 +1,17 @@
 <h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{task}}</h3>
 
 <div *ngIf="currentLanguage === 'de'">
-    <p>The <code class="help" [appTooltip]="tooltip">take</code> operator emits only the first count values emitted by the
-        source Observable. <a href="https://rxjs.dev/api/operators/take" target="_blank">Mehr Infos zu take.</a></p>
-    
-    <div #tooltip class="tooltip codeTooltip">
-        <pre>
-            <code [highlight]="takeCode"></code>
-        </pre>
-    </div>
+    <p>Das ist zu viel des Guten!</p>
+    <p>Verwende den <code class="help" [appTooltip]="tooltip">take</code> Operator, um nur soviel Bananen auf das Fließband zu legen, wie es im Rezept vorgegeben ist. 
+        <a href="https://rxjs.dev/api/operators/take" target="_blank">(Mehr Infos zu take)</a></p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
-    <p>The <code class="help" [appTooltip]="tooltip">take</code> operator emits only the first count values emitted by the
-        source Observable. <a href="https://rxjs.dev/api/operators/take" target="_blank">Mehr Infos zu take.</a></p>
-    
-    <div #tooltip class="tooltip codeTooltip">
-        <pre>
-            <code [highlight]="takeCode"></code>
-        </pre>
-    </div>
+    <p>That is too much of a good thing!</p>
+    <p>Use the <code class="help" [appTooltip]="tooltip">take</code> operator to put only as much bananas on the conveyor belt as is specified in the recipe. 
+        <a href="https://rxjs.dev/api/operators/take" target="_blank">(Learn more about take)</a></p>
+</div>
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="takeCode"></code>
+    </pre>
 </div>

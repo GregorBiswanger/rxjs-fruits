@@ -12,12 +12,12 @@ import { Subscription } from 'rxjs';
 export class TakeComponent implements OnInit, OnDestroy {
   task = 'take';
   takeCode = `
-import { interval } from 'rxjs';
-import { take } from 'rxjs/operators';
-
 const intervalCount = interval(1000);
-const takeFive = intervalCount.pipe(take(5));
-takeFive.subscribe(x => console.log(x));
+intervalCount.pipe(
+  take(5)
+).subscribe({
+  next: x => console.log(x)
+});
 
 // Logs:
 // 0

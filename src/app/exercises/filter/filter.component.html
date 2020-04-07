@@ -1,20 +1,17 @@
 <h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{task}}</h3>
 
 <div *ngIf="currentLanguage === 'de'">
-    <p>The <code class="help" [appTooltip]="tooltip">filter</code> operator filter items emitted by the source Observable by only emitting those that satisfy a specified predicate. <a href="https://rxjs.dev/api/operators/filter" target="_blank">Mehr Infos zu filter.</a></p>
-    
-    <div #tooltip class="tooltip codeTooltip">
-        <pre>
-            <code [highlight]="filterCode"></code>
-        </pre>
-    </div>
+    <p>Igitt! Hier sind alte Früchte geliefert worden.</p>
+    <p>Nutze den <code class="help" [appTooltip]="tooltip">filter</code> Operator um nur frische Früchte auf das Fließband zu legen.
+        <a href="https://rxjs.dev/api/operators/filter" target="_blank">(Mehr Infos zum filter)</a></p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
-    <p>The <code class="help" [appTooltip]="tooltip">filter</code> operator filter items emitted by the source Observable by only emitting those that satisfy a specified predicate. <a href="https://rxjs.dev/api/operators/filter" target="_blank">Mehr Infos zu filter.</a></p>
-    
-    <div #tooltip class="tooltip codeTooltip">
-        <pre>
-            <code [highlight]="filterCode"></code>
-        </pre>
-    </div>
+    <p>Yuck! Old fruit has been delivered here.</p>
+    <p>Use the <code class="help" [appTooltip]="tooltip">filter</code> operator to put only fresh fruit on the conveyor belt.
+        <a href="https://rxjs.dev/api/operators/filter" target="_blank">(Learn more about the filter)</a></p>
+</div>
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="filterCode"></code>
+    </pre>
 </div>

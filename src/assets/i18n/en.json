@@ -15,7 +15,7 @@
 	},
 	"EXERCISES": {
 		"DISTINCT": {
-			"RECIPEDESCRIPTION": "Each fruit should only be mixed once. (Note: use distinct)"
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Each fruit should only be mixed once. (Note: use distinct)</p>"
 		},
 		"EXERCISETITLE": "Exercise",
 		"FILTER": {

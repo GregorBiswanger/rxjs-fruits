@@ -1,10 +1,9 @@
 <h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
 
 <div *ngIf="currentLanguage === 'de'">
-    <p>The <code class="help" [appTooltip]="tooltip">distinct</code> operator returns an Observable that emits all items
-        emitted by the source Observable that are distinct by comparison from previous items. 
-        <a href="https://rxjs.dev/api/operators/distinct" target="_blank">Mehr Infos zu distinct.</a></p>
-
+    <p>Oh Nein! Wir bekommen mehr Früchte geliefert als auf dem Rezept vorgegeben sind.</p>
+    <p>Der pipe-Operator ermöglicht uns, unterschiedliche RxJS-Operatoren nacheinander auszuführen um unsere Früchte so zu erhalten, wie wir sie brauchen.</p>
+    <p>In unserem Fall hilft uns der <code class="help" [appTooltip]="tooltip">distinct</code>-Operator. Er verhindert, dass in unserem Datenstrom doppelte Früchte geliefert werden. <a href="https://rxjs.dev/api/operators/distinct" target="_blank">(Mehr Infos zu distinct)</a></p>
     <div #tooltip class="tooltip codeTooltip">
         <pre>
             <code [highlight]="distinctCode"></code>
@@ -12,9 +11,9 @@
     </div>
 </div>
 <div *ngIf="currentLanguage === 'en'">
-    <p>The <code class="help" [appTooltip]="tooltip">distinct</code> operator returns an Observable that emits all items
-        emitted by the source Observable that are distinct by comparison from previous items. 
-        <a href="https://rxjs.dev/api/operators/distinct" target="_blank">Mehr Infos zu distinct.</a></p>
+    <p>Oh no! We get more fruit than the recipe says.</p>
+    <p>The pipe operator enables us to execute different RxJS operators one after the other in order to get our fruits as we need them.</p>
+    <p>In our case, the <code class = "help" [appTooltip] = "tooltip">distinct</code> operator helps us. It prevents duplicate fruits from being delivered in our data stream. <a href="https://rxjs.dev/api/operators/distinct" target="_blank">(Learn more about distinct)</a></p>
 
     <div #tooltip class="tooltip codeTooltip">
         <pre>

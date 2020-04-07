@@ -12,15 +12,19 @@ import { Subscription } from 'rxjs';
 export class MapComponent implements OnInit, OnDestroy {
   task = 'map';
   mapCode = `
-import { fromEvent } from 'rxjs';
-import { map } from 'rxjs/operators';
+const source = from([1, 2, 3, 4, 5]);
+source.pipe(
+  map(data => 'My Number is ' + data)
+).subscribe({
+  next: data => console.log(data)
+});
 
-const clicks = fromEvent(document, 'click');
-const positions = clicks.pipe(
-  map(ev => ev.clientX)
-);
-
-positions.subscribe(x => console.log(x));
+// Logs:
+// My Number is 1
+// My Number is 2
+// My Number is 3
+// My Number is 4
+// My Number is 5
   `;
 
   currentLanguage = '';
