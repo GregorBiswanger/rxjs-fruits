@@ -22,7 +22,7 @@ describe('The map level 6', () => {
   });
 
   it('should success on valid solution', () => {
-    page.getCodeEditor().wait(500).type('map(fruit => fruit.replace(\'dirty-\', \'\'))');
+    page.getCodeEditor().type('map(fruit => fruit.replace(\'dirty-\', \'\'))', { force: true });
     page.getStartButton().click();
     cy.wait(2500);
 

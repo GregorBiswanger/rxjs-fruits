@@ -20,7 +20,7 @@ describe('The distinct level 3', () => {
   });
 
   it('should success on valid solution', () => {
-    page.getCodeEditor().wait(500).type('distinct()');
+    page.getCodeEditor().type('distinct()', { force: true });
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -32,7 +32,7 @@ describe('The distinct level 3', () => {
   });
 
   it('should show a error info dialog on borad with failed code', () => {
-    page.getCodeEditor().wait(500).type('distinct((f: string) => f.substring(6))');
+    page.getCodeEditor().type('distinct((f: string) => f.substring(6))', { force: true });
     page.getStartButton().click();
     cy.wait(2500);
 
