@@ -1,0 +1,37 @@
+{
+	"APP": {
+		"FRUITS": {
+			"APPLE": "Apfel",
+			"BANANA": "Banane",
+			"CHERRY": "Kirsche"
+		},
+		"ISTOMUCHFRUITS": "❌ Mehr Früchte als im Rezept angegeben sind!",
+		"LABELLEVEL": " von ",
+		"LABELRESET": "Zurücksetzen",
+		"NEXTBUTTON": "Weiter",
+		"OUTPUT": "Es gab einen Fehler mit deinem Code. Bitte mit F12 die Ausgabe in der Console überprüfen.",
+		"RECIPETITLE": "Rezept",
+		"STARTBUTTON": "Start"
+	},
+	"EXERCISES": {
+		"DISTINCT": {
+			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n\n<p>Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)</p>"
+		},
+		"EXERCISETITLE": "Übung",
+		"FILTER": {
+			"RECIPEDESCRIPTION": "Es sollen alle frischen Äpfel und Bananen gemixt werden. (Hinweis: Verwende filter)"
+		},
+		"MAP": {
+			"RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)"
+		},
+		"SUBSCRIBE": {
+			"RECIPEDESCRIPTION": "Im Source-Code haben wir ein Leeres-Observable ohne Daten zu erwarten. <p><b>Bewege das Fließband</b>, indem du das Leere-Observable conveyorBelt mit der subscribe-function abonnierst und auf den Start-Button klickst.</p>"
+		},
+		"SUBSCRIBE-NEXT": {
+			"RECIPEDESCRIPTION": "Abonniere das Observable und gebe jeweils eine Frucht auf das Fließband mit der <b>toConveyorBelt</b>-Funktion.\n\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende subscribe mit next)</p>"
+		},
+		"TAKE": {
+			"RECIPEDESCRIPTION": "Es sollen nur zwei Bananen gemixt werden. (Hinweis: Verwende take)"
+		}
+	}
+}
