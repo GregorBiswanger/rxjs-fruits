@@ -1,28 +1,25 @@
-import { TakeExercise } from './take-exercise';
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ExerciseService } from '../../shared/exercise.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { DistinctuntilchangedExercise } from './distinctuntilchanged-exercise';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-take',
-  templateUrl: './take.component.html',
-  styleUrls: ['./take.component.scss']
+  selector: 'app-distinctuntilchanged',
+  templateUrl: './distinctuntilchanged.component.html',
+  styleUrls: ['./distinctuntilchanged.component.scss']
 })
-export class TakeComponent implements OnInit, OnDestroy {
-  task = 'take';
-  takeCode = `
-  const intervalCount = interval(1000);
-  intervalCount.pipe(
-    take(5)
-  ).subscribe({
-    next: x => console.log(x)
-  });
+export class DistinctuntilchangedComponent implements OnInit, OnDestroy {
+  exerciseTitle = 'distinctUntilChanged';
+  distinctUntilChangedCode = `
+  of(1, 1, 2, 1, 3, 4).pipe(
+    distinctUntilChanged()
+  ).subscribe(x => console.log(x));
 
   // Logs:
-  // 0
   // 1
   // 2
+  // 1
   // 3
   // 4
   `;
@@ -34,7 +31,7 @@ export class TakeComponent implements OnInit, OnDestroy {
               private translateService: TranslateService) { }
 
   ngOnInit() {
-    this.exerciseService.newExercise(new TakeExercise());
+    this.exerciseService.newExercise(new DistinctuntilchangedExercise());
     this.currentLanguage = this.translateService.currentLang;
     this.onLangChangeSubscription = this.translateService.onLangChange.subscribe({
       next: () => {

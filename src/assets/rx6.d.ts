@@ -704,3 +704,6 @@ declare function toConveyorBelt(fruit: string): void;
 
 declare function tap<T>(next: (x: T) => void): MonoTypeOperatorFunction<T>;
 declare function tap<T>(observer: PartialObserver<T>): MonoTypeOperatorFunction<T>;
+
+declare function distinctUntilChanged<T>(compare?: (x: T, y: T) => boolean): MonoTypeOperatorFunction<T>;
+declare function distinctUntilChanged<T, K>(compare: (x: K, y: K) => boolean, keySelector: (x: T) => K): MonoTypeOperatorFunction<T>;

@@ -17,6 +17,9 @@
 		"DISTINCT": {
 			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n\n<p>Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)</p>"
 		},
+		"DISTINCTUNTILCHANGED": {
+			"RECIPEDESCRIPTION": "Es soll keine Frucht doppelt hintereinander gemixt werden. (Hinweis: Verwende distinctUntilChanged)"
+		},
 		"EXERCISETITLE": "Übung",
 		"FILTER": {
 			"RECIPEDESCRIPTION": "Es sollen alle frischen Äpfel und Bananen gemixt werden. (Hinweis: Verwende filter)"

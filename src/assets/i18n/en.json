@@ -17,6 +17,9 @@
 		"DISTINCT": {
 			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Each fruit should only be mixed once. (Note: use distinct)</p>"
 		},
+		"DISTINCTUNTILCHANGED": {
+			"RECIPEDESCRIPTION": "No fruit should be mixed twice in a row. (Note: use distinctUntilChanged)"
+		},
 		"EXERCISETITLE": "Exercise",
 		"FILTER": {
 			"RECIPEDESCRIPTION": "All fresh apples and bananas should be mixed. (Note: use filter)"

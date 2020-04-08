@@ -1,0 +1,19 @@
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
+
+<div *ngIf="currentLanguage === 'de'">
+    <p>Eins nach dem anderen! Einige Früchte kommen doppelt hintereinander. Wir brauchen allerdings die Früchte abwechselnd.</p>
+    <p>In unserem Fall hilft uns der <code class="help" [appTooltip]="tooltip">distinctUntilChanged</code>-Operator. Er verhindert, dass in unserem Datenstrom doppelte Früchte direkt hintereinander geliefert werden.
+        <a href="https://rxjs.dev/api/operators/distinctUntilChanged" target="_blank">(Mehr Infos zu distinctUntilChanged)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>One after the other! Some fruits come twice in a row. However, we need the fruits alternately.</p>
+    <p>In our case, the <code class="help" [appTooltip]="tooltip">distinctUntilChanged</code> operator helps us. It prevents duplicate fruits from being delivered one after the other in our data stream. 
+        <a href="https://rxjs.dev/api/operators/distinctUntilChanged" target="_blank">(Learn more about distinctUntilChanged)</a>
+    </p>
+</div>
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="distinctUntilChangedCode"></code>
+    </pre>
+</div>
