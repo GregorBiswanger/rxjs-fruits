@@ -1,0 +1,17 @@
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
+
+<div *ngIf="currentLanguage === 'de'">
+    <p>Auf die ersten zwei Früchte können wir verzichten.</p>
+    <p>Der <code class="help" [appTooltip]="tooltip">skip</code>-Operator ermöglicht uns das Überspringen unnötiger Früchte. 
+        <a href="https://rxjs.dev/api/operators/skip" target="_blank">(Mehr Infos zu skip)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>We can do without the first two fruits. The <code class = "help" [appTooltip] = "tooltip"> skip </code> operator enables us to skip unnecessary fruit. 
+        <a href="https://rxjs.dev/api/operators/skip" target="_blank">(Learn more about skip)</a></p>
+</div>
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="skipCode"></code>
+    </pre>
+</div>

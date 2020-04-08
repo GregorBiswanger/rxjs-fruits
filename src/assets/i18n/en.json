@@ -30,6 +30,9 @@
 		"MAP": {
 			"RECIPEDESCRIPTION": "All apples and bananas should be cleared of dirt. (Note: use map)"
 		},
+		"SKIP": {
+			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use skip)"
+		},
 		"SUBSCRIBE": {
 			"RECIPEDESCRIPTION": "In the source code we have an empty Observable with no data to expect. <p><b>Move the conveyor belt</b>, by subscribing to the empty observable with the subscribe function and click on the start button.</p>"
 		},

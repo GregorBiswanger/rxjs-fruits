@@ -30,6 +30,9 @@
 		"MAP": {
 			"RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)"
 		},
+		"SKIP": {
+			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skip)"
+		},
 		"SUBSCRIBE": {
 			"RECIPEDESCRIPTION": "Im Source-Code haben wir ein Leeres-Observable ohne Daten zu erwarten. <p><b>Bewege das Fließband</b>, indem du das Leere-Observable conveyorBelt mit der subscribe-function abonnierst und auf den Start-Button klickst.</p>"
 		},
