@@ -12,7 +12,7 @@ export class AppPage {
   }
 
   getCodeEditor() {
-    return cy.get('.view-lines');
+    return cy.get('.monaco-editor textarea:first');
   }
 
   getRecipe() {

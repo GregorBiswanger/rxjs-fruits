@@ -15,8 +15,7 @@ describe('The subscribe-next level 2', () => {
   });
 
   it('should success on valid solution', () => {
-    page.getCodeEditor().type(`fruits.subscribe({
-next: fruit => toConveyorBelt(fruit)`);
+    page.getCodeEditor().type('toConveyorBelt(fruit)');
     page.getStartButton().click();
     cy.wait(2500);
 

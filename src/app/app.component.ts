@@ -313,10 +313,10 @@ export class AppComponent implements OnInit {
         conveyorBeltSubject.complete();
       } catch (error) {
         this.consoleService.showRandomErrorImage();
+        this.resetCurrentState();
+
         console.error(error);
         this.isErrorInConsole = true;
-
-        this.resetCurrentState();
       }
     }
   }
@@ -410,6 +410,7 @@ export class AppComponent implements OnInit {
     this.fruits = [];
     this.isToMuchFruits = false;
     this.isNextExerciseAviable = false;
+    this.isErrorInConsole = false;
     this.stopConveyorBeltAnimation();
   }
 }
