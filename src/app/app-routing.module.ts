@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'take', loadChildren: () => import('./exercises/take/take.module').then(m => m.TakeModule) },
   { path: 'filter', loadChildren: () => import('./exercises/filter/filter.module').then(m => m.FilterModule) },
   { path: 'map', loadChildren: () => import('./exercises/map/map.module').then(m => m.MapModule) },
+  { path: 'filter-map-take', loadChildren: () => import('./exercises/filter-map-take/filter-map-take.module').then(m => m.FilterMapTakeModule) },
   { path: '**', component: NotFoundComponent }
 ];
 
