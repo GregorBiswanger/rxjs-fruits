@@ -30,6 +30,9 @@
 		"MAP": {
 			"RECIPEDESCRIPTION": "All apples and bananas should be cleared of dirt. (Note: use map)"
 		},
+		"MERGE": {
+			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use merge and filter)"
+		},
 		"SKIP": {
 			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use skip)"
 		},

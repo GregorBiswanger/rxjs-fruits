@@ -30,6 +30,9 @@
 		"MAP": {
 			"RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)"
 		},
+		"MERGE": {
+			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende merge und filter)"
+		},
 		"SKIP": {
 			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skip)"
 		},
