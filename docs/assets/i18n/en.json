@@ -21,6 +21,9 @@
 		"FILTER": {
 			"RECIPEDESCRIPTION": "All fresh apples and bananas should be mixed. (Note: use filter)"
 		},
+		"FILTER-MAP-TAKE": {
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Add only the fruits that are specified on the recipe. (Note: use filter, map and take)</p>"
+		},
 		"MAP": {
 			"RECIPEDESCRIPTION": "All apples and bananas should be cleared of dirt. (Note: use map)"
 		},
