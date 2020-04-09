@@ -33,6 +33,9 @@
 		"MERGE": {
 			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende merge und filter)"
 		},
+		"REPEAT": {
+			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende repeat)"
+		},
 		"SKIP": {
 			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skip)"
 		},

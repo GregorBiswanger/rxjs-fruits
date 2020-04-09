@@ -33,6 +33,9 @@
 		"MERGE": {
 			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use merge and filter)"
 		},
+		"REPEAT": {
+			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use repeat)"
+		},
 		"SKIP": {
 			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use skip)"
 		},
