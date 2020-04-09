@@ -33,6 +33,9 @@
 		"SKIP": {
 			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use skip)"
 		},
+		"SKIP-TAKE-MAP": {
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Add only the fruits that are specified on the recipe. (Note: use skip, take and map)</p>"
+		},
 		"SUBSCRIBE": {
 			"RECIPEDESCRIPTION": "In the source code we have an empty Observable with no data to expect. <p><b>Move the conveyor belt</b>, by subscribing to the empty observable with the subscribe function and click on the start button.</p>"
 		},

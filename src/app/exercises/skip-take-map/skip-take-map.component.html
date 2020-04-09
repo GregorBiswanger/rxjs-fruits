@@ -1,0 +1,25 @@
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
+
+<div *ngIf="currentLanguage === 'de'">
+    <p>Eine übermäßige Lieferung!</p>
+    <p>Du möchtest einfach nur eine Banane. Die Lieferung beinhaltet allerdings zu viel unnötige Früchte. Verwende jetzt alle bisher gelernten Operatoren <code class="help" [appTooltip]="skipTooltip">skip</code>, <code class="help" [appTooltip]="takeTooltip">take</code> und <code class="help" [appTooltip]="mapTooltip">map</code> nacheinander in der Pipe-Funktion.</p>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>An excessive delivery!</p>
+    <p>You just want a banana. However, the delivery contains too much unnecessary fruit. Now use all operators that have been learned so far <code class="help" [appTooltip]="skipTooltip">skip</code>, <code class="help" [appTooltip]="takeTooltip">take</code> and <code class="help" [appTooltip]="mapTooltip">map</code> one after the other in the pipe function.</p>
+</div>
+<div #skipTooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="skipCode"></code>
+    </pre>
+</div>
+<div #takeTooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="takeCode"></code>
+    </pre>
+</div>
+<div #mapTooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="mapCode"></code>
+    </pre>
+</div>
