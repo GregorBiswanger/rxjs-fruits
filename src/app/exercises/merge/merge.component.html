@@ -1,0 +1,18 @@
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
+
+<div *ngIf="currentLanguage === 'de'">
+    <p>Jetzt müssen wir zwei Lieferungen Zusammenfassen.</p>
+    <p>Unser Früchte Lieferant musste uns die Früchte separat liefern. Die <code class="help" [appTooltip]="tooltip">merge</code>-Funktion kann unterschiedliche Observables zu einem Observable vereinen. Anschließend können wir dann mit der Pipe-Funktion, nur frische Früchte auf das Fließband legen. 
+        <a href="https://rxjs.dev/api/index/function/merge" target="_blank">(Mehr Infos zu merge)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>Now we have to combine two deliveries.</p>
+    <p>Our fruit supplier had to deliver the fruit to us separately. The <code class="help" [appTooltip]="tooltip">merge</code> function can combine different observables into one observable. Then we can use the pipe function to put only fresh fruit on the conveyor belt. 
+        <a href="https://rxjs.dev/api/index/function/merge" target="_blank">(Learn more about merge)</a></p>
+</div>
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="mergeCode"></code>
+    </pre>
+</div>
