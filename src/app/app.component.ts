@@ -6,11 +6,11 @@ import { ExerciseService } from './shared/exercise.service';
 import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Subject } from 'rxjs';
-import { from as fromX, EMPTY as EMPTYX, merge as mergeX } from 'rxjs';
+import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX } from 'rxjs';
 import { delay, concatMap, take, filter } from 'rxjs/operators';
 import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } from 'rxjs/operators';
 import { tap as tapX, distinctUntilChanged as distinctUntilChangedX } from 'rxjs/operators';
-import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX } from 'rxjs/operators';
+import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap as concatMapX } from 'rxjs/operators';
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
@@ -290,6 +290,8 @@ export class AppComponent implements OnInit {
     const retry = retryX;
     const catchError = catchErrorX;
     const distinctUntilChanged = distinctUntilChangedX;
+    const zip = zipX;
+    const concatMap = concatMapX;
     const toConveyorBeltX = toConveyorBelt;
 
     function toConveyorBelt(fruit: string) {
