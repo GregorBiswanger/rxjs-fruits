@@ -12,9 +12,14 @@ import { Subscription } from 'rxjs';
 export class SkipLastComponent implements OnInit, OnDestroy {
   exerciseTitle = 'skipLast';
   skipLastCode = `
-  of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1).pipe(
-    distinct()
-  ).subscribe(x => console.log(x)); // 1, 2, 3, 4
+  of(1, 2, 3, 4).pipe(
+    skipLast(1)
+  ).subscribe(data => console.log(data));
+
+  // Logs:
+  // 1
+  // 2
+  // 3
   `;
 
   currentLanguage = '';

@@ -14,9 +14,7 @@ export class SkipComponent implements OnInit, OnDestroy {
   skipCode = `
   of(1, 2, 3, 4).pipe(
     skip(1)
-  ).subscribe({
-    next: data => console.log(data)
-  });
+  ).subscribe(data => console.log(data));
 
   // Logs:
   // 2
