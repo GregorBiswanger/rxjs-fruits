@@ -704,3 +704,230 @@ declare function toConveyorBelt(fruit: string): void;
 
 declare function tap<T>(next: (x: T) => void): MonoTypeOperatorFunction<T>;
 declare function tap<T>(observer: PartialObserver<T>): MonoTypeOperatorFunction<T>;
+
+declare function distinctUntilChanged<T>(compare?: (x: T, y: T) => boolean): MonoTypeOperatorFunction<T>;
+declare function distinctUntilChanged<T, K>(compare: (x: K, y: K) => boolean, keySelector: (x: T) => K): MonoTypeOperatorFunction<T>;
+
+/**
+ * Returns an Observable that skips the first `count` items emitted by the source Observable.
+ *
+ * ![](skip.png)
+ *
+ * @param {Number} count - The number of times, items emitted by source Observable should be skipped.
+ * @return {Observable} An Observable that skips values emitted by the source Observable.
+ *
+ * @method skip
+ * @owner Observable
+ */
+declare function skip<T>(count: number): MonoTypeOperatorFunction<T>;
+
+declare function merge<T>(scheduler?: SchedulerLike): MonoTypeOperatorFunction<T>;
+declare function merge<T>(concurrent?: number, scheduler?: SchedulerLike): MonoTypeOperatorFunction<T>;
+declare function merge<T, T2>(v2: ObservableInput<T2>, scheduler?: SchedulerLike): OperatorFunction<T, T | T2>;
+declare function merge<T, T2>(v2: ObservableInput<T2>, concurrent?: number, scheduler?: SchedulerLike): OperatorFunction<T, T | T2>;
+declare function merge<T, T2, T3>(v2: ObservableInput<T2>, v3: ObservableInput<T3>, scheduler?: SchedulerLike): OperatorFunction<T, T | T2 | T3>;
+declare function merge<T, T2, T3>(v2: ObservableInput<T2>, v3: ObservableInput<T3>, concurrent?: number, scheduler?: SchedulerLike): OperatorFunction<T, T | T2 | T3>;
+declare function merge<T, T2, T3, T4>(v2: ObservableInput<T2>, v3: ObservableInput<T3>, v4: ObservableInput<T4>, scheduler?: SchedulerLike): OperatorFunction<T, T | T2 | T3 | T4>;
+declare function merge<T, T2, T3, T4>(v2: ObservableInput<T2>, v3: ObservableInput<T3>, v4: ObservableInput<T4>, concurrent?: number, scheduler?: SchedulerLike): OperatorFunction<T, T | T2 | T3 | T4>;
+declare function merge<T, T2, T3, T4, T5>(v2: ObservableInput<T2>, v3: ObservableInput<T3>, v4: ObservableInput<T4>, v5: ObservableInput<T5>, scheduler?: SchedulerLike): OperatorFunction<T, T | T2 | T3 | T4 | T5>;
+declare function merge<T, T2, T3, T4, T5>(v2: ObservableInput<T2>, v3: ObservableInput<T3>, v4: ObservableInput<T4>, v5: ObservableInput<T5>, concurrent?: number, scheduler?: SchedulerLike): OperatorFunction<T, T | T2 | T3 | T4 | T5>;
+declare function merge<T, T2, T3, T4, T5, T6>(v2: ObservableInput<T2>, v3: ObservableInput<T3>, v4: ObservableInput<T4>, v5: ObservableInput<T5>, v6: ObservableInput<T6>, scheduler?: SchedulerLike): OperatorFunction<T, T | T2 | T3 | T4 | T5 | T6>;
+declare function merge<T, T2, T3, T4, T5, T6>(v2: ObservableInput<T2>, v3: ObservableInput<T3>, v4: ObservableInput<T4>, v5: ObservableInput<T5>, v6: ObservableInput<T6>, concurrent?: number, scheduler?: SchedulerLike): OperatorFunction<T, T | T2 | T3 | T4 | T5 | T6>;
+declare function merge<T>(...observables: Array<ObservableInput<T> | SchedulerLike | number>): MonoTypeOperatorFunction<T>;
+declare function merge<T, R>(...observables: Array<ObservableInput<any> | SchedulerLike | number>): OperatorFunction<T, R>;
+
+/**
+ * Emits only the last `count` values emitted by the source Observable.
+ *
+ * <span class="informal">Remembers the latest `count` values, then emits those
+ * only when the source completes.</span>
+ *
+ * ![](takeLast.png)
+ *
+ * `takeLast` returns an Observable that emits at most the last `count` values
+ * emitted by the source Observable. If the source emits fewer than `count`
+ * values then all of its values are emitted. This operator must wait until the
+ * `complete` notification emission from the source in order to emit the `next`
+ * values on the output Observable, because otherwise it is impossible to know
+ * whether or not more values will be emitted on the source. For this reason,
+ * all values are emitted synchronously, followed by the complete notification.
+ *
+ * ## Example
+ * Take the last 3 values of an Observable with many values
+ * ```ts
+ * import { range } from 'rxjs';
+ * import { takeLast } from 'rxjs/operators';
+ *
+ * const many = range(1, 100);
+ * const lastThree = many.pipe(takeLast(3));
+ * lastThree.subscribe(x => console.log(x));
+ * ```
+ *
+ * @see {@link take}
+ * @see {@link takeUntil}
+ * @see {@link takeWhile}
+ * @see {@link skip}
+ *
+ * @throws {ArgumentOutOfRangeError} When using `takeLast(i)`, it delivers an
+ * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0`.
+ *
+ * @param {number} count The maximum number of values to emit from the end of
+ * the sequence of values emitted by the source Observable.
+ * @return {Observable<T>} An Observable that emits at most the last count
+ * values emitted by the source Observable.
+ * @method takeLast
+ * @owner Observable
+ */
+declare function takeLast<T>(count: number): MonoTypeOperatorFunction<T>;
+
+/**
+ * Skip the last `count` values emitted by the source Observable.
+ *
+ * ![](skipLast.png)
+ *
+ * `skipLast` returns an Observable that accumulates a queue with a length
+ * enough to store the first `count` values. As more values are received,
+ * values are taken from the front of the queue and produced on the result
+ * sequence. This causes values to be delayed.
+ *
+ * ## Example
+ * Skip the last 2 values of an Observable with many values
+ * ```ts
+ * import { range } from 'rxjs';
+ * import { skipLast } from 'rxjs/operators';
+ *
+ * const many = range(1, 5);
+ * const skipLastTwo = many.pipe(skipLast(2));
+ * skipLastTwo.subscribe(x => console.log(x));
+ *
+ * // Results in:
+ * // 1 2 3
+ * ```
+ *
+ * @see {@link skip}
+ * @see {@link skipUntil}
+ * @see {@link skipWhile}
+ * @see {@link take}
+ *
+ * @throws {ArgumentOutOfRangeError} When using `skipLast(i)`, it throws
+ * ArgumentOutOrRangeError if `i < 0`.
+ *
+ * @param {number} count Number of elements to skip from the end of the source Observable.
+ * @returns {Observable<T>} An Observable that skips the last count values
+ * emitted by the source Observable.
+ * @method skipLast
+ * @owner Observable
+ */
+declare function skipLast<T>(count: number): MonoTypeOperatorFunction<T>;
+
+/**
+ * Returns an Observable that will resubscribe to the source stream when the source stream completes, at most count times.
+ *
+ * <span class="informal">Repeats all values emitted on the source. It's like {@link retry}, but for non error cases.</span>
+ *
+ * ![](repeat.png)
+ *
+ * Similar to {@link retry}, this operator repeats the stream of items emitted by the source for non error cases.
+ * Repeat can be useful for creating observables that are meant to have some repeated pattern or rhythm.
+ *
+ * Note: `repeat(0)` returns an empty observable and `repeat()` will repeat forever
+ *
+ * ## Example
+ * Repeat a message stream
+ * ```ts
+ * import { of } from 'rxjs';
+ * import { repeat, delay } from 'rxjs/operators';
+ *
+ * const source = of('Repeat message');
+ * const example = source.pipe(repeat(3));
+ * example.subscribe(x => console.log(x));
+ *
+ * // Results
+ * // Repeat message
+ * // Repeat message
+ * // Repeat message
+ * ```
+ *
+ * Repeat 3 values, 2 times
+ * ```ts
+ * import { interval } from 'rxjs';
+ * import { repeat, take } from 'rxjs/operators';
+ *
+ * const source = interval(1000);
+ * const example = source.pipe(take(3), repeat(2));
+ * example.subscribe(x => console.log(x));
+ *
+ * // Results every second
+ * // 0
+ * // 1
+ * // 2
+ * // 0
+ * // 1
+ * // 2
+ * ```
+ *
+ * @see {@link repeatWhen}
+ * @see {@link retry}
+ *
+ * @param {number} [count] The number of times the source Observable items are repeated, a count of 0 will yield
+ * an empty Observable.
+ * @return {Observable} An Observable that will resubscribe to the source stream when the source stream completes
+ * , at most count times.
+ * @method repeat
+ * @owner Observable
+ */
+declare function repeat<T>(count?: number): MonoTypeOperatorFunction<T>;
+
+declare function takeWhile<T, S extends T>(predicate: (value: T, index: number) => value is S): OperatorFunction<T, S>;
+declare function takeWhile<T, S extends T>(predicate: (value: T, index: number) => value is S, inclusive: false): OperatorFunction<T, S>;
+declare function takeWhile<T>(predicate: (value: T, index: number) => boolean, inclusive?: boolean): MonoTypeOperatorFunction<T>;
+
+/**
+ * Returns an Observable that mirrors the source Observable with the exception of an `error`. If the source Observable
+ * calls `error`, this method will resubscribe to the source Observable for a maximum of `count` resubscriptions (given
+ * as a number parameter) rather than propagating the `error` call.
+ *
+ * ![](retry.png)
+ *
+ * Any and all items emitted by the source Observable will be emitted by the resulting Observable, even those emitted
+ * during failed subscriptions. For example, if an Observable fails at first but emits [1, 2] then succeeds the second
+ * time and emits: [1, 2, 3, 4, 5] then the complete stream of emissions and notifications
+ * would be: [1, 2, 1, 2, 3, 4, 5, `complete`].
+ *
+ * ## Example
+ * ```ts
+ * import { interval, of, throwError } from 'rxjs';
+ * import { mergeMap, retry } from 'rxjs/operators';
+ *
+ * const source = interval(1000);
+ * const example = source.pipe(
+ *   mergeMap(val => {
+ *     if(val > 5){
+ *       return throwError('Error!');
+ *     }
+ *     return of(val);
+ *   }),
+ *   //retry 2 times on error
+ *   retry(2)
+ * );
+ *
+ * const subscribe = example.subscribe({
+ *   next: val => console.log(val),
+ *   error: val => console.log(`${val}: Retried 2 times then quit!`)
+ * });
+ *
+ * // Output:
+ * // 0..1..2..3..4..5..
+ * // 0..1..2..3..4..5..
+ * // 0..1..2..3..4..5..
+ * // "Error!: Retried 2 times then quit!"
+ * ```
+ *
+ * @param {number} count - Number of retry attempts before failing.
+ * @return {Observable} The source Observable modified with the retry logic.
+ * @method retry
+ * @owner Observable
+ */
+declare function retry<T>(count?: number): MonoTypeOperatorFunction<T>;
+
+declare function catchError<T, O extends ObservableInput<any>>(selector: (err: any, caught: Observable<T>) => O): OperatorFunction<T, T | ObservedValueOf<O>>;
