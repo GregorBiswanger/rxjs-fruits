@@ -36,6 +36,9 @@
 		"SKIP": {
 			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use skip)"
 		},
+		"SKIP-LAST": {
+			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use skipLast)"
+		},
 		"SKIP-TAKE-MAP": {
 			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Add only the fruits that are specified on the recipe. (Note: use skip, take and map)</p>"
 		},

@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'skip-take-map', loadChildren: () => import('./exercises/skip-take-map/skip-take-map.module').then(m => m.SkipTakeMapModule) },
   { path: 'merge', loadChildren: () => import('./exercises/merge/merge.module').then(m => m.MergeModule) },
   { path: 'take-last', loadChildren: () => import('./exercises/take-last/take-last.module').then(m => m.TakeLastModule) },
+  { path: 'skip-last', loadChildren: () => import('./exercises/skip-last/skip-last.module').then(m => m.SkipLastModule) },
   { path: '**', component: NotFoundComponent }
 ];
 

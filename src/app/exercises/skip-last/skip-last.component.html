@@ -1,0 +1,19 @@
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
+
+<div *ngIf="currentLanguage === 'de'">
+    <p>Auf die letzten zwei Früchte können wir verzichten.</p>
+    <p>Der <code class="help" [appTooltip]="tooltip">skipLast</code>-Operator ermöglicht uns das Ignorieren von den letzten Früchten. 
+        <a href="https://rxjs.dev/api/operators/skipLast" target="_blank">(Mehr Infos zu skipLast)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>We can do without the last two fruits.</p>
+    <p>The <code class="help" [appTooltip]="tooltip">skipLast</code> operator enables us to ignore the last fruits. 
+        <a href="https://rxjs.dev/api/operators/skipLast" target="_blank">(Learn more about skipLast)</a>
+    </p>
+</div>
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="skipLastCode"></code>
+    </pre>
+</div>
