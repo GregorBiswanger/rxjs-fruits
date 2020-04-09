@@ -1,0 +1,25 @@
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
+
+<div *ngIf="currentLanguage === 'de'">
+    <p>Gib dem Chaos keine Chance!</p>
+    <p>Du hast zwei Lieferungen bekommen. Entnehme nur verwendbare Früchte mit dem <code class="help" [appTooltip]="skipLastTooltip">skipLast</code>- und <code class="help" [appTooltip]="skipTooltip">skip</code>-Operator. Ersetze dann das leere (Empty) Observable mit der <code class="help" [appTooltip]="mergeTooltip">merge</code>-Funktion. Gegen Ende bereinige die dreckigen (dirty) Früchte und lege sie auf das Fließband.</p>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>Don't give chaos a chance!</p>
+    <p>You received two deliveries. Take only usable fruit with the <code class="help" [appTooltip]="skipLastTooltip">skipLast</code> and <code class="help" [appTooltip]="skipTooltip">skip</code> operator. Then replace the empty observable with the <code class="help" [appTooltip]="mergeTooltip">merge</code> function. Towards the end, clean up the dirty fruits and place them on the conveyor belt.</p>
+</div>
+<div #skipTooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="skipCode"></code>
+    </pre>
+</div>
+<div #skipLastTooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="skipLastCode"></code>
+    </pre>
+</div>
+<div #mergeTooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="mergeCode"></code>
+    </pre>
+</div>
