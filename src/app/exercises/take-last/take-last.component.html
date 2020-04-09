@@ -1,0 +1,18 @@
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
+
+<div *ngIf="currentLanguage === 'de'">
+    <p>Nur das letzte bitte!</p>
+    <p>Verwende den <code class="help" [appTooltip]="tooltip">takeLast</code> Operator, um nur eine bestimmte Anzahl der letzten Früchte auf das Fließband zu legen. 
+        <a href="https://rxjs.dev/api/operators/takeLast" target="_blank">(Mehr Infos zu takeLast)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+    <p>Only the last please!</p>
+    <p>Use the <code class="help" [appTooltip]="tooltip">takeLast</code> operator to put only a certain number of the last fruits on the conveyor belt. 
+        <a href="https://rxjs.dev/api/operators/takeLast" target="_blank"> (Learn more about takeLast)</a></p>
+</div>
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="takeLastCode"></code>
+    </pre>
+</div>

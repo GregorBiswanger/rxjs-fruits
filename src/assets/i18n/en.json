@@ -47,6 +47,9 @@
 		},
 		"TAKE": {
 			"RECIPEDESCRIPTION": "Only two bananas should be mixed. (Note: use take)"
+		},
+		"TAKE-LAST": {
+			"RECIPEDESCRIPTION": "Only the last three fruits should be mixed. (Note: use takeLast)"
 		}
 	}
 }
