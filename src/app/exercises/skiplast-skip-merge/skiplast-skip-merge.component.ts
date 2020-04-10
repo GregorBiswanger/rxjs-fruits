@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./skiplast-skip-merge.component.scss']
 })
 export class SkiplastSkipMergeComponent implements OnInit, OnDestroy {
-  exerciseTitle = 'skipLast, skip und merge';
+  exerciseTitle = 'skipLast, skip & merge';
   skipCode = `
   of(1, 2, 3, 4).pipe(
     skip(1)
