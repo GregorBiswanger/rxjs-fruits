@@ -13,6 +13,7 @@ describe('The zip-concatmap level 15', () => {
     cy.wait(2500);
 
     page.getNextButton().should('have.attr', 'disabled');
+    page.getRecipeWarningIsNoFruitsIncoming().should('exist');
   });
 
   it('should success on valid solution', () => {
@@ -25,7 +26,8 @@ describe('The zip-concatmap level 15', () => {
     page.getRecipeItem(2).should('contain.text', '✔');
     page.getRecipeItem(3).should('contain.text', '✔');
     page.getRecipeItem(4).should('contain.text', '✔');
-    page.getRecipeWarning().should('not.exist');
+    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsNoFruitsIncoming().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 });

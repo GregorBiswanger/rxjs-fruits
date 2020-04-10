@@ -11,6 +11,7 @@ describe('The subscribe level 1', () => {
   it('should failed on wrong solution', () => {
     page.getStartButton().click();
     page.getNextButton().should('have.attr', 'disabled');
+    page.getRecipeWarningIsNoActivateSubscribe().should('exist');
   });
 
   it('should success on valid solution', () => {
@@ -18,6 +19,7 @@ describe('The subscribe level 1', () => {
     page.getStartButton().click();
 
     page.getNextButton().should('not.have.attr', 'disabled');
+    page.getRecipeWarningIsNoActivateSubscribe().should('not.exist');
   });
 
 });

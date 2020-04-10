@@ -13,6 +13,7 @@ describe('The skiplast-skip-merge level 14', () => {
     cy.wait(2500);
 
     page.getNextButton().should('have.attr', 'disabled');
+    page.getRecipeWarningIsNoFruitsIncoming().should('exist');
   });
 
   it('should success on valid solution', () => {
@@ -33,7 +34,8 @@ describe('The skiplast-skip-merge level 14', () => {
     page.getRecipeItem(4).should('contain.text', '✔');
     page.getRecipeItem(5).should('contain.text', '✔');
     page.getRecipeItem(6).should('contain.text', '✔');
-    page.getRecipeWarning().should('not.exist');
+    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsNoFruitsIncoming().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 });

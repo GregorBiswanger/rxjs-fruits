@@ -12,6 +12,7 @@ describe('The subscribe-next level 2', () => {
     page.getStartButton().click();
     cy.wait(2500);
     page.getNextButton().should('have.attr', 'disabled');
+    page.getOutputHint().should('exist');
   });
 
   it('should success on valid solution', () => {
@@ -23,7 +24,7 @@ describe('The subscribe-next level 2', () => {
     page.getRecipeItem(1).should('contain.text', '✔');
     page.getRecipeItem(2).should('contain.text', '✔');
     page.getRecipeItem(3).should('contain.text', '✔');
-    page.getRecipeWarning().should('not.exist');
+    page.getRecipeWarningIsToMuchFruits().should('not.exist');
 
     page.getNextButton().should('not.have.attr', 'disabled');
   });

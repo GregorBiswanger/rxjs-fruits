@@ -14,7 +14,7 @@ describe('The skip-take-map level 10', () => {
 
     page.getRecipe().should('have.class', 'animated shake');
     page.getRecipeItem(1).should('contain.text', '❌');
-    page.getRecipeWarning().should('contain.text', '❌');
+    page.getRecipeWarningIsToMuchFruits().should('contain.text', '❌');
     page.getNextButton().should('have.attr', 'disabled');
   });
 
@@ -27,7 +27,7 @@ describe('The skip-take-map level 10', () => {
 
     page.getRecipe().should('not.have.class', 'animated shake');
     page.getRecipeItem(1).should('contain.text', '✔');
-    page.getRecipeWarning().should('not.exist');
+    page.getRecipeWarningIsToMuchFruits().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 });

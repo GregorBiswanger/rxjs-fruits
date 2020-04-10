@@ -16,7 +16,8 @@ describe('The repeat level 16', () => {
     page.getRecipeItem(1).should('contain.text', '✔');
     page.getRecipeItem(2).should('contain.text', '');
     page.getRecipeItem(3).should('contain.text', '');
-    page.getRecipeWarning().should('not.exist');
+    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsToLittleFruits().should('exist');
     page.getNextButton().should('have.attr', 'disabled');
   });
 
@@ -29,7 +30,8 @@ describe('The repeat level 16', () => {
     page.getRecipeItem(1).should('contain.text', '✔');
     page.getRecipeItem(2).should('contain.text', '✔');
     page.getRecipeItem(3).should('contain.text', '✔');
-    page.getRecipeWarning().should('not.exist');
+    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsToLittleFruits().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 });

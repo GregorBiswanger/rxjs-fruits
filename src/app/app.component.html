@@ -33,7 +33,8 @@
       <div class="recipe" [ngClass]="recipeAnimationStyle()"
         *ngIf="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
         <h3>🧾 {{ 'APP.RECIPETITLE' | translate }}</h3>
-        <p [innerHTML]="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate"></p>
+        <p [innerHTML]="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
+        </p>
 
         <ol>
           <li *ngFor="let fruitName of currentExercise.expectedFruits; let i = index;">
@@ -41,7 +42,10 @@
           </li>
         </ol>
 
-        <p *ngIf="isToMuchFruits">{{ 'APP.ISTOMUCHFRUITS' | translate }}</p>
+        <p id="isToMuchFruits" *ngIf="isToMuchFruits">{{ 'APP.ISTOMUCHFRUITS' | translate }}</p>
+        <p id="isNoFruitsIncoming" *ngIf="isNoFruitsIncoming">{{'APP.ISNOFRUITSINCOMING' | translate}}</p>
+        <p id="isToLittleFruits" *ngIf="isToLittleFruits">{{'APP.ISTOLITTLEFRUITS' | translate}}</p>
+        <p id="isNoActivateSubscribe" *ngIf="isNoActivateSubscribe">{{'APP.ISNOACTIVATESUBSCRIBE' | translate}}</p>
       </div>
       <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
     </div>
@@ -49,7 +53,8 @@
       <button id="cancelButton" *ngIf="isRunActive" (click)="cancel()">{{ 'APP.CANCELBUTTON' | translate }}
         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
           <g>
-            <path id="path1" transform="rotate(0,12,12) translate(0,0) scale(0.75,0.75)  " fill="#FFF5F5" d="M9.9000245,6.000003L6.0000001,9.8999988 12.100037,16.000007 6.0000001,22.100002 9.9000245,25.999997 16,19.900018 22.100037,25.999997 26,22.100002 19.900024,16.000007 26,9.8999988 22.100037,6.000003 16,12.099997z M16,0C24.799988,0 32,7.2000005 32,16.000007 32,24.800016 24.799988,32.000001 16,32.000001 7.2000123,32.000001 8.3946347E-08,24.800016 0,16.000007 8.3946347E-08,7.2000005 7.2000123,0 16,0z" />
+            <path id="path1" transform="rotate(0,12,12) translate(0,0) scale(0.75,0.75)  " fill="#FFF5F5"
+              d="M9.9000245,6.000003L6.0000001,9.8999988 12.100037,16.000007 6.0000001,22.100002 9.9000245,25.999997 16,19.900018 22.100037,25.999997 26,22.100002 19.900024,16.000007 26,9.8999988 22.100037,6.000003 16,12.099997z M16,0C24.799988,0 32,7.2000005 32,16.000007 32,24.800016 24.799988,32.000001 16,32.000001 7.2000123,32.000001 8.3946347E-08,24.800016 0,16.000007 8.3946347E-08,7.2000005 7.2000123,0 16,0z" />
           </g>
         </svg>
       </button>
@@ -65,13 +70,14 @@
         (click)="nextExercise(true)">{{ 'APP.NEXTBUTTON' | translate }}</button>
     </div>
     <div class="credits" fxLayout="row" fxLayoutAlign="center">
-      Gemacht mit ❤ von Gregor Biswanger • Grafiken von Bele Eisenmann 
+      Gemacht mit ❤ von Gregor Biswanger • Grafiken von Bele Eisenmann
       <span id="language">
         <span class="toggle" (click)="toggleLanguageOptions()">{{ translate.currentLang | language }}</span>
         <span class="tooltip" style="display: block;" *ngIf="isLanguageOptionsOpen">
-            <span class="language-marker" *ngFor="let language of translate.getLangs()" (click)="changeLanguage(language)">
-              {{ language | language }}
-            </span>
+          <span class="language-marker" *ngFor="let language of translate.getLangs()"
+            (click)="changeLanguage(language)">
+            {{ language | language }}
+          </span>
         </span>
       </span>
     </div>

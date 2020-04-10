@@ -6,6 +6,9 @@
 			"BANANA": "Banana",
 			"CHERRY": "Cherry"
 		},
+		"ISNOACTIVATESUBSCRIBE": "❌ The conveyor belt must be moved by calling the subscribe function!",
+		"ISNOFRUITSINCOMING": "❌ The conveyor belt does not get any fruit!",
+		"ISTOLITTLEFRUITS": "❌ The conveyor belt gets too little fruit!",
 		"ISTOMUCHFRUITS": "❌ More fruits than specified in the recipe!",
 		"LABELLEVEL": " of ",
 		"LABELRESET": "Reset",

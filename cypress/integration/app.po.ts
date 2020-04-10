@@ -23,8 +23,20 @@ export class AppPage {
     return cy.get(`ol > :nth-child(${positionIndex})`);
   }
 
-  getRecipeWarning(positionIndex: number = 4) {
-    return cy.get(`.recipe > :nth-child(${positionIndex})`);
+  getRecipeWarningIsToMuchFruits() {
+    return cy.get('#isToMuchFruits');
+  }
+
+  getRecipeWarningIsNoFruitsIncoming() {
+    return cy.get('#isNoFruitsIncoming');
+  }
+
+  getRecipeWarningIsToLittleFruits() {
+    return cy.get('#isToLittleFruits');
+  }
+
+  getRecipeWarningIsNoActivateSubscribe() {
+    return cy.get('#isNoActivateSubscribe');
   }
 
   getOutputHint() {

@@ -12,6 +12,7 @@ import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } 
 import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
 import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap as concatMapX } from 'rxjs/operators';
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
+import { timeout } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
 import * as monaco from 'monaco-editor';
@@ -43,7 +44,7 @@ export class AppComponent implements OnInit {
   @ViewChild('conveyorbelt', { static: true })
   conveyorBelt: ElementRef<HTMLObjectElement>;
 
-  @OnChange<string>(function(this: AppComponent) {
+  @OnChange<string>(function (this: AppComponent) {
     if (this.isRunActive) {
       this.cancel();
     }
@@ -59,6 +60,9 @@ export class AppComponent implements OnInit {
   fruitsInPipe: string[] = [];
   isNextExerciseAviable = false;
   isToMuchFruits = false;
+  isNoFruitsIncoming = false;
+  isToLittleFruits = false;
+  isNoActivateSubscribe = false;
   currentExercise: Exercise = {
     code: '',
     expectedFruits: [],
@@ -95,7 +99,20 @@ export class AppComponent implements OnInit {
     });
 
     this.exerciseService.assertionChecked$.subscribe({
-      next: valid => this.isNextExerciseAviable = valid
+      next: valid => {
+        this.isNextExerciseAviable = valid;
+
+        if (valid === false &&
+          this.isRunActive &&
+          this.fruitsInPipe.length === 0) {
+          this.isNoFruitsIncoming = true;
+          this.cancel();
+        } else if (valid === false &&
+          this.isRunActive &&
+          this.currentExercise.expectedFruits.length > this.fruitsInPipe.length) {
+          this.isToLittleFruits = true;
+        }
+      }
     });
 
     this.monacoLoader.isMonacoLoaded$
@@ -277,6 +294,9 @@ export class AppComponent implements OnInit {
     this.fruits = [];
     this.fruitsInPipe = [];
     this.isToMuchFruits = false;
+    this.isNoFruitsIncoming = false;
+    this.isToLittleFruits = false;
+    this.isNoActivateSubscribe = false;
     this.isErrorInConsole = false;
     this.isRunActive = true;
     this.consoleService.showWelcomeMessage();
@@ -310,7 +330,8 @@ export class AppComponent implements OnInit {
     if (this.code.includes('conveyorBelt.subscribe()') && this.levelService.currentLevel.number === 1) {
       this.startConveyorBeltAnimation();
       this.isNextExerciseAviable = true;
-    } else if (this.levelService.currentLevel.number > 1) {
+    } else if (this.code.includes('subscribe(') &&
+      this.levelService.currentLevel.number > 1) {
       this.startConveyorBeltAnimation();
 
       try {
@@ -341,6 +362,9 @@ export class AppComponent implements OnInit {
         console.error(error);
         this.isErrorInConsole = true;
       }
+    } else {
+      this.isNoActivateSubscribe = true;
+      this.cancel();
     }
   }
 
@@ -438,6 +462,9 @@ export class AppComponent implements OnInit {
     this.fruitsInPipe = [];
     this.fruits = [];
     this.isToMuchFruits = false;
+    this.isNoFruitsIncoming = false;
+    this.isToLittleFruits = false;
+    this.isNoActivateSubscribe = false;
     this.isNextExerciseAviable = false;
     this.isErrorInConsole = false;
     this.isRunActive = false;
