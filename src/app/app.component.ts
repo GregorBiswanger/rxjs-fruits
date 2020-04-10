@@ -9,7 +9,7 @@ import { of, Subject } from 'rxjs';
 import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX } from 'rxjs';
 import { delay, concatMap, take, filter } from 'rxjs/operators';
 import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } from 'rxjs/operators';
-import { tap as tapX, distinctUntilChanged as distinctUntilChangedX } from 'rxjs/operators';
+import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
 import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap as concatMapX } from 'rxjs/operators';
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
 import { Exercise } from './shared/exercise';
 import { TranslateService } from '@ngx-translate/core';
 import { ConsoleService } from './console.service';
+import { OnChange } from 'property-watch-decorator';
 
 @Component({
   selector: 'app-root',
@@ -42,13 +43,20 @@ export class AppComponent implements OnInit {
   @ViewChild('conveyorbelt', { static: true })
   conveyorBelt: ElementRef<HTMLObjectElement>;
 
+  @OnChange<string>(function(this: AppComponent) {
+    if (this.isRunActive) {
+      this.cancel();
+    }
+  })
+  code = '';
+
   conveyorBeltAnimationTimeline: TimelineLite;
+  isRunActive = false;
   isLevelsWrapperOpen = false;
   isLanguageOptionsOpen = false;
   clickedByToggle = false;
   fruits: Fruit[] = [];
   fruitsInPipe: string[] = [];
-  code = '';
   isNextExerciseAviable = false;
   isToMuchFruits = false;
   currentExercise: Exercise = {
@@ -270,8 +278,9 @@ export class AppComponent implements OnInit {
     this.fruitsInPipe = [];
     this.isToMuchFruits = false;
     this.isErrorInConsole = false;
-    const conveyorBeltSubject = new Subject<string>();
+    this.isRunActive = true;
     this.consoleService.showWelcomeMessage();
+    const conveyorBeltSubject = new Subject<string>();
 
     // workaround for angular tree shaking
     const EMPTY = EMPTYX;
@@ -308,6 +317,7 @@ export class AppComponent implements OnInit {
         conveyorBeltSubject
           .pipe(
             concatMap(item => of(item).pipe(delay(1000))),
+            takeWhile(() => this.isRunActive),
             tap(x => console.log('Into the pipe: ' + x)),
             tap(fruit => {
               this.fruitsInPipe.push(fruit);
@@ -418,12 +428,19 @@ export class AppComponent implements OnInit {
     this.router.navigate([level.urlPath]);
   }
 
+  cancel() {
+    this.fruits = [];
+    this.isRunActive = false;
+    this.stopConveyorBeltAnimation();
+  }
+
   resetCurrentState() {
     this.fruitsInPipe = [];
     this.fruits = [];
     this.isToMuchFruits = false;
     this.isNextExerciseAviable = false;
     this.isErrorInConsole = false;
+    this.isRunActive = false;
     this.stopConveyorBeltAnimation();
   }
 }

@@ -1,5 +1,6 @@
 {
 	"APP": {
+		"CANCELBUTTON": "Cancel",
 		"FRUITS": {
 			"APPLE": "Apple",
 			"BANANA": "Banana",

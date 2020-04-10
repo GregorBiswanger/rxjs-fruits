@@ -104,6 +104,18 @@ button[disabled] {
   opacity: 0.5;
 }
 
+button svg {
+  vertical-align: middle;
+}
+
+#cancelButton {
+  background-color: darkred;
+}
+
+#cancelButton:hover {
+  background-color: rgb(97, 1, 1);
+}
+
 // LEVEL INDICATOR
 
 #level-counter {

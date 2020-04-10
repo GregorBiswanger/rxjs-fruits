@@ -46,9 +46,15 @@
       <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
     </div>
     <div fyLayout fxLayoutAlign="end">
-      <button id="startButton" (click)="run()">{{ 'APP.STARTBUTTON' | translate }}
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" style="vertical-align: middle;"
-          viewBox="0 0 24 24">
+      <button id="cancelButton" *ngIf="isRunActive" (click)="cancel()">{{ 'APP.CANCELBUTTON' | translate }}
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+          <g>
+            <path id="path1" transform="rotate(0,12,12) translate(0,0) scale(0.75,0.75)  " fill="#FFF5F5" d="M9.9000245,6.000003L6.0000001,9.8999988 12.100037,16.000007 6.0000001,22.100002 9.9000245,25.999997 16,19.900018 22.100037,25.999997 26,22.100002 19.900024,16.000007 26,9.8999988 22.100037,6.000003 16,12.099997z M16,0C24.799988,0 32,7.2000005 32,16.000007 32,24.800016 24.799988,32.000001 16,32.000001 7.2000123,32.000001 8.3946347E-08,24.800016 0,16.000007 8.3946347E-08,7.2000005 7.2000123,0 16,0z" />
+          </g>
+        </svg>
+      </button>
+      <button id="startButton" *ngIf="!isRunActive" (click)="run()">{{ 'APP.STARTBUTTON' | translate }}
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
           <g>
             <path transform="rotate(0,12,12) translate(0,0) scale(0.75,0.75)" fill="#FFF5F5"
               d="M12.5,9.2999878L22,16 12.5,22.700012z M16,3.1000061C8.9000244,3.1000061 3.1000061,8.8999939 3.1000061,16 3.1000061,23.100006 8.9000244,28.899994 16,28.899994 23.100037,28.899994 28.900024,23.100006 28.900024,16 28.900024,8.8999939 23.100037,3.1000061 16,3.1000061z M16,0C24.799988,0 32,7.2000122 32,16 32,24.799988 24.799988,32 16,32 7.2000122,32 0,24.799988 0,16 0,7.2000122 7.2000122,0 16,0z" />
