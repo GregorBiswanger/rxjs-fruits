@@ -14,9 +14,7 @@ export class DistinctuntilchangedComponent implements OnInit, OnDestroy {
   distinctUntilChangedCode = `
   of(1, 1, 2, 1, 3, 4).pipe(
     distinctUntilChanged()
-  ).subscribe({
-    next: data => console.log(data)
-  });
+  ).subscribe(data => console.log(data));
 
   // Logs:
   // 1

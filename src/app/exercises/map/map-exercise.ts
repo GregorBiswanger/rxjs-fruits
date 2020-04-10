@@ -17,11 +17,10 @@ export class MapExercise implements Exercise {
     "apple",
     "dirty-banana",
     "banana"]);
+
 fruits.pipe(
 \t
-).subscribe({
-    next: fruit => toConveyorBelt(fruit)
-});`;
-    minPositionLineNumber = 6;
+).subscribe(fruit => toConveyorBelt(fruit));`;
+    minPositionLineNumber = 7;
     positionColumnNumber = 2;
 }

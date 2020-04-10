@@ -32,11 +32,10 @@ export class FilterExercise implements Exercise {
     "old-banana",
     "banana",
     "banana"]);
+
 fruits.pipe(
 \t
-).subscribe({
-    next: fruit => toConveyorBelt(fruit)
-});`;
-    readonly minPositionLineNumber = 12;
+).subscribe(fruit => toConveyorBelt(fruit));`;
+    readonly minPositionLineNumber = 13;
     readonly positionColumnNumber = 2;
 }

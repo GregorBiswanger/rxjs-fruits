@@ -12,10 +12,8 @@ export class SubscibeNextExercise implements Exercise {
     "banana",
     "cherry"]);
 
-fruits.subscribe({
-    next: fruit => 
-});
+fruits.subscribe(fruit => );
 `;
-    readonly minPositionLineNumber = 6;
-    readonly positionColumnNumber = 20;
+    readonly minPositionLineNumber = 5;
+    readonly positionColumnNumber = 27;
 }

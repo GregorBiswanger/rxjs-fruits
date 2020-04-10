@@ -14,9 +14,7 @@ export class SkipTakeMapComponent implements OnInit, OnDestroy {
   skipCode = `
   of(1, 2, 3, 4).pipe(
     skip(1)
-  ).subscribe({
-    next: data => console.log(data)
-  });
+  ).subscribe(data => console.log(data));
 
   // Logs:
   // 2
@@ -27,9 +25,7 @@ export class SkipTakeMapComponent implements OnInit, OnDestroy {
   const intervalCount = interval(1000);
   intervalCount.pipe(
     take(5)
-  ).subscribe({
-    next: x => console.log(x)
-  });
+  ).subscribe(x => console.log(x));
 
   // Logs:
   // 0
@@ -39,20 +35,18 @@ export class SkipTakeMapComponent implements OnInit, OnDestroy {
   // 4
   `;
   mapCode = `
-const source = from([1, 2, 3, 4, 5]);
-source.pipe(
-  map(data => 'My Number is ' + data)
-).subscribe({
-  next: data => console.log(data)
-});
+  const source = from([1, 2, 3, 4, 5]);
+  source.pipe(
+    map(data => 'My Number is ' + data)
+  ).subscribe(data => console.log(data));
 
-// Logs:
-// My Number is 1
-// My Number is 2
-// My Number is 3
-// My Number is 4
-// My Number is 5
-  `;
+  // Logs:
+  // My Number is 1
+  // My Number is 2
+  // My Number is 3
+  // My Number is 4
+  // My Number is 5
+    `;
 
   currentLanguage = '';
   onLangChangeSubscription: Subscription;

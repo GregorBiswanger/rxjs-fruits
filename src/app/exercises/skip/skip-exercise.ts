@@ -11,9 +11,7 @@ export class SkipExercise implements Exercise {
 
 fruits.pipe(
 \t
-).subscribe({
-    next: fruit => toConveyorBelt(fruit)
-});
+).subscribe(fruit => toConveyorBelt(fruit));
 `;
     readonly minPositionLineNumber = 7;
     readonly positionColumnNumber = 2;

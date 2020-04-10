@@ -12,11 +12,12 @@ import { Subscription } from 'rxjs';
 export class SubscribeNextComponent implements OnInit, OnDestroy {
   exerciseTitle = 'subscribe-next';
   subscibeNextCode = `
-fruits.subscribe({
-  complete: () => { ... },  // The observable has ended
-  error: () => { ... },     // There was a mistake
-  next: (fruit) => { ... }, // A data is delivered
-});
+  const messages = from(["Hello", "World"]);
+  messages.subscribe(message => console.log(message));
+
+  // Logs:
+  // Hello
+  // World
   `;
 
   currentLanguage = '';

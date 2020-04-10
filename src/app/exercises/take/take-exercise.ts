@@ -12,11 +12,10 @@ export class TakeExercise implements Exercise {
     "banana",
     "banana",
     "banana"]);
+
 fruits.pipe(
 \t
-).subscribe({
-    next: fruit => toConveyorBelt(fruit)
-});`;
-    readonly minPositionLineNumber = 6;
+).subscribe(fruit => toConveyorBelt(fruit));`;
+    readonly minPositionLineNumber = 7;
     readonly positionColumnNumber = 2;
 }

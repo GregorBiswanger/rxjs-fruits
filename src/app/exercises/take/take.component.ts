@@ -15,9 +15,7 @@ export class TakeComponent implements OnInit, OnDestroy {
   const intervalCount = interval(1000);
   intervalCount.pipe(
     take(5)
-  ).subscribe({
-    next: x => console.log(x)
-  });
+  ).subscribe(x => console.log(x));
 
   // Logs:
   // 0

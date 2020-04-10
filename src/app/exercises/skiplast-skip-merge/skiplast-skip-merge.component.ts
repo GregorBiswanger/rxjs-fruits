@@ -35,9 +35,7 @@ export class SkiplastSkipMergeComponent implements OnInit, OnDestroy {
   const first = of(1, 2, 3)
   const second = of(4, 5, 6);
 
-  merge(first, second).subscribe({
-    next: data => console.log(data)
-  });
+  merge(first, second).subscribe(data => console.log(data));
 
   // Logs:
   // 1

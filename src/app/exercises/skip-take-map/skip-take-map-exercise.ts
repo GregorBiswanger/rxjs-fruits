@@ -12,9 +12,7 @@ export class SkipTakeMapExercise implements Exercise {
 
 fruits.pipe(
 \t
-).subscribe({
-    next: fruit => toConveyorBelt(fruit)
-});
+).subscribe(fruit => toConveyorBelt(fruit));
 `;
     readonly minPositionLineNumber = 8;
     readonly positionColumnNumber = 2;

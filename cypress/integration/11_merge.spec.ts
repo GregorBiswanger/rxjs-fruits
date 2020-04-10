@@ -16,9 +16,8 @@ describe('The merge level 11', () => {
   });
 
   it('should success on valid solution', () => {
-    page.getCodeEditor().type(`merge(apples, bananas).pipe(
-      filter(fruit => !fruit.includes('old-'))
-    ).subscribe(toConveyorBelt);{del}{del}`);
+    page.getCodeEditor().type(`{del}{del}{del}{del}{del}merge(apples, bananas){esc}{downarrow}
+      filter(fruit => !fruit.includes('old-'))`, { timeout: 10000 });
     page.getStartButton().click();
     cy.wait(2500);
 

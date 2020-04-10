@@ -14,9 +14,7 @@ export class DistinctComponent implements OnInit, OnDestroy {
   distinctCode = `
   of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1).pipe(
     distinct()
-  ).subscribe({
-    next: data => console.log(data)
-  });
+  ).subscribe(data => console.log(data));
 
   // Logs:
   // 1

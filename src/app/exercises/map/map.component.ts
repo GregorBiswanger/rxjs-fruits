@@ -12,19 +12,17 @@ import { Subscription } from 'rxjs';
 export class MapComponent implements OnInit, OnDestroy {
   task = 'map';
   mapCode = `
-const source = from([1, 2, 3, 4, 5]);
-source.pipe(
-  map(data => 'My Number is ' + data)
-).subscribe({
-  next: data => console.log(data)
-});
+  const source = from([1, 2, 3, 4, 5]);
+  source.pipe(
+    map(data => 'My Number is ' + data)
+  ).subscribe(data => console.log(data));
 
-// Logs:
-// My Number is 1
-// My Number is 2
-// My Number is 3
-// My Number is 4
-// My Number is 5
+  // Logs:
+  // My Number is 1
+  // My Number is 2
+  // My Number is 3
+  // My Number is 4
+  // My Number is 5
   `;
 
   currentLanguage = '';

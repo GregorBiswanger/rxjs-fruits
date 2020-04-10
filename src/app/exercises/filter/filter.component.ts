@@ -12,15 +12,13 @@ import { Subscription } from 'rxjs';
 export class FilterComponent implements OnInit, OnDestroy {
   task = 'filter';
   filterCode = `
-const source = from([1, 2, 3, 4, 5]);
-source.pipe(
-  filter(data => data === 3)
-).subscribe({
-  next: data => console.log(data)
-});
+  const source = from([1, 2, 3, 4, 5]);
+  source.pipe(
+    filter(data => data === 3)
+  ).subscribe(data => console.log(data));
 
-// Logs:
-// 3
+  // Logs:
+  // 3
   `;
 
   currentLanguage = '';

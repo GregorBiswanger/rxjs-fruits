@@ -18,8 +18,10 @@ const bananas = from(["banana",
     "banana",
     "banana"]);
 
-
+EMPTY.pipe(
+\t
+).subscribe(fruit => toConveyorBelt(fruit));
 `;
     readonly minPositionLineNumber = 12;
-    readonly positionColumnNumber = 2;
+    readonly positionColumnNumber = 1;
 }
