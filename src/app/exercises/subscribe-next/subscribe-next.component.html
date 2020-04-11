@@ -3,12 +3,12 @@
 <div *ngIf="currentLanguage === 'de'">
     <p>Jetzt ist es an der Zeit, ein paar Früchte auf das Fließband zu legen!</p>
     <p>Die from-Funktion erzeugt aus einem Array ein Observable. Dieses liefert die Daten nacheinander, wie eine foreach-Schleife.</p>
-    <p>Die <code class="help" [appTooltip]="tooltip">Subscribe</code>-Funktion erwartet eine Callback-Funktion als Parameter. Diese erhält die Daten vom Observable über die Parameter.</p>
+    <p>Die <code class="help" [appTooltip]="tooltip">subscribe</code>-Funktion erwartet eine Callback-Funktion als Parameter. Diese erhält die Daten vom Observable über die Parameter.</p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>Now it's time to put some fruits on the conveyor belt!</p>
     <p>The from function creates an observable from an array. This delivers the data one after the other, like a foreach loop.</p>
-    <p>The <code class="help" [appTooltip]="tooltip">Subscribe</code> function expects a callback function as a parameter. This receives the data from the observable via the parameters.</p>
+    <p>The <code class="help" [appTooltip]="tooltip">subscribe</code> function expects a callback function as a parameter. This receives the data from the observable via the parameters.</p>
 </div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>

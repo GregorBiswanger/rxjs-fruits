@@ -32,7 +32,7 @@ describe('The distinct level 3', () => {
   });
 
   it('should show a error info dialog on borad with failed code', () => {
-    page.getCodeEditor().type('distinct((f: string) => f.substring(6))');
+    page.getCodeEditor().type('abcdefghijklmnopqrstuvwxyz');
     page.getStartButton().click();
     cy.wait(2500);
 

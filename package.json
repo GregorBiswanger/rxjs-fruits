@@ -35,7 +35,8 @@
     "property-watch-decorator": "^1.2.5",
     "rxjs": "^6.5.5",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "typescript": "~3.7.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.0",
@@ -60,7 +61,6 @@
     "start-server-and-test": "^1.10.11",
     "ts-loader": "6.2.2",
     "ts-node": "~8.3.0",
-    "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "tslint": "~5.18.0"
   }
 }

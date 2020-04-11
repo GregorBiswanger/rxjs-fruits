@@ -22,6 +22,7 @@ import { Exercise } from './shared/exercise';
 import { TranslateService } from '@ngx-translate/core';
 import { ConsoleService } from './console.service';
 import { CheatingDetectionService } from './cheating-detection.service';
+import { TypescriptService } from './typescript.service';
 import { OnChange } from 'property-watch-decorator';
 
 @Component({
@@ -91,6 +92,7 @@ export class AppComponent implements OnInit {
     private consoleService: ConsoleService,
     private cheatingDetectionService: CheatingDetectionService,
     private confettiService: ConfettiService,
+    private typescriptService: TypescriptService,
     private monacoLoader: MonacoEditorLoaderService,
     private httpClient: HttpClient
   ) { }
@@ -384,7 +386,8 @@ export class AppComponent implements OnInit {
             tap((fruit: string) => this.addFruitToView(fruit))
           ).subscribe(this.exerciseService.assertExerciseOutput());
 
-        eval(this.code);
+        const transpiledCode = this.typescriptService.transpile(this.code);
+        eval(transpiledCode);
         conveyorBeltSubject.complete();
       } catch (error) {
         this.consoleService.showRandomErrorImage();

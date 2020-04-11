@@ -30,7 +30,7 @@ describe('The subscribe-next level 2', () => {
   });
 
   it('should show a error info dialog on borad with failed code', () => {
-    page.getCodeEditor().type('distinct((f: string) => f.substring(6))');
+    page.getCodeEditor().type('toConveyorBelt(fruit){downarrow}jklsdjflskdjflksdjf');
     page.getStartButton().click();
     cy.wait(2500);
 
