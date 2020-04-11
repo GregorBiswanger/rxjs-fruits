@@ -1,10 +1,15 @@
 {
 	"APP": {
+		"CANCELBUTTON": "Abbrechen",
+		"CONFIRMRESET": "Bist du sicher, dass du das Spiel zurücksetzen möchtest?\n\nDein gespeicherter Fortschritt geht dabei verloren und du musst das Spiel von neuem starten.",
 		"FRUITS": {
 			"APPLE": "Apfel",
 			"BANANA": "Banane",
 			"CHERRY": "Kirsche"
 		},
+		"ISNOACTIVATESUBSCRIBE": "❌ Das Fließband muss bewegt werden mit dem Aufruf der subscribe-Funktion!",
+		"ISNOFRUITSINCOMING": "❌ Das Fließband bekommt keine Früchte!",
+		"ISTOLITTLEFRUITS": "❌ Das Fließband bekommt zu wenig Früchte!",
 		"ISTOMUCHFRUITS": "❌ Mehr Früchte als im Rezept angegeben sind!",
 		"LABELLEVEL": " von ",
 		"LABELRESET": "Zurücksetzen",
@@ -31,7 +36,7 @@
 			"RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)"
 		},
 		"MERGE": {
-			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende merge und filter)"
+			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der merge-Funktion.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende merge und filter)</p>"
 		},
 		"REPEAT": {
 			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende repeat)"
@@ -46,7 +51,7 @@
 			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skip, take und map)</p>"
 		},
 		"SKIPLAST-SKIP-MERGE": {
-			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skipLast, skip, merge und map)</p>"
+			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der merge-Funktion.</p>\n<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skipLast, skip, merge und map)</p>"
 		},
 		"SUBSCRIBE": {
 			"RECIPEDESCRIPTION": "Im Source-Code haben wir ein Leeres-Observable ohne Daten zu erwarten. <p><b>Bewege das Fließband</b>, indem du das Leere-Observable conveyorBelt mit der subscribe-function abonnierst und auf den Start-Button klickst.</p>"
@@ -61,7 +66,7 @@
 			"RECIPEDESCRIPTION": "Es sollen nur die letzten drei Früchte gemixt werden. (Hinweis: Verwende takeLast)"
 		},
 		"ZIP-CONCATMAP": {
-			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n\n<p>Es soll jede Frucht abwechselnd gemixt werden. (Hinweis: Verwende zip und concatMap)</p>"
+			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der zip-Funktion.</p>\n<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Es soll jede Frucht abwechselnd gemixt werden. (Hinweis: Verwende zip und concatMap)</p>"
 		}
 	}
 }
