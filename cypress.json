@@ -5,5 +5,5 @@
   "responseTimeout": 120000,
   "defaultCommandTimeout": 10000,
   "chromeWebSecurity": false,
-  "ignoreTestFiles": "**/*.po.js"
+  "ignoreTestFiles": "**/*.po.ts"
 }

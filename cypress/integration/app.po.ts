@@ -1,6 +1,6 @@
 export class AppPage {
   navigateTo(urlPath: string) {
-    return cy.visit(urlPath).wait(500);
+    return cy.visit(urlPath, { timeout: 80000 });
   }
 
   getStartButton() {
