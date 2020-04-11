@@ -7,15 +7,21 @@ export class CheatingDetectionService {
 
   analyseCode(code: string) {
 
-    if (code.includes(`toConveyorBelt('apple')`)) {
+    if (code.includes(`toConveyorBelt('apple')`) ||
+      code.includes(`toConveyorBelt("apple")`) ||
+      code.includes('toConveyorBelt(`apple`)')) {
       return true;
     }
 
-    if (code.includes(`toConveyorBelt('banana')`)) {
+    if (code.includes(`toConveyorBelt('banana')`) ||
+    code.includes(`toConveyorBelt("banana")`) ||
+    code.includes('toConveyorBelt(`banana`)')) {
       return true;
     }
 
-    if (code.includes(`toConveyorBelt('cherry')`)) {
+    if (code.includes(`toConveyorBelt('cherry')`) ||
+    code.includes(`toConveyorBelt("cherry")`) ||
+    code.includes('toConveyorBelt(`cherry`)')) {
       return true;
     }
 
