@@ -54,7 +54,7 @@
 			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der merge-Funktion.</p>\n<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skipLast, skip, merge und map)</p>"
 		},
 		"SUBSCRIBE": {
-			"RECIPEDESCRIPTION": "Im Source-Code haben wir ein Leeres-Observable ohne Daten zu erwarten. <p><b>Bewege das Fließband</b>, indem du das Leere-Observable conveyorBelt mit der subscribe-function abonnierst und auf den Start-Button klickst.</p>"
+			"RECIPEDESCRIPTION": "Im Source-Code haben wir ein leeres Observable ohne Daten zu erwarten. <p><b>Bewege das Fließband</b>, indem du das leere Observable conveyorBelt mit der subscribe-function abonnierst und auf den Start-Button klickst.</p>"
 		},
 		"SUBSCRIBE-NEXT": {
 			"RECIPEDESCRIPTION": "Abonniere das Observable und gebe jeweils eine Frucht auf das Fließband mit der <b>toConveyorBelt</b>-Funktion.\n\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende subscribe mit next)</p>"
