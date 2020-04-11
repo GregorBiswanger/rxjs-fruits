@@ -1,0 +1,72 @@
+{
+	"APP": {
+		"CANCELBUTTON": "Cancel",
+		"CONFIRMRESET": "Are you sure you want to reset the game?\n\nYour saved progress will be lost and you will have to start the game again.",
+		"FRUITS": {
+			"APPLE": "Apple",
+			"BANANA": "Banana",
+			"CHERRY": "Cherry"
+		},
+		"ISNOACTIVATESUBSCRIBE": "❌ The conveyor belt must be moved by calling the subscribe function!",
+		"ISNOFRUITSINCOMING": "❌ The conveyor belt does not get any fruit!",
+		"ISTOLITTLEFRUITS": "❌ The conveyor belt gets too little fruit!",
+		"ISTOMUCHFRUITS": "❌ More fruits than specified in the recipe!",
+		"LABELLEVEL": " of ",
+		"LABELRESET": "Reset",
+		"NEXTBUTTON": "Next",
+		"OUTPUT": "There was an error with your code. Please use F12 to check the output in the console.",
+		"RECIPETITLE": "Recipe",
+		"STARTBUTTON": "Play"
+	},
+	"EXERCISES": {
+		"DISTINCT": {
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Each fruit should only be mixed once. (Note: use distinct)</p>"
+		},
+		"DISTINCTUNTILCHANGED": {
+			"RECIPEDESCRIPTION": "No fruit should be mixed twice in a row. (Note: use distinctUntilChanged)"
+		},
+		"EXERCISETITLE": "Exercise",
+		"FILTER": {
+			"RECIPEDESCRIPTION": "All fresh apples and bananas should be mixed. (Note: use filter)"
+		},
+		"FILTER-MAP-TAKE": {
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Add only the fruits that are specified on the recipe. (Note: use filter, map and take)</p>"
+		},
+		"MAP": {
+			"RECIPEDESCRIPTION": "All apples and bananas should be cleared of dirt. (Note: use map)"
+		},
+		"MERGE": {
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Replace the EMPTY observable with the merge function.</p>\n<p>Add only the fruits that are specified on the recipe. (Note: use merge and filter)</p>"
+		},
+		"REPEAT": {
+			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use repeat)"
+		},
+		"SKIP": {
+			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use skip)"
+		},
+		"SKIP-LAST": {
+			"RECIPEDESCRIPTION": "Add only the fruits specified on the recipe. (Note: use skipLast)"
+		},
+		"SKIP-TAKE-MAP": {
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Add only the fruits that are specified on the recipe. (Note: use skip, take and map)</p>"
+		},
+		"SKIPLAST-SKIP-MERGE": {
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Replace the EMPTY observable with the merge function.</p>\n<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Add only the fruits that are specified on the recipe. (Note: use skipLast, skip, merge and map)</p>"
+		},
+		"SUBSCRIBE": {
+			"RECIPEDESCRIPTION": "In the source code we have an empty Observable with no data to expect. <p><b>Move the conveyor belt</b>, by subscribing to the empty observable with the subscribe function and click on the start button.</p>"
+		},
+		"SUBSCRIBE-NEXT": {
+			"RECIPEDESCRIPTION": "Subscribe to the Observable and put each fruit on the conveyor belt with the <b>toConveyorBelt</b> function.\n\n<p>Add only the fruits that are specified on the recipe. (Note: use subscribe with next)</p>"
+		},
+		"TAKE": {
+			"RECIPEDESCRIPTION": "Only two bananas should be mixed. (Note: use take)"
+		},
+		"TAKE-LAST": {
+			"RECIPEDESCRIPTION": "Only the last three fruits should be mixed. (Note: use takeLast)"
+		},
+		"ZIP-CONCATMAP": {
+			"RECIPEDESCRIPTION": "<p><b>Tip:</b> Replace the EMPTY observable with the zip function.</p>\n<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Each fruit should be mixed alternately. (Note: Use zip and concatMap)</p>"
+		}
+	}
+}
