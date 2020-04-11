@@ -1,6 +1,7 @@
 {
 	"APP": {
 		"CANCELBUTTON": "Abbrechen",
+		"CONFIRMRESET": "Bist du sicher, dass du das Spiel zurücksetzen möchtest?\n\nDein gespeicherter Fortschritt geht dabei verloren und du musst das Spiel von neuem starten.",
 		"FRUITS": {
 			"APPLE": "Apfel",
 			"BANANA": "Banane",

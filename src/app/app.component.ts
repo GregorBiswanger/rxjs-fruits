@@ -1,3 +1,4 @@
+import { LocalStorageService } from './local-storage.service';
 import { OnInit } from '@angular/core';
 // tslint:disable: no-shadowed-variable deprecation no-eval
 import { ConfettiService } from './confetti.service';
@@ -44,9 +45,14 @@ export class AppComponent implements OnInit {
   @ViewChild('conveyorbelt', { static: true })
   conveyorBelt: ElementRef<HTMLObjectElement>;
 
-  @OnChange<string>(function (this: AppComponent) {
+  @OnChange<string>(function(this: AppComponent, code: string) {
     if (this.isRunActive) {
       this.cancel();
+    }
+
+    if (code) {
+      const levelTitle = this.levelService.currentLevel.title;
+      this.localStorageService.saveCode(levelTitle, code);
     }
   })
   code = '';
@@ -77,6 +83,7 @@ export class AppComponent implements OnInit {
     public translate: TranslateService,
     private router: Router,
     private exerciseService: ExerciseService,
+    private localStorageService: LocalStorageService,
     private consoleService: ConsoleService,
     private confettiService: ConfettiService,
     private monacoLoader: MonacoEditorLoaderService,
@@ -86,14 +93,23 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.translate.addLangs(['en', 'de']);
     this.translate.setDefaultLang('en');
+    this.translate.onLangChange.subscribe(() => {
+      this.localStorageService.saveLanguage(this.translate.currentLang);
+    });
 
-    const browserLang = this.translate.getBrowserLang();
-    this.translate.use(browserLang.match(/en|de/) ? browserLang : 'en');
+    const language = this.localStorageService.loadSelectedLanguage();
+
+    if (language) {
+      this.translate.use(language);
+    } else {
+      const browserLang = this.translate.getBrowserLang();
+      this.translate.use(browserLang.match(/en|de/) ? browserLang : 'en');
+    }
 
     this.exerciseService.exerciseChanged$.pipe(delay(0)).subscribe({
       next: exercise => {
         this.currentExercise = exercise;
-        this.code = exercise.code;
+        this.code = this.localStorageService.loadCode(this.levelService.currentLevel.title) || exercise.code;
         this.changeMonacoSettings();
       }
     });
@@ -207,6 +223,15 @@ export class AppComponent implements OnInit {
     }
   }
 
+  resetAllStates() {
+    this.translate.get('APP.CONFIRMRESET').subscribe((text) => {
+      if (confirm(text)) {
+        this.localStorageService.clearAll();
+        location.reload();
+      }
+    });
+  }
+
   changeLanguage(language: string) {
     this.translate.use(language);
   }
@@ -260,7 +285,8 @@ export class AppComponent implements OnInit {
           this.editor.editor.trigger('', 'undo', '');
 
           // workaround for monaco to accept the style update
-          this.code = this.currentExercise.code + ' ';
+          this.code = this.localStorageService.loadCode(this.levelService.currentLevel.title) || this.currentExercise.code;
+          this.code = this.code + ' ';
           this.changeMonacoSettings();
         }
       });

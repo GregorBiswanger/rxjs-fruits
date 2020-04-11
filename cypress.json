@@ -3,6 +3,7 @@
   "supportFile": "cypress/support/index.ts",
   "requestTimeout": 120000,
   "responseTimeout": 120000,
+  "defaultCommandTimeout": 10000,
   "chromeWebSecurity": false,
   "ignoreTestFiles": "**/*.po.js"
 }

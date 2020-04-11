@@ -1,6 +1,7 @@
 {
 	"APP": {
 		"CANCELBUTTON": "Cancel",
+		"CONFIRMRESET": "Are you sure you want to reset the game?\n\nYour saved progress will be lost and you will have to start the game again.",
 		"FRUITS": {
 			"APPLE": "Apple",
 			"BANANA": "Banana",

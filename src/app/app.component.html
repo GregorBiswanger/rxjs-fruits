@@ -21,7 +21,7 @@
               [ngClass]="levelStateStyle(level)" [title]="level.title"
               (click)="goToExercise(level)">{{ level.number }}</span>
 
-            <div id="labelReset">{{ 'APP.LABELRESET' | translate }}</div>
+            <div id="labelReset" (click)="resetAllStates()">{{ 'APP.LABELRESET' | translate }}</div>
           </div>
         </div>
       </div>

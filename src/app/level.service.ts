@@ -1,3 +1,4 @@
+import { LocalStorageService } from './local-storage.service';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import levels from './exercises/levels.json';
@@ -22,11 +23,17 @@ export class LevelService {
     return this.levels[this.currentLevelIndex].number === level.number;
   }
 
-  constructor() {
+  constructor(private localStorageService: LocalStorageService) {
+    const solvedLevels = localStorageService.loadSolvedLevels();
+
     for (let index = 0; index < this.levels.length; index++) {
       const level = this.levels[index];
       if (level.urlPath === window.location.pathname) {
         this.currentLevelIndex = index;
+      }
+
+      if (solvedLevels.includes(level.title)) {
+        this.levels[index].solved = true;
       }
     }
   }
@@ -34,6 +41,8 @@ export class LevelService {
   nextLevel(currentLevelSolved: boolean) {
     if (currentLevelSolved) {
       this.currentLevel.solved = currentLevelSolved;
+
+      this.localStorageService.saveLevelSolved(this.currentLevel.title);
     }
 
     const nextLevelIndex = this.currentLevelIndex + 1;
