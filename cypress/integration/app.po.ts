@@ -42,4 +42,8 @@ export class AppPage {
   getOutputHint() {
     return cy.get('.output');
   }
+
+  getCheatingDetectedImage() {
+    return cy.get('#cheating-detected');
+  }
 }

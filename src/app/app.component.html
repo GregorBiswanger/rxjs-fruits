@@ -58,7 +58,7 @@
           </g>
         </svg>
       </button>
-      <button id="startButton" *ngIf="!isRunActive" (click)="run()">{{ 'APP.STARTBUTTON' | translate }}
+      <button id="startButton" *ngIf="!isRunActive" (click)="run()" [disabled]="isCheatingDetected">{{ 'APP.STARTBUTTON' | translate }}
         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
           <g>
             <path transform="rotate(0,12,12) translate(0,0) scale(0.75,0.75)" fill="#FFF5F5"
@@ -96,6 +96,9 @@
       <div class="output">
         {{ 'APP.OUTPUT' | translate }}
       </div>
+    </div>
+    <div id="cheating-detected" fyLayout fxLayoutAlign="center center" *ngIf="isCheatingDetected">
+      <img src="assets/images/anti-cheat/no-no.gif" alt="no cheating please" />
     </div>
   </div>
 </div>

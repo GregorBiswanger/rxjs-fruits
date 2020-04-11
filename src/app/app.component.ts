@@ -21,6 +21,7 @@ import { Router } from '@angular/router';
 import { Exercise } from './shared/exercise';
 import { TranslateService } from '@ngx-translate/core';
 import { ConsoleService } from './console.service';
+import { CheatingDetectionService } from './cheating-detection.service';
 import { OnChange } from 'property-watch-decorator';
 
 @Component({
@@ -54,6 +55,8 @@ export class AppComponent implements OnInit {
       const levelTitle = this.levelService.currentLevel.title;
       this.localStorageService.saveCode(levelTitle, code);
     }
+
+    this.isCheatingDetected = this.cheatingDetectionService.analyseCode(code);
   })
   code = '';
 
@@ -69,6 +72,7 @@ export class AppComponent implements OnInit {
   isNoFruitsIncoming = false;
   isToLittleFruits = false;
   isNoActivateSubscribe = false;
+  isCheatingDetected = false;
   currentExercise: Exercise = {
     code: '',
     expectedFruits: [],
@@ -85,6 +89,7 @@ export class AppComponent implements OnInit {
     private exerciseService: ExerciseService,
     private localStorageService: LocalStorageService,
     private consoleService: ConsoleService,
+    private cheatingDetectionService: CheatingDetectionService,
     private confettiService: ConfettiService,
     private monacoLoader: MonacoEditorLoaderService,
     private httpClient: HttpClient
