@@ -1,6 +1,7 @@
+import { environment } from './../environments/environment';
+// tslint:disable: no-shadowed-variable deprecation no-eval
 import { LocalStorageService } from './local-storage.service';
 import { OnInit } from '@angular/core';
-// tslint:disable: no-shadowed-variable deprecation no-eval
 import { ConfettiService } from './confetti.service';
 import { LevelService, Level } from './level.service';
 import { ExerciseService } from './shared/exercise.service';
@@ -24,6 +25,7 @@ import { ConsoleService } from './console.service';
 import { CheatingDetectionService } from './cheating-detection.service';
 import { TypescriptService } from './typescript.service';
 import { OnChange } from 'property-watch-decorator';
+import { Angulartics2GoogleGlobalSiteTag } from 'angulartics2/gst';
 
 @Component({
   selector: 'app-root',
@@ -47,7 +49,7 @@ export class AppComponent implements OnInit {
   @ViewChild('conveyorbelt', { static: true })
   conveyorBelt: ElementRef<HTMLObjectElement>;
 
-  @OnChange<string>(function(this: AppComponent, code: string) {
+  @OnChange<string>(function (this: AppComponent, code: string) {
     if (this.isRunActive) {
       this.cancel();
     }
@@ -94,10 +96,15 @@ export class AppComponent implements OnInit {
     private confettiService: ConfettiService,
     private typescriptService: TypescriptService,
     private monacoLoader: MonacoEditorLoaderService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private angulartics: Angulartics2GoogleGlobalSiteTag
   ) { }
 
   ngOnInit() {
+    if (environment.production) {
+      this.angulartics.startTracking();
+    }
+
     this.translate.addLangs(['en', 'de']);
     this.translate.setDefaultLang('en');
     this.translate.onLangChange.subscribe(() => {
