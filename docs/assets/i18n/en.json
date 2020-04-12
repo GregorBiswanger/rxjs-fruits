@@ -2,6 +2,14 @@
 	"APP": {
 		"CANCELBUTTON": "Cancel",
 		"CONFIRMRESET": "Are you sure you want to reset the game?\n\nYour saved progress will be lost and you will have to start the game again.",
+		"COOKIEBANNER": {
+			"BUTTONS": {
+				"ALLOW": "Allow cookies",
+				"DENY": "Refuse cookies"
+			},
+			"MESSAGE": "By continuing your visit to this site, you accept the use of cookies by Google Analytics to make visits statistics.",
+			"PRIVACYLINK": "More information"
+		},
 		"FRUITS": {
 			"APPLE": "Apple",
 			"BANANA": "Banana",
@@ -15,6 +23,7 @@
 		"LABELRESET": "Reset",
 		"NEXTBUTTON": "Next",
 		"OUTPUT": "There was an error with your code. Please use F12 to check the output in the console.",
+		"PRIVACYBUTTON": "Privacy",
 		"RECIPETITLE": "Recipe",
 		"STARTBUTTON": "Play"
 	},
