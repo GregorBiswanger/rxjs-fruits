@@ -7,7 +7,8 @@
 				"ALLOW": "Cookies zulassen",
 				"DENY": "Cookies ablehnen"
 			},
-			"MESSAGE": "Wenn Sie Ihren Besuch auf dieser Website fortsetzen, akzeptieren Sie die Verwendung von Cookies durch Google Analytics, um Besuchsstatistiken zu erstellen."
+			"MESSAGE": "Wenn Sie Ihren Besuch auf dieser Website fortsetzen, akzeptieren Sie die Verwendung von Cookies durch Google Analytics, um Besuchsstatistiken zu erstellen.",
+			"PRIVACYLINK": "Mehr Informationen"
 		},
 		"FRUITS": {
 			"APPLE": "Apfel",
@@ -22,6 +23,7 @@
 		"LABELRESET": "Zurücksetzen",
 		"NEXTBUTTON": "Weiter",
 		"OUTPUT": "Es gab einen Fehler mit deinem Code. Bitte mit F12 die Ausgabe in der Console überprüfen.",
+		"PRIVACYBUTTON": "Datenschutz",
 		"RECIPETITLE": "Rezept",
 		"STARTBUTTON": "Start"
 	},

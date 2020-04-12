@@ -1,5 +1,5 @@
 import { environment } from './../../environments/environment';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Angulartics2GoogleGlobalSiteTag } from 'angulartics2/gst';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -12,6 +12,9 @@ import { CookieService } from 'ngx-cookie-service';
 export class CookieBannerComponent implements OnInit {
   isBannerOpen = true;
 
+  @Input()
+  showBanner = false;
+
   get expiresDate() {
     return new Date(new Date().setFullYear(new Date().getFullYear() + 99));
   }
@@ -20,7 +23,7 @@ export class CookieBannerComponent implements OnInit {
               private cookieService: CookieService) { }
 
   ngOnInit() {
-    if (this.cookieService.check('cookiesAllowed')) {
+    if (this.cookieService.check('cookiesAllowed') && !this.showBanner) {
       this.isBannerOpen = false;
 
       if (this.cookieService.get('cookiesAllowed') === 'true') {

@@ -5,17 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InitDirective } from './init.directive';
+import { InitDirective } from './game/shared/init.directive';
 import { SubscribeComponent } from './exercises/subscribe/subscribe.component';
 import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
 import { SharedModule } from './shared/shared.module';
 import { AppTranslateModule } from './app-translate.module';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { LanguagePipe } from './language.pipe';
+import { LanguagePipe } from './game/shared/language.pipe';
 
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Angulartics2Module } from 'angulartics2';
+import { GameComponent } from './game/game.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { Angulartics2Module } from 'angulartics2';
     SubscribeComponent,
     NotFoundComponent,
     CookieBannerComponent,
-    LanguagePipe
+    LanguagePipe,
+    GameComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,

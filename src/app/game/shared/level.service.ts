@@ -1,7 +1,7 @@
 import { LocalStorageService } from './local-storage.service';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import levels from './exercises/levels.json';
+import levels from './../../exercises/levels.json';
 
 @Injectable({
   providedIn: 'root'
