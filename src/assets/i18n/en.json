@@ -2,6 +2,13 @@
 	"APP": {
 		"CANCELBUTTON": "Cancel",
 		"CONFIRMRESET": "Are you sure you want to reset the game?\n\nYour saved progress will be lost and you will have to start the game again.",
+		"COOKIEBANNER": {
+			"BUTTONS": {
+				"ALLOW": "Allow cookies",
+				"DENY": "Refuse cookies"
+			},
+			"MESSAGE": "By continuing your visit to this site, you accept the use of cookies by Google Analytics to make visits statistics."
+		},
 		"FRUITS": {
 			"APPLE": "Apple",
 			"BANANA": "Banana",

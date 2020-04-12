@@ -1,0 +1,92 @@
+.dialog {
+    bottom: 1em;
+    right: 1em;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5em;
+    display: flex;
+    flex-wrap: nowrap;
+    z-index: 9999;
+    max-width: 24em;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.message {
+    margin: 2em 2em 1.5em;
+    display: block;
+}
+
+.link {
+    opacity: 0.8;
+    display: inline-block;
+    padding: 0.2em;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+link:hover {
+    text-decoration: underline;
+}
+
+link:visited {
+    color: initial;
+}
+
+a {
+    background-color: transparent;
+}
+
+.options {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    color: rgb(255, 255, 255);
+}
+
+.button-deny {
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 0.4em 0.8em;
+    text-decoration: none;
+}
+
+.button-deny:first-child {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.button-allow {
+    margin-left: 0;
+    color: rgb(0, 0, 0);
+    background-color: rgb(241, 214, 0);
+    border-color: transparent;
+    display: block;
+    padding: 0.4em 0.8em;
+}
+
+.button-allow:hover {
+    background-color: rgb(255, 252, 38);
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+.button {
+    flex: 1;
+    font-size: 0.9em;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}

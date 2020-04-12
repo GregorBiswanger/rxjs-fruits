@@ -1,4 +1,3 @@
-import { environment } from './../environments/environment';
 // tslint:disable: no-shadowed-variable deprecation no-eval
 import { LocalStorageService } from './local-storage.service';
 import { OnInit } from '@angular/core';
@@ -14,7 +13,6 @@ import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } 
 import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
 import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap as concatMapX } from 'rxjs/operators';
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
-import { timeout } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
 import * as monaco from 'monaco-editor';
@@ -25,7 +23,6 @@ import { ConsoleService } from './console.service';
 import { CheatingDetectionService } from './cheating-detection.service';
 import { TypescriptService } from './typescript.service';
 import { OnChange } from 'property-watch-decorator';
-import { Angulartics2GoogleGlobalSiteTag } from 'angulartics2/gst';
 
 @Component({
   selector: 'app-root',
@@ -96,15 +93,9 @@ export class AppComponent implements OnInit {
     private confettiService: ConfettiService,
     private typescriptService: TypescriptService,
     private monacoLoader: MonacoEditorLoaderService,
-    private httpClient: HttpClient,
-    private angulartics: Angulartics2GoogleGlobalSiteTag
-  ) { }
+    private httpClient: HttpClient) { }
 
   ngOnInit() {
-    if (environment.production) {
-      this.angulartics.startTracking();
-    }
-
     this.translate.addLangs(['en', 'de']);
     this.translate.setDefaultLang('en');
     this.translate.onLangChange.subscribe(() => {

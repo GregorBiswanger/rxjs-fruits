@@ -32,6 +32,7 @@
     "animate.css": "^3.7.2",
     "gsap": "^3.2.5",
     "monaco-editor": "^0.20.0",
+    "ngx-cookie-service": "^3.0.4",
     "ngx-highlightjs": "^4.1.0-beta",
     "property-watch-decorator": "^1.2.5",
     "rxjs": "^6.5.5",

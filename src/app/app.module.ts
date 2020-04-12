@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InitDirective } from './init.directive';
 import { SubscribeComponent } from './exercises/subscribe/subscribe.component';
+import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
 import { SharedModule } from './shared/shared.module';
 import { AppTranslateModule } from './app-translate.module';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -22,7 +23,8 @@ import { Angulartics2Module } from 'angulartics2';
     InitDirective,
     SubscribeComponent,
     NotFoundComponent,
-    LanguagePipe,
+    CookieBannerComponent,
+    LanguagePipe
   ],
   imports: [
     BrowserModule,

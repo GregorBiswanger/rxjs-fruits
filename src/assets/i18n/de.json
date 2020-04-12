@@ -2,6 +2,13 @@
 	"APP": {
 		"CANCELBUTTON": "Abbrechen",
 		"CONFIRMRESET": "Bist du sicher, dass du das Spiel zurücksetzen möchtest?\n\nDein gespeicherter Fortschritt geht dabei verloren und du musst das Spiel von neuem starten.",
+		"COOKIEBANNER": {
+			"BUTTONS": {
+				"ALLOW": "Cookies zulassen",
+				"DENY": "Cookies ablehnen"
+			},
+			"MESSAGE": "Wenn Sie Ihren Besuch auf dieser Website fortsetzen, akzeptieren Sie die Verwendung von Cookies durch Google Analytics, um Besuchsstatistiken zu erstellen."
+		},
 		"FRUITS": {
 			"APPLE": "Apfel",
 			"BANANA": "Banane",

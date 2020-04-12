@@ -1,0 +1,11 @@
+<div class="dialog" *ngIf="isBannerOpen">
+    <span class="message">
+        {{'APP.COOKIEBANNER.MESSAGE' | translate}}
+
+        <a class="link" target="_blank">Learn more</a>
+    </span>
+    <div class="options">
+        <a class="button button-deny" (click)="refuseCookies()">{{'APP.COOKIEBANNER.BUTTONS.DENY' | translate}}</a>
+        <a class="button button-allow" (click)="allowCookies()">{{'APP.COOKIEBANNER.BUTTONS.ALLOW' | translate}}</a>
+    </div>
+</div>
