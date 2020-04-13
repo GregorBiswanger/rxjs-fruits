@@ -15,8 +15,12 @@ export class CookieBannerComponent implements OnInit {
   @Input()
   showBanner = false;
 
-  get expiresDate() {
+  get expiresAllowDate() {
     return new Date(new Date().setFullYear(new Date().getFullYear() + 99));
+  }
+
+  get expiresRefuseDate() {
+    return new Date(new Date().setDate(new Date().getDate() + 1));
   }
 
   constructor(private angulartics: Angulartics2GoogleGlobalSiteTag,
@@ -34,12 +38,12 @@ export class CookieBannerComponent implements OnInit {
 
   refuseCookies() {
     this.isBannerOpen = false;
-    this.cookieService.set('cookiesAllowed', 'false', this.expiresDate);
+    this.cookieService.set('cookiesAllowed', 'false', this.expiresRefuseDate);
   }
 
   allowCookies() {
     this.isBannerOpen = false;
-    this.cookieService.set('cookiesAllowed', 'true', this.expiresDate);
+    this.cookieService.set('cookiesAllowed', 'true', this.expiresAllowDate);
     this.startTracking();
   }
 
