@@ -10,6 +10,7 @@
 			"MESSAGE": "Wenn Sie Ihren Besuch auf dieser Website fortsetzen, akzeptieren Sie die Verwendung von Cookies durch Google Analytics, um Besuchsstatistiken zu erstellen.",
 			"PRIVACYLINK": "Mehr Informationen"
 		},
+		"CREDITS": "<span>Gemacht mit ❤ von </span><a class=\"credits-link\" href=\"https://about.me/gregor.biswanger\" target=\"_blank\">Gregor Biswanger</a> • <a class=\"credits-link\" href=\"https://github.com/GregorBiswanger/rxjs-fruits\" target=\"_blank\">GitHub</a> • <a class=\"credits-link\" href=\"https://twitter.com/BFreakout\" target=\"_blank\">Twitter</a> • <span class=\"credits-text\">Grafiken von </span><a class=\"credits-link\" href=\"https://twitter.com/BeleEisenmann\" target=\"_blank\">Bele Eisenmann</a>",
 		"FRUITS": {
 			"APPLE": "Apfel",
 			"BANANA": "Banane",

@@ -72,7 +72,7 @@
                 (click)="nextExercise(true)">{{ 'APP.NEXTBUTTON' | translate }}</button>
         </div>
         <div class="credits" fxLayout="row" fxLayoutAlign="center">
-            Gemacht mit ❤ von Gregor Biswanger • Grafiken von Bele Eisenmann
+            <span [innerHTML]="'APP.CREDITS' | translate"></span>
             <span id="language">
                 <span class="toggle" (click)="toggleLanguageOptions()">{{ translate.currentLang | language }}</span>
                 <span class="tooltip" style="display: block;" *ngIf="isLanguageOptionsOpen">
