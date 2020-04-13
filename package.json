@@ -6,7 +6,7 @@
     "cy:run": "cypress run",
     "ng": "ng",
     "start": "ng serve --prod",
-    "build": "ng build --prod && echo www.rxjs-fruits.com > docs/CNAME",
+    "build": "ng build --prod --async false && echo www.rxjs-fruits.com > docs/CNAME",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
