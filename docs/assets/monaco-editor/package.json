@@ -1,37 +1,26 @@
 {
-  "_from": "monaco-editor",
-  "_id": "monaco-editor@0.20.0",
-  "_inBundle": false,
-  "_integrity": "sha512-hkvf4EtPJRMQlPC3UbMoRs0vTAFAYdzFQ+gpMb8A+9znae1c43q8Mab9iVsgTcg/4PNiLGGn3SlDIa8uvK1FIQ==",
-  "_location": "/monaco-editor",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "monaco-editor",
-    "name": "monaco-editor",
-    "escapedName": "monaco-editor",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/monaco-editor/-/monaco-editor-0.20.0.tgz",
-  "_shasum": "5d5009343a550124426cb4d965a4d27a348b4dea",
-  "_spec": "monaco-editor",
-  "_where": "C:\\Users\\Gregor\\Documents\\Web-Projects\\rxjs-fruits",
-  "author": {
-    "name": "Microsoft Corporation"
-  },
-  "bugs": {
-    "url": "https://github.com/Microsoft/monaco-editor/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
+  "name": "monaco-editor",
+  "private": false,
+  "version": "0.20.0",
   "description": "A browser based code editor",
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "scripts": {
+    "simpleserver": "gulp simpleserver",
+    "release": "gulp release",
+    "website": "gulp website",
+    "build-website": "gulp build-website",
+    "build-test": "tsc -b ./ci/tsconfig.json --preserveWatchOutput",
+    "bundle": "webpack --config ci/webpack.config.js --display-error-details --bail",
+    "test": "mocha \"out-ci/*.test.js\" --headless",
+    "ciserver": "gulp ciserver"
+  },
+  "typings": "./esm/vs/editor/editor.api.d.ts",
+  "module": "./esm/vs/editor/editor.main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/monaco-editor"
+  },
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.33",
@@ -60,26 +49,9 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "yaserver": "^0.2.0"
-  },
-  "homepage": "https://github.com/Microsoft/monaco-editor#readme",
-  "license": "MIT",
-  "module": "./esm/vs/editor/editor.main.js",
-  "name": "monaco-editor",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Microsoft/monaco-editor.git"
-  },
-  "scripts": {
-    "build-test": "tsc -b ./ci/tsconfig.json --preserveWatchOutput",
-    "build-website": "gulp build-website",
-    "bundle": "webpack --config ci/webpack.config.js --display-error-details --bail",
-    "ciserver": "gulp ciserver",
-    "release": "gulp release",
-    "simpleserver": "gulp simpleserver",
-    "test": "mocha \"out-ci/*.test.js\" --headless",
-    "website": "gulp website"
-  },
-  "typings": "./esm/vs/editor/editor.api.d.ts",
-  "version": "0.20.0"
+  }
+
+,"_resolved": "https://registry.npmjs.org/monaco-editor/-/monaco-editor-0.20.0.tgz"
+,"_integrity": "sha512-hkvf4EtPJRMQlPC3UbMoRs0vTAFAYdzFQ+gpMb8A+9znae1c43q8Mab9iVsgTcg/4PNiLGGn3SlDIa8uvK1FIQ=="
+,"_from": "monaco-editor@0.20.0"
 }

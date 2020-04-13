@@ -173,6 +173,9 @@ SOFTWARE.
 
 
 
+angulartics2/gst
+MIT
+
 animate.css
 MIT
 The MIT License (MIT)
