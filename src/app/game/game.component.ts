@@ -15,6 +15,7 @@ import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap 
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
 import { TimelineLite, Power0, Bounce } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
+import { GameOverDialogComponent } from '../game-over-dialog/game-over-dialog.component';
 import * as monaco from 'monaco-editor';
 import { Router } from '@angular/router';
 import { Exercise } from './../shared/exercise';
@@ -23,6 +24,7 @@ import { ConsoleService } from './shared/console.service';
 import { CheatingDetectionService } from './shared/cheating-detection.service';
 import { TypescriptService } from './shared/typescript.service';
 import { OnChange } from 'property-watch-decorator';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-game',
@@ -93,7 +95,8 @@ export class GameComponent implements OnInit {
     private confettiService: ConfettiService,
     private typescriptService: TypescriptService,
     private monacoLoader: MonacoEditorLoaderService,
-    private httpClient: HttpClient) { }
+    private httpClient: HttpClient,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
     this.translate.addLangs(['en', 'de']);
@@ -160,7 +163,11 @@ export class GameComponent implements OnInit {
       });
 
     this.levelService.gameOver$.subscribe({
-      next: () => this.confettiService.start()
+      next: () => {
+        this.confettiService.start();
+        const dialogRef = this.dialog.open(GameOverDialogComponent);
+        dialogRef.afterClosed().subscribe(() => this.confettiService.stop());
+      }
     });
 
     this.consoleService.showWelcomeMessage();

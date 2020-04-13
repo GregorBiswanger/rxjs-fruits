@@ -56,6 +56,7 @@
               }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "./node_modules/animate.css/animate.min.css",
               "src/styles.scss"
             ],
@@ -121,6 +122,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []

@@ -15,6 +15,14 @@
 			"BANANA": "Banane",
 			"CHERRY": "Kirsche"
 		},
+		"GAMEOVERDIALOG": {
+			"CONTRIBUTEMESSAGE": "Falls du selbst eine Idee für ein Level hast und Angular Entwickler bist, <br />\ndann findest du weitere Informationen hier: <a href=\"https://github.com/GregorBiswanger/rxjs-fruits-schematics\" target=\"_blank\">rxjs-fruits-schematics</a>",
+			"DONATEMESSAGE": "Hat dir das Spiel gefallen? Hast du RxJS besser verstehen gelernt?<br />\nDann sei so fair und gebe mir als Dankeschön ein <s>Bier</s> ahh Kaffee aus:",
+			"PAYSHAREMESSAGE": "Oder zahle mit einem teilen Button klick:",
+			"SUBTITLE": "Du hast es geschafft und bist jetzt ein reaktiver Barkeeper!",
+			"THANKYOU": "Danke an meine Frau Christine und meinen Sohn Raphael für die Unterstützung, <br />\ndamit ich die Zeit für die Entwicklung zu diesem Spiel bekommen habe. <br />\nIch liebe euch von ganzen herzen… 🥰",
+			"TITLE": "Herzlichen Glückwunsch 🎉🎉🎉"
+		},
 		"ISNOACTIVATESUBSCRIBE": "❌ Das Fließband muss bewegt werden mit dem Aufruf der subscribe-Funktion!",
 		"ISNOFRUITSINCOMING": "❌ Das Fließband bekommt keine Früchte!",
 		"ISTOLITTLEFRUITS": "❌ Das Fließband bekommt zu wenig Früchte!",

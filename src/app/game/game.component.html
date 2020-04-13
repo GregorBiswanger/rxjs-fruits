@@ -33,8 +33,7 @@
             <div class="recipe" [ngClass]="recipeAnimationStyle()"
                 *ngIf="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
                 <h3>🧾 {{ 'APP.RECIPETITLE' | translate }}</h3>
-                <p
-                    [innerHTML]="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
+                <p [innerHTML]="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
                 </p>
 
                 <ol>
