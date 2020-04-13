@@ -61,7 +61,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
-    "rxjs-fruits-schematics": "^1.0.2",
+    "rxjs-fruits-schematics": "^1.0.3",
     "start-server-and-test": "^1.10.11",
     "ts-loader": "6.2.2",
     "ts-node": "~8.3.0",
