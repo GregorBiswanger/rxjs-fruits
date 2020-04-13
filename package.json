@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "e2e:ci": "start-server-and-test start http://localhost:4200 cy:run"
+    "e2e:ci": "start-server-and-test start http://localhost:4200 cy:run",
+    "postinstall": "ngcc --properties es2015 browser module main --async false"
   },
   "private": true,
   "dependencies": {
