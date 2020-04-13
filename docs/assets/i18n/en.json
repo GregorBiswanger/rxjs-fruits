@@ -10,10 +10,19 @@
 			"MESSAGE": "By continuing your visit to this site, you accept the use of cookies by Google Analytics to make visits statistics.",
 			"PRIVACYLINK": "More information"
 		},
+		"CREDITS": "<span>Made with ❤ by </span><a class=\"credits-link\" href=\"https://about.me/gregor.biswanger\" target=\"_blank\">Gregor Biswanger</a> • <a class=\"credits-link\" href=\"https://github.com/GregorBiswanger/rxjs-fruits\" target=\"_blank\">GitHub</a> • <a class=\"credits-link\" href=\"https://twitter.com/BFreakout\" target=\"_blank\">Twitter</a> • <span class=\"credits-text\">Graphics by </span><a class=\"credits-link\" href=\"https://twitter.com/BeleEisenmann\" target=\"_blank\">Bele Eisenmann</a>",
 		"FRUITS": {
 			"APPLE": "Apple",
 			"BANANA": "Banana",
 			"CHERRY": "Cherry"
+		},
+		"GAMEOVERDIALOG": {
+			"CONTRIBUTEMESSAGE": "If you have an idea for a level and are an Angular developer, <br />\nthen you can find more information here: <a href=\"https://github.com/GregorBiswanger/rxjs-fruits-schematics\" target=\"_blank\">rxjs-fruits-schematics</a>",
+			"DONATEMESSAGE": "Did you like the game? Did you learn to understand RxJS better?<br />\nThen be so fair and give me a <s>beer</s> ahh coffee as a thank you:",
+			"PAYSHAREMESSAGE": "Or pay with a share button click:",
+			"SUBTITLE": "You did it and now you are a reactive barkeeper!",
+			"THANKYOU": "Thanks to my wife Christine and my son Raphael for their support, <br />\nso that I got the time to develop this game. <br />\nI love you... 🥰",
+			"TITLE": "Congratulations 🎉🎉🎉"
 		},
 		"ISNOACTIVATESUBSCRIBE": "❌ The conveyor belt must be moved by calling the subscribe function!",
 		"ISNOFRUITSINCOMING": "❌ The conveyor belt does not get any fruit!",
