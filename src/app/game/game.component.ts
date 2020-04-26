@@ -48,7 +48,12 @@ export class GameComponent implements OnInit {
   @ViewChild('conveyorbelt', { static: true })
   conveyorBelt: ElementRef<HTMLObjectElement>;
 
-  @OnChange<string>(function(this: GameComponent, code: string) {
+  @ViewChild('bottle', { static: true })
+  bottle: ElementRef<HTMLObjectElement>;
+
+  currentBottleHeight = 100;
+
+  @OnChange<string>(function (this: GameComponent, code: string) {
     if (this.isRunActive) {
       this.cancel();
     }
@@ -416,14 +421,29 @@ export class GameComponent implements OnInit {
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Apple.svg' });
         break;
 
+      case 'dirty-apple':
+        fruitSelector = 'fruit-apple-' + this.fruits.length;
+        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Apple.svg' });
+        break;
+
       case 'banana':
         fruitSelector = 'fruit-banana-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Banana.svg' });
         break;
 
+      case 'dirty-banana':
+        fruitSelector = 'fruit-banana-' + this.fruits.length;
+        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Banana.svg' });
+        break;
+
       case 'cherry':
         fruitSelector = 'fruit-banana-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Cherry.svg' });
+        break;
+
+      case 'dirty-cherry':
+        fruitSelector = 'fruit-banana-' + this.fruits.length;
+        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Cherry.svg' });
         break;
 
       default:
@@ -433,9 +453,8 @@ export class GameComponent implements OnInit {
 
   startFruitAnimation(fruitSelector) {
     fruitSelector = '#' + fruitSelector;
-
-    // const width = this.conveyorBelt.nativeElement.contentDocument.querySelectorAll('#conveyor-belt')[0].getBBox().width;
     const width = this.conveyorBelt.nativeElement.offsetTop - (this.conveyorBelt.nativeElement.offsetHeight / 100) * 70;
+    // const width = this.conveyorBelt.nativeElement.contentDocument.querySelectorAll('#conveyor-belt')[0].getBBox().width;
 
     const timeline = new TimelineLite();
     timeline
@@ -443,6 +462,17 @@ export class GameComponent implements OnInit {
       .to(fruitSelector, 3, { x: '18.5vw', ease: Power0.easeNone })
       .to(fruitSelector, 2, { y: '40vw', ease: Bounce.easeOut })
       .to(fruitSelector, 1, { x: 0, y: 0, visibility: 'hidden' });
+
+    timeline.eventCallback('onComplete', () => {
+      const fullSide = this.bottle.nativeElement.contentDocument.getElementById('full');
+      fullSide.style.fill = '#FF0000';
+
+      const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
+      this.currentBottleHeight = this.currentBottleHeight - (100 / this.fruits.length);
+
+      const timeline = new TimelineLite();
+      timeline.to(bottle, 1, { attr: { height: this.currentBottleHeight + '%' } });
+    });
   }
 
   startConveyorBeltAnimation() {
@@ -473,6 +503,14 @@ export class GameComponent implements OnInit {
     this.conveyorBeltAnimationTimeline?.pause();
   }
 
+  resetBottleHeight() {
+    this.currentBottleHeight = 100;
+    const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
+
+    const timeline = new TimelineLite();
+    timeline.to(bottle, 0, { attr: { height: '100%' } });
+  }
+
   nextExercise(currentLevelSolved: boolean) {
     this.resetCurrentState();
     this.levelService.nextLevel(currentLevelSolved);
@@ -495,6 +533,7 @@ export class GameComponent implements OnInit {
     this.fruits = [];
     this.isRunActive = false;
     this.stopConveyorBeltAnimation();
+    this.resetBottleHeight();
   }
 
   resetCurrentState() {
@@ -508,6 +547,7 @@ export class GameComponent implements OnInit {
     this.isErrorInConsole = false;
     this.isRunActive = false;
     this.stopConveyorBeltAnimation();
+    this.resetBottleHeight();
   }
 }
 

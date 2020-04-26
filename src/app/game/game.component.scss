@@ -38,7 +38,18 @@ ngx-monaco-editor {
     position: absolute;
 }
 
+#bottle {
+    height: 10vw;
+    left: 18vw;
+    top: 80%;
+}
+
 img[src="assets/Fruit-Apple.svg"] {
+    width: 10%;
+    top: 5vh;
+}
+
+img[src="assets/Fruit-dirty-Apple.svg"] {
     width: 10%;
     top: 5vh;
 }
@@ -48,7 +59,17 @@ img[src="assets/Fruit-Cherry.svg"] {
     top: 4.5vh;
 }
 
+img[src="assets/Fruit-dirty-Cherry.svg"] {
+    width: 5%;
+    top: 4.5vh;
+}
+
 img[src="assets/Fruit-Banana.svg"] {
+    width: 8%;
+    top: 2.8vh;
+}
+
+img[src="assets/Fruit-dirty-Banana.svg"] {
     width: 8%;
     top: 2.8vh;
 }
