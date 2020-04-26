@@ -1,3 +1,4 @@
+import { ColorMixerService } from './shared/color-mixer.service';
 // tslint:disable: no-shadowed-variable deprecation no-eval
 import { LocalStorageService } from './shared/local-storage.service';
 import { OnInit } from '@angular/core';
@@ -52,6 +53,7 @@ export class GameComponent implements OnInit {
   bottle: ElementRef<HTMLObjectElement>;
 
   currentBottleHeight = 100;
+  lastFruitColor = '';
 
   @OnChange<string>(function (this: GameComponent, code: string) {
     if (this.isRunActive) {
@@ -99,6 +101,7 @@ export class GameComponent implements OnInit {
     private cheatingDetectionService: CheatingDetectionService,
     private confettiService: ConfettiService,
     private typescriptService: TypescriptService,
+    private colorMixerService: ColorMixerService,
     private monacoLoader: MonacoEditorLoaderService,
     private httpClient: HttpClient,
     private dialog: MatDialog) { }
@@ -422,7 +425,7 @@ export class GameComponent implements OnInit {
         break;
 
       case 'dirty-apple':
-        fruitSelector = 'fruit-apple-' + this.fruits.length;
+        fruitSelector = 'fruit-dirty-apple-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Apple.svg' });
         break;
 
@@ -432,17 +435,17 @@ export class GameComponent implements OnInit {
         break;
 
       case 'dirty-banana':
-        fruitSelector = 'fruit-banana-' + this.fruits.length;
+        fruitSelector = 'fruit-dirty-banana-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Banana.svg' });
         break;
 
       case 'cherry':
-        fruitSelector = 'fruit-banana-' + this.fruits.length;
+        fruitSelector = 'fruit-cherry-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Cherry.svg' });
         break;
 
       case 'dirty-cherry':
-        fruitSelector = 'fruit-banana-' + this.fruits.length;
+        fruitSelector = 'fruit-dirty-cherry-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Cherry.svg' });
         break;
 
@@ -464,8 +467,36 @@ export class GameComponent implements OnInit {
       .to(fruitSelector, 1, { x: 0, y: 0, visibility: 'hidden' });
 
     timeline.eventCallback('onComplete', () => {
+      let fruitColor = '';
+
+      if (fruitSelector.includes('dirty')) {
+        fruitColor = '#814f00';
+      } else if (fruitSelector.includes('apple')) {
+        fruitColor = '#F8C301';
+      } else if (fruitSelector.includes('banana')) {
+        fruitColor = '#FDD3A3';
+      } else if (fruitSelector.includes('cherry')) {
+        fruitColor = '#E83B57';
+      }
+
+      let newFruitColor = '';
+
+      if (this.lastFruitColor) {
+        newFruitColor = this.colorMixerService.mix(fruitColor, this.lastFruitColor);
+        this.lastFruitColor = newFruitColor;
+      } else {
+        this.lastFruitColor = fruitColor;
+      }
+
       const fullSide = this.bottle.nativeElement.contentDocument.getElementById('full');
-      fullSide.style.fill = '#FF0000';
+      fullSide.style.fill = newFruitColor || fruitColor;
+
+      const blows = this.bottle.nativeElement.contentDocument.getElementsByClassName('st2');
+
+      Array.from(blows).forEach(blow => {
+        // tslint:disable-next-line: no-string-literal
+        blow['style'].fill = newFruitColor || fruitColor;
+      });
 
       const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
       this.currentBottleHeight = this.currentBottleHeight - (100 / this.fruits.length);
@@ -532,6 +563,7 @@ export class GameComponent implements OnInit {
   cancel() {
     this.fruits = [];
     this.isRunActive = false;
+    this.lastFruitColor = '';
     this.stopConveyorBeltAnimation();
     this.resetBottleHeight();
   }
@@ -546,6 +578,7 @@ export class GameComponent implements OnInit {
     this.isNextExerciseAviable = false;
     this.isErrorInConsole = false;
     this.isRunActive = false;
+    this.lastFruitColor = '';
     this.stopConveyorBeltAnimation();
     this.resetBottleHeight();
   }
