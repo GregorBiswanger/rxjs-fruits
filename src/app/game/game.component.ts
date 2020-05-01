@@ -429,6 +429,11 @@ export class GameComponent implements OnInit {
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Apple.svg' });
         break;
 
+      case 'old-apple':
+        fruitSelector = 'fruit-dirty-apple-' + this.fruits.length;
+        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-old-Apple.svg' });
+        break;
+
       case 'banana':
         fruitSelector = 'fruit-banana-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Banana.svg' });
@@ -439,6 +444,11 @@ export class GameComponent implements OnInit {
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Banana.svg' });
         break;
 
+      case 'old-banana':
+        fruitSelector = 'fruit-dirty-banana-' + this.fruits.length;
+        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-old-Banana.svg' });
+        break;
+
       case 'cherry':
         fruitSelector = 'fruit-cherry-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-Cherry.svg' });
@@ -447,6 +457,11 @@ export class GameComponent implements OnInit {
       case 'dirty-cherry':
         fruitSelector = 'fruit-dirty-cherry-' + this.fruits.length;
         this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-dirty-Cherry.svg' });
+        break;
+
+      case 'old-cherry':
+        fruitSelector = 'fruit-dirty-cherry-' + this.fruits.length;
+        this.fruits.push({ id: fruitSelector, url: 'assets/Fruit-old-Cherry.svg' });
         break;
 
       default:
@@ -471,6 +486,8 @@ export class GameComponent implements OnInit {
 
       if (fruitSelector.includes('dirty')) {
         fruitColor = '#814f00';
+      } else if (fruitSelector.includes('old')) {
+        fruitColor = '#088A08';
       } else if (fruitSelector.includes('apple')) {
         fruitColor = '#F8C301';
       } else if (fruitSelector.includes('banana')) {
