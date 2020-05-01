@@ -478,7 +478,7 @@ export class GameComponent implements OnInit {
     timeline
       .to(fruitSelector, 0, { y: width })
       .to(fruitSelector, 3, { x: '18.5vw', ease: Power0.easeNone })
-      .to(fruitSelector, 2, { y: '40vw', ease: Bounce.easeOut })
+      .to(fruitSelector, 2, { y: '28vw', ease: Bounce.easeOut })
       .to(fruitSelector, 1, { x: 0, y: 0, visibility: 'hidden' });
 
     timeline.eventCallback('onComplete', () => {
