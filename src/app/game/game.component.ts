@@ -52,6 +52,12 @@ export class GameComponent implements OnInit {
   @ViewChild('bottle', { static: true })
   bottle: ElementRef<HTMLObjectElement>;
 
+  @ViewChild('funnel', { static: true })
+  funnel: ElementRef<HTMLObjectElement>;
+
+  @ViewChild('liquid', { static: true })
+  liquid: ElementRef<HTMLObjectElement>;
+
   currentBottleHeight = 100;
   lastFruitColor = '';
 
@@ -471,14 +477,18 @@ export class GameComponent implements OnInit {
 
   startFruitAnimation(fruitSelector) {
     fruitSelector = '#' + fruitSelector;
-    const width = this.conveyorBelt.nativeElement.offsetTop - (this.conveyorBelt.nativeElement.offsetHeight / 100) * 70;
+    // const conveyorBeltTop = this.conveyorBelt.nativeElement.offsetTop - (this.conveyorBelt.nativeElement.offsetHeight / 100) * 70;
+    const conveyorBeltTop = this.conveyorBelt.nativeElement.offsetTop - this.conveyorBelt.nativeElement.offsetHeight;
     // const width = this.conveyorBelt.nativeElement.contentDocument.querySelectorAll('#conveyor-belt')[0].getBBox().width;
+
+    const funnelTopPosition = this.funnel.nativeElement.offsetTop;
+    const liquidLeftPosition = this.liquid.nativeElement.offsetLeft;
 
     const timeline = new TimelineLite();
     timeline
-      .to(fruitSelector, 0, { y: width })
-      .to(fruitSelector, 3, { x: '18.5vw', ease: Power0.easeNone })
-      .to(fruitSelector, 2, { y: '28vw', ease: Bounce.easeOut })
+      .to(fruitSelector, 0, { y: conveyorBeltTop })
+      .to(fruitSelector, 3, { x: liquidLeftPosition, ease: Power0.easeNone })
+      .to(fruitSelector, 1, { y: funnelTopPosition, ease: Bounce.easeOut })
       .to(fruitSelector, 1, { x: 0, y: 0, visibility: 'hidden' });
 
     timeline.eventCallback('onComplete', () => {
@@ -518,8 +528,44 @@ export class GameComponent implements OnInit {
       const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
       this.currentBottleHeight = this.currentBottleHeight - (100 / this.fruits.length);
 
+      if (this.currentBottleHeight < 0) {
+        this.currentBottleHeight = 0;
+      }
+
+      const liquid = this.liquid.nativeElement.contentDocument.getElementById('line');
+      liquid.style.stroke = fruitColor;
+
+      const bottleOpening = this.bottle.nativeElement.contentDocument.getElementById('opening');
+
+      // console.log(smoothDelivery.getBoundingClientRect());
+
+      // .to('#liquid', 0, {
+      //   x: this.funnel.nativeElement.offsetLeft + (this.funnel.nativeElement.offsetWidth / 100) * 50,
+      //   y: this.funnel.nativeElement.offsetTop,
+      // })
+
       const timeline = new TimelineLite();
-      timeline.to(bottle, 1, { attr: { height: this.currentBottleHeight + '%' } });
+      timeline
+        .to(liquid, 1, {
+          duration: 0.5,
+          attr: {
+            y2: 600
+          }
+        })
+        .to(bottle, 1, { attr: { height: this.currentBottleHeight + '%' } })
+        .to(liquid, 1, {
+          duration: 0.5,
+          attr: {
+            y1: 600
+          }
+        })
+        .to(liquid, 0, {
+          attr: {
+            y1: 50,
+            y2: 50
+          }
+        });
+
     });
   }
 

@@ -20,9 +20,37 @@ ngx-monaco-editor {
     width: 50vw;
     display: inline-block;
     position: relative;
+
+    &__elements {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
 }
 
-.board > :first-child ~ * {
+.element {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--bottle {
+        bottom: 0;
+        height: 10vw;
+    }
+
+    &--funnel {
+        top: 50%;
+        height: 8vw;
+    }
+
+    &--liquid {
+        top: 50%;
+    }
+}
+
+img[src^="assets/Fruit"] {
     position: absolute;
     top: 0;
     right: 0;
@@ -38,21 +66,9 @@ ngx-monaco-editor {
     position: absolute;
 }
 
-#bottle {
-    height: 10vw;
-    left: 18vw;
-    top: 80%;
-}
-
-#funnel {
-    height: 8vw;
-    left: 15.3vw;
-    top: 50%;
-}
-
 img[src="assets/Fruit-Apple.svg"] {
     width: 10%;
-    top: 5vh;
+    top: 2vh;
 }
 
 img[src="assets/Fruit-dirty-Apple.svg"] {
@@ -67,7 +83,7 @@ img[src="assets/Fruit-old-Apple.svg"] {
 
 img[src="assets/Fruit-Cherry.svg"] {
     width: 5%;
-    top: 4.5vh;
+    top: 6vh;
 }
 
 img[src="assets/Fruit-dirty-Cherry.svg"] {

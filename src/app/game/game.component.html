@@ -33,7 +33,8 @@
             <div class="recipe" [ngClass]="recipeAnimationStyle()"
                 *ngIf="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
                 <h3>🧾 {{ 'APP.RECIPETITLE' | translate }}</h3>
-                <p [innerHTML]="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
+                <p
+                    [innerHTML]="'EXERCISES.' + levelService.currentLevel.title + '.RECIPEDESCRIPTION' | uppercase | translate">
                 </p>
 
                 <ol>
@@ -88,16 +89,18 @@
         </div>
     </div>
     <div class="board" fxFlex="40%">
-        <img [id]="imageSource.id" *ngFor="let imageSource of fruits" [src]="imageSource.url"
-            (appInit)="startFruitAnimation(imageSource.id)">
+        <div class="board__elements">
+            <img [id]="imageSource.id" *ngFor="let imageSource of fruits" [src]="imageSource.url"
+                (appInit)="startFruitAnimation(imageSource.id)">
 
-        <!-- <img style="width: 10%; top: 5vh;" src="assets/Fruit-Apple.svg">
-        <img style="width: 5%; top: 4.5vh;" src="assets/Fruit-Cherry.svg">
-        <img style="width: 10%; top: 2.8vh;" src="assets/Fruit-Banana.svg"> -->
-
-        <object #conveyorbelt id="conveyor-belt" data="assets/conveyor-belt.svg" type="image/svg+xml"></object>
-        <object #funnel id="funnel" data="assets/funnel.svg" type="image/svg+xml"></object>
-        <object #bottle id="bottle" data="assets/bottle.svg" type="image/svg+xml"></object>
+            <object #conveyorbelt id="conveyor-belt" data="assets/conveyor-belt.svg" type="image/svg+xml"></object>
+            <object class="element element--liquid" #liquid id="liquid" data="assets/liquid.svg"
+                type="image/svg+xml"></object>
+            <object class="element element--funnel" #funnel id="funnel" data="assets/funnel.svg"
+                type="image/svg+xml"></object>
+            <object class="element element--bottle" #bottle id="bottle" data="assets/bottle.svg"
+                type="image/svg+xml"></object>
+        </div>
 
         <div fyLayout fxLayoutAlign="center center" *ngIf="isErrorInConsole">
             <div class="output">
