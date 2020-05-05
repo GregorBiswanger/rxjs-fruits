@@ -14,7 +14,7 @@ import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } 
 import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
 import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap as concatMapX } from 'rxjs/operators';
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
-import { TimelineLite, Power0, Bounce } from 'gsap';
+import { TimelineLite, Power0, Bounce, gsap } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
 import { GameOverDialogComponent } from '../game-over-dialog/game-over-dialog.component';
 import * as monaco from 'monaco-editor';
@@ -477,96 +477,97 @@ export class GameComponent implements OnInit {
 
   startFruitAnimation(fruitSelector) {
     fruitSelector = '#' + fruitSelector;
-    // const conveyorBeltTop = this.conveyorBelt.nativeElement.offsetTop - (this.conveyorBelt.nativeElement.offsetHeight / 100) * 70;
-    const conveyorBeltTop = this.conveyorBelt.nativeElement.offsetTop - this.conveyorBelt.nativeElement.offsetHeight;
-    // const width = this.conveyorBelt.nativeElement.contentDocument.querySelectorAll('#conveyor-belt')[0].getBBox().width;
 
+    const conveyorBeltTop = this.conveyorBelt.nativeElement.offsetTop - this.conveyorBelt.nativeElement.offsetHeight;
     const funnelTopPosition = this.funnel.nativeElement.offsetTop;
     const liquidLeftPosition = this.liquid.nativeElement.offsetLeft;
 
-    const timeline = new TimelineLite();
-    timeline
-      .to(fruitSelector, 0, { y: conveyorBeltTop })
-      .to(fruitSelector, 3, { x: liquidLeftPosition, ease: Power0.easeNone })
-      .to(fruitSelector, 1, { y: funnelTopPosition, ease: Bounce.easeOut })
-      .to(fruitSelector, 1, { x: 0, y: 0, visibility: 'hidden' });
+    const timeline = gsap.timeline();
+    timeline.to(fruitSelector, 0, { y: conveyorBeltTop });
+    timeline.to(fruitSelector, { duration: 3, x: liquidLeftPosition, ease: 'none' });
+    timeline.to(fruitSelector, { duration: 1, y: funnelTopPosition, ease: 'bounce.out' });
+    timeline.to(fruitSelector, { x: 0, y: 0, visibility: 'hidden' });
 
-    timeline.eventCallback('onComplete', () => {
-      let fruitColor = '';
+    this.animateLiquid(fruitSelector, timeline);
+  }
 
-      if (fruitSelector.includes('dirty')) {
-        fruitColor = '#814f00';
-      } else if (fruitSelector.includes('old')) {
-        fruitColor = '#088A08';
-      } else if (fruitSelector.includes('apple')) {
-        fruitColor = '#F8C301';
-      } else if (fruitSelector.includes('banana')) {
-        fruitColor = '#FDD3A3';
-      } else if (fruitSelector.includes('cherry')) {
-        fruitColor = '#E83B57';
-      }
+  animateLiquid(fruitSelector, timeline: gsap.core.Timeline) {
+    const liquid = this.liquid.nativeElement.contentDocument.getElementById('line');
+    const fullSide = this.bottle.nativeElement.contentDocument.getElementById('full');
+    const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
 
-      let newFruitColor = '';
+    this.distanceBetweenLiquidBottle(this.funnel.nativeElement, this.bottle.nativeElement);
 
-      if (this.lastFruitColor) {
-        newFruitColor = this.colorMixerService.mix(fruitColor, this.lastFruitColor);
-        this.lastFruitColor = newFruitColor;
-      } else {
-        this.lastFruitColor = fruitColor;
-      }
-
-      const fullSide = this.bottle.nativeElement.contentDocument.getElementById('full');
-      fullSide.style.fill = newFruitColor || fruitColor;
-
+    timeline.to(liquid, { duration: 2, attr: { y2: 600 }, stroke: this.getCurrentFruitColor(fruitSelector) });
+    timeline.to(fullSide, { fill: this.getMixedFruitColor(fruitSelector) }, '-=2').call(() => {
       const blows = this.bottle.nativeElement.contentDocument.getElementsByClassName('st2');
 
       Array.from(blows).forEach(blow => {
         // tslint:disable-next-line: no-string-literal
-        blow['style'].fill = newFruitColor || fruitColor;
+        blow['style'].fill = fullSide.style.fill;
       });
-
-      const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
-      this.currentBottleHeight = this.currentBottleHeight - (100 / this.fruits.length);
-
-      if (this.currentBottleHeight < 0) {
-        this.currentBottleHeight = 0;
-      }
-
-      const liquid = this.liquid.nativeElement.contentDocument.getElementById('line');
-      liquid.style.stroke = fruitColor;
-
-      const bottleOpening = this.bottle.nativeElement.contentDocument.getElementById('opening');
-
-      // console.log(smoothDelivery.getBoundingClientRect());
-
-      // .to('#liquid', 0, {
-      //   x: this.funnel.nativeElement.offsetLeft + (this.funnel.nativeElement.offsetWidth / 100) * 50,
-      //   y: this.funnel.nativeElement.offsetTop,
-      // })
-
-      const timeline = new TimelineLite();
-      timeline
-        .to(liquid, 1, {
-          duration: 0.5,
-          attr: {
-            y2: 600
-          }
-        })
-        .to(bottle, 1, { attr: { height: this.currentBottleHeight + '%' } })
-        .to(liquid, 1, {
-          duration: 0.5,
-          attr: {
-            y1: 600
-          }
-        })
-        .to(liquid, 0, {
-          attr: {
-            y1: 50,
-            y2: 50
-          }
-        });
-
     });
+    timeline.to(bottle, { duration: 2, attr: { height: this.calcCurrentBottleHeight() } }, '-=1');
+    timeline.to(liquid, { duration: 0, attr: { y1: 600 } });
+    timeline.to(liquid, 0, { attr: { y1: 10, y2: 10 } });
+  }
+
+  distanceBetweenLiquidBottle(liquid: HTMLElement, bottle: HTMLElement) {
+    // get the bounding rectangles
+    const div1rect = liquid.getBoundingClientRect();
+    const div2rect = bottle.getBoundingClientRect();
+
+    // get div1's center point
+    const div1x = div1rect.left + div2rect.width / 2;
+    const div1y = div1rect.top + div1rect.height / 2;
+
+    // get div2's center point
+    const div2x = div2rect.left + div2rect.width / 2;
+    const div2y = div2rect.top + div2rect.height / 2;
+
+    // calculate the distance using the Pythagorean Theorem (a^2 + b^2 = c^2)
+    const distanceSquared = Math.pow(div1x - div2x, 2) + Math.pow(div1y - div2y, 2);
+    const distance = Math.sqrt(distanceSquared);
+    console.log(distance);
+  }
+
+  getMixedFruitColor(fruitSelector) {
+    const fruitColor = this.getCurrentFruitColor(fruitSelector);
+
+    let newFruitColor = '';
+
+    if (this.lastFruitColor) {
+      newFruitColor = this.colorMixerService.mix(fruitColor, this.lastFruitColor);
+      this.lastFruitColor = newFruitColor;
+    } else {
+      this.lastFruitColor = fruitColor;
+    }
+
+    return newFruitColor || fruitColor;
+  }
+
+  getCurrentFruitColor(fruitSelector) {
+    if (fruitSelector.includes('dirty')) {
+      return '#814f00';
+    } else if (fruitSelector.includes('old')) {
+      return '#088A08';
+    } else if (fruitSelector.includes('apple')) {
+      return '#F8C301';
+    } else if (fruitSelector.includes('banana')) {
+      return '#FDD3A3';
+    } else if (fruitSelector.includes('cherry')) {
+      return '#E83B57';
+    }
+  }
+
+  calcCurrentBottleHeight() {
+    this.currentBottleHeight = this.currentBottleHeight - (100 / this.currentExercise.expectedFruits.length);
+
+    if (this.currentBottleHeight < 0) {
+      this.currentBottleHeight = 0;
+    }
+
+    return this.currentBottleHeight + '%';
   }
 
   startConveyorBeltAnimation() {
