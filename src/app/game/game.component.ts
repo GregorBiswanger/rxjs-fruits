@@ -1,4 +1,5 @@
 // tslint:disable: no-shadowed-variable deprecation no-eval no-string-literal
+import { SoundService } from './shared/sound.service';
 import { ColorMixerService } from './shared/color-mixer.service';
 import { LocalStorageService } from './shared/local-storage.service';
 import { OnInit } from '@angular/core';
@@ -109,6 +110,7 @@ export class GameComponent implements OnInit {
     private confettiService: ConfettiService,
     private typescriptService: TypescriptService,
     private colorMixerService: ColorMixerService,
+    private soundService: SoundService,
     private monacoLoader: MonacoEditorLoaderService,
     private httpClient: HttpClient,
     private dialog: MatDialog) { }
@@ -485,7 +487,8 @@ export class GameComponent implements OnInit {
 
     const timeline = gsap.timeline();
     timeline.to(fruitSelector, 0, { y: conveyorBeltTop });
-    timeline.to(fruitSelector, { duration: 3, x: liquidLeftPosition, ease: 'none' });
+    timeline.to(fruitSelector, { duration: 3, x: liquidLeftPosition, ease: 'none' })
+      .call(() => this.soundService.playSmashFruitSound());
     timeline.to(fruitSelector, { duration: 1, y: funnelTopPosition, ease: 'bounce.out' });
     timeline.to(fruitSelector, { x: 0, y: 0, visibility: 'hidden' }).call(() => {
       if (this.isRunActive) {
@@ -502,7 +505,8 @@ export class GameComponent implements OnInit {
 
     this.distanceBetweenLiquidBottle(this.funnel.nativeElement, this.bottle.nativeElement);
 
-    this.liquidAnimationTimeline.to(liquid, { duration: 1, attr: { y2: 600 }, stroke: this.getCurrentFruitColor(fruitSelector) }, '-=0.8');
+    this.liquidAnimationTimeline.to(liquid, { duration: 1, attr: { y2: 600 }, stroke: this.getCurrentFruitColor(fruitSelector) }, '-=0.8')
+      .call(() => this.soundService.playPouringLiquidSound());
     this.liquidAnimationTimeline.to(fullSide, { duration: 1, fill: this.getMixedFruitColor(fruitSelector) }, '-=0.5').call(() => {
       const blows = this.bottle.nativeElement.contentDocument.getElementsByClassName('st2');
       Array.from(blows).forEach(blow => blow['style'].fill = fullSide.style.fill);
@@ -592,11 +596,14 @@ export class GameComponent implements OnInit {
     } else {
       this.conveyorBeltAnimationTimeline.play();
     }
+
+    this.soundService.playConveyorBeltSound();
   }
 
   stopAllAnimations() {
     this.conveyorBeltAnimationTimeline?.pause();
     this.liquidAnimationTimeline.pause();
+    this.soundService.stopAll();
   }
 
   resetBottleHeight() {
