@@ -98,6 +98,7 @@ export class GameComponent implements OnInit {
     positionColumnNumber: 0
   };
   isErrorInConsole = false;
+  soundIconPath = '';
 
   constructor(
     public levelService: LevelService,
@@ -116,6 +117,11 @@ export class GameComponent implements OnInit {
     private dialog: MatDialog) { }
 
   ngOnInit() {
+    const soundSettings = this.localStorageService.loadSoundSettings();
+    this.soundIconPath = soundSettings.imagePath;
+    this.soundService.volume = soundSettings.volume;
+    this.soundService.isMute = soundSettings.isMute;
+
     this.translate.addLangs(['en', 'de']);
     this.translate.setDefaultLang('en');
     this.translate.onLangChange.subscribe(() => {
@@ -653,6 +659,13 @@ export class GameComponent implements OnInit {
     this.lastFruitColor = '';
     this.stopAllAnimations();
     this.resetBottleHeight();
+  }
+
+  changeSound() {
+    const soundSettings = this.soundService.changeSound(this.isRunActive);
+    this.localStorageService.saveSoundSettings(soundSettings);
+
+    this.soundIconPath = soundSettings.imagePath;
   }
 }
 

@@ -1,3 +1,4 @@
+import { SoundSettings } from './sound.service';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -44,6 +45,22 @@ export class LocalStorageService {
     }
 
     return '';
+  }
+
+  saveSoundSettings(soundSettings: SoundSettings) {
+    localStorage.setItem('sound', JSON.stringify(soundSettings));
+  }
+
+  loadSoundSettings(): SoundSettings {
+    if ('sound' in localStorage) {
+      return JSON.parse(localStorage.getItem('sound'));
+    }
+
+    return {
+      imagePath: '/assets/images/sound-low.png',
+      volume: 0.1,
+      isMute: false
+    };
   }
 
   clearAll() {
