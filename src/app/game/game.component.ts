@@ -64,7 +64,7 @@ export class GameComponent implements OnInit {
 
   currentBottleHeight = 100;
   lastFruitColor = '';
-  liquidAnimationTimeline: gsap.core.Timeline = gsap.timeline();
+  liquidAnimationTimeline: GSAPTimeline = gsap.timeline();
 
   @OnChange<string>(function (this: GameComponent, code: string) {
     if (this.isRunActive) {
@@ -80,7 +80,7 @@ export class GameComponent implements OnInit {
   })
   code = '';
 
-  conveyorBeltAnimationTimeline: TimelineLite;
+  conveyorBeltAnimationTimeline: GSAPTimeline;
   isRunActive = false;
   isLevelsWrapperOpen = false;
   isLanguageOptionsOpen = false;
@@ -512,11 +512,13 @@ export class GameComponent implements OnInit {
     const fullSide = this.bottle.nativeElement.contentDocument.getElementById('full');
     const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
 
-    // this.distanceBetweenLiquidBottle(this.funnel.nativeElement, this.bottle.nativeElement);
     const halfBoardHeight = (this.board.nativeElement.offsetHeight / 2);
     const boardHeight = halfBoardHeight - ((halfBoardHeight / 100) * 10);
 
-    this.liquidAnimationTimeline.to(liquid, { duration: 1, attr: { y2: boardHeight }, stroke: this.getCurrentFruitColor(fruitSelector) }, '-=0.8')
+    this.liquidAnimationTimeline.to(liquid, {
+      duration: 1, attr: { y2: boardHeight },
+      stroke: this.getCurrentFruitColor(fruitSelector)
+    }, '-=0.8')
       .call(() => this.soundService.playPouringLiquidSound(this.isRunActive));
     this.liquidAnimationTimeline.to(fullSide, { duration: 1, fill: this.getMixedFruitColor(fruitSelector) }, '-=0.5').call(() => {
       const blows = this.bottle.nativeElement.contentDocument.getElementsByClassName('st2');
@@ -525,25 +527,6 @@ export class GameComponent implements OnInit {
     this.liquidAnimationTimeline.to(bottle, { duration: 1, attr: { height: this.calcCurrentBottleHeight() } }, '-=0.5');
     this.liquidAnimationTimeline.to(liquid, { duration: 0.5, attr: { y1: boardHeight } }, '-=0.5');
     this.liquidAnimationTimeline.to(liquid, { duration: 0, attr: { y1: 10, y2: 10 } });
-  }
-
-  distanceBetweenLiquidBottle(liquid: HTMLElement, bottle: HTMLElement) {
-    // get the bounding rectangles
-    const div1rect = liquid.getBoundingClientRect();
-    const div2rect = bottle.getBoundingClientRect();
-
-    // get div1's center point
-    const div1x = div1rect.left + div2rect.width / 2;
-    const div1y = div1rect.top + div1rect.height / 2;
-
-    // get div2's center point
-    const div2x = div2rect.left + div2rect.width / 2;
-    const div2y = div2rect.top + div2rect.height / 2;
-
-    // calculate the distance using the Pythagorean Theorem (a^2 + b^2 = c^2)
-    const distanceSquared = Math.pow(div1x - div2x, 2) + Math.pow(div1y - div2y, 2);
-    const distance = Math.sqrt(distanceSquared);
-    console.log(distance);
   }
 
   getMixedFruitColor(fruitSelector) {
@@ -591,19 +574,14 @@ export class GameComponent implements OnInit {
     );
 
     if (this.conveyorBeltAnimationTimeline === undefined) {
-      this.conveyorBeltAnimationTimeline = new TimelineLite();
-
-      this.conveyorBeltAnimationTimeline.to(
-        wheels,
-        3,
-        {
-          rotation: 360,
-          transformOrigin: 'center',
-          ease: Power0.easeNone,
-          repeat: -1
-        },
-        0
-      );
+      this.conveyorBeltAnimationTimeline = gsap.timeline();
+      this.conveyorBeltAnimationTimeline.to(wheels, {
+        duration: 3,
+        rotation: 360,
+        transformOrigin: 'center',
+        ease: 'none',
+        repeat: -1
+      }, 0);
     } else {
       this.conveyorBeltAnimationTimeline.play();
     }
@@ -614,6 +592,7 @@ export class GameComponent implements OnInit {
   stopAllAnimations() {
     this.conveyorBeltAnimationTimeline?.pause();
     this.liquidAnimationTimeline.pause();
+    this.liquidAnimationTimeline.clear();
     this.liquidAnimationTimeline.progress(0).clear();
     this.liquidAnimationTimeline.progress(1).clear();
     this.liquidAnimationTimeline.progress(2).clear();
@@ -624,9 +603,7 @@ export class GameComponent implements OnInit {
   resetBottleHeight() {
     this.currentBottleHeight = 100;
     const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
-
-    const timeline = new TimelineLite();
-    timeline.to(bottle, 0, { attr: { height: '100%' } });
+    bottle.setAttribute('height', '100%');
   }
 
   nextExercise(currentLevelSolved: boolean) {
