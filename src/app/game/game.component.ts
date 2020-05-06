@@ -47,6 +47,9 @@ export class GameComponent implements OnInit {
     fixedOverflowWidgets: true
   };
 
+  @ViewChild('board', { static: true })
+  board: ElementRef<HTMLDivElement>;
+
   @ViewChild('conveyorbelt', { static: true })
   conveyorBelt: ElementRef<HTMLObjectElement>;
 
@@ -494,7 +497,7 @@ export class GameComponent implements OnInit {
     const timeline = gsap.timeline();
     timeline.to(fruitSelector, 0, { y: conveyorBeltTop });
     timeline.to(fruitSelector, { duration: 3, x: liquidLeftPosition, ease: 'none' })
-      .call(() => this.soundService.playSmashFruitSound());
+      .call(() => this.soundService.playSmashFruitSound(this.isRunActive));
     timeline.to(fruitSelector, { duration: 1, y: funnelTopPosition, ease: 'bounce.out' });
     timeline.to(fruitSelector, { x: 0, y: 0, visibility: 'hidden' }).call(() => {
       if (this.isRunActive) {
@@ -509,16 +512,18 @@ export class GameComponent implements OnInit {
     const fullSide = this.bottle.nativeElement.contentDocument.getElementById('full');
     const bottle = this.bottle.nativeElement.contentDocument.getElementById('fill-rect');
 
-    this.distanceBetweenLiquidBottle(this.funnel.nativeElement, this.bottle.nativeElement);
+    // this.distanceBetweenLiquidBottle(this.funnel.nativeElement, this.bottle.nativeElement);
+    const halfBoardHeight = (this.board.nativeElement.offsetHeight / 2);
+    const boardHeight = halfBoardHeight - ((halfBoardHeight / 100) * 10);
 
-    this.liquidAnimationTimeline.to(liquid, { duration: 1, attr: { y2: 600 }, stroke: this.getCurrentFruitColor(fruitSelector) }, '-=0.8')
-      .call(() => this.soundService.playPouringLiquidSound());
+    this.liquidAnimationTimeline.to(liquid, { duration: 1, attr: { y2: boardHeight }, stroke: this.getCurrentFruitColor(fruitSelector) }, '-=0.8')
+      .call(() => this.soundService.playPouringLiquidSound(this.isRunActive));
     this.liquidAnimationTimeline.to(fullSide, { duration: 1, fill: this.getMixedFruitColor(fruitSelector) }, '-=0.5').call(() => {
       const blows = this.bottle.nativeElement.contentDocument.getElementsByClassName('st2');
       Array.from(blows).forEach(blow => blow['style'].fill = fullSide.style.fill);
     });
     this.liquidAnimationTimeline.to(bottle, { duration: 1, attr: { height: this.calcCurrentBottleHeight() } }, '-=0.5');
-    this.liquidAnimationTimeline.to(liquid, { duration: 0.5, attr: { y1: 600 } }, '-=0.5');
+    this.liquidAnimationTimeline.to(liquid, { duration: 0.5, attr: { y1: boardHeight } }, '-=0.5');
     this.liquidAnimationTimeline.to(liquid, { duration: 0, attr: { y1: 10, y2: 10 } });
   }
 
@@ -609,6 +614,10 @@ export class GameComponent implements OnInit {
   stopAllAnimations() {
     this.conveyorBeltAnimationTimeline?.pause();
     this.liquidAnimationTimeline.pause();
+    this.liquidAnimationTimeline.progress(0).clear();
+    this.liquidAnimationTimeline.progress(1).clear();
+    this.liquidAnimationTimeline.progress(2).clear();
+    this.liquidAnimationTimeline.progress(3).clear();
     this.soundService.stopAll();
   }
 

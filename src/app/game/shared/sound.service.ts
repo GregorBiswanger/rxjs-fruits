@@ -48,17 +48,19 @@ export class SoundService {
     loopIt(this);
   }
 
-  playSmashFruitSound() {
+  playSmashFruitSound(isRunActive: boolean) {
     if (this.isMute) {
       return;
     }
 
-    this.smashFruitSound.volume = this.volume;
-    this.smashFruitSound.src = '/assets/sounds/smash-fruit.mp3';
-    this.smashFruitSound.play();
+    if (isRunActive) {
+      this.smashFruitSound.volume = this.volume;
+      this.smashFruitSound.src = '/assets/sounds/smash-fruit.mp3';
+      this.smashFruitSound.play();
+    }
   }
 
-  playPouringLiquidSound() {
+  playPouringLiquidSound(isRunActive: boolean) {
     if (this.isMute) {
       return;
     }

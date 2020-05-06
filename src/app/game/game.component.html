@@ -88,7 +88,7 @@
             </span>
         </div>
     </div>
-    <div class="board" fxFlex="40%">
+    <div #board class="board" fxFlex="40%">
         <div class="board__elements">
             <img class="sound-icon" [src]="soundIconPath" alt="sound-icon" (click)="changeSound()">
             <img [id]="imageSource.id" *ngFor="let imageSource of fruits" [src]="imageSource.url"

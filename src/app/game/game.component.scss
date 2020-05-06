@@ -20,6 +20,7 @@ ngx-monaco-editor {
     width: 50vw;
     display: inline-block;
     position: relative;
+    overflow: hidden;
 
     &__elements {
         position: relative;
@@ -47,6 +48,7 @@ ngx-monaco-editor {
 
     &--liquid {
         top: 50%;
+        height: 50%;
     }
 }
 
