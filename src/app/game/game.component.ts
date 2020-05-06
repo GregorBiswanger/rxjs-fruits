@@ -515,9 +515,9 @@ export class GameComponent implements OnInit {
     const halfBoardHeight = (this.board.nativeElement.offsetHeight / 2);
     const boardHeight = halfBoardHeight - ((halfBoardHeight / 100) * 10);
 
+    this.liquidAnimationTimeline.set(liquid, { stroke: this.getCurrentFruitColor(fruitSelector) });
     this.liquidAnimationTimeline.to(liquid, {
-      duration: 1, attr: { y2: boardHeight },
-      stroke: this.getCurrentFruitColor(fruitSelector)
+      duration: 1, attr: { y2: boardHeight }
     }, '-=0.8')
       .call(() => this.soundService.playPouringLiquidSound(this.isRunActive));
     this.liquidAnimationTimeline.to(fullSide, { duration: 1, fill: this.getMixedFruitColor(fruitSelector) }, '-=0.5').call(() => {
@@ -526,7 +526,7 @@ export class GameComponent implements OnInit {
     });
     this.liquidAnimationTimeline.to(bottle, { duration: 1, attr: { height: this.calcCurrentBottleHeight() } }, '-=0.5');
     this.liquidAnimationTimeline.to(liquid, { duration: 0.5, attr: { y1: boardHeight } }, '-=0.5');
-    this.liquidAnimationTimeline.to(liquid, { duration: 0, attr: { y1: 10, y2: 10 } });
+    this.liquidAnimationTimeline.set(liquid, { duration: 0, attr: { y1: 10, y2: 10 } });
   }
 
   getMixedFruitColor(fruitSelector) {
