@@ -65,6 +65,7 @@ export class GameComponent implements OnInit {
   currentBottleHeight = 100;
   lastFruitColor = '';
   liquidAnimationTimeline: GSAPTimeline = gsap.timeline();
+  fruitAnimationTimelines: GSAPTimeline[] = [];
 
   @OnChange<string>(function (this: GameComponent, code: string) {
     if (this.isRunActive) {
@@ -495,13 +496,14 @@ export class GameComponent implements OnInit {
     const liquidLeftPosition = this.liquid.nativeElement.offsetLeft;
 
     const timeline = gsap.timeline();
+    this.fruitAnimationTimelines.push(timeline);
+
     timeline.to(fruitSelector, 0, { y: conveyorBeltTop });
     timeline.to(fruitSelector, { duration: 3, x: liquidLeftPosition, ease: 'none' })
       .call(() => this.soundService.playSmashFruitSound(this.isRunActive));
     timeline.to(fruitSelector, { duration: 1, y: funnelTopPosition, ease: 'bounce.out' });
     timeline.to(fruitSelector, { x: 0, y: 0, visibility: 'hidden' }).call(() => {
       if (this.isRunActive) {
-        this.liquidAnimationTimeline.play();
         this.animateLiquid(fruitSelector);
       }
     });
@@ -591,12 +593,10 @@ export class GameComponent implements OnInit {
 
   stopAllAnimations() {
     this.conveyorBeltAnimationTimeline?.pause();
-    this.liquidAnimationTimeline.pause();
-    this.liquidAnimationTimeline.clear();
-    this.liquidAnimationTimeline.progress(0).clear();
-    this.liquidAnimationTimeline.progress(1).clear();
-    this.liquidAnimationTimeline.progress(2).clear();
-    this.liquidAnimationTimeline.progress(3).clear();
+    this.liquidAnimationTimeline.progress(0, true).clear();
+    this.fruitAnimationTimelines.forEach(fruitAnimationTimeline =>
+      fruitAnimationTimeline.progress(0, true).clear());
+    this.fruitAnimationTimelines = [];
     this.soundService.stopAll();
   }
 
