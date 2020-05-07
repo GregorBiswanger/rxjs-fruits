@@ -15,7 +15,7 @@ import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } 
 import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
 import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap as concatMapX } from 'rxjs/operators';
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
-import { TimelineLite, Power0, Bounce, gsap } from 'gsap';
+import { gsap } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
 import { GameOverDialogComponent } from '../game-over-dialog/game-over-dialog.component';
 import * as monaco from 'monaco-editor';

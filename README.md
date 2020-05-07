@@ -5,7 +5,7 @@ RxJS-fruits
 
 RxJS-fruits is a game for learning RxJS (Reactive Extensions for JavaScript). Check it out at [rxjs-fruits.com](https://www.rxjs-fruits.com).
 
-![FontCDN screenshot](./images/screenshot.png)
+![rxjs-fruits.com screenshot](./assets/images/thumbnail.jpg)
 
 ## Author
 
