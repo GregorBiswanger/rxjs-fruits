@@ -489,9 +489,10 @@ export class GameComponent implements OnInit {
   }
 
   startFruitAnimation(fruitSelector) {
+    const fruit = document.getElementById(fruitSelector);
     fruitSelector = '#' + fruitSelector;
 
-    const conveyorBeltTop = this.conveyorBelt.nativeElement.offsetTop - this.conveyorBelt.nativeElement.offsetHeight;
+    const conveyorBeltTop = this.conveyorBelt.nativeElement.offsetTop - fruit.offsetHeight;
     const funnelTopPosition = this.funnel.nativeElement.offsetTop;
     const liquidLeftPosition = this.liquid.nativeElement.offsetLeft;
 
