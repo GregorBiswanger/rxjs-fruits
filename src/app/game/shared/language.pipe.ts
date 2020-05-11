@@ -6,12 +6,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class LanguagePipe implements PipeTransform {
 
   transform(value: string, ...args: unknown[]): string {
-    if(value === 'de') {
+    if (value === 'de') {
       return 'Deutsch';
     }
 
-    if(value === 'en') {
+    if (value === 'en') {
       return 'English';
+    }
+
+    if (value === 'es') {
+      return 'Spanish';
     }
 
     return '';

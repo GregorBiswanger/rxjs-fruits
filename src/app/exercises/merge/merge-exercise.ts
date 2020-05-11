@@ -24,6 +24,6 @@ EMPTY.pipe(
 \t
 ).subscribe(fruit => toConveyorBelt(fruit));
 `;
-    readonly minPositionLineNumber = 12;
+    readonly minPositionLineNumber = 14;
     readonly positionColumnNumber = 1;
 }
