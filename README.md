@@ -17,6 +17,23 @@ Additionally he is writing articles for known magazines and you can find attendi
 * [Homepage](http://about.me/gregor.biswanger)
 * [GitHub](https://github.com/GregorBiswanger)
 
+## 📚 Translators
+My gratitude to these contributors for localizing RxJS-Fruits. This is what open source is all about.
+* Spanish by [Andrés Villanueva](https://github.com/Villanuevand)
+
+## 🙋‍♀️🙋‍♂ Contributing
+Feel free to submit a pull request if you find any bugs (to see a list of active issues, visit the [Issues section](https://github.com/GregorBiswanger/rxjs-fruits/issues).
+Please make sure all commits are properly documented.
+
+## 🧪 Working with this Repo
+To write own exercises, I wrote an Angular Schematics. [More information about this RxJS-fruits Schematics.](https://github.com/GregorBiswanger/rxjs-fruits-schematics)
+
+## 😘 A big thank you
+* To [@BeleEisenmann](https://twitter.com/BeleEisenmann) for the design of the graphics
+* To [@BaggersIO](https://twitter.com/BaggersIO) for the help on hardcore css pitfalls
+* To some of my preview testers:  
+[@niklas_wortmann](https://twitter.com/niklas_wortmann) [@ADickenscheidt](https://twitter.com/ADickenscheidt) [@g_doroschenko](https://twitter.com/g_doroschenko) [@LeoFischl](https://twitter.com/LeoFischl) [@hjst1979](https://twitter.com/hjst1979) [@peterbucher](https://twitter.com/peterbucher) [@sharpcms](https://twitter.com/sharpcms)
+
 ## 🙏 Sponsors
 
 Thank you to all sponsors!
