@@ -6,13 +6,15 @@ export class MergeExercise implements Exercise {
         'banana', 'old-banana', 'old-banana', 'banana', 'banana'
     ];
     readonly expectedFruits = ['apple', 'apple', 'apple', 'banana', 'banana', 'banana'];
-    readonly code = `const apples = from(["apple",
+    readonly code = `const apples = from([
+    "apple",
     "apple",
     "old-apple",
     "apple",
     "old-apple"]);
 
-const bananas = from(["banana",
+const bananas = from([
+    "banana",
     "old-banana",
     "old-banana",
     "banana",
