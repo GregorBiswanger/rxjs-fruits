@@ -48,10 +48,23 @@ export class LevelService {
     const nextLevelIndex = this.currentLevelIndex + 1;
 
     if (nextLevelIndex <= this.levels.length - 1) {
-      this.currentLevelIndex = nextLevelIndex;
+      if (this.levels[nextLevelIndex].solved) {
+        this.currentLevelIndex = this.nextUnsolvedLevelIndex() || nextLevelIndex;
+      } else {
+        this.currentLevelIndex = nextLevelIndex;
+      }
+    } else {
+      this.currentLevelIndex = this.nextUnsolvedLevelIndex();
     }
 
     this.checkOfGameOver();
+  }
+
+  nextUnsolvedLevelIndex() {
+    const unsolvedLevel = this.levels.find(level => level.solved === false);
+    if (unsolvedLevel) {
+      return this.levels.indexOf(unsolvedLevel);
+    }
   }
 
   checkOfGameOver() {
