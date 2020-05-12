@@ -50,6 +50,21 @@ ngx-monaco-editor {
         top: 50%;
         height: 50%;
     }
+
+    &--output {
+        background-color: black;
+        color: red;
+        top: 50%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+    }
+
+    &--cheating-detected {
+        top: 40%;
+    }
 }
 
 img[src^="assets/Fruit"] {
@@ -352,16 +367,6 @@ a {
 
 a:hover {
     color: #fff;
-}
-
-.output {
-    background-color: black;
-    color: red;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    width: 50%;
-    text-align: center;
 }
 
 .credits {

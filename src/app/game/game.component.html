@@ -101,15 +101,13 @@
                 type="image/svg+xml"></object>
             <object class="element element--bottle" #bottle id="bottle" data="assets/bottle.svg"
                 type="image/svg+xml"></object>
-        </div>
 
-        <div fyLayout fxLayoutAlign="center center" *ngIf="isErrorInConsole">
-            <div class="output">
+            <div class="element element--output" *ngIf="isErrorInConsole">
                 {{ 'APP.OUTPUT' | translate }}
             </div>
-        </div>
-        <div id="cheating-detected" fyLayout fxLayoutAlign="center center" *ngIf="isCheatingDetected">
-            <img src="assets/images/anti-cheat/no-no.gif" alt="no cheating please" />
+
+            <img class="element element--cheating-detected" *ngIf="isCheatingDetected" src="assets/images/anti-cheat/no-no.gif"
+                alt="no cheating please" />
         </div>
     </div>
 </div>

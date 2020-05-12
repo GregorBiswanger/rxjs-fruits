@@ -40,10 +40,10 @@ export class AppPage {
   }
 
   getOutputHint() {
-    return cy.get('.output');
+    return cy.get('.element--output');
   }
 
   getCheatingDetectedImage() {
-    return cy.get('#cheating-detected');
+    return cy.get('.element--cheating-detected');
   }
 }
