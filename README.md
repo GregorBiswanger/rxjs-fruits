@@ -19,6 +19,7 @@ Additionally he is writing articles for known magazines and you can find attendi
 
 ## 📚 Translators
 My gratitude to these contributors for localizing RxJS-Fruits. This is what open source is all about.
+* Russian by [Gregor Doroschenko](https://github.com/gregor-doroschenko)
 * Spanish by [Andrés Villanueva](https://github.com/Villanuevand)
 
 ## 🙋‍♀️🙋‍♂ Contributing

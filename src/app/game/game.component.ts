@@ -126,7 +126,7 @@ export class GameComponent implements OnInit {
     this.soundService.volume = soundSettings.volume;
     this.soundService.isMute = soundSettings.isMute;
 
-    this.translate.addLangs(['en', 'de', 'es']);
+    this.translate.addLangs(['en', 'de', 'es', 'ru']);
     this.translate.setDefaultLang('en');
     this.translate.onLangChange.subscribe(() => {
       this.localStorageService.saveLanguage(this.translate.currentLang);
@@ -138,7 +138,7 @@ export class GameComponent implements OnInit {
       this.translate.use(language);
     } else {
       const browserLang = this.translate.getBrowserLang();
-      this.translate.use(browserLang.match(/en|de|es/) ? browserLang : 'en');
+      this.translate.use(browserLang.match(/en|de|es|ru/) ? browserLang : 'en');
     }
 
     this.exerciseService.exerciseChanged$.pipe(delay(0)).subscribe({

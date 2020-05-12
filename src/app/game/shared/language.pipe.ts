@@ -18,6 +18,10 @@ export class LanguagePipe implements PipeTransform {
       return 'Spanish';
     }
 
+    if (value === 'ru') {
+      return 'Русский';
+    }
+
     return '';
   }
 
