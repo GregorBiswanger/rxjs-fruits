@@ -2,14 +2,19 @@
 
 <div *ngIf="currentLanguage === 'de'">
     <p>Nur das letzte bitte!</p>
-    <p>Verwende den <code class="help" [appTooltip]="tooltip">takeLast</code> Operator, um nur eine bestimmte Anzahl der letzten Früchte auf das Fließband zu legen. 
+    <p>Verwende den <code class="help" [appTooltip]="tooltip">takeLast</code> Operator, um nur eine bestimmte Anzahl der letzten Früchte auf das Fließband zu legen.
         <a href="https://rxjs.dev/api/operators/takeLast" target="_blank">(Mehr Infos zu takeLast)</a>
     </p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>Only the last please!</p>
-    <p>Use the <code class="help" [appTooltip]="tooltip">takeLast</code> operator to put only a certain number of the last fruits on the conveyor belt. 
+    <p>Use the <code class="help" [appTooltip]="tooltip">takeLast</code> operator to put only a certain number of the last fruits on the conveyor belt.
         <a href="https://rxjs.dev/api/operators/takeLast" target="_blank"> (Learn more about takeLast)</a></p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>只需要最后一个水果！</p>
+    <p>使用 <code class="help" [appTooltip]="tooltip">takeLast</code> 操作符只需要把最后的一定数量的水果放到传送带上。
+        <a href="https://rxjs.dev/api/operators/takeLast" target="_blank">（了解关于 takeLast 操作符的更多信息）</a></p>
 </div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>

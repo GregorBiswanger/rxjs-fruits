@@ -8,6 +8,10 @@
     <p>What a mess!</p>
     <p>You just want an apple and a banana. However, the delivery also includes old and dirty fruit. Now use all previously learned operators <code class="help" [appTooltip]="filterCodeTooltip">filter</code>, <code class="help" [appTooltip]="mapCodeTooltip">map</code> and <code class="help" [appTooltip]="takeCodeTooltip">take</code> one after the other in the pipe function.</p>
 </div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>真是一团糟！</p>
+    <p>你只想要一个苹果和一个香蕉。然而，运送中还包括不新鲜和不干净的水果。在 pipe 函数中使用以前学过的所有操作符 <code class="help" [appTooltip]="filterCodeTooltip">filter</code>， <code class="help" [appTooltip]="mapCodeTooltip">map</code> 和 <code class="help" [appTooltip]="takeCodeTooltip">take</code>。</p>
+</div>
 <div #filterCodeTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="filterCode"></code>

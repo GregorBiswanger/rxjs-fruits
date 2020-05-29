@@ -2,7 +2,7 @@
 
 <div *ngIf="currentLanguage === 'de'">
     <p>Willkommen bei RxJS-fruits. Hier schreibst du JavaScript / TypeScript Code, um deinen Fruchtsaft zu mixen!</p>
-    <p>Die Basis von <b>Reactive Extensions</b> ist das <code class="help" [appTooltip]="tooltipObservableCode">Observable</code>. 
+    <p>Die Basis von <b>Reactive Extensions</b> ist das <code class="help" [appTooltip]="tooltipObservableCode">Observable</code>.
         Es ist ein Gegenstück von einem Array. Anstatt die Daten zu behalten, gibt es diese als Datenströme an interessierte Abonnenten weiter.
         <a href="https://rxjs.dev/guide/observable" target="_blank">(Mehr Infos zum Observable)</a></p>
 
@@ -12,12 +12,21 @@
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>Welcome to RxJS-fruits, where you write JavaScript / TypeScript code to mix your fruit juice!</p>
-    <p>The basis of <b>Reactive Extensions</b> is the <code class="help" [appTooltip]="tooltipObservableCode">Observable</code>. 
+    <p>The basis of <b>Reactive Extensions</b> is the <code class="help" [appTooltip]="tooltipObservableCode">Observable</code>.
         It is a counterpart of an array. Instead of that Retaining data it streams the data to interested subscribers.
         <a href="https://rxjs.dev/guide/observable" target="_blank">(More information about the Observable)</a></p>
 
     <p>An Observable is therefore only active if it is subscribed to with the <code class="help" [appTooltip]="tooltipSubscribeCode">subscribe</code>-function.
         <a href="https://rxjs.dev/guide/subscription" target="_blank">(More information about Subscription)</a></p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>欢迎来到 RxJS-fruits，在这里编写 JavaScript/TypeScript 代码制作果汁！</p>
+    <p><b>Reactive Extensions</b> 的基础是 <code class="help" [appTooltip]="tooltipObservableCode">Observable</code>。
+        它是数组的副本，但并不是固定的数据，而是将数据流传输到对其感兴趣的订阅者。
+        <a href="https://rxjs.dev/guide/observable" target="_blank">（更多关于 Observable 的信息）</a></p>
+
+    <p>因此，一个 Observable 对象只有在使用 <code class="help" [appTooltip]="tooltipSubscribeCode">subscribe</code>-function 时才会被激活。
+        <a href="https://rxjs.dev/guide/subscription" target="_blank">（更多关于 Subscription 的信息）</a></p>
 </div>
 <div #tooltipObservableCode class="tooltip codeTooltip">
     <pre>

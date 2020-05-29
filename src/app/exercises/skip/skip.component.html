@@ -2,13 +2,17 @@
 
 <div *ngIf="currentLanguage === 'de'">
     <p>Auf die ersten zwei Früchte können wir verzichten.</p>
-    <p>Der <code class="help" [appTooltip]="tooltip">skip</code>-Operator ermöglicht uns das Überspringen unnötiger Früchte. 
+    <p>Der <code class="help" [appTooltip]="tooltip">skip</code>-Operator ermöglicht uns das Überspringen unnötiger Früchte.
         <a href="https://rxjs.dev/api/operators/skip" target="_blank">(Mehr Infos zu skip)</a>
     </p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
-    <p>We can do without the first two fruits. The <code class = "help" [appTooltip] = "tooltip"> skip </code> operator enables us to skip unnecessary fruit. 
+    <p>We can do without the first two fruits. The <code class = "help" [appTooltip] = "tooltip"> skip </code> operator enables us to skip unnecessary fruit.
         <a href="https://rxjs.dev/api/operators/skip" target="_blank">(Learn more about skip)</a></p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>我们不需要前两个水果。 <code class = "help" [appTooltip] = "tooltip"> skip </code> 操作符能够跳过不必要的水果。
+        <a href="https://rxjs.dev/api/operators/skip" target="_blank">（了解关于 skip 操作符的更多信息）</a></p>
 </div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>

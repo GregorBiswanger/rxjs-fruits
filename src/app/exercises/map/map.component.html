@@ -7,8 +7,13 @@
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>Some fruits are dirty in this delivery.</p>
-    <p>The <code class="help" [appTooltip]="tooltip">map</code> operator enables data to be changed here. Wash the fruits by removing the dirt from dirty fruits. 
-        <a href="https://rxjs.dev/api/operators/map" target="_blank">(Learn more about map)</a></p>    
+    <p>The <code class="help" [appTooltip]="tooltip">map</code> operator enables data to be changed here. Wash the fruits by removing the dirt from dirty fruits.
+        <a href="https://rxjs.dev/api/operators/map" target="_blank">(Learn more about map)</a></p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>有些水果在运送过程中弄脏了。</p>
+    <p><code class="help" [appTooltip]="tooltip">map</code> 操作符能够在数据流中更改数据。使用它清洗水果，除去水果上的污垢。
+        <a href="https://rxjs.dev/api/operators/map" target="_blank">（了解关于 map 操作符的更多信息）</a></p>
 </div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>

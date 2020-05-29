@@ -22,6 +22,10 @@ export class LanguagePipe implements PipeTransform {
       return 'Русский';
     }
 
+    if (value === 'zh_CN') {
+      return '中文-简体';
+    }
+
     return '';
   }
 

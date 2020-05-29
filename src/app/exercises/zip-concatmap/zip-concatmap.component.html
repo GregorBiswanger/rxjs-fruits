@@ -2,20 +2,29 @@
 
 <div *ngIf="currentLanguage === 'de'">
     <p>Abwechslung ist der Schlüssel zum Glück!</p>
-    <p>Wir haben zwei Lieferungen bekommen und müssen den Inhalt abwechselnd auf das Fließband legen. Die <code class="help" [appTooltip]="zipTooltip">zip</code>-Funktion verbindet zwei Observables und gibt die Daten abwechselnd an die pipe-Funktion weiter. Allerdings nicht jede Frucht einzeln, sondern als mehrdimensionales Array. 
+    <p>Wir haben zwei Lieferungen bekommen und müssen den Inhalt abwechselnd auf das Fließband legen. Die <code class="help" [appTooltip]="zipTooltip">zip</code>-Funktion verbindet zwei Observables und gibt die Daten abwechselnd an die pipe-Funktion weiter. Allerdings nicht jede Frucht einzeln, sondern als mehrdimensionales Array.
         <a href="https://rxjs.dev/api/index/function/zip" target="_blank">(Mehr Infos zu zip)</a>
     </p>
-    <p>Der <code class="help" [appTooltip]="concatMapTooltip">concatMap</code>-Operator projiziert das mehrdimensionale Array in ein Observable und gibt die Früchte wieder einzeln zurück. 
+    <p>Der <code class="help" [appTooltip]="concatMapTooltip">concatMap</code>-Operator projiziert das mehrdimensionale Array in ein Observable und gibt die Früchte wieder einzeln zurück.
         <a href="https://rxjs.dev/api/operators/concatMap" target="_blank">(Mehr Infos zu concatMap)</a>
     </p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>Variety is the key to happiness!</p>
-    <p>We have received two deliveries and have to alternately put the contents on the conveyor belt. The <code class="help" [appTooltip]="zipTooltip">zip</code> function connects two observables and passes the data on to the pipe function alternately. However, not every fruit individually, but as a multi-dimensional array. 
+    <p>We have received two deliveries and have to alternately put the contents on the conveyor belt. The <code class="help" [appTooltip]="zipTooltip">zip</code> function connects two observables and passes the data on to the pipe function alternately. However, not every fruit individually, but as a multi-dimensional array.
         <a href="https://rxjs.dev/api/index/function/zip" target="_blank">(Learn more about zip)</a>
     </p>
-    <p>The <code class="help" [appTooltip]="concatMapTooltip">concatMap</code> operator projects the multidimensional array into an observable and returns the fruit individually. 
+    <p>The <code class="help" [appTooltip]="concatMapTooltip">concatMap</code> operator projects the multidimensional array into an observable and returns the fruit individually.
         <a href="https://rxjs.dev/api/operators/concatMap" target="_blank">(Learn more about concatMap)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>多样性是幸福的关键！</p>
+    <p>我们有两个供应商，必须交替把不同供应商的水果放到传送带上。 <code class="help" [appTooltip]="zipTooltip">zip</code> 操作符可以组合两个 observable ，并将数据交替传递给 pipe 函数。然而，并不是每个水果都单独存在，而是一个多维数组。
+        <a href="https://rxjs.dev/api/index/function/zip" target="_blank">（了解关于 zip 操作符的更多信息）</a>
+    </p>
+    <p><code class="help" [appTooltip]="concatMapTooltip">concatMap</code> 操作符将多维数组投影到一个 observable 对象中，并返回单独的水果。
+        <a href="https://rxjs.dev/api/operators/concatMap" target="_blank">（了解关于 concatMap 操作符的更多信息）</a>
     </p>
 </div>
 <div #zipTooltip class="tooltip codeTooltip">
