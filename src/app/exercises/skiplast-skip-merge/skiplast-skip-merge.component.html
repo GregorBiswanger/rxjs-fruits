@@ -8,6 +8,10 @@
     <p>Don't give chaos a chance!</p>
     <p>You received two deliveries. Take only usable fruit with the <code class="help" [appTooltip]="skipLastTooltip">skipLast</code> and <code class="help" [appTooltip]="skipTooltip">skip</code> operator. Then replace the empty observable with the <code class="help" [appTooltip]="mergeTooltip">merge</code> function. Towards the end, clean up the dirty fruits and place them on the conveyor belt.</p>
 </div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>不要把水果搞混乱了！</p>
+    <p>你有两个供货商。使用 <code class="help" [appTooltip]="skipLastTooltip">skipLast</code> 和 <code class="help" [appTooltip]="skipTooltip">skip</code> 操作符，只取可用的水果。然后用 <code class="help" [appTooltip]="mergeTooltip">merge</code> 操作符替换 empty observable。最后，把不干净的水果清理干净，再放到传送带上。</p>
+</div>
 <div #skipTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipCode"></code>

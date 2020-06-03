@@ -4,14 +4,20 @@
     <p>Viel zu wenig!</p>
     <p>Die Lieferung hat uns wirklich nur einen Apfel gebracht. Das Rezept gibt uns aber vor das wir drei Äpfel
         brauchen. In dieser Notlage behilft uns der <code class="help" [appTooltip]="tooltip">repeat</code>-Operator. Er
-        wiederholt das Observable mit der angegeben Anzahl. 
+        wiederholt das Observable mit der angegeben Anzahl.
         <a href="https://rxjs.dev/api/operators/repeat" target="_blank">(Mehr Infos zu repeat)</a>
     </p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>Much too little!</p>
-    <p>The delivery really only brought us an apple. The recipe gives us three apples need. In this emergency, the <code class="help" [appTooltip]="tooltip">repeat</code> operator helps us. He repeats the observable with the specified number. 
+    <p>The delivery really only brought us an apple. The recipe gives us three apples need. In this emergency, the <code class="help" [appTooltip]="tooltip">repeat</code> operator helps us. He repeats the observable with the specified number.
         <a href="https://rxjs.dev/api/operators/repeat" target="_blank">(Learn more about repeat)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>水果太少了！</p>
+    <p>只运送过来了一个苹果，食谱上说我们需要三个苹果。在这个紧急情况下， <code class="help" [appTooltip]="tooltip">repeat</code> 操作符可以为我们提供帮助。它可以指定重复 observable 的次数。
+        <a href="https://rxjs.dev/api/operators/repeat" target="_blank">（了解关于 repeat 操作符的更多信息）</a>
     </p>
 </div>
 <div #tooltip class="tooltip codeTooltip">

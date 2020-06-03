@@ -15,7 +15,13 @@
     <p>In our case, the <code class="help" [appTooltip]="tooltip">distinct</code> operator helps us. It prevents
         duplicate fruits from being delivered in our data stream. <a href="https://rxjs.dev/api/operators/distinct"
             target="_blank">(Learn more about distinct)</a></p>
-
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>搞错了！得到的水果比食谱上指定的多。</p>
+    <p>pipe 操作符可以依次执行不同的 RxJS 操作符，用来获取我们需要的结果。</p>
+    <p>在这个例子中，<code class="help" [appTooltip]="tooltip">distinct</code> 操作符可以为我们提供帮助。它可以防止在数据流中传递重复的水果。
+        <a href="https://rxjs.dev/api/operators/distinct"
+            target="_blank">（了解关于 distinct 操作符的更多信息）</a></p>
 </div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>

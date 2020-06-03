@@ -8,8 +8,14 @@
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>One after the other! Some fruits come twice in a row. However, we need the fruits alternately.</p>
-    <p>In our case, the <code class="help" [appTooltip]="tooltip">distinctUntilChanged</code> operator helps us. It prevents duplicate fruits from being delivered one after the other in our data stream. 
+    <p>In our case, the <code class="help" [appTooltip]="tooltip">distinctUntilChanged</code> operator helps us. It prevents duplicate fruits from being delivered one after the other in our data stream.
         <a href="https://rxjs.dev/api/operators/distinctUntilChanged" target="_blank">(Learn more about distinctUntilChanged)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>水果会一个接一个地出现，有些水果连续出现了两次。但是，我们需要交替使用不同的水果。</p>
+    <p>在这个例子中，<code class="help" [appTooltip]="tooltip">distinctUntilChanged</code> 操作符可以为我们提供帮助。它可以防止重复的水果在数据流中连续地传递。
+        <a href="https://rxjs.dev/api/operators/distinctUntilChanged" target="_blank">（了解关于 distinctUntilChanged 操作符的更多信息）</a>
     </p>
 </div>
 <div #tooltip class="tooltip codeTooltip">

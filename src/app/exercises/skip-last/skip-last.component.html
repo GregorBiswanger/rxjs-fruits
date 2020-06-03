@@ -2,14 +2,20 @@
 
 <div *ngIf="currentLanguage === 'de'">
     <p>Auf die letzten zwei Früchte können wir verzichten.</p>
-    <p>Der <code class="help" [appTooltip]="tooltip">skipLast</code>-Operator ermöglicht uns das Ignorieren von den letzten Früchten. 
+    <p>Der <code class="help" [appTooltip]="tooltip">skipLast</code>-Operator ermöglicht uns das Ignorieren von den letzten Früchten.
         <a href="https://rxjs.dev/api/operators/skipLast" target="_blank">(Mehr Infos zu skipLast)</a>
     </p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>We can do without the last two fruits.</p>
-    <p>The <code class="help" [appTooltip]="tooltip">skipLast</code> operator enables us to ignore the last fruits. 
+    <p>The <code class="help" [appTooltip]="tooltip">skipLast</code> operator enables us to ignore the last fruits.
         <a href="https://rxjs.dev/api/operators/skipLast" target="_blank">(Learn more about skipLast)</a>
+    </p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>我们不需要最后两个水果。</p>
+    <p><code class="help" [appTooltip]="tooltip">skipLast</code> 运算符能够跳过最后的水果。
+        <a href="https://rxjs.dev/api/operators/skipLast" target="_blank">（了解关于 skipLast 操作符的更多信息）</a>
     </p>
 </div>
 <div #tooltip class="tooltip codeTooltip">

@@ -10,6 +10,11 @@
     <p>The from function creates an observable from an array. This delivers the data one after the other, like a foreach loop.</p>
     <p>The <code class="help" [appTooltip]="tooltip">subscribe</code> function expects a callback function as a parameter. This receives the data from the observable via the parameters.</p>
 </div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>现在是时候把一些水果放到传送带上了！</p>
+    <p>from 函数从数组创建一个 observable 。这就像 foreach 循环一样，一个接一个地传递数据。</p>
+    <p><code class="help" [appTooltip]="tooltip">subscribe</code> 函数需要一个回调函数作为参数，它通过参数从 observable 对象接收数据。</p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="subscibeNextCode"></code>

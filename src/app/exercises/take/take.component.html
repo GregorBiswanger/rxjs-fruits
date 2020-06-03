@@ -2,13 +2,18 @@
 
 <div *ngIf="currentLanguage === 'de'">
     <p>Das ist zu viel des Guten!</p>
-    <p>Verwende den <code class="help" [appTooltip]="tooltip">take</code> Operator, um nur so viel Bananen auf das Fließband zu legen, wie es im Rezept vorgegeben ist. 
+    <p>Verwende den <code class="help" [appTooltip]="tooltip">take</code> Operator, um nur so viel Bananen auf das Fließband zu legen, wie es im Rezept vorgegeben ist.
         <a href="https://rxjs.dev/api/operators/take" target="_blank">(Mehr Infos zu take)</a></p>
 </div>
 <div *ngIf="currentLanguage === 'en'">
     <p>That is too much of a good thing!</p>
-    <p>Use the <code class="help" [appTooltip]="tooltip">take</code> operator to put only as much bananas on the conveyor belt as is specified in the recipe. 
+    <p>Use the <code class="help" [appTooltip]="tooltip">take</code> operator to put only as much bananas on the conveyor belt as is specified in the recipe.
         <a href="https://rxjs.dev/api/operators/take" target="_blank">(Learn more about take)</a></p>
+</div>
+<div *ngIf="currentLanguage === 'zh_CN'">
+    <p>还不错！</p>
+    <p>使用 <code class="help" [appTooltip]="tooltip">take</code> 操作符将食谱中指定的香蕉放到传送带上。
+        <a href="https://rxjs.dev/api/operators/take" target="_blank">（了解关于 take 操作符的更多信息）</a></p>
 </div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
