@@ -20,6 +20,12 @@
         <a href="https://rxjs.dev/api/operators/repeat" target="_blank">（了解关于 repeat 操作符的更多信息）</a>
     </p>
 </div>
+<div *ngIf="currentLanguage === 'ru'">
+  <p> Слишком мало! </p>
+  <p> Доставка действительно принесла нам только яблоко. Рецепт дает нам три яблока нужно. В этом случае нам помогает оператор <code class = "help" [appTooltip] = "tooltip"> repeat </code>. Он повторяет наблюдаемое с указанным номером.
+    <a href="https://rxjs.dev/api/operators/repeat" target="_blank"> (Подробнее о повторении) </a>
+  </p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="repeatCode"></code>

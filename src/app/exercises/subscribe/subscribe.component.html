@@ -28,6 +28,15 @@
     <p>因此，一个 Observable 对象只有在使用 <code class="help" [appTooltip]="tooltipSubscribeCode">subscribe</code>-function 时才会被激活。
         <a href="https://rxjs.dev/guide/subscription" target="_blank">（更多关于 Subscription 的信息）</a></p>
 </div>
+<div *ngIf="currentLanguage === 'ru'">
+  <p>Добро пожаловать в RxJS-fruits, где вы пишите JavaScript / TypeScript код чтобы смешать ваш фруктовый сок!</p>
+  <p>Основой <b> Реактивных расширений </b> является <code class = "help" [appTooltip] = "tooltipObservableCode"> Observable </code>.
+    Это аналог массива. Вместо этого, сохраняя данные, он передает данные заинтересованным подписчикам.
+    <a href="https://rxjs.dev/guide/observable" target="_blank">(Более подробная информация о Observable)</a></p>
+
+  <p>Поэтому Observable активен, только если он подписан с помощью <code class="help" [appTooltip]="tooltipSubscribeCode">subscribe</code>-function.
+    <a href="https://rxjs.dev/guide/subscription" target="_blank">(Более подробная информация о Subscription)</a></p>
+</div>
 <div #tooltipObservableCode class="tooltip codeTooltip">
     <pre>
         <code [highlight]="observableCode"></code>

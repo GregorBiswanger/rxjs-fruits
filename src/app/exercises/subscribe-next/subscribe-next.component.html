@@ -15,6 +15,11 @@
     <p>from 函数从数组创建一个 observable 。这就像 foreach 循环一样，一个接一个地传递数据。</p>
     <p><code class="help" [appTooltip]="tooltip">subscribe</code> 函数需要一个回调函数作为参数，它通过参数从 observable 对象接收数据。</p>
 </div>
+<div *ngIf="currentLanguage === 'ru'">
+  <p>Теперь пришло время положить фрукты на конвейерную ленту! </p>
+  <p>Функция from создает наблюдаемое из массива. Это доставляет данные один за другим, как цикл foreach. </p>
+  <p>Функция <code class="help" [appTooltip]="tooltip"> subscribe </code> ожидает функцию обратного вызова в качестве параметра. Это получает данные от наблюдаемой через параметры. </p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="subscibeNextCode"></code>

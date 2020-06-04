@@ -27,6 +27,14 @@
         <a href="https://rxjs.dev/api/operators/concatMap" target="_blank">（了解关于 concatMap 操作符的更多信息）</a>
     </p>
 </div>
+<div *ngIf="currentLanguage === 'ru'">
+  <p>Разнообразие - это ключ к счастью! </p>
+  <p>Мы получили две поставки и должны поочередно поместить содержимое на конвейерную ленту. Функция <code class="help" [appTooltip]="zipTooltip"> zip </code> соединяет две наблюдаемые и поочередно передает данные в функцию канала. Однако не каждый фрукт в отдельности, а как многомерный массив.
+    <a href="https://rxjs.dev/api/index/function/zip" target="_blank"> (подробнее о zip) </a>
+  </p>
+  <p> Оператор <code class="help" [appTooltip]="concatMapTooltip"> concatMap </code> проецирует многомерный массив в наблюдаемую и возвращает плод по отдельности.
+    <a href="https://rxjs.dev/api/operators/concatMap" target="_blank"> (Подробнее о concatMap) </a>
+</div>
 <div #zipTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="zipCode"></code>

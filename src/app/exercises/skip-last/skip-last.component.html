@@ -18,6 +18,12 @@
         <a href="https://rxjs.dev/api/operators/skipLast" target="_blank">（了解关于 skipLast 操作符的更多信息）</a>
     </p>
 </div>
+<div *ngIf="currentLanguage === 'ru'">
+  <p> Мы можем обойтись без двух последних фруктов. </p>
+  <p> Оператор <code class = "help" [appTooltip] = "tooltip"> skipLast </code> позволяет нам игнорировать последние фрукты.
+    <a href="https://rxjs.dev/api/operators/skipLast" target="_blank"> (Подробнее о skipLast) </a>
+  </p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipLastCode"></code>
