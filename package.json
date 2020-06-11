@@ -53,7 +53,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
-    "cypress": "^4.7.0",
+    "cypress": "^4.8.0",
     "cypress-plugin-retries": "^1.5.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
