@@ -8,7 +8,7 @@
             <div id="level-counter">
                 <span class="arrow left" [ngClass]="previousLevelStyle()" (click)="previousExercise()">◀</span>
                 <span id="level-indicator" (click)="toggleLevelsWrapper()">
-                    <span id="labelLevel">Level </span>
+                    <span id="labelLevel">{{ 'APP.LEVEL' | translate }}</span>
                     <span>{{ levelService.currentLevel.number }}</span>
                     <span>{{ 'APP.LABELLEVEL' | translate }}</span>
                     <span>{{ levelService.levels.length }}</span>

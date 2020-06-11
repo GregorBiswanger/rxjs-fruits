@@ -15,6 +15,11 @@
     <p>使用 <code class="help" [appTooltip]="tooltip">filter</code> 操作符，只将新鲜水果放到传送带上。
         <a href="https://rxjs.dev/api/operators/filter" target="_blank">（了解关于 filter 操作符的更多信息）</a></p>
 </div>
+<div *ngIf="currentLanguage === 'ru'">
+  <p>Тьфу! Старый фрукт был доставлен сюда.</p>
+  <p>Используйте оператор <code class="help" [appTooltip]="tooltip">filter</code>, чтобы положить на конвейер только свежие фрукты.
+    <a href="https://rxjs.dev/api/operators/filter" target="_blank">(Подробнее о filter)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="filterCode"></code>

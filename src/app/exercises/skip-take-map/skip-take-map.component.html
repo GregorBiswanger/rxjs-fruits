@@ -12,6 +12,10 @@
     <p>水果运送过多！</p>
     <p>你只想要一根香蕉。然而，在水果运送中还包含过多不必要的水果。在 pipe 函数中使用到目前为止已掌握的所有运算符 <code class="help" [appTooltip]="skipTooltip">skip</code>， <code class="help" [appTooltip]="takeTooltip">take</code> 和 <code class="help" [appTooltip]="mapTooltip">map</code> 。</p>
 </div>
+<div *ngIf="currentLanguage === 'ru'">
+  <p>Чрезмерная доставка!</p>
+  <p>Вы просто хотите банан. Тем не менее, доставка содержит слишком много ненужных фруктов. Теперь используйте все операторы, которые были изучены до сих пор <code class="help" [appTooltip]="skipTooltip">skip</code>, <code class="help" [appTooltip]="takeTooltip">take</code> и <code class="help" [appTooltip]="mapTooltip">map</code> один за другим в функции конвейера.</p>
+</div>
 <div #skipTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipCode"></code>
