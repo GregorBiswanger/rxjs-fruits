@@ -30,6 +30,7 @@
 		"ISTOMUCHFRUITS": "❌ More fruits than specified in the recipe!",
 		"LABELLEVEL": " of ",
 		"LABELRESET": "Reset",
+		"LEVEL": "Level ",
 		"NEXTBUTTON": "Next",
 		"OUTPUT": "There was an error with your code. Please use F12 to check the output in the console.",
 		"PRIVACYBUTTON": "Privacy",

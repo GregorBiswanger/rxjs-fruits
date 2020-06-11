@@ -20,7 +20,7 @@ Additionally he is writing articles for known magazines and you can find attendi
 ## 📚 Translators
 My gratitude to these contributors for localizing RxJS-Fruits. This is what open source is all about.
 * Chinese Simplified by [Tian-Hun](https://github.com/Tian-Hun)
-* Russian by [Gregor Doroschenko](https://github.com/gregor-doroschenko) **Not finished yet!**
+* Russian by [Valentin Chernyshov](https://github.com/ValentinChernyshov)
 * Spanish by [Andrés Villanueva](https://github.com/Villanuevand) **Not finished yet!**
 
 

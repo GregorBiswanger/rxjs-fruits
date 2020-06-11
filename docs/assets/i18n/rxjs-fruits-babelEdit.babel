@@ -1,4 +1,4 @@
-<babeledit_project be_version="2.6.1" version="1.2">
+<babeledit_project version="1.2" be_version="2.7.0">
     <!--
 
     BabelEdit project file
@@ -33,6 +33,10 @@
                                 <language>en-US</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <concept_node>
@@ -48,6 +52,10 @@
                             </translation>
                             <translation>
                                 <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -73,6 +81,10 @@
                                                 <language>en-US</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>ru-RU</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -88,6 +100,10 @@
                                             </translation>
                                             <translation>
                                                 <language>en-US</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>ru-RU</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -109,6 +125,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                             <concept_node>
@@ -124,6 +144,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -143,6 +167,10 @@
                             </translation>
                             <translation>
                                 <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -165,6 +193,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                             <concept_node>
@@ -182,6 +214,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                             <concept_node>
@@ -197,6 +233,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -221,6 +261,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                             <concept_node>
@@ -236,6 +280,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -255,6 +303,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                             <concept_node>
@@ -270,6 +322,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -289,6 +345,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                             <concept_node>
@@ -304,6 +364,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -325,6 +389,10 @@
                                 <language>en-US</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <concept_node>
@@ -340,6 +408,10 @@
                             </translation>
                             <translation>
                                 <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -359,6 +431,10 @@
                                 <language>en-US</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <concept_node>
@@ -374,6 +450,10 @@
                             </translation>
                             <translation>
                                 <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -393,6 +473,10 @@
                                 <language>en-US</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <concept_node>
@@ -408,6 +492,31 @@
                             </translation>
                             <translation>
                                 <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>LEVEL</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description></description>
+                        <comment></comment>
+                        <default_text></default_text>
+                        <translations>
+                            <translation>
+                                <language>de-DE</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -427,6 +536,10 @@
                                 <language>en-US</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <concept_node>
@@ -442,6 +555,10 @@
                             </translation>
                             <translation>
                                 <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -461,6 +578,10 @@
                                 <language>en-US</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <concept_node>
@@ -478,6 +599,10 @@
                                 <language>en-US</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <concept_node>
@@ -493,6 +618,10 @@
                             </translation>
                             <translation>
                                 <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -520,6 +649,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -542,6 +675,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -559,6 +696,10 @@
                             </translation>
                             <translation>
                                 <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -579,6 +720,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -603,6 +748,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -623,6 +772,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -647,6 +800,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -667,6 +824,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -691,6 +852,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -711,6 +876,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -735,6 +904,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -755,6 +928,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -779,6 +956,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -799,6 +980,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -823,6 +1008,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -843,6 +1032,10 @@
                                     </translation>
                                     <translation>
                                         <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -867,6 +1060,10 @@
                                         <language>en-US</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -887,6 +1084,11 @@
             <source_id></source_id>
             <source_file>en.json</source_file>
         </language>
+        <language>
+            <code>ru-RU</code>
+            <source_id></source_id>
+            <source_file>ru.json</source_file>
+        </language>
     </languages>
     <translation_files>
         <translation_file>
@@ -894,6 +1096,9 @@
         </translation_file>
         <translation_file>
             <file>en.json</file>
+        </translation_file>
+        <translation_file>
+            <file>ru.json</file>
         </translation_file>
     </translation_files>
     <editor_configuration>
