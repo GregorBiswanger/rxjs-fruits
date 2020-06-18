@@ -20,7 +20,7 @@
 </div>
 <div *ngIf="currentLanguage === 'ru'">
   <p>Один за другим! Некоторые фрукты появляются два раза подряд. Однако нам поочередно нужны фрукты.</p>
-  <p>В нашем случае нам помогает оператор <code class="help" [appTooltip]="tooltip">diverUntilChanged</code>. Это предотвращает доставку повторяющихся фруктов один за другим в нашем потоке данных.
+  <p>В нашем случае нам помогает оператор <code class="help" [appTooltip]="tooltip">distinctUntilChanged</code>. Это предотвращает доставку повторяющихся фруктов один за другим в нашем потоке данных.
     <a href="https://rxjs.dev/api/operators/distinctUntilChanged" target="_blank">(Подробнее о DifferentUntilChanged)</a>
   </p>
 </div>
