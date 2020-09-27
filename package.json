@@ -37,7 +37,7 @@
     "ngx-cookie-service": "^3.0.4",
     "ngx-highlightjs": "^4.1.0-beta",
     "property-watch-decorator": "^1.2.5",
-    "rxjs": "^6.5.5",
+    "rxjs": "^6.6.3",
     "tslib": "^2.0.0",
     "typescript": "^3.9.5",
     "zone.js": "~0.10.2"
