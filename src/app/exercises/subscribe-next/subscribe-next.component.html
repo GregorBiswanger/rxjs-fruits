@@ -20,6 +20,14 @@
   <p>Функция from создает наблюдаемое из массива. Это доставляет данные один за другим, как цикл foreach.</p>
   <p>Функция <code class="help" [appTooltip]="tooltip">subscribe</code> ожидает функцию обратного вызова в качестве параметра. Это получает данные от наблюдаемой через параметры.</p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Ahora es tiempo de poner algunas frutas sobre la cinta transportadora!</p>
+  <p>The from function creates an observable from an array. This delivers the data one after the other, like a foreach loop.</p>
+  <p>La función from crea un observable a partir de una matríz</p>
+  <p>The <code class="help" [appTooltip]="tooltip">subscribe</code> function expects a callback function as a parameter. This receives the data from the observable via the parameters.</p>
+  <p>La función <code class="help" [appTooltip]="tooltip">subscribe</code> espera una función callback como parámetro. Esta recibe los datos desde el observable vía parámetros.</p>
+</div>
+
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="subscibeNextCode"></code>
