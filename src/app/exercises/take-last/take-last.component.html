@@ -21,6 +21,11 @@
   <p>Используйте оператор <code class="help" [appTooltip]="tooltip">takeLast</code>, чтобы поместить только определенное количество последних плодов на конвейерную ленту.
     <a href="https://rxjs.dev/api/operators/takeLast" target="_blank">(Подробнее о takeLast)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Sólo la última por favor!</p>
+  <p>Usa el operador <code class="help" [appTooltip]="tooltip">takeLast</code> para colocar únicamente cierta cantidad de las últimas frutas en la cinta transportadora.
+    <a href="https://rxjs.dev/api/operators/takeLast" target="_blank"> (Aprende más sobre takeLast)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="takeLastCode"></code>
