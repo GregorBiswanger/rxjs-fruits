@@ -24,6 +24,12 @@
     <a href="https://rxjs.dev/api/operators/skipLast" target="_blank">(Подробнее о skipLast)</a>
   </p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Podemos hacerlo sin las últimas dos frutas.</p>
+  <p>El operador <code class="help" [appTooltip]="tooltip">skipLast</code> nos permite ignorar las últimas frutas.
+    <a href="https://rxjs.dev/api/operators/skipLast" target="_blank">(Aprende más sobre skipLast)</a>
+  </p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipLastCode"></code>
