@@ -20,6 +20,11 @@
   <p>Используйте оператор <code class="help" [appTooltip]="tooltip">take</code>, чтобы положить на конвейер столько бананов, сколько указано в рецепте.
     <a href="https://rxjs.dev/api/operators/take" target="_blank">(Подробнее о take)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Eso es demasiado!</p>
+  <p>Usa el operador <code class="help" [appTooltip]="tooltip">take</code> para colocar en la cinta transportadora únicamente la cantidad de bananas especificadas en la receta.
+    <a href="https://rxjs.dev/api/operators/take" target="_blank">(Aprende más sobre take)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="takeCode"></code>
