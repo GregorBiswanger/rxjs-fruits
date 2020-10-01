@@ -69,7 +69,7 @@
       "RECIPEDESCRIPTION": "<p><b>Tip:</b> Presione la tecla F12 y use la consola dentro de las herramientas de desarrollador del navegador para la depuración.</p>\n<p>Agrega solo las frutas que está especificadas en la receta. (Nota: usa skip, take and map)</p>"
     },
     "SKIPLAST-SKIP-MERGE": {
-      "RECIPEDESCRIPTION": "<p><b>Tip:</b>Reemplaza el observable EMPTY con la función merge.</p>\n<p><b>Tip:</b> Presione la tecla F12 y use la consola dentro de las herramientas de desarrollador del navegador para la depuración.</p>\n<p>Agrega solo las frutas que está especificadas en la receta. (Nota: usa skipLast, skip, merge y map)</p>"
+      "RECIPEDESCRIPTION": "<p><b>Tip:</b> Reemplaza el observable EMPTY con la función merge.</p>\n<p><b>Tip:</b> Presione la tecla F12 y use la consola dentro de las herramientas de desarrollador del navegador para la depuración.</p>\n<p>Agrega solo las frutas que está especificadas en la receta. (Nota: usa skipLast, skip, merge y map)</p>"
     },
     "SUBSCRIBE": {
       "RECIPEDESCRIPTION": "En el código fuente tenemos un Observable vacío que no espera datos. <p><b>Mueve la cinta transportadora</b>, suscribiéndose al observable vacío con la función subscribe(), y haga clic en el botón de inicio.</p>"
