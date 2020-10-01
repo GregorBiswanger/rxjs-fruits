@@ -16,6 +16,10 @@
   <p>Какой беспорядок!</p>
   <p>Вы просто хотите яблоко и банан. Тем не менее, доставка также включает в себя старые и грязные фрукты. Теперь используйте все ранее изученные операторы <code class="help" [appTooltip]="filterCodeTooltip">filter</code>, <code class="help" [appTooltip]="mapCodeTooltip">map</code> и <code class="help" [appTooltip]="takeCodeTooltip">take</code> один за другим в функции конвейера.</p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Que desastre!</p>
+  <p>Tú solo quieres una manzana y una banana. Sin embargo, la entrega también incluye fruta vieja y sucia. Ahora usa todos los operadores previamente aprendidos <code class="help" [appTooltip]="filterCodeTooltip">filter</code>, <code class="help" [appTooltip]="mapCodeTooltip">map</code> y <code class="help" [appTooltip]="takeCodeTooltip">take</code> uno tras otro en la función pipe.</p>
+</div>
 <div #filterCodeTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="filterCode"></code>
