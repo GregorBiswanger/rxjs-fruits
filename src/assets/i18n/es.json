@@ -28,6 +28,7 @@
     "ISNOFRUITSINCOMING": "❌ La cinta transportadora recibe no esta recibiendo frutas!",
     "ISTOLITTLEFRUITS": "❌ La cinta transportadora recibe muy poca fruta!",
     "ISTOMUCHFRUITS": "❌ Más frutas de las especificadas en la receta!",
+    "LEVEL": "Nivel ",
     "LABELLEVEL": " de ",
     "LABELRESET": "Reiniciar",
     "NEXTBUTTON": "Siguiente",
