@@ -31,6 +31,12 @@
     дубликаты фруктов от доставки в нашем потоке данных. <a href="https://rxjs.dev/api/operators/distinct"
                                                             target="_ blank">(Подробнее о distinct)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Oh no! Estamos teniendo mas frutas de las que la receta dice</p>
+  <p>El operador pipe nos permite ejecutar diferentes operador RxJs uno después de otro en order, para obtener las frutas tal y como las necesitamos</p>
+  <p>En nuestro caso, el operador <code class="help" [appTooltip]="tooltip">distinct</code> nos ayudará. Este prevendrá frutas duplicadas sean entregadas en nuestro stream de datos<a href="https://rxjs.dev/api/operators/distinct"
+                                                                 target="_blank">(Aprende mas sobre distinct)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="distinctCode"></code>
