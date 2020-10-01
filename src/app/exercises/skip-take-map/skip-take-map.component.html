@@ -16,6 +16,10 @@
   <p>Чрезмерная доставка!</p>
   <p>Вы просто хотите банан. Тем не менее, доставка содержит слишком много ненужных фруктов. Теперь используйте все операторы, которые были изучены до сих пор <code class="help" [appTooltip]="skipTooltip">skip</code>, <code class="help" [appTooltip]="takeTooltip">take</code> и <code class="help" [appTooltip]="mapTooltip">map</code> один за другим в функции конвейера.</p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Una entrega excesiva!</p>
+  <p>Tú solo quieres una banana. Sin embargo, la entrega contiene demasiada fruta innecesaria. Ahora use todos los operadores que haya aprendido hasta ahora: <code class="help" [appTooltip]="skipTooltip">skip</code>, <code class="help" [appTooltip]="takeTooltip">take</code> y <code class="help" [appTooltip]="mapTooltip">map</code> uno tras otro en una función pipe.</p>
+</div>
 <div #skipTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipCode"></code>
