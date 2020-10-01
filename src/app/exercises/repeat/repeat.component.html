@@ -26,6 +26,12 @@
     <a href="https://rxjs.dev/api/operators/repeat" target="_blank">(Подробнее о repeat)</a>
   </p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Demasiado poco!</p>
+  <p>La entrega solo nos trajo una manzana. En esta emergencia, el operador <code class="help" [appTooltip]="tooltip">repeat</code> nos ayuda. Repite el observable con el número especificado.
+    <a href="https://rxjs.dev/api/operators/repeat" target="_blank">(Aprende más sobre repeat)</a>
+  </p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="repeatCode"></code>
