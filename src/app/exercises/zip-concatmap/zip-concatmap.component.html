@@ -35,6 +35,15 @@
   <p>Оператор <code class="help" [appTooltip]="concatMapTooltip">concatMap</code> проецирует многомерный массив в наблюдаемую и возвращает плод по отдельности.
     <a href="https://rxjs.dev/api/operators/concatMap" target="_blank">(Подробнее о concatMap)</a>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>La variedad es la clave de la felicidad!</p>
+  <p>Hemos recibido dos entregas y tenemos que colocar los contenidos alternadamente en la cinta transportadora. La función <code class="help" [appTooltip]="zipTooltip">zip</code> conecta dos observables y pasa la información alternadamente a la función pipe. Sin embargo, no pasa cada fruta individualmente, sino como un arreglo multi-dimensional.
+    <a href="https://rxjs.dev/api/index/function/zip" target="_blank">(Aprenda más sobre zip)</a>
+  </p>
+  <p>El operador <code class="help" [appTooltip]="concatMapTooltip">concatMap</code> proyecta el arreglo multi-dimensional en un observable y retorna la fruta individualmente.
+    <a href="https://rxjs.dev/api/operators/concatMap" target="_blank">(Aprenda más sobre concatMap)</a>
+  </p>
+</div>
 <div #zipTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="zipCode"></code>
