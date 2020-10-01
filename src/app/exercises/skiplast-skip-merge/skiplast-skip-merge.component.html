@@ -16,6 +16,10 @@
   <p>Не дай хаосу шанс!</p>
   <p>Вы получили две поставки. Возьмите только полезные фрукты с оператором <code class="help" [appTooltip]="skipLastTooltip">skipLast</code> и <code class="help" [appTooltip]="skipTooltip">skip</code>. Затем замените пустую наблюдаемую функцию <code class="help" [appTooltip]="mergeTooltip">merge</code>. Под конец уберите грязные фрукты и положите их на конвейер.</p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>No le des oportunidad al caos!</p>
+  <p>Recibiste dos entregas. Toma solo fruta utilizable con los operadores <code class="help" [appTooltip]="skipLastTooltip">skipLast</code> y <code class="help" [appTooltip]="skipTooltip">skip</code>. Luego reemplaza el observable EMPTY con la función <code class="help" [appTooltip]="mergeTooltip">merge</code>. Hacia el final, limpia las frutas sucias y colócalas en la cinta transportadora.</p>
+</div>
 <div #skipTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipCode"></code>
