@@ -21,6 +21,11 @@
   <p>Наш поставщик фруктов должен был доставить нам фрукты отдельно. Функция <code class="help" [appTooltip]="tooltip">merge</code> может объединять разные наблюдаемые в одну наблюдаемую. Затем мы можем использовать функцию «труба», чтобы положить на конвейер только свежие фрукты.
     <a href="https://rxjs.dev/api/index/function/merge" target="_blank">(Подробнее о merge)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'es'">
+  <p>Ahora tenemos que combinar dos entregas.</p>
+  <p>Nuestro proveedor de fruta tuvo que entregarnos la fruta por separado. La función <code class="help" [appTooltip]="tooltip">merge</code> puede combinar diferentes observables en un observables. Entonces podemos usar la función pipe para poner únicamente fruta fresca en la cinta transportadora.
+    <a href="https://rxjs.dev/api/index/function/merge" target="_blank">(Aprende más sobre merge)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="mergeCode"></code>
