@@ -1,0 +1,23 @@
+<h3>{{'EXERCISES.EXERCISETITLE' | translate }}: {{exerciseTitle}}</h3>
+
+<div *ngIf="currentLanguage === 'de'">
+  <p>Wir haben neue Lieferanten und wollen einen Qualitätstest durchführen.</p>
+  <p>
+    <code class="help" [appTooltip]="tooltip">Fork-join</code> hilft uns auf das Ende <em>aller</em> Lieferungen zu warten und die letzte gelieferten Früchte zu entnehmen.
+    <a href="https://rxjs.dev/api/operators/fork-join" target="_blank">Mehr Information zu fork-join.</a>
+  </p>
+  <p>Tipp: Wie zip(), liefert forkJoin() ein Array zurück, dass du zuerst 'flatten' musst.</p>
+  <p>Bonusfrage: Wo ist der Unterschied zur takeLast() funktion?</p>
+</div>
+<div *ngIf="currentLanguage === 'en'">
+  <p>We have new subcontractors and want to test their fruits quality before offering them a deal.</p>
+  <p><code class="help" [appTooltip]="tooltip">Fork-join</code> helps us to wait for all deliveries to complete and only pick the last delivered fruit.
+    <a href="https://rxjs.dev/api/operators/fork-join" target="_blank">More infos about fork-join.</a></p>
+  <p> Tipp: Like zip(), forkJoin() returns an array that you have to flatten somehow first...</p>
+  <p> Bonus: Where is the difference to the takeLast() function?</p>
+</div>
+<div #tooltip class="tooltip codeTooltip">
+    <pre>
+        <code [highlight]="forkJoinCode"></code>
+    </pre>
+</div>

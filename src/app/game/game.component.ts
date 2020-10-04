@@ -9,7 +9,7 @@ import { ExerciseService } from './../shared/exercise.service';
 import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Subject } from 'rxjs';
-import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX } from 'rxjs';
+import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX, forkJoin as forkJoinX  } from 'rxjs';
 import { delay, concatMap, take, filter } from 'rxjs/operators';
 import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } from 'rxjs/operators';
 import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
@@ -386,6 +386,7 @@ export class GameComponent implements OnInit {
     const distinctUntilChanged = distinctUntilChangedX;
     const zip = zipX;
     const concatMap = concatMapX;
+    const forkJoin = forkJoinX;
     const toConveyorBeltX = toConveyorBelt;
 
     function toConveyorBelt(fruit: string) {
