@@ -1,91 +1,97 @@
 {
-	"APP": {
-		"CANCELBUTTON": "Abbrechen",
-		"CONFIRMRESET": "Bist du sicher, dass du das Spiel zurücksetzen möchtest?\n\nDein gespeicherter Fortschritt geht dabei verloren und du musst das Spiel von neuem starten.",
-		"COOKIEBANNER": {
-			"BUTTONS": {
-				"ALLOW": "Cookies zulassen",
-				"DENY": "Cookies ablehnen"
-			},
-			"MESSAGE": "Wenn Sie Ihren Besuch auf dieser Website fortsetzen, akzeptieren Sie die Verwendung von Cookies durch Google Analytics, um Besuchsstatistiken zu erstellen.",
-			"PRIVACYLINK": "Mehr Informationen"
-		},
-		"CREDITS": "<span>Gemacht mit ❤ von </span><a class=\"credits-link\" href=\"https://about.me/gregor.biswanger\" target=\"_blank\">Gregor Biswanger</a> • <a class=\"credits-link\" href=\"https://github.com/GregorBiswanger/rxjs-fruits\" target=\"_blank\">GitHub</a> • <a class=\"credits-link\" href=\"https://twitter.com/BFreakout\" target=\"_blank\">Twitter</a> • <span class=\"credits-text\">Grafiken von </span><a class=\"credits-link\" href=\"https://twitter.com/BeleEisenmann\" target=\"_blank\">Bele Eisenmann</a>",
-		"FRUITS": {
-			"APPLE": "Apfel",
-			"BANANA": "Banane",
-			"CHERRY": "Kirsche"
-		},
-		"GAMEOVERDIALOG": {
-			"CONTRIBUTEMESSAGE": "Falls du selbst eine Idee für ein Level hast und Angular Entwickler bist, <br />\ndann findest du weitere Informationen hier: <a href=\"https://github.com/GregorBiswanger/rxjs-fruits-schematics\" target=\"_blank\">rxjs-fruits-schematics</a>",
-			"DONATEMESSAGE": "Hat dir das Spiel gefallen? Hast du RxJS besser verstehen gelernt?<br />\nDann sei so fair und gebe mir als Dankeschön ein <s>Bier</s> ahh Kaffee aus:",
-			"PAYSHAREMESSAGE": "Oder zahle mit einem teilen Button klick:",
-			"SUBTITLE": "Du hast es geschafft und bist jetzt ein reaktiver Barkeeper!",
-			"THANKYOU": "Danke an meine Frau Christine und meinen Sohn Raphael für die Unterstützung, <br />\ndamit ich die Zeit für die Entwicklung zu diesem Spiel bekommen habe. <br />\nIch liebe euch von ganzem Herzen… 🥰",
-			"TITLE": "Herzlichen Glückwunsch 🎉🎉🎉"
-		},
-		"ISNOACTIVATESUBSCRIBE": "❌ Das Fließband muss bewegt werden mit dem Aufruf der subscribe-Funktion!",
-		"ISNOFRUITSINCOMING": "❌ Das Fließband bekommt keine Früchte!",
-		"ISTOLITTLEFRUITS": "❌ Das Fließband bekommt zu wenig Früchte!",
-		"ISTOMUCHFRUITS": "❌ Mehr Früchte als im Rezept angegeben sind!",
-		"LABELLEVEL": " von ",
-		"LABELRESET": "Zurücksetzen",
-		"LEVEL": "Level ",
-		"NEXTBUTTON": "Weiter",
-		"OUTPUT": "Es gab einen Fehler mit deinem Code. Bitte mit F12 die Ausgabe in der Console überprüfen.",
-		"PRIVACYBUTTON": "Datenschutz",
-		"RECIPETITLE": "Rezept",
-		"STARTBUTTON": "Start"
-	},
-	"EXERCISES": {
-		"DISTINCT": {
-			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n\n<p>Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)</p>"
-		},
-		"DISTINCTUNTILCHANGED": {
-			"RECIPEDESCRIPTION": "Es soll keine Frucht doppelt hintereinander gemixt werden. (Hinweis: Verwende distinctUntilChanged)"
-		},
-		"EXERCISETITLE": "Übung",
-		"FILTER": {
-			"RECIPEDESCRIPTION": "Es sollen alle frischen Äpfel und Bananen gemixt werden. (Hinweis: Verwende filter)"
-		},
-		"FILTER-MAP-TAKE": {
-			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende filter, map und take)</p>"
-		},
-		"MAP": {
-			"RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)"
-		},
-		"MERGE": {
-			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der merge-Funktion.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende merge und filter)</p>"
-		},
-		"REPEAT": {
-			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende repeat)"
-		},
-		"SKIP": {
-			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skip)"
-		},
-		"SKIP-LAST": {
-			"RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skipLast)"
-		},
-		"SKIP-TAKE-MAP": {
-			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skip, take und map)</p>"
-		},
-		"SKIPLAST-SKIP-MERGE": {
-			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der merge-Funktion.</p>\n<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skipLast, skip, merge und map)</p>"
-		},
-		"SUBSCRIBE": {
-			"RECIPEDESCRIPTION": "Im Source-Code haben wir ein leeres Observable ohne Daten zu erwarten. <p><b>Bewege das Fließband</b>, indem du das leere Observable conveyorBelt mit der subscribe-function abonnierst und auf den Start-Button klickst.</p>"
-		},
-		"SUBSCRIBE-NEXT": {
-			"RECIPEDESCRIPTION": "Abonniere das Observable und gebe jeweils eine Frucht auf das Fließband mit der <b>toConveyorBelt</b>-Funktion.\n\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende subscribe mit next)</p>"
-		},
-		"TAKE": {
-			"RECIPEDESCRIPTION": "Es sollen nur zwei Bananen gemixt werden. (Hinweis: Verwende take)"
-		},
-		"TAKE-LAST": {
-			"RECIPEDESCRIPTION": "Es sollen nur die letzten drei Früchte gemixt werden. (Hinweis: Verwende takeLast)"
-		},
-		"ZIP-CONCATMAP": {
-			"RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der zip-Funktion.</p>\n<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Es soll jede Frucht abwechselnd gemixt werden. (Hinweis: Verwende zip und concatMap)</p>"
-		}
-	}
+  "APP": {
+    "CANCELBUTTON": "Abbrechen",
+    "CONFIRMRESET": "Bist du sicher, dass du das Spiel zurücksetzen möchtest?\n\nDein gespeicherter Fortschritt geht dabei verloren und du musst das Spiel von neuem starten.",
+    "COOKIEBANNER": {
+      "BUTTONS": {
+        "ALLOW": "Cookies zulassen",
+        "DENY": "Cookies ablehnen"
+      },
+      "MESSAGE": "Wenn Sie Ihren Besuch auf dieser Website fortsetzen, akzeptieren Sie die Verwendung von Cookies durch Google Analytics, um Besuchsstatistiken zu erstellen.",
+      "PRIVACYLINK": "Mehr Informationen"
+    },
+    "CREDITS": "<span>Gemacht mit ❤ von </span><a class=\"credits-link\" href=\"https://about.me/gregor.biswanger\" target=\"_blank\">Gregor Biswanger</a> • <a class=\"credits-link\" href=\"https://github.com/GregorBiswanger/rxjs-fruits\" target=\"_blank\">GitHub</a> • <a class=\"credits-link\" href=\"https://twitter.com/BFreakout\" target=\"_blank\">Twitter</a> • <span class=\"credits-text\">Grafiken von </span><a class=\"credits-link\" href=\"https://twitter.com/BeleEisenmann\" target=\"_blank\">Bele Eisenmann</a>",
+    "FRUITS": {
+      "APPLE": "Apfel",
+      "BANANA": "Banane",
+      "CHERRY": "Kirsche"
+    },
+    "GAMEOVERDIALOG": {
+      "CONTRIBUTEMESSAGE": "Falls du selbst eine Idee für ein Level hast und Angular Entwickler bist, <br />\ndann findest du weitere Informationen hier: <a href=\"https://github.com/GregorBiswanger/rxjs-fruits-schematics\" target=\"_blank\">rxjs-fruits-schematics</a>",
+      "DONATEMESSAGE": "Hat dir das Spiel gefallen? Hast du RxJS besser verstehen gelernt?<br />\nDann sei so fair und gebe mir als Dankeschön ein <s>Bier</s> ahh Kaffee aus:",
+      "PAYSHAREMESSAGE": "Oder zahle mit einem teilen Button klick:",
+      "SUBTITLE": "Du hast es geschafft und bist jetzt ein reaktiver Barkeeper!",
+      "THANKYOU": "Danke an meine Frau Christine und meinen Sohn Raphael für die Unterstützung, <br />\ndamit ich die Zeit für die Entwicklung zu diesem Spiel bekommen habe. <br />\nIch liebe euch von ganzem Herzen… 🥰",
+      "TITLE": "Herzlichen Glückwunsch 🎉🎉🎉"
+    },
+    "ISNOACTIVATESUBSCRIBE": "❌ Das Fließband muss bewegt werden mit dem Aufruf der subscribe-Funktion!",
+    "ISNOFRUITSINCOMING": "❌ Das Fließband bekommt keine Früchte!",
+    "ISTOLITTLEFRUITS": "❌ Das Fließband bekommt zu wenig Früchte!",
+    "ISTOMUCHFRUITS": "❌ Mehr Früchte als im Rezept angegeben sind!",
+    "LABELLEVEL": " von ",
+    "LABELRESET": "Zurücksetzen",
+    "LEVEL": "Level ",
+    "NEXTBUTTON": "Weiter",
+    "OUTPUT": "Es gab einen Fehler mit deinem Code. Bitte mit F12 die Ausgabe in der Console überprüfen.",
+    "PRIVACYBUTTON": "Datenschutz",
+    "RECIPETITLE": "Rezept",
+    "STARTBUTTON": "Start"
+  },
+  "EXERCISES": {
+    "DISTINCT": {
+      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n\n<p>Es soll jede Frucht nur einmal gemixt werden. (Hinweis: Verwende distinct)</p>"
+    },
+    "DISTINCTUNTILCHANGED": {
+      "RECIPEDESCRIPTION": "Es soll keine Frucht doppelt hintereinander gemixt werden. (Hinweis: Verwende distinctUntilChanged)"
+    },
+    "EXERCISETITLE": "Übung",
+    "FILTER": {
+      "RECIPEDESCRIPTION": "Es sollen alle frischen Äpfel und Bananen gemixt werden. (Hinweis: Verwende filter)"
+    },
+    "FILTER-MAP-TAKE": {
+      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende filter, map und take)</p>"
+    },
+    "MAP": {
+      "RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)"
+    },
+    "MERGE": {
+      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der merge-Funktion.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende merge und filter)</p>"
+    },
+    "REPEAT": {
+      "RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende repeat)"
+    },
+    "SKIP": {
+      "RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skip)"
+    },
+    "SKIP-LAST": {
+      "RECIPEDESCRIPTION": "Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skipLast)"
+    },
+    "SKIP-TAKE-MAP": {
+      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skip, take und map)</p>"
+    },
+    "SKIPLAST-SKIP-MERGE": {
+      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der merge-Funktion.</p>\n<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende skipLast, skip, merge und map)</p>"
+    },
+    "SUBSCRIBE": {
+      "RECIPEDESCRIPTION": "Im Source-Code haben wir ein leeres Observable ohne Daten zu erwarten. <p><b>Bewege das Fließband</b>, indem du das leere Observable conveyorBelt mit der subscribe-function abonnierst und auf den Start-Button klickst.</p>"
+    },
+    "SUBSCRIBE-NEXT": {
+      "RECIPEDESCRIPTION": "Abonniere das Observable und gebe jeweils eine Frucht auf das Fließband mit der <b>toConveyorBelt</b>-Funktion.\n\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende subscribe mit next)</p>"
+    },
+    "TAKE": {
+      "RECIPEDESCRIPTION": "Es sollen nur zwei Bananen gemixt werden. (Hinweis: Verwende take)"
+    },
+    "TAKE-LAST": {
+      "RECIPEDESCRIPTION": "Es sollen nur die letzten drei Früchte gemixt werden. (Hinweis: Verwende takeLast)"
+    },
+    "ZIP-CONCATMAP": {
+      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der zip-Funktion.</p>\n<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Es soll jede Frucht abwechselnd gemixt werden. (Hinweis: Verwende zip und concatMap)</p>"
+    },
+    "FORK-JOIN": {
+      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der gesuchten Funktion.</p><p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind.</p>"
+    }
+  }
 }
+
+
+
