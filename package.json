@@ -32,7 +32,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "angulartics2": "^8.3.0",
     "animate.css": "^3.7.2",
-    "gsap": "^3.2.5",
+    "gsap": "^3.6.0",
     "monaco-editor": "^0.20.0",
     "ngx-cookie-service": "^3.0.4",
     "ngx-highlightjs": "^4.1.0-beta",
