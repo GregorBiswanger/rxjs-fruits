@@ -18,7 +18,6 @@ import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError
 import { gsap } from 'gsap';
 import { MonacoEditorComponent, MonacoEditorLoaderService } from '@materia-ui/ngx-monaco-editor';
 import { GameOverDialogComponent } from '../game-over-dialog/game-over-dialog.component';
-import * as monaco from 'monaco-editor';
 import { Router } from '@angular/router';
 import { Exercise } from './../shared/exercise';
 import { TranslateService } from '@ngx-translate/core';
