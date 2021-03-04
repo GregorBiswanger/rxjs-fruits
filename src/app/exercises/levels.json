@@ -1,1 +1,98 @@
-[{"title":"subscribe","number":1,"urlPath":"/subscribe","solved":false},{"title":"subscribe-next","number":2,"urlPath":"/subscribe-next","solved":false},{"title":"distinct","number":3,"urlPath":"/distinct","solved":false},{"title":"take","number":4,"urlPath":"/take","solved":false},{"title":"filter","number":5,"urlPath":"/filter","solved":false},{"title":"map","number":6,"urlPath":"/map","solved":false},{"title":"filter-map-take","number":7,"urlPath":"/filter-map-take","solved":false},{"title":"distinctuntilchanged","number":8,"urlPath":"/distinctuntilchanged","solved":false},{"title":"skip","number":9,"urlPath":"/skip","solved":false},{"title":"skip-take-map","number":10,"urlPath":"/skip-take-map","solved":false},{"title":"merge","number":11,"urlPath":"/merge","solved":false},{"title":"take-last","number":12,"urlPath":"/take-last","solved":false},{"title":"skip-last","number":13,"urlPath":"/skip-last","solved":false},{"title":"skiplast-skip-merge","number":14,"urlPath":"/skiplast-skip-merge","solved":false},{"title":"zip-concatmap","number":15,"urlPath":"/zip-concatmap","solved":false},{"title":"repeat","number":16,"urlPath":"/repeat","solved":false},{"title":"fork-join","number":17,"urlPath":"/fork-join","solved":false}]
+[
+    {
+        "title": "subscribe",
+        "number": 1,
+        "urlPath": "/subscribe",
+        "solved": false
+    },
+    {
+        "title": "subscribe-next",
+        "number": 2,
+        "urlPath": "/subscribe-next",
+        "solved": false
+    },
+    {
+        "title": "distinct",
+        "number": 3,
+        "urlPath": "/distinct",
+        "solved": false
+    },
+    {
+        "title": "take",
+        "number": 4,
+        "urlPath": "/take",
+        "solved": false
+    },
+    {
+        "title": "filter",
+        "number": 5,
+        "urlPath": "/filter",
+        "solved": false
+    },
+    {
+        "title": "map",
+        "number": 6,
+        "urlPath": "/map",
+        "solved": false
+    },
+    {
+        "title": "filter-map-take",
+        "number": 7,
+        "urlPath": "/filter-map-take",
+        "solved": false
+    },
+    {
+        "title": "distinctuntilchanged",
+        "number": 8,
+        "urlPath": "/distinctuntilchanged",
+        "solved": false
+    },
+    {
+        "title": "skip",
+        "number": 9,
+        "urlPath": "/skip",
+        "solved": false
+    },
+    {
+        "title": "skip-take-map",
+        "number": 10,
+        "urlPath": "/skip-take-map",
+        "solved": false
+    },
+    {
+        "title": "merge",
+        "number": 11,
+        "urlPath": "/merge",
+        "solved": false
+    },
+    {
+        "title": "take-last",
+        "number": 12,
+        "urlPath": "/take-last",
+        "solved": false
+    },
+    {
+        "title": "skip-last",
+        "number": 13,
+        "urlPath": "/skip-last",
+        "solved": false
+    },
+    {
+        "title": "skiplast-skip-merge",
+        "number": 14,
+        "urlPath": "/skiplast-skip-merge",
+        "solved": false
+    },
+    {
+        "title": "zip-concatmap",
+        "number": 15,
+        "urlPath": "/zip-concatmap",
+        "solved": false
+    },
+    {
+        "title": "repeat",
+        "number": 16,
+        "urlPath": "/repeat",
+        "solved": false
+    }
+]

@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('The fork-join level 17', () => {
+xdescribe('The fork-join level 17', () => {
   let page: AppPage;
 
   beforeEach(() => {
