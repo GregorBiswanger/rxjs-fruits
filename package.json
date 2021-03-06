@@ -5,13 +5,13 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "ng": "ng",
-    "start": "ng serve --prod",
+    "start": "ng serve",
     "build": "ng build --prod && echo www.rxjs-fruits.com > docs/CNAME",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "e2e:ci": "start-server-and-test start http://localhost:4200 cy:run",
-    "postinstall": "ngcc --properties es2015 browser module main --async false"
+    "postinstall": "ngcc --properties es2015 browser module main"
   },
   "private": true,
   "dependencies": {

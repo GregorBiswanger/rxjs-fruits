@@ -1,0 +1,40 @@
+name: rxjs-fruits CI Pipeline
+
+on:
+  push:
+    branches-ignore:
+      - "gh-pages"
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node14.16.0-chrome89-ff77
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+            node-version: '15'
+      - name: Cypress run
+        uses: cypress-io/github-action@v2.9.1
+        with:
+          build: npm build
+          start: npm start
+          wait-on: 'http://localhost:4200'
+          wait-on-timeout: 180
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Artefakte hochladen
+        uses: actions/upload-artifact@v2
+        with:
+            name: cypress-videos
+            path: ./cypress/videos/
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            github_token: ${{ secrets.GH_TOKEN }}
+            publish_dir: ./docs
