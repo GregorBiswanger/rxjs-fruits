@@ -15,24 +15,24 @@ jobs:
       - uses: actions/setup-node@v2
         with:
             node-version: '15'
-      - name: Cypress run
-        uses: cypress-io/github-action@v2.9.1
-        with:
-          build: npm run build
-          start: npm start
-          wait-on: 'http://localhost:4200'
-          wait-on-timeout: 180
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Artefakte hochladen
-        uses: actions/upload-artifact@v2
-        with:
-            name: cypress-videos
-            path: ./cypress/videos/
+      # - name: Cypress run
+      #   uses: cypress-io/github-action@v2.9.1
+      #   with:
+      #     build: npm run build
+      #     start: npm start
+      #     wait-on: 'http://localhost:4200'
+      #     wait-on-timeout: 180
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-
+      # - name: Artefakte hochladen
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #       name: cypress-videos
+      #       path: ./cypress/videos/
 
   deploy:
     runs-on: ubuntu-latest
@@ -44,6 +44,7 @@ jobs:
         with:
             node-version: '15'
       - run: npm run build
+      - run: echo www.rxjs-fruits.com > CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
