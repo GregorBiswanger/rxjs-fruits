@@ -43,8 +43,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
             node-version: '15'
+      - run: npm install
       - run: npm run build
-      - run: echo www.rxjs-fruits.com > CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
