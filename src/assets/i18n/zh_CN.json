@@ -30,6 +30,7 @@
     "ISTOMUCHFRUITS": "❌ 多于食谱中指定的水果了！",
     "LABELLEVEL": " of ",
     "LABELRESET": "重置",
+    "LEVEL": "级",
     "NEXTBUTTON": "下一关",
     "OUTPUT": "代码有错误，打开浏览器控制台查看错误信息。",
     "PRIVACYBUTTON": "隐私政策",
@@ -87,7 +88,7 @@
       "RECIPEDESCRIPTION": "<p><b>提示：</b> 将 EMPTY observable 替换为 zip function 。</p>\n<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>每种水果需要交替使用。（注意：使用 zip 和 concatMap ）</p>"
     },
     "FORK-JOIN": {
-      "RECIPEDESCRIPTION": "lorem ipsum."
+      "RECIPEDESCRIPTION": "只能添加食谱上指定的水果。（注意：使用 concatMap ）"
     }
   }
 }
