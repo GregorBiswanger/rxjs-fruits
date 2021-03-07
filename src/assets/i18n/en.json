@@ -51,6 +51,9 @@
     "FILTER-MAP-TAKE": {
       "RECIPEDESCRIPTION": "<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Add only the fruits that are specified on the recipe. (Note: use filter, map and take)</p>"
     },
+    "FORK-JOIN": {
+      "RECIPEDESCRIPTION": "<p>Use concatMap like you did before</p>"
+    },
     "MAP": {
       "RECIPEDESCRIPTION": "All apples and bananas should be cleared of dirt. (Note: use map)"
     },
@@ -86,9 +89,6 @@
     },
     "ZIP-CONCATMAP": {
       "RECIPEDESCRIPTION": "<p><b>Tip:</b> Replace the EMPTY Observable with the zip function.</p>\n<p><b>Tip:</b> Press the F12 key and use the console within the developer tools of the browser for debugging.</p>\n<p>Each fruit should be mixed alternately. (Note: Use zip and concatMap)</p>"
-    },
-    "FORK-JOIN": {
-      "RECIPEDESCRIPTION": "<p>Use concatMap like you did before</p>"
     }
   }
 }

@@ -51,6 +51,9 @@
     "FILTER-MAP-TAKE": {
       "RECIPEDESCRIPTION": "<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 filter 、 map 和 take ）</p>"
     },
+    "FORK-JOIN": {
+      "RECIPEDESCRIPTION": "只能添加食谱上指定的水果。（注意：使用 concatMap ）"
+    },
     "MAP": {
       "RECIPEDESCRIPTION": "所有苹果和香蕉都需要清除污垢。（注意：使用 map ）"
     },
@@ -86,9 +89,6 @@
     },
     "ZIP-CONCATMAP": {
       "RECIPEDESCRIPTION": "<p><b>提示：</b> 将 EMPTY observable 替换为 zip function 。</p>\n<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>每种水果需要交替使用。（注意：使用 zip 和 concatMap ）</p>"
-    },
-    "FORK-JOIN": {
-      "RECIPEDESCRIPTION": "只能添加食谱上指定的水果。（注意：使用 concatMap ）"
     }
   }
 }

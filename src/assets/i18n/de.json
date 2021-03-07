@@ -51,6 +51,9 @@
     "FILTER-MAP-TAKE": {
       "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende filter, map und take)</p>"
     },
+    "FORK-JOIN": {
+      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der gesuchten Funktion.</p><p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind.</p>"
+    },
     "MAP": {
       "RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom Dreck befreit werden. (Hinweis: Verwende map)"
     },
@@ -86,9 +89,6 @@
     },
     "ZIP-CONCATMAP": {
       "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der zip-Funktion.</p>\n<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Es soll jede Frucht abwechselnd gemixt werden. (Hinweis: Verwende zip und concatMap)</p>"
-    },
-    "FORK-JOIN": {
-      "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der gesuchten Funktion.</p><p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind.</p>"
     }
   }
 }

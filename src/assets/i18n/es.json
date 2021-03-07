@@ -28,9 +28,9 @@
     "ISNOFRUITSINCOMING": "❌ La cinta transportadora recibe no esta recibiendo frutas!",
     "ISTOLITTLEFRUITS": "❌ La cinta transportadora recibe muy poca fruta!",
     "ISTOMUCHFRUITS": "❌ Más frutas de las especificadas en la receta!",
-    "LEVEL": "Nivel ",
     "LABELLEVEL": " de ",
     "LABELRESET": "Reiniciar",
+    "LEVEL": "Nivel ",
     "NEXTBUTTON": "Siguiente",
     "OUTPUT": "Hubo un error con tu código. Por favor usa F12 para verificar la salida en la consola.",
     "PRIVACYBUTTON": "Privacidad",
@@ -50,6 +50,9 @@
     },
     "FILTER-MAP-TAKE": {
       "RECIPEDESCRIPTION": "<p><b>Tip:</b> Presione la tecla F12 y use la consola dentro de las herramientas de desarrollador del navegador para la depuración.</p>\n<p>Agrega solo las frutas que está especificadas en la receta. (Nota: usa filter, map y take)</p>"
+    },
+    "FORK-JOIN": {
+      "RECIPEDESCRIPTION": "Agrega solo las frutas que está especificadas en la receta. (Nota: usa concatMap)"
     },
     "MAP": {
       "RECIPEDESCRIPTION": "Todas las manzanas y plátanos deben estar limpias. (Nota: usa map)"
@@ -86,9 +89,6 @@
     },
     "ZIP-CONCATMAP": {
       "RECIPEDESCRIPTION": "<p><b>Tip:</b> Reemplaza el observable EMPTY con la función zip.</p>\n<p><b>Tip:</b> Presione la tecla F12 y use la consola dentro de las herramientas de desarrollador del navegador para la depuración</p>\n<p>Cada fruta deben mezclarse alternativamente. (Nota: Usa zip y concatMap)</p>"
-    },
-    "FORK-JOIN": {
-      "RECIPEDESCRIPTION": "Agrega solo las frutas que está especificadas en la receta. (Nota: usa concatMap)"
     }
   }
 }
