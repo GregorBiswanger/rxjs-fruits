@@ -1,1 +1,93 @@
-{"APP":{"CANCELBUTTON":"取消","CONFIRMRESET":"确定要重置游戏吗？\n\n保存的进度将会丢失，并且将要重新开始游戏。","COOKIEBANNER":{"BUTTONS":{"ALLOW":"允许","DENY":"拒绝"},"MESSAGE":"继续访问该网站，即表示你接受 Google Analytics（分析）使用 cookie 进行访问统计。","PRIVACYLINK":"更多信息"},"CREDITS":"<span>Made with ❤ by </span><a class=\"credits-link\" href=\"https://about.me/gregor.biswanger\" target=\"_blank\">Gregor Biswanger</a> • <a class=\"credits-link\" href=\"https://github.com/GregorBiswanger/rxjs-fruits\" target=\"_blank\">GitHub</a> • <a class=\"credits-link\" href=\"https://twitter.com/BFreakout\" target=\"_blank\">Twitter</a> • <span class=\"credits-text\">Graphics by </span><a class=\"credits-link\" href=\"https://twitter.com/BeleEisenmann\" target=\"_blank\">Bele Eisenmann</a>","FRUITS":{"APPLE":"苹果","BANANA":"香蕉","CHERRY":"樱桃"},"GAMEOVERDIALOG":{"CONTRIBUTEMESSAGE":"如果你有设计一个关卡的想法并且是 Angular 开发者， <br />\n那么可以在这里找到更多信息： <a href=\"https://github.com/GregorBiswanger/rxjs-fruits-schematics\" target=\"_blank\">rxjs-fruits-schematics</a>","DONATEMESSAGE":"你喜欢这个游戏吗？是否学会了更好地理解 RxJS 呢？<br />\n如果是，那就请我喝一杯咖啡吧。谢谢！","PAYSHAREMESSAGE":"或者分享到下面的社交网络平台上：","SUBTITLE":"你通关了，现在你是一位合格的酒吧老板了！","THANKYOU":"感谢我的妻子克里斯汀（Christine）和我的儿子拉斐尔（Raphael）的支持， <br />\n我才有时间开发这款游戏。 <br />\n爱你们... 🥰","TITLE":"恭喜 🎉🎉🎉"},"ISNOACTIVATESUBSCRIBE":"❌ 必须通过调用 subscribe function 移动传送带！","ISNOFRUITSINCOMING":"❌ 传送带上没有任何水果！","ISTOLITTLEFRUITS":"❌ 传送带上的水果太少了！","ISTOMUCHFRUITS":"❌ 多于食谱中指定的水果了！","LABELLEVEL":" of ","LABELRESET":"重置","NEXTBUTTON":"下一关","OUTPUT":"代码有错误，打开浏览器控制台查看错误信息。","PRIVACYBUTTON":"隐私政策","RECIPETITLE":"食谱","STARTBUTTON":"开始游戏"},"EXERCISES":{"DISTINCT":{"RECIPEDESCRIPTION":"<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>每种水果只能使用一次。（注意：使用 distinct ）</p>"},"DISTINCTUNTILCHANGED":{"RECIPEDESCRIPTION":"一种水果不能连续使用两次。（注意：使用 distinctUntilChanged ）"},"EXERCISETITLE":"练习","FILTER":{"RECIPEDESCRIPTION":"使用所有新鲜的水果。（注意：使用 filter ）"},"FILTER-MAP-TAKE":{"RECIPEDESCRIPTION":"<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 filter 、 map 和 take ）</p>"},"MAP":{"RECIPEDESCRIPTION":"所有苹果和香蕉都需要清除污垢。（注意：使用 map ）"},"MERGE":{"RECIPEDESCRIPTION":"<p><b>提示：</b> 将 EMPTY observable 替换为 merge function 。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 merge 和 filter ）</p>"},"REPEAT":{"RECIPEDESCRIPTION":"只能添加食谱上指定的水果。（注意：使用 repeat ）"},"SKIP":{"RECIPEDESCRIPTION":"只能添加食谱上指定的水果。（注意：使用 skip ）"},"SKIP-LAST":{"RECIPEDESCRIPTION":"只能添加食谱上指定的水果。（注意：使用 skipLast ）"},"SKIP-TAKE-MAP":{"RECIPEDESCRIPTION":"<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 skip 、 take 和 map ）</p>"},"SKIPLAST-SKIP-MERGE":{"RECIPEDESCRIPTION":"<p><b>提示：</b> 将 EMPTY observable 替换为 merge function 。</p>\n<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 skipLast 、 skip 、 merge 和 map ）</p>"},"SUBSCRIBE":{"RECIPEDESCRIPTION":"源码中有一个空的 Observable ，但没有预期的数据。 <p>首先调用 subscribe function 订阅空的 Observable ，然后点击“开始游戏”按钮<b>移动传送带</b>。</p>"},"SUBSCRIBE-NEXT":{"RECIPEDESCRIPTION":"订阅 Observable ，并使用 <b>toConveyorBelt</b> function 将每个水果放到传送带上。\n\n<p>只能添加食谱上指定的水果。（注意：使用下一个 subscribe ）</p>"},"TAKE":{"RECIPEDESCRIPTION":"只能使用两个香蕉。（注意：使用 take ）"},"TAKE-LAST":{"RECIPEDESCRIPTION":"只能使用最后三个水果。（注意：使用 takeLast ）"},"ZIP-CONCATMAP":{"RECIPEDESCRIPTION":"<p><b>提示：</b> 将 EMPTY observable 替换为 zip function 。</p>\n<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>每种水果需要交替使用。（注意：使用 zip 和 concatMap ）</p>"},"FORK-JOIN":{"RECIPEDESCRIPTION":"lorem ipsum."}}}
+{
+  "APP": {
+    "CANCELBUTTON": "取消",
+    "CONFIRMRESET": "确定要重置游戏吗？\n\n保存的进度将会丢失，并且将要重新开始游戏。",
+    "COOKIEBANNER": {
+      "BUTTONS": {
+        "ALLOW": "允许",
+        "DENY": "拒绝"
+      },
+      "MESSAGE": "继续访问该网站，即表示你接受 Google Analytics（分析）使用 cookie 进行访问统计。",
+      "PRIVACYLINK": "更多信息"
+    },
+    "CREDITS": "<span>Made with ❤ by </span><a class=\"credits-link\" href=\"https://about.me/gregor.biswanger\" target=\"_blank\">Gregor Biswanger</a> • <a class=\"credits-link\" href=\"https://github.com/GregorBiswanger/rxjs-fruits\" target=\"_blank\">GitHub</a> • <a class=\"credits-link\" href=\"https://twitter.com/BFreakout\" target=\"_blank\">Twitter</a> • <span class=\"credits-text\">Graphics by </span><a class=\"credits-link\" href=\"https://twitter.com/BeleEisenmann\" target=\"_blank\">Bele Eisenmann</a>",
+    "FRUITS": {
+      "APPLE": "苹果",
+      "BANANA": "香蕉",
+      "CHERRY": "樱桃"
+    },
+    "GAMEOVERDIALOG": {
+      "CONTRIBUTEMESSAGE": "如果你有设计一个关卡的想法并且是 Angular 开发者， <br />\n那么可以在这里找到更多信息： <a href=\"https://github.com/GregorBiswanger/rxjs-fruits-schematics\" target=\"_blank\">rxjs-fruits-schematics</a>",
+      "DONATEMESSAGE": "你喜欢这个游戏吗？是否学会了更好地理解 RxJS 呢？<br />\n如果是，那就请我喝一杯咖啡吧。谢谢！",
+      "PAYSHAREMESSAGE": "或者分享到下面的社交网络平台上：",
+      "SUBTITLE": "你通关了，现在你是一位合格的酒吧老板了！",
+      "THANKYOU": "感谢我的妻子克里斯汀（Christine）和我的儿子拉斐尔（Raphael）的支持， <br />\n我才有时间开发这款游戏。 <br />\n爱你们... 🥰",
+      "TITLE": "恭喜 🎉🎉🎉"
+    },
+    "ISNOACTIVATESUBSCRIBE": "❌ 必须通过调用 subscribe function 移动传送带！",
+    "ISNOFRUITSINCOMING": "❌ 传送带上没有任何水果！",
+    "ISTOLITTLEFRUITS": "❌ 传送带上的水果太少了！",
+    "ISTOMUCHFRUITS": "❌ 多于食谱中指定的水果了！",
+    "LABELLEVEL": " of ",
+    "LABELRESET": "重置",
+    "NEXTBUTTON": "下一关",
+    "OUTPUT": "代码有错误，打开浏览器控制台查看错误信息。",
+    "PRIVACYBUTTON": "隐私政策",
+    "RECIPETITLE": "食谱",
+    "STARTBUTTON": "开始游戏"
+  },
+  "EXERCISES": {
+    "DISTINCT": {
+      "RECIPEDESCRIPTION": "<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>每种水果只能使用一次。（注意：使用 distinct ）</p>"
+    },
+    "DISTINCTUNTILCHANGED": {
+      "RECIPEDESCRIPTION": "一种水果不能连续使用两次。（注意：使用 distinctUntilChanged ）"
+    },
+    "EXERCISETITLE": "练习",
+    "FILTER": {
+      "RECIPEDESCRIPTION": "使用所有新鲜的水果。（注意：使用 filter ）"
+    },
+    "FILTER-MAP-TAKE": {
+      "RECIPEDESCRIPTION": "<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 filter 、 map 和 take ）</p>"
+    },
+    "MAP": {
+      "RECIPEDESCRIPTION": "所有苹果和香蕉都需要清除污垢。（注意：使用 map ）"
+    },
+    "MERGE": {
+      "RECIPEDESCRIPTION": "<p><b>提示：</b> 将 EMPTY observable 替换为 merge function 。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 merge 和 filter ）</p>"
+    },
+    "REPEAT": {
+      "RECIPEDESCRIPTION": "只能添加食谱上指定的水果。（注意：使用 repeat ）"
+    },
+    "SKIP": {
+      "RECIPEDESCRIPTION": "只能添加食谱上指定的水果。（注意：使用 skip ）"
+    },
+    "SKIP-LAST": {
+      "RECIPEDESCRIPTION": "只能添加食谱上指定的水果。（注意：使用 skipLast ）"
+    },
+    "SKIP-TAKE-MAP": {
+      "RECIPEDESCRIPTION": "<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 skip 、 take 和 map ）</p>"
+    },
+    "SKIPLAST-SKIP-MERGE": {
+      "RECIPEDESCRIPTION": "<p><b>提示：</b> 将 EMPTY observable 替换为 merge function 。</p>\n<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>只能添加食谱上指定的水果。（注意：使用 skipLast 、 skip 、 merge 和 map ）</p>"
+    },
+    "SUBSCRIBE": {
+      "RECIPEDESCRIPTION": "源码中有一个空的 Observable ，但没有预期的数据。 <p>首先调用 subscribe function 订阅空的 Observable ，然后点击“开始游戏”按钮<b>移动传送带</b>。</p>"
+    },
+    "SUBSCRIBE-NEXT": {
+      "RECIPEDESCRIPTION": "订阅 Observable ，并使用 <b>toConveyorBelt</b> function 将每个水果放到传送带上。\n\n<p>只能添加食谱上指定的水果。（注意：使用下一个 subscribe ）</p>"
+    },
+    "TAKE": {
+      "RECIPEDESCRIPTION": "只能使用两个香蕉。（注意：使用 take ）"
+    },
+    "TAKE-LAST": {
+      "RECIPEDESCRIPTION": "只能使用最后三个水果。（注意：使用 takeLast ）"
+    },
+    "ZIP-CONCATMAP": {
+      "RECIPEDESCRIPTION": "<p><b>提示：</b> 将 EMPTY observable 替换为 zip function 。</p>\n<p><b>提示：</b> 尝试使用浏览器开发者工具中的控制台进行调试。</p>\n<p>每种水果需要交替使用。（注意：使用 zip 和 concatMap ）</p>"
+    },
+    "FORK-JOIN": {
+      "RECIPEDESCRIPTION": "lorem ipsum."
+    }
+  }
+}
