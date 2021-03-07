@@ -88,7 +88,7 @@
       "RECIPEDESCRIPTION": "<p><b>Tip:</b> Reemplaza el observable EMPTY con la función zip.</p>\n<p><b>Tip:</b> Presione la tecla F12 y use la consola dentro de las herramientas de desarrollador del navegador para la depuración</p>\n<p>Cada fruta deben mezclarse alternativamente. (Nota: Usa zip y concatMap)</p>"
     },
     "FORK-JOIN": {
-      "RECIPEDESCRIPTION": "lorem ipsum."
+      "RECIPEDESCRIPTION": "Agrega solo las frutas que está especificadas en la receta. (Nota: usa concatMap)"
     }
   }
 }
