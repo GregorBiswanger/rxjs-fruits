@@ -23,16 +23,16 @@ export class AppPage {
     return cy.get(`ol > :nth-child(${positionIndex})`);
   }
 
-  getRecipeWarningIsToMuchFruits() {
-    return cy.get('#isToMuchFruits');
+  getRecipeWarningIsTooMuchFruits() {
+    return cy.get('#isTooMuchFruits');
   }
 
   getRecipeWarningIsNoFruitsIncoming() {
     return cy.get('#isNoFruitsIncoming');
   }
 
-  getRecipeWarningIsToLittleFruits() {
-    return cy.get('#isToLittleFruits');
+  getRecipeWarningIsTooLittleFruits() {
+    return cy.get('#isTooLittleFruits');
   }
 
   getRecipeWarningIsNoActivateSubscribe() {

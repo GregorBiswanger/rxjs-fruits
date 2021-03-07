@@ -17,7 +17,7 @@ describe('The map level 6', () => {
     page.getRecipeItem(2).should('contain.text', '✔');
     page.getRecipeItem(3).should('contain.text', '❌');
     page.getRecipeItem(4).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getNextButton().should('have.attr', 'disabled');
   });
 
@@ -29,7 +29,7 @@ describe('The map level 6', () => {
     page.getRecipe().should('not.have.class', 'animated shake');
     page.getRecipeItem(1).should('contain.text', '✔');
     page.getRecipeItem(2).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 });

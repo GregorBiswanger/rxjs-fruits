@@ -26,7 +26,7 @@ describe('The zip-concatmap level 15', () => {
     page.getRecipeItem(2).should('contain.text', '✔');
     page.getRecipeItem(3).should('contain.text', '✔');
     page.getRecipeItem(4).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getRecipeWarningIsNoFruitsIncoming().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });

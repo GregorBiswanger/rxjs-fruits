@@ -29,7 +29,7 @@ describe('The merge level 11', () => {
     page.getRecipeItem(4).should('contain.text', '✔');
     page.getRecipeItem(5).should('contain.text', '✔');
     page.getRecipeItem(6).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getRecipeWarningIsNoFruitsIncoming().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });

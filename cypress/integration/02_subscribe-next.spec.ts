@@ -24,7 +24,7 @@ describe('The subscribe-next level 2', () => {
     page.getRecipeItem(1).should('contain.text', '✔');
     page.getRecipeItem(2).should('contain.text', '✔');
     page.getRecipeItem(3).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
 
     page.getNextButton().should('not.have.attr', 'disabled');
   });

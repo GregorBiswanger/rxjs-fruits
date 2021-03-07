@@ -19,7 +19,7 @@ describe('The filter level 5', () => {
     page.getRecipeItem(4).should('contain.text', '❌');
     page.getRecipeItem(5).should('contain.text', '❌');
     page.getRecipeItem(6).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('contain.text', '❌');
+    page.getRecipeWarningIsTooMuchFruits().should('contain.text', '❌');
     page.getNextButton().should('have.attr', 'disabled');
   });
 
@@ -36,7 +36,7 @@ describe('The filter level 5', () => {
     page.getRecipeItem(4).should('contain.text', '✔');
     page.getRecipeItem(5).should('contain.text', '✔');
     page.getRecipeItem(6).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 });

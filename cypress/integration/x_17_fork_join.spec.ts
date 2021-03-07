@@ -24,7 +24,7 @@ xdescribe('The fork-join level 17', () => {
     page.getRecipe().should('not.have.class', 'animated shake');
     page.getRecipeItem(1).should('contain.text', 'Apfel');
     page.getRecipeItem(2).should('contain.text', 'Banane');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getRecipeWarningIsNoFruitsIncoming().should('not.exist');
   });
 });
