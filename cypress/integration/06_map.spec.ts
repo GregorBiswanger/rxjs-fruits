@@ -8,7 +8,7 @@ describe('The map level 6', () => {
     page.navigateTo('/map');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -21,7 +21,7 @@ describe('The map level 6', () => {
     page.getNextButton().should('have.attr', 'disabled');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('map(fruit => fruit.replace(\'dirty-\', \'\'))');
     page.getStartButton().click();
     cy.wait(2500);

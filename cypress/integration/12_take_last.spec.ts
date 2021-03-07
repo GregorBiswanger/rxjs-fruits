@@ -8,7 +8,7 @@ describe('The take-last level 12', () => {
     page.navigateTo('/take-last');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -20,7 +20,7 @@ describe('The take-last level 12', () => {
     page.getNextButton().should('have.attr', 'disabled');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('takeLast(3)');
     page.getStartButton().click();
     cy.wait(2500);

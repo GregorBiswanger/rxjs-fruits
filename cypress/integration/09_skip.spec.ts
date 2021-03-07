@@ -8,7 +8,7 @@ describe('The skip level 9', () => {
     page.navigateTo('/skip');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -19,7 +19,7 @@ describe('The skip level 9', () => {
     page.getNextButton().should('have.attr', 'disabled');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('skip(2)');
     page.getStartButton().click();
     cy.wait(2500);

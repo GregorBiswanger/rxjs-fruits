@@ -8,7 +8,7 @@ describe('The skip-last level 13', () => {
     page.navigateTo('/skip-last');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -20,7 +20,7 @@ describe('The skip-last level 13', () => {
     page.getNextButton().should('have.attr', 'disabled');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('skipLast(2)');
     page.getStartButton().click();
     cy.wait(2500);

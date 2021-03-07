@@ -8,14 +8,14 @@ describe('The subscribe-next level 2', () => {
     page.navigateTo('/subscribe-next');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
     page.getNextButton().should('have.attr', 'disabled');
     page.getOutputHint().should('exist');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('toConveyorBelt(fruit)');
     page.getStartButton().click();
     cy.wait(2500);
@@ -29,7 +29,7 @@ describe('The subscribe-next level 2', () => {
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 
-  it('should show a error info dialog on borad with failed code', () => {
+  it('should show a error info dialog on board with failed code', () => {
     page.getCodeEditor().type('toConveyorBelt(fruit){downarrow}jklsdjflskdjflksdjf');
     page.getStartButton().click();
     cy.wait(2500);

@@ -8,7 +8,7 @@ describe('The distinct level 3', () => {
     page.navigateTo('/distinct');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -19,7 +19,7 @@ describe('The distinct level 3', () => {
     page.getNextButton().should('have.attr', 'disabled');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('distinct()');
     page.getStartButton().click();
     cy.wait(2500);
@@ -31,7 +31,7 @@ describe('The distinct level 3', () => {
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 
-  it('should show a error info dialog on borad with failed code', () => {
+  it('should show a error info dialog on board with failed code', () => {
     page.getCodeEditor().type('abcdefghijklmnopqrstuvwxyz');
     page.getStartButton().click();
     cy.wait(2500);

@@ -8,7 +8,7 @@ describe('The skiplast-skip-merge level 14', () => {
     page.navigateTo('/skiplast-skip-merge');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -16,7 +16,7 @@ describe('The skiplast-skip-merge level 14', () => {
     page.getRecipeWarningIsNoFruitsIncoming().should('exist');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('skipLast(2)');
     page.getCodeEditor().type('{downarrow}{downarrow}{downarrow}{downarrow}skip(2)');
     page.getCodeEditor().type(
