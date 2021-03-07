@@ -19,9 +19,9 @@
     "GAMEOVERDIALOG": {
       "CONTRIBUTEMESSAGE": "Falls du selbst eine Idee für ein Level hast und Angular Entwickler bist, <br />\ndann findest du weitere Informationen hier: <a href=\"https://github.com/GregorBiswanger/rxjs-fruits-schematics\" target=\"_blank\">rxjs-fruits-schematics</a>",
       "DONATEMESSAGE": "Hat dir das Spiel gefallen? Hast du RxJS besser verstehen gelernt?<br />\nDann sei so fair und gebe mir als Dankeschön ein <s>Bier</s> ahh Kaffee aus:",
-      "PAYSHAREMESSAGE": "Oder zahle mit einem teilen Button klick:",
+      "PAYSHAREMESSAGE": "Oder zahle mit einem Klick auf den Teilen-Button:",
       "SUBTITLE": "Du hast es geschafft und bist jetzt ein reaktiver Barkeeper!",
-      "THANKYOU": "Danke an meine Frau Christine und meinen Sohn Raphael für die Unterstützung, <br />\ndamit ich die Zeit für die Entwicklung zu diesem Spiel bekommen habe. <br />\nIch liebe euch von ganzem Herzen… 🥰",
+      "THANKYOU": "Danke an meine Frau Christine und meinen Sohn Raphael für die Unterstützung, <br />\ndamit ich die Zeit für die Entwicklung dieses Spiels bekommen habe. <br />\nIch liebe euch von ganzem Herzen… 🥰",
       "TITLE": "Herzlichen Glückwunsch 🎉🎉🎉"
     },
     "ISNOACTIVATESUBSCRIBE": "❌ Das Fließband muss bewegt werden mit dem Aufruf der subscribe-Funktion!",
@@ -52,7 +52,7 @@
       "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Drücke die F12-Taste und verwende zum Debuggen die Console innerhalb der Entwicklertools vom Browser.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende filter, map und take)</p>"
     },
     "MAP": {
-      "RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom dreck befreit werden. (Hinweis: Verwende map)"
+      "RECIPEDESCRIPTION": "Es sollen alle Äpfel und Bananen vom Dreck befreit werden. (Hinweis: Verwende map)"
     },
     "MERGE": {
       "RECIPEDESCRIPTION": "<p><b>Tipp:</b> Ersetze das EMPTY-Observable mit der merge-Funktion.</p>\n<p>Füge nur die Früchte hinzu, welche auf dem Rezept vorgegeben sind. (Hinweis: Verwende merge und filter)</p>"
