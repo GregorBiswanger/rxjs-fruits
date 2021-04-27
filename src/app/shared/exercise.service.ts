@@ -23,14 +23,27 @@ export class ExerciseService {
   }
 
   assertExerciseOutput() {
-    const results = [];
+    const deliveredFruits: string[] = [];
 
     return {
-      next: (value) => results.push(value),
+      next: (deliveredFruit) => deliveredFruits.push(deliveredFruit),
       complete: () => {
-        const valid = JSON.stringify(results) === JSON.stringify(this.currentExercise.expectedFruits);
+        const valid = this.canAcceptDeliveredFruits(deliveredFruits);
         this.assertionChecked$.next(valid);
       }
     };
+  }
+
+  private canAcceptDeliveredFruits(deliveredFruits: string[]) {
+    const expectedFruits = this.currentExercise.expectedFruits;
+    if (deliveredFruits.length !== expectedFruits.length) {
+      return false;
+    }
+
+    if (deliveredFruits.some((deliveredFruit, index) => deliveredFruit !== expectedFruits[index])) {
+      return false;
+    }
+
+    return true;
   }
 }
