@@ -401,9 +401,11 @@ export class GameComponent implements OnInit {
         ).subscribe(this.exerciseService.assertExerciseOutput());
 
       this.executeCode(toConveyorBelt);
-      conveyorBeltSubject.complete();
     } catch (error) {
       this.notifyAboutErrorInCode(error);
+    }
+    finally {
+      conveyorBeltSubject.complete();
     }
   }
 
