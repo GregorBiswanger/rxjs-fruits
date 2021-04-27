@@ -9,7 +9,7 @@ import { ExerciseService } from './../shared/exercise.service';
 import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Subject } from 'rxjs';
-import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX, forkJoin as forkJoinX  } from 'rxjs';
+import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX, forkJoin as forkJoinX } from 'rxjs';
 import { delay, concatMap, take, filter } from 'rxjs/operators';
 import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } from 'rxjs/operators';
 import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
@@ -364,6 +364,24 @@ export class GameComponent implements OnInit {
     this.isErrorInConsole = false;
     this.isRunActive = true;
     this.consoleService.showWelcomeMessage();
+
+    if (this.code.includes('conveyorBelt.subscribe()') && this.levelService.currentLevel.number === 1) {
+      this.runIntroductoryLevel();
+    } else if (this.code.includes('subscribe(') &&
+      this.levelService.currentLevel.number > 1) {
+      this.runLevelWithUserCode();
+    } else {
+      this.isNoActivateSubscribe = true;
+      this.cancel();
+    }
+  }
+
+  private runIntroductoryLevel(): void {
+    this.startConveyorBeltAnimation();
+    this.isNextExerciseAvailable = true;
+  }
+
+  private runLevelWithUserCode(): void {
     const conveyorBeltSubject = new Subject<string>();
 
     // workaround for angular tree shaking
@@ -392,45 +410,36 @@ export class GameComponent implements OnInit {
       conveyorBeltSubject.next(fruit);
     }
 
-    if (this.code.includes('conveyorBelt.subscribe()') && this.levelService.currentLevel.number === 1) {
-      this.startConveyorBeltAnimation();
-      this.isNextExerciseAvailable = true;
-    } else if (this.code.includes('subscribe(') &&
-      this.levelService.currentLevel.number > 1) {
-      this.startConveyorBeltAnimation();
+    this.startConveyorBeltAnimation();
 
-      try {
-        conveyorBeltSubject
-          .pipe(
-            concatMap(item => of(item).pipe(delay(1000))),
-            takeWhile(() => this.isRunActive),
-            tap(x => console.log('Into the pipe: ' + x)),
-            tap(fruit => {
-              this.fruitsInPipe.push(fruit);
+    try {
+      conveyorBeltSubject
+        .pipe(
+          concatMap(item => of(item).pipe(delay(1000))),
+          takeWhile(() => this.isRunActive),
+          tap(x => console.log('Into the pipe: ' + x)),
+          tap(fruit => {
+            this.fruitsInPipe.push(fruit);
 
-              if (
-                this.fruitsInPipe.length >
-                this.currentExercise.expectedFruits.length
-              ) {
-                this.isTooMuchFruits = true;
-              }
-            }),
-            tap((fruit: string) => this.addFruitToView(fruit))
-          ).subscribe(this.exerciseService.assertExerciseOutput());
+            if (
+              this.fruitsInPipe.length >
+              this.currentExercise.expectedFruits.length
+            ) {
+              this.isTooMuchFruits = true;
+            }
+          }),
+          tap((fruit: string) => this.addFruitToView(fruit))
+        ).subscribe(this.exerciseService.assertExerciseOutput());
 
-        const transpiledCode = this.typescriptService.transpile(this.code);
-        eval(transpiledCode);
-        conveyorBeltSubject.complete();
-      } catch (error) {
-        this.consoleService.showRandomErrorImage();
-        this.resetCurrentState();
+      const transpiledCode = this.typescriptService.transpile(this.code);
+      eval(transpiledCode);
+      conveyorBeltSubject.complete();
+    } catch (error) {
+      this.consoleService.showRandomErrorImage();
+      this.resetCurrentState();
 
-        console.error(error);
-        this.isErrorInConsole = true;
-      }
-    } else {
-      this.isNoActivateSubscribe = true;
-      this.cancel();
+      console.error(error);
+      this.isErrorInConsole = true;
     }
   }
 
