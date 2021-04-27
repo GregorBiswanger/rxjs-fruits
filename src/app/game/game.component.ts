@@ -10,9 +10,9 @@ import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/co
 import { HttpClient } from '@angular/common/http';
 import { of, Subject } from 'rxjs';
 import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX, forkJoin as forkJoinX } from 'rxjs';
-import { delay, concatMap, take, filter } from 'rxjs/operators';
+import { delay, concatMap, take, filter, takeWhile, tap } from 'rxjs/operators';
 import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } from 'rxjs/operators';
-import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
+import { tap as tapX, distinctUntilChanged as distinctUntilChangedX } from 'rxjs/operators';
 import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap as concatMapX } from 'rxjs/operators';
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
 import { gsap } from 'gsap';
@@ -384,28 +384,6 @@ export class GameComponent implements OnInit {
   private runLevelWithUserCode(): void {
     const conveyorBeltSubject = new Subject<string>();
 
-    // workaround for angular tree shaking
-    const EMPTY = EMPTYX;
-    const from = fromX;
-    const distinct = distinctX;
-    const map = mapX;
-    const take = takeX;
-    const filter = filterX;
-    const tap = tapX;
-    const skip = skipX;
-    const merge = mergeX;
-    const takeLast = takeLastX;
-    const skipLast = skipLastX;
-    const repeat = repeatX;
-    const takeWhile = takeWhileX;
-    const retry = retryX;
-    const catchError = catchErrorX;
-    const distinctUntilChanged = distinctUntilChangedX;
-    const zip = zipX;
-    const concatMap = concatMapX;
-    const forkJoin = forkJoinX;
-    const toConveyorBeltX = toConveyorBelt;
-
     function toConveyorBelt(fruit: string) {
       conveyorBeltSubject.next(fruit);
     }
@@ -431,12 +409,37 @@ export class GameComponent implements OnInit {
           tap((fruit: string) => this.addFruitToView(fruit))
         ).subscribe(this.exerciseService.assertExerciseOutput());
 
-      const transpiledCode = this.typescriptService.transpile(this.code);
-      eval(transpiledCode);
+      this.executeCode(toConveyorBelt);
       conveyorBeltSubject.complete();
     } catch (error) {
       this.notifyAboutErrorInCode(error);
     }
+  }
+
+  private executeCode(toConveyorBelt: (fruit: string) => void): void {
+    // workaround for angular tree shaking
+    const EMPTY = EMPTYX;
+    const from = fromX;
+    const distinct = distinctX;
+    const map = mapX;
+    const take = takeX;
+    const filter = filterX;
+    const tap = tapX;
+    const skip = skipX;
+    const merge = mergeX;
+    const takeLast = takeLastX;
+    const skipLast = skipLastX;
+    const repeat = repeatX;
+    const takeWhile = takeWhileX;
+    const retry = retryX;
+    const catchError = catchErrorX;
+    const distinctUntilChanged = distinctUntilChangedX;
+    const zip = zipX;
+    const concatMap = concatMapX;
+    const forkJoin = forkJoinX;
+
+    const transpiledCode = this.typescriptService.transpile(this.code);
+    eval(transpiledCode);
   }
 
   private notifyAboutErrorInCode(error: any): void {
