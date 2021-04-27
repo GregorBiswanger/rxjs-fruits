@@ -435,12 +435,16 @@ export class GameComponent implements OnInit {
       eval(transpiledCode);
       conveyorBeltSubject.complete();
     } catch (error) {
-      this.consoleService.showRandomErrorImage();
-      this.resetCurrentState();
-
-      console.error(error);
-      this.isErrorInConsole = true;
+      this.notifyAboutErrorInCode(error);
     }
+  }
+
+  private notifyAboutErrorInCode(error: any): void {
+    this.consoleService.showRandomErrorImage();
+    this.resetCurrentState();
+
+    console.error(error);
+    this.isErrorInConsole = true;
   }
 
   addFruitToView(fruit: string): void {
