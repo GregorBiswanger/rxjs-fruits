@@ -1,4 +1,5 @@
-<babeledit_project version="1.2" be_version="2.7.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<babeledit_project be_version="2.8.0" version="1.2">
     <!--
 
     BabelEdit project file
@@ -13,7 +14,7 @@
     <filename>rxjs-fruits-babelEdit.babel</filename>
     <source_root_dir>../../../</source_root_dir>
     <folder_node>
-        <name></name>
+        <name/>
         <children>
             <folder_node>
                 <name>APP</name>
@@ -21,9 +22,9 @@
                     <concept_node>
                         <name>CANCELBUTTON</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -35,6 +36,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -42,9 +51,9 @@
                     <concept_node>
                         <name>CONFIRMRESET</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -56,6 +65,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -69,9 +86,9 @@
                                     <concept_node>
                                         <name>ALLOW</name>
                                         <definition_loaded>false</definition_loaded>
-                                        <description></description>
-                                        <comment></comment>
-                                        <default_text></default_text>
+                                        <description/>
+                                        <comment/>
+                                        <default_text/>
                                         <translations>
                                             <translation>
                                                 <language>de-DE</language>
@@ -83,6 +100,14 @@
                                             </translation>
                                             <translation>
                                                 <language>ru-RU</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>es-ES</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -90,9 +115,9 @@
                                     <concept_node>
                                         <name>DENY</name>
                                         <definition_loaded>false</definition_loaded>
-                                        <description></description>
-                                        <comment></comment>
-                                        <default_text></default_text>
+                                        <description/>
+                                        <comment/>
+                                        <default_text/>
                                         <translations>
                                             <translation>
                                                 <language>de-DE</language>
@@ -104,6 +129,14 @@
                                             </translation>
                                             <translation>
                                                 <language>ru-RU</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>es-ES</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -113,9 +146,9 @@
                             <concept_node>
                                 <name>MESSAGE</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -127,6 +160,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -134,9 +175,9 @@
                             <concept_node>
                                 <name>PRIVACYLINK</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -148,6 +189,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -157,9 +206,9 @@
                     <concept_node>
                         <name>CREDITS</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -173,6 +222,14 @@
                                 <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <folder_node>
@@ -181,9 +238,9 @@
                             <concept_node>
                                 <name>APPLE</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -195,6 +252,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -202,9 +267,9 @@
                             <concept_node>
                                 <name>BANANA</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -216,6 +281,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -223,9 +296,9 @@
                             <concept_node>
                                 <name>CHERRY</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -237,6 +310,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -249,9 +330,9 @@
                             <concept_node>
                                 <name>CONTRIBUTEMESSAGE</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -263,6 +344,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -270,9 +359,9 @@
                             <concept_node>
                                 <name>DONATEMESSAGE</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -284,6 +373,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -291,9 +388,9 @@
                             <concept_node>
                                 <name>PAYSHAREMESSAGE</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -305,6 +402,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -312,9 +417,9 @@
                             <concept_node>
                                 <name>SUBTITLE</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -326,6 +431,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -333,9 +446,9 @@
                             <concept_node>
                                 <name>THANKYOU</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -347,6 +460,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -354,9 +475,9 @@
                             <concept_node>
                                 <name>TITLE</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -368,6 +489,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -377,9 +506,9 @@
                     <concept_node>
                         <name>ISNOACTIVATESUBSCRIBE</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -391,6 +520,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -398,9 +535,9 @@
                     <concept_node>
                         <name>ISNOFRUITSINCOMING</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -412,6 +549,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -419,9 +564,9 @@
                     <concept_node>
                         <name>ISTOLITTLEFRUITS</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -433,6 +578,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -440,9 +593,9 @@
                     <concept_node>
                         <name>ISTOMUCHFRUITS</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -454,6 +607,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -461,9 +622,9 @@
                     <concept_node>
                         <name>LABELLEVEL</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -475,6 +636,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -482,9 +651,9 @@
                     <concept_node>
                         <name>LABELRESET</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -496,6 +665,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -503,9 +680,9 @@
                     <concept_node>
                         <name>LEVEL</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -517,6 +694,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -524,9 +709,9 @@
                     <concept_node>
                         <name>NEXTBUTTON</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -538,6 +723,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -545,9 +738,9 @@
                     <concept_node>
                         <name>OUTPUT</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -559,6 +752,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -566,9 +767,9 @@
                     <concept_node>
                         <name>PRIVACYBUTTON</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -580,6 +781,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -587,9 +796,9 @@
                     <concept_node>
                         <name>RECIPETITLE</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -601,6 +810,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -608,9 +825,9 @@
                     <concept_node>
                         <name>STARTBUTTON</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -622,6 +839,14 @@
                             </translation>
                             <translation>
                                 <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
                                 <approved>false</approved>
                             </translation>
                         </translations>
@@ -637,9 +862,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -651,6 +876,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -663,9 +896,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -679,6 +912,14 @@
                                         <language>ru-RU</language>
                                         <approved>false</approved>
                                     </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
+                                        <approved>false</approved>
+                                    </translation>
                                 </translations>
                             </concept_node>
                         </children>
@@ -686,9 +927,9 @@
                     <concept_node>
                         <name>EXERCISETITLE</name>
                         <definition_loaded>false</definition_loaded>
-                        <description></description>
-                        <comment></comment>
-                        <default_text></default_text>
+                        <description/>
+                        <comment/>
+                        <default_text/>
                         <translations>
                             <translation>
                                 <language>de-DE</language>
@@ -702,6 +943,14 @@
                                 <language>ru-RU</language>
                                 <approved>false</approved>
                             </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>zh-CN</language>
+                                <approved>false</approved>
+                            </translation>
                         </translations>
                     </concept_node>
                     <folder_node>
@@ -710,9 +959,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -724,6 +973,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -736,9 +993,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -750,6 +1007,48 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                        </children>
+                    </folder_node>
+                    <folder_node>
+                        <name>FORK-JOIN</name>
+                        <children>
+                            <concept_node>
+                                <name>RECIPEDESCRIPTION</name>
+                                <definition_loaded>false</definition_loaded>
+                                <description/>
+                                <comment/>
+                                <default_text/>
+                                <translations>
+                                    <translation>
+                                        <language>de-DE</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -762,9 +1061,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -776,6 +1075,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -788,9 +1095,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -802,6 +1109,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -814,9 +1129,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -828,6 +1143,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -840,9 +1163,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -854,6 +1177,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -866,9 +1197,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -880,6 +1211,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -892,9 +1231,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -906,6 +1245,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -918,9 +1265,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -932,6 +1279,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -944,9 +1299,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -958,6 +1313,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -970,9 +1333,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -984,6 +1347,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -996,9 +1367,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -1010,6 +1381,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -1022,9 +1401,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -1036,6 +1415,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -1048,9 +1435,9 @@
                             <concept_node>
                                 <name>RECIPEDESCRIPTION</name>
                                 <definition_loaded>false</definition_loaded>
-                                <description></description>
-                                <comment></comment>
-                                <default_text></default_text>
+                                <description/>
+                                <comment/>
+                                <default_text/>
                                 <translations>
                                     <translation>
                                         <language>de-DE</language>
@@ -1062,6 +1449,14 @@
                                     </translation>
                                     <translation>
                                         <language>ru-RU</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>es-ES</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -1076,18 +1471,28 @@
     <languages>
         <language>
             <code>de-DE</code>
-            <source_id></source_id>
+            <source_id/>
             <source_file>de.json</source_file>
         </language>
         <language>
             <code>en-US</code>
-            <source_id></source_id>
+            <source_id/>
             <source_file>en.json</source_file>
         </language>
         <language>
+            <code>es-ES</code>
+            <source_id/>
+            <source_file>es.json</source_file>
+        </language>
+        <language>
             <code>ru-RU</code>
-            <source_id></source_id>
+            <source_id/>
             <source_file>ru.json</source_file>
+        </language>
+        <language>
+            <code>zh-CN</code>
+            <source_id/>
+            <source_file>zh_CN.json</source_file>
         </language>
     </languages>
     <translation_files>
@@ -1100,12 +1505,18 @@
         <translation_file>
             <file>ru.json</file>
         </translation_file>
+        <translation_file>
+            <file>es.json</file>
+        </translation_file>
+        <translation_file>
+            <file>zh_CN.json</file>
+        </translation_file>
     </translation_files>
     <editor_configuration>
         <save_empty_translations>true</save_empty_translations>
         <copy_templates>
             <copy_template>{{'%1' | translate}}</copy_template>
-            <copy_template>[translate]="'%1'"</copy_template>
+            <copy_template>[translate]=&quot;'%1'&quot;</copy_template>
             <copy_template>_('%1')</copy_template>
         </copy_templates>
     </editor_configuration>
