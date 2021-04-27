@@ -562,7 +562,7 @@
                         </translations>
                     </concept_node>
                     <concept_node>
-                        <name>ISTOLITTLEFRUITS</name>
+                        <name>ISTOOLITTLEFRUITS</name>
                         <definition_loaded>false</definition_loaded>
                         <description/>
                         <comment/>
@@ -591,7 +591,7 @@
                         </translations>
                     </concept_node>
                     <concept_node>
-                        <name>ISTOMUCHFRUITS</name>
+                        <name>ISTOOMUCHFRUITS</name>
                         <definition_loaded>false</definition_loaded>
                         <description/>
                         <comment/>
