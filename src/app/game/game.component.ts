@@ -26,6 +26,7 @@ import { CheatingDetectionService } from './shared/cheating-detection.service';
 import { TypescriptService } from './shared/typescript.service';
 import { OnChange } from 'property-watch-decorator';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-game',
@@ -382,24 +383,15 @@ export class GameComponent implements OnInit {
   }
 
   private runLevelWithUserCode(): void {
-    const conveyorBeltSubject = new Subject<string>();
+    this.startConveyorBeltAnimation();
 
+    const conveyorBeltSubject = new Subject<string>();
     function toConveyorBelt(fruit: string) {
       conveyorBeltSubject.next(fruit);
     }
 
-    this.startConveyorBeltAnimation();
-
     try {
-      conveyorBeltSubject
-        .pipe(
-          concatMap(item => of(item).pipe(delay(1000))),
-          takeWhile(() => this.isRunActive),
-          tap(x => console.log('Into the pipe: ' + x)),
-          tap(fruit => this.pushFruitToPipe(fruit)),
-          tap((fruit: string) => this.addFruitToView(fruit))
-        ).subscribe(this.exerciseService.assertExerciseOutput());
-
+      this.observeConveyorBelt(conveyorBeltSubject.asObservable());
       this.executeCode(toConveyorBelt);
     } catch (error) {
       this.notifyAboutErrorInCode(error);
@@ -407,6 +399,18 @@ export class GameComponent implements OnInit {
     finally {
       conveyorBeltSubject.complete();
     }
+  }
+
+  private observeConveyorBelt(conveyorBelt: Observable<string>) {
+    const addDelayBetweenEachFruit = durationMs => concatMap((fruit: string) => of(fruit).pipe(delay(durationMs)));
+    conveyorBelt
+      .pipe(
+        addDelayBetweenEachFruit(1000),
+        takeWhile(() => this.isRunActive),
+        tap(x => console.log('Into the pipe: ' + x)),
+        tap(fruit => this.pushFruitToPipe(fruit)),
+        tap((fruit: string) => this.addFruitToView(fruit))
+      ).subscribe(this.exerciseService.assertExerciseOutput());
   }
 
   private pushFruitToPipe(fruit: string) {
