@@ -396,16 +396,7 @@ export class GameComponent implements OnInit {
           concatMap(item => of(item).pipe(delay(1000))),
           takeWhile(() => this.isRunActive),
           tap(x => console.log('Into the pipe: ' + x)),
-          tap(fruit => {
-            this.fruitsInPipe.push(fruit);
-
-            if (
-              this.fruitsInPipe.length >
-              this.currentExercise.expectedFruits.length
-            ) {
-              this.isTooMuchFruits = true;
-            }
-          }),
+          tap(fruit => this.pushFruitToPipe(fruit)),
           tap((fruit: string) => this.addFruitToView(fruit))
         ).subscribe(this.exerciseService.assertExerciseOutput());
 
@@ -413,6 +404,17 @@ export class GameComponent implements OnInit {
       conveyorBeltSubject.complete();
     } catch (error) {
       this.notifyAboutErrorInCode(error);
+    }
+  }
+
+  private pushFruitToPipe(fruit: string) {
+    this.fruitsInPipe.push(fruit);
+
+    if (
+      this.fruitsInPipe.length >
+      this.currentExercise.expectedFruits.length
+    ) {
+      this.isTooMuchFruits = true;
     }
   }
 
