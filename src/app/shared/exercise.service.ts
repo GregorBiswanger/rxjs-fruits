@@ -22,7 +22,7 @@ export class ExerciseService {
     this.exerciseChanged$.next(exercise);
   }
 
-  assertExerciseOutput() {
+  assertExerciseOutput(): PartialObserver<string> {
     const deliveredFruits: string[] = [];
 
     return {
