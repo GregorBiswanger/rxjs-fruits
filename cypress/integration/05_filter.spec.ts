@@ -8,7 +8,7 @@ describe('The filter level 5', () => {
     page.navigateTo('/filter');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -19,11 +19,11 @@ describe('The filter level 5', () => {
     page.getRecipeItem(4).should('contain.text', '❌');
     page.getRecipeItem(5).should('contain.text', '❌');
     page.getRecipeItem(6).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('contain.text', '❌');
+    page.getRecipeWarningIsTooMuchFruits().should('contain.text', '❌');
     page.getNextButton().should('have.attr', 'disabled');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     cy.wait(1000);
     page.getCodeEditor().type('filter(fruit => !fruit.startsWith(\'old-\'))');
     page.getStartButton().click();
@@ -36,7 +36,7 @@ describe('The filter level 5', () => {
     page.getRecipeItem(4).should('contain.text', '✔');
     page.getRecipeItem(5).should('contain.text', '✔');
     page.getRecipeItem(6).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 });

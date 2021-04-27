@@ -43,9 +43,9 @@
                     </li>
                 </ol>
 
-                <p id="isToMuchFruits" *ngIf="isToMuchFruits">{{ 'APP.ISTOMUCHFRUITS' | translate }}</p>
+                <p id="isTooMuchFruits" *ngIf="isTooMuchFruits">{{ 'APP.ISTOOMUCHFRUITS' | translate }}</p>
                 <p id="isNoFruitsIncoming" *ngIf="isNoFruitsIncoming">{{'APP.ISNOFRUITSINCOMING' | translate}}</p>
-                <p id="isToLittleFruits" *ngIf="isToLittleFruits">{{'APP.ISTOLITTLEFRUITS' | translate}}</p>
+                <p id="isTooLittleFruits" *ngIf="isTooLittleFruits">{{'APP.ISTOOLITTLEFRUITS' | translate}}</p>
                 <p id="isNoActivateSubscribe" *ngIf="isNoActivateSubscribe">{{'APP.ISNOACTIVATESUBSCRIBE' | translate}}
                 </p>
             </div>
@@ -69,7 +69,7 @@
                     </g>
                 </svg>
             </button>
-            <button id="nextButton" [ngClass]="buttonAnimationStyle()" [disabled]="!isNextExerciseAviable"
+            <button id="nextButton" [ngClass]="buttonAnimationStyle()" [disabled]="!isNextExerciseAvailable"
                 (click)="nextExercise(true)">{{ 'APP.NEXTBUTTON' | translate }}</button>
         </div>
         <div class="credits" fxLayout="row" fxLayoutAlign="center">

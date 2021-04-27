@@ -8,7 +8,7 @@ describe('The merge level 11', () => {
     page.navigateTo('/merge');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -16,7 +16,7 @@ describe('The merge level 11', () => {
     page.getRecipeWarningIsNoFruitsIncoming().should('exist');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type(`{del}{del}{del}{del}{del}merge(apples, bananas){esc}{downarrow}
       filter(fruit => !fruit.includes('old-'))`, { timeout: 10000 });
     page.getStartButton().click();
@@ -29,7 +29,7 @@ describe('The merge level 11', () => {
     page.getRecipeItem(4).should('contain.text', '✔');
     page.getRecipeItem(5).should('contain.text', '✔');
     page.getRecipeItem(6).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getRecipeWarningIsNoFruitsIncoming().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });

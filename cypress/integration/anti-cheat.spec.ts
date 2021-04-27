@@ -8,25 +8,25 @@ describe('Anti cheating detection', () => {
     page.navigateTo('/distinct');
   });
 
-  it('should failed on write fruits directly in toConveyorBelt "Apple" ', () => {
+  it('should trigger on writing fruits directly to toConveyorBelt "Apple" ', () => {
     page.getCodeEditor().type(`{downarrow}{downarrow}toConveyorBelt('apple')`);
     page.getCheatingDetectedImage().should('exist');
     page.getStartButton().should('have.attr', 'disabled');
   });
 
-  it('should failed on write fruits directly in toConveyorBelt "Banana" ', () => {
+  it('should trigger on writing fruits directly to toConveyorBelt "Banana" ', () => {
     page.getCodeEditor().type(`{downarrow}{downarrow}toConveyorBelt('banana')`);
     page.getCheatingDetectedImage().should('exist');
     page.getStartButton().should('have.attr', 'disabled');
   });
 
-  it('should failed on write fruits directly in toConveyorBelt "Cherry" ', () => {
+  it('should trigger on writing fruits directly to toConveyorBelt "Cherry" ', () => {
     page.getCodeEditor().type(`{downarrow}{downarrow}toConveyorBelt('cherry')`);
     page.getCheatingDetectedImage().should('exist');
     page.getStartButton().should('have.attr', 'disabled');
   });
 
-  it('should failed on write toConveyorBelt more as one', () => {
+  it('should trigger on writing toConveyorBelt more than once', () => {
     page.getCodeEditor().type(`{downarrow}{downarrow}toConveyorBelt() toConveyorBelt()`);
     page.getCheatingDetectedImage().should('exist');
     page.getStartButton().should('have.attr', 'disabled');

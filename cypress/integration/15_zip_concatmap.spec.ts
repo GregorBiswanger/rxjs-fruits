@@ -8,7 +8,7 @@ describe('The zip-concatmap level 15', () => {
     page.navigateTo('/zip-concatmap');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -16,7 +16,7 @@ describe('The zip-concatmap level 15', () => {
     page.getRecipeWarningIsNoFruitsIncoming().should('exist');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('concatMap(fruit => fruit){uparrow}{home}{del}{del}{del}{del}{del}zip(apples, bananas)');
     page.getStartButton().click();
     cy.wait(2500);
@@ -26,7 +26,7 @@ describe('The zip-concatmap level 15', () => {
     page.getRecipeItem(2).should('contain.text', '✔');
     page.getRecipeItem(3).should('contain.text', '✔');
     page.getRecipeItem(4).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getRecipeWarningIsNoFruitsIncoming().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });

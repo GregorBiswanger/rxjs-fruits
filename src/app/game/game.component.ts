@@ -87,10 +87,10 @@ export class GameComponent implements OnInit {
   clickedByToggle = false;
   fruits: Fruit[] = [];
   fruitsInPipe: string[] = [];
-  isNextExerciseAviable = false;
-  isToMuchFruits = false;
+  isNextExerciseAvailable = false;
+  isTooMuchFruits = false;
   isNoFruitsIncoming = false;
-  isToLittleFruits = false;
+  isTooLittleFruits = false;
   isNoActivateSubscribe = false;
   isCheatingDetected = false;
   currentExercise: Exercise = {
@@ -150,7 +150,7 @@ export class GameComponent implements OnInit {
 
     this.exerciseService.assertionChecked$.subscribe({
       next: valid => {
-        this.isNextExerciseAviable = valid;
+        this.isNextExerciseAvailable = valid;
 
         if (valid === false &&
           this.isRunActive &&
@@ -160,7 +160,7 @@ export class GameComponent implements OnInit {
         } else if (valid === false &&
           this.isRunActive &&
           this.currentExercise.expectedFruits.length > this.fruitsInPipe.length) {
-          this.isToLittleFruits = true;
+          this.isTooLittleFruits = true;
         }
       }
     });
@@ -222,8 +222,8 @@ export class GameComponent implements OnInit {
 
   buttonAnimationStyle() {
     return {
-      animated: this.isNextExerciseAviable,
-      nextButtonAnimation: this.isNextExerciseAviable
+      animated: this.isNextExerciseAvailable,
+      nextButtonAnimation: this.isNextExerciseAvailable
     };
   }
 
@@ -357,9 +357,9 @@ export class GameComponent implements OnInit {
   run() {
     this.fruits = [];
     this.fruitsInPipe = [];
-    this.isToMuchFruits = false;
+    this.isTooMuchFruits = false;
     this.isNoFruitsIncoming = false;
-    this.isToLittleFruits = false;
+    this.isTooLittleFruits = false;
     this.isNoActivateSubscribe = false;
     this.isErrorInConsole = false;
     this.isRunActive = true;
@@ -394,7 +394,7 @@ export class GameComponent implements OnInit {
 
     if (this.code.includes('conveyorBelt.subscribe()') && this.levelService.currentLevel.number === 1) {
       this.startConveyorBeltAnimation();
-      this.isNextExerciseAviable = true;
+      this.isNextExerciseAvailable = true;
     } else if (this.code.includes('subscribe(') &&
       this.levelService.currentLevel.number > 1) {
       this.startConveyorBeltAnimation();
@@ -412,7 +412,7 @@ export class GameComponent implements OnInit {
                 this.fruitsInPipe.length >
                 this.currentExercise.expectedFruits.length
               ) {
-                this.isToMuchFruits = true;
+                this.isTooMuchFruits = true;
               }
             }),
             tap((fruit: string) => this.addFruitToView(fruit))
@@ -636,11 +636,11 @@ export class GameComponent implements OnInit {
   resetCurrentState() {
     this.fruitsInPipe = [];
     this.fruits = [];
-    this.isToMuchFruits = false;
+    this.isTooMuchFruits = false;
     this.isNoFruitsIncoming = false;
-    this.isToLittleFruits = false;
+    this.isTooLittleFruits = false;
     this.isNoActivateSubscribe = false;
-    this.isNextExerciseAviable = false;
+    this.isNextExerciseAvailable = false;
     this.isErrorInConsole = false;
     this.isRunActive = false;
     this.lastFruitColor = '';

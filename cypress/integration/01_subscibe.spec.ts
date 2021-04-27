@@ -8,13 +8,13 @@ describe('The subscribe level 1', () => {
     page.navigateTo('/');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     page.getNextButton().should('have.attr', 'disabled');
     page.getRecipeWarningIsNoActivateSubscribe().should('exist');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('conveyorBelt.subscribe();');
     page.getStartButton().click();
 

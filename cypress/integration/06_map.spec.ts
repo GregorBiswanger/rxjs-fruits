@@ -8,7 +8,7 @@ describe('The map level 6', () => {
     page.navigateTo('/map');
   });
 
-  it('should failed on wrong solution', () => {
+  it('should fail on wrong solution', () => {
     page.getStartButton().click();
     cy.wait(2500);
 
@@ -17,11 +17,11 @@ describe('The map level 6', () => {
     page.getRecipeItem(2).should('contain.text', '✔');
     page.getRecipeItem(3).should('contain.text', '❌');
     page.getRecipeItem(4).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getNextButton().should('have.attr', 'disabled');
   });
 
-  it('should success on valid solution', () => {
+  it('should succeed on valid solution', () => {
     page.getCodeEditor().type('map(fruit => fruit.replace(\'dirty-\', \'\'))');
     page.getStartButton().click();
     cy.wait(2500);
@@ -29,7 +29,7 @@ describe('The map level 6', () => {
     page.getRecipe().should('not.have.class', 'animated shake');
     page.getRecipeItem(1).should('contain.text', '✔');
     page.getRecipeItem(2).should('contain.text', '✔');
-    page.getRecipeWarningIsToMuchFruits().should('not.exist');
+    page.getRecipeWarningIsTooMuchFruits().should('not.exist');
     page.getNextButton().should('not.have.attr', 'disabled');
   });
 });
