@@ -9,10 +9,10 @@ import { ExerciseService } from './../shared/exercise.service';
 import { Component, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of, Subject } from 'rxjs';
-import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX, forkJoin as forkJoinX  } from 'rxjs';
-import { delay, concatMap, take, filter } from 'rxjs/operators';
+import { from as fromX, EMPTY as EMPTYX, merge as mergeX, zip as zipX, forkJoin as forkJoinX } from 'rxjs';
+import { delay, concatMap, take, filter, takeWhile, tap } from 'rxjs/operators';
 import { distinct as distinctX, map as mapX, take as takeX, filter as filterX } from 'rxjs/operators';
-import { tap as tapX, distinctUntilChanged as distinctUntilChangedX, takeWhile } from 'rxjs/operators';
+import { tap as tapX, distinctUntilChanged as distinctUntilChangedX } from 'rxjs/operators';
 import { skip as skipX, takeLast as takeLastX, skipLast as skipLastX, concatMap as concatMapX } from 'rxjs/operators';
 import { repeat as repeatX, takeWhile as takeWhileX, retry as retryX, catchError as catchErrorX } from 'rxjs/operators';
 import { gsap } from 'gsap';
@@ -26,6 +26,7 @@ import { CheatingDetectionService } from './shared/cheating-detection.service';
 import { TypescriptService } from './shared/typescript.service';
 import { OnChange } from 'property-watch-decorator';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-game',
@@ -364,8 +365,66 @@ export class GameComponent implements OnInit {
     this.isErrorInConsole = false;
     this.isRunActive = true;
     this.consoleService.showWelcomeMessage();
-    const conveyorBeltSubject = new Subject<string>();
 
+    if (this.code.includes('conveyorBelt.subscribe()') && this.levelService.currentLevel.number === 1) {
+      this.runIntroductoryLevel();
+    } else if (this.code.includes('subscribe(') &&
+      this.levelService.currentLevel.number > 1) {
+      this.runLevelWithUserCode();
+    } else {
+      this.isNoActivateSubscribe = true;
+      this.cancel();
+    }
+  }
+
+  private runIntroductoryLevel(): void {
+    this.startConveyorBeltAnimation();
+    this.isNextExerciseAvailable = true;
+  }
+
+  private runLevelWithUserCode(): void {
+    this.startConveyorBeltAnimation();
+
+    const conveyorBeltSubject = new Subject<string>();
+    function toConveyorBelt(fruit: string) {
+      conveyorBeltSubject.next(fruit);
+    }
+
+    try {
+      this.observeConveyorBelt(conveyorBeltSubject.asObservable());
+      this.executeCode(toConveyorBelt);
+    } catch (error) {
+      this.notifyAboutErrorInCode(error);
+    }
+    finally {
+      conveyorBeltSubject.complete();
+    }
+  }
+
+  private observeConveyorBelt(conveyorBelt: Observable<string>) {
+    const addDelayBetweenEachFruit = durationMs => concatMap((fruit: string) => of(fruit).pipe(delay(durationMs)));
+    conveyorBelt
+      .pipe(
+        addDelayBetweenEachFruit(1000),
+        takeWhile(() => this.isRunActive),
+        tap(x => console.log('Into the pipe: ' + x)),
+        tap(fruit => this.pushFruitToPipe(fruit)),
+        tap((fruit: string) => this.addFruitToView(fruit))
+      ).subscribe(this.exerciseService.assertExerciseOutput());
+  }
+
+  private pushFruitToPipe(fruit: string) {
+    this.fruitsInPipe.push(fruit);
+
+    if (
+      this.fruitsInPipe.length >
+      this.currentExercise.expectedFruits.length
+    ) {
+      this.isTooMuchFruits = true;
+    }
+  }
+
+  private executeCode(toConveyorBelt: (fruit: string) => void): void {
     // workaround for angular tree shaking
     const EMPTY = EMPTYX;
     const from = fromX;
@@ -386,52 +445,17 @@ export class GameComponent implements OnInit {
     const zip = zipX;
     const concatMap = concatMapX;
     const forkJoin = forkJoinX;
-    const toConveyorBeltX = toConveyorBelt;
 
-    function toConveyorBelt(fruit: string) {
-      conveyorBeltSubject.next(fruit);
-    }
+    const transpiledCode = this.typescriptService.transpile(this.code);
+    eval(transpiledCode);
+  }
 
-    if (this.code.includes('conveyorBelt.subscribe()') && this.levelService.currentLevel.number === 1) {
-      this.startConveyorBeltAnimation();
-      this.isNextExerciseAvailable = true;
-    } else if (this.code.includes('subscribe(') &&
-      this.levelService.currentLevel.number > 1) {
-      this.startConveyorBeltAnimation();
+  private notifyAboutErrorInCode(error: any): void {
+    this.consoleService.showRandomErrorImage();
+    this.resetCurrentState();
 
-      try {
-        conveyorBeltSubject
-          .pipe(
-            concatMap(item => of(item).pipe(delay(1000))),
-            takeWhile(() => this.isRunActive),
-            tap(x => console.log('Into the pipe: ' + x)),
-            tap(fruit => {
-              this.fruitsInPipe.push(fruit);
-
-              if (
-                this.fruitsInPipe.length >
-                this.currentExercise.expectedFruits.length
-              ) {
-                this.isTooMuchFruits = true;
-              }
-            }),
-            tap((fruit: string) => this.addFruitToView(fruit))
-          ).subscribe(this.exerciseService.assertExerciseOutput());
-
-        const transpiledCode = this.typescriptService.transpile(this.code);
-        eval(transpiledCode);
-        conveyorBeltSubject.complete();
-      } catch (error) {
-        this.consoleService.showRandomErrorImage();
-        this.resetCurrentState();
-
-        console.error(error);
-        this.isErrorInConsole = true;
-      }
-    } else {
-      this.isNoActivateSubscribe = true;
-      this.cancel();
-    }
+    console.error(error);
+    this.isErrorInConsole = true;
   }
 
   addFruitToView(fruit: string): void {
