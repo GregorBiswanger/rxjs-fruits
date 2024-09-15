@@ -25,6 +25,11 @@
   <p>Usa el operador <code class="help" [appTooltip]="tooltip">take</code> para colocar en la cinta transportadora únicamente la cantidad de bananas especificadas en la receta.
     <a href="https://rxjs.dev/api/operators/take" target="_blank">(Aprende más sobre take)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+    <p>Tem muita fruta!</p>
+    <p>Use o operador <code class="help" [appTooltip]="tooltip">take</code> para colocar na esteira apenas a quantidade de bananas especificadas na receita.
+        <a href="https://rxjs.dev/api/operators/take" target="_blank">(Aprenda mais sobre take)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="takeCode"></code>

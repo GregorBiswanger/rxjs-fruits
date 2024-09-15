@@ -25,6 +25,11 @@
   <p>Usa el operador <code class="help" [appTooltip]="tooltip">filter</code> para colocar únicamente fruta fresca en la cinta transportadora.
     <a href="https://rxjs.dev/api/operators/filter" target="_blank">(Aprende más sobre filter)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+  <p>Eca! Nos entregaram frutas podres.</p>
+  <p>Use o operador <code class="help" [appTooltip]="tooltip">filter</code> para colocar somente frutas frescas na esteira.
+    <a href="https://rxjs.dev/api/operators/filter" target="_blank">(Aprenda mais sobre filter)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="filterCode"></code>

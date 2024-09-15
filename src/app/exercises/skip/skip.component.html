@@ -22,6 +22,10 @@
   <p>Podemos hacerlo sin las primeras dos frutas. El operador <code class="help" [appTooltip]="tooltip">skip</code> nos permite omitir fruta innecesaria.
     <a href="https://rxjs.dev/api/operators/skip" target="_blank">(Aprende más sobre skip)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+  <p>Podemos fazer isso sem as duas primeiras frutas. O operador <code class="help" [appTooltip]="tooltip">skip</code> nos permite pular as frutas que não vamos usar.
+    <a href="https://rxjs.dev/api/operators/skip" target="_blank">(Aprenda mais sobre skip)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipCode"></code>

@@ -20,6 +20,10 @@
   <p>No le des oportunidad al caos!</p>
   <p>Recibiste dos entregas. Toma solo fruta utilizable con los operadores <code class="help" [appTooltip]="skipLastTooltip">skipLast</code> y <code class="help" [appTooltip]="skipTooltip">skip</code>. Luego reemplaza el observable EMPTY con la función <code class="help" [appTooltip]="mergeTooltip">merge</code>. Hacia el final, limpia las frutas sucias y colócalas en la cinta transportadora.</p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+  <p>Não dê oportunidade ao caos!</p>
+  <p>Você recebeu duas entregas. Pegue somentes as frutas utilizáveis com os operadores <code class="help" [appTooltip]="skipLastTooltip">skipLast</code> e <code class="help" [appTooltip]="skipTooltip">skip</code>. Depois, substitua o Obseravable EMPTY pela função <code class="help" [appTooltip]="mergeTooltip">merge</code>. Por fim, limpe as frutas sujas e coloque-as na esteira.</p>
+</div>
 <div #skipTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipCode"></code>

@@ -30,6 +30,12 @@
     <a href="https://rxjs.dev/api/operators/distinctUntilChanged" target="_blank">(Aprende más acerca de distinctUntilChanged)</a>
   </p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+  <p>Uma após a outra! Algumas frutas vieram duas vezes consecutivas. Entretanto, precisamos delas alternadas..</p>
+  <p>Em nosso caso, o operador <code class="help" [appTooltip]="tooltip">distinctUntilChanged</code> nos ajudará. Ele evita que as frutas duplicadas sejam entregues uma após a outra em nosso fluxo de dados.
+    <a href="https://rxjs.dev/api/operators/distinctUntilChanged" target="_blank">(Aprenda mais sobre distinctUntilChanged)</a>
+  </p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="distinctUntilChangedCode"></code>

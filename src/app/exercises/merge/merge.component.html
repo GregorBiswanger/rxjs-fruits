@@ -26,6 +26,11 @@
   <p>Nuestro proveedor de fruta tuvo que entregarnos la fruta por separado. La función <code class="help" [appTooltip]="tooltip">merge</code> puede combinar diferentes observables en un observables. Entonces podemos usar la función pipe para poner únicamente fruta fresca en la cinta transportadora.
     <a href="https://rxjs.dev/api/index/function/merge" target="_blank">(Aprende más sobre merge)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+  <p>Agora precisamos combinar duas entregas.</p>
+  <p>Nosso fornecedor de frutas teve que fazer entregas separadas. A função <code class="help" [appTooltip]="tooltip">merge</code> pode combinar dois observables em um observable. Depois, podemos usar a função pipe para botar somente frutas frescas na esteira.
+    <a href="https://rxjs.dev/api/index/function/merge" target="_blank">(Aprenda mais sobre merge)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="mergeCode"></code>

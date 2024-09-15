@@ -25,6 +25,11 @@
   <p>La función from crea un observable a partir de un arreglo. Esto entrega los datos uno tras otro, como un bucle foreach.</p>
   <p>La función <code class="help" [appTooltip]="tooltip">subscribe</code> espera una función callback como parámetro. Esta recibe los datos desde el observable vía parámetros.</p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+    <p>Agora é hora de colocar algumas frutas na esteira!</p>
+    <p>A função <code>from</code> cria um Observable a partir de um array. Isso entrega os dados um após o outro, como em um loop foreach.</p>
+    <p>A função <code class="help" [appTooltip]="tooltip">subscribe</code> espera uma função de callback como parâmetro. Essa função recebe os dados do Observable por meio dos parâmetros.</p>
+</div>
 
 <div #tooltip class="tooltip codeTooltip">
     <pre>

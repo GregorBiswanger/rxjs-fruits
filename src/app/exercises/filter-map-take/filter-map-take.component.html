@@ -20,6 +20,10 @@
   <p>Que desastre!</p>
   <p>Tú solo quieres una manzana y una banana. Sin embargo, la entrega también incluye fruta vieja y sucia. Ahora usa todos los operadores previamente aprendidos <code class="help" [appTooltip]="filterCodeTooltip">filter</code>, <code class="help" [appTooltip]="mapCodeTooltip">map</code> y <code class="help" [appTooltip]="takeCodeTooltip">take</code> uno tras otro en la función pipe.</p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+  <p>Que desastre!</p>
+  <p>Você só queria uma maçã e uma banana. Entretanto, a entrega também incluiu frutas podres e sujas. Agora use todos os operadores aprendidos previamente, <code class="help" [appTooltip]="filterCodeTooltip">filter</code>, <code class="help" [appTooltip]="mapCodeTooltip">map</code> e <code class="help" [appTooltip]="takeCodeTooltip">take</code>, um após o outro na função pipe.</p>
+</div>
 <div #filterCodeTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="filterCode"></code>

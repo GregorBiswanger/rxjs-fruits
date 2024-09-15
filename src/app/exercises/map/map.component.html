@@ -25,6 +25,11 @@
   <p>El operador <code class="help" [appTooltip]="tooltip">map</code> permite cambiar los datos aquí. Lave las frutas removiendoles la suciedad a las frutas sucias.
     <a href="https://rxjs.dev/api/operators/map" target="_blank">(Aprende más sobre map)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+  <p>Algumas frutas foram entregues sujas.</p>
+  <p>O operador <code class="help" [appTooltip]="tooltip">map</code> permite modificar os dados. Lave as frutas removendo a sujeira delas.
+    <a href="https://rxjs.dev/api/operators/map" target="_blank">(Aprenda mais sobre map)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="mapCode"></code>

@@ -20,6 +20,10 @@
   <p>Una entrega excesiva!</p>
   <p>Tú solo quieres una banana. Sin embargo, la entrega contiene demasiada fruta innecesaria. Ahora use todos los operadores que haya aprendido hasta ahora: <code class="help" [appTooltip]="skipTooltip">skip</code>, <code class="help" [appTooltip]="takeTooltip">take</code> y <code class="help" [appTooltip]="mapTooltip">map</code> uno tras otro en una función pipe.</p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+  <p>Uma entrega excessiva!</p>
+  <p>Você quer somente uma banana. Entretanto, a entrega contém muitas frutas. Agora use todos os operadores que você aprendeu até agora: <code class="help" [appTooltip]="skipTooltip">skip</code>, <code class="help" [appTooltip]="takeTooltip">take</code> e <code class="help" [appTooltip]="mapTooltip">map</code>, um após o outro na função pipe.</p>
+</div>
 <div #skipTooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="skipCode"></code>

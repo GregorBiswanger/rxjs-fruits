@@ -36,6 +36,11 @@
   <p>El operador pipe nos permite ejecutar diferentes operadores RxJs uno después de otro en orden, para obtener las frutas tal y como las necesitamos</p>
   <p>En nuestro caso, el operador <code class="help" [appTooltip]="tooltip">distinct</code> nos ayudará. Este prevendrá frutas duplicadas sean entregadas en nuestro flujo de datos<a href="https://rxjs.dev/api/operators/distinct" target="_blank">(Aprende más sobre distinct)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+    <p>Oh, não! Estamos recebendo mais frutas do que a receita pede.</p>
+    <p>O operador <code>pipe</code> nos permite executar diferentes operadores RxJS um após o outro para obtermos as frutas da forma que precisamos.</p>
+    <p>No nosso caso, o operador <code class="help" [appTooltip]="tooltip">distinct</code> nos ajudará. Ele impede que frutas duplicadas sejam entregues em nosso fluxo de dados. <a href="https://rxjs.dev/api/operators/distinct" target="_blank">(Aprenda mais sobre distinct)</a></p>
+</div>
 <div #tooltip class="tooltip codeTooltip">
     <pre>
         <code [highlight]="distinctCode"></code>

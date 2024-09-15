@@ -43,6 +43,15 @@
     Es una contraparte de una arreglo o matríz. En lugar de esos datos de retención, transmite los datos a los suscriptores interesados.
     <a href="https://rxjs.dev/guide/subscription" target="_blank">(Más información sobre Subscription)</a></p>
 </div>
+<div *ngIf="currentLanguage === 'pt'">
+    <p>Bem-vindo ao RxJS-fruits, onde você escreve código JavaScript / TypeScript para misturar seu suco de frutas!</p>
+    <p>A base das <b>Extensões Reativas</b> é o <code class="help" [appTooltip]="tooltipObservableCode">Observable</code>.
+        Ele é equivalente a um array, mas em vez de reter os dados, ele transmite para os subscribers interessados.
+        <a href="https://rxjs.dev/guide/observable" target="_blank">(Mais informações sobre o Observable)</a></p>
+
+    <p>Um Observable, portanto, só é ativo se for assinado com a função <code class="help" [appTooltip]="tooltipSubscribeCode">subscribe</code>.
+        <a href="https://rxjs.dev/guide/subscription" target="_blank">(Mais informações sobre Subscription)</a></p>
+</div>
 <div #tooltipObservableCode class="tooltip codeTooltip">
     <pre>
         <code [highlight]="observableCode"></code>

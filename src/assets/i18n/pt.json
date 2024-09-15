@@ -1,0 +1,94 @@
+{
+  "APP": {
+    "CANCELBUTTON": "Cancelar",
+    "CONFIRMRESET": "Você tem certeza que deseja reiniciar o jogo?\n\nSeu progresso salvo será perdido e você terá que começar o jogo novamente.",
+    "COOKIEBANNER": {
+      "BUTTONS": {
+        "ALLOW": "Permitir cookies",
+        "DENY": "Rejeitar cookies"
+      },
+      "MESSAGE": "Ao continuar sua visita a este site, você aceita o uso de cookies pelo Google Analytics para coletar estatísticas de visitantes.",
+      "PRIVACYLINK": "Mais informações"
+    },
+    "CREDITS": "<span>Feito com ❤ por</span><a class=\"credits-link\" href=\"https://about.me/gregor.biswanger\" target=\"_blank\">Gregor Biswanger</a> • <a class=\"credits-link\" href=\"https://github.com/GregorBiswanger/rxjs-fruits\" target=\"_blank\">GitHub</a> • <a class=\"credits-link\" href=\"https://twitter.com/BFreakout\" target=\"_blank\">Twitter</a> • <span class=\"credits-text\">Gráficos por</span><a class=\"credits-link\" href=\"https://twitter.com/BeleEisenmann\" target=\"_blank\">Bele Eisenmann</a>",
+    "FRUITS": {
+      "APPLE": "Maca",
+      "BANANA": "Banana",
+      "CHERRY": "Cereja"
+    },
+    "GAMEOVERDIALOG": {
+      "CONTRIBUTEMESSAGE": "Se você tiver uma ideia para um nível e for um desenvolvedor Angular, <br />\nvocê pode encontrar mais informações aqui: <a href=\"https://github.com/GregorBiswanger/rxjs-fruits-schematics\" target=\"_blank\">rxjs-fruits-schematics</a>",
+      "DONATEMESSAGE": "Gostou do jogo? Aprendeu algo ou entendeu RxJS melhor?<br />\nEntão para ser justo, me pague <s>uma cerveja</s> um café como agradecimento:",
+      "PAYSHAREMESSAGE": "Ou pague clicando em compartilhar:",
+      "SUBTITLE": "Você conseguiu e agora é um barista reativo!",
+      "THANKYOU": "Obrigado a minha esposa Christine e ao meu filho Raphael pelo apoio, <br />\npara que eu tivesse tempo de desenvolver este jogo. <br />\nEu amo vocês... 🥰",
+      "TITLE": "Parabéns 🎉🎉🎉"
+    },
+    "ISNOACTIVATESUBSCRIBE": "❌ A esteira deve ser movimentada chamando a função subscribe!",
+    "ISNOFRUITSINCOMING": "❌ A esteira não está recebendo frutas!",
+    "ISTOOLITTLEFRUITS": "❌ A esteira está recebendo poucas frutas!",
+    "ISTOOMUCHFRUITS": "❌ Tem mais frutas que especificado na receita!",
+    "LABELLEVEL": " de ",
+    "LABELRESET": "Reiniciar",
+    "LEVEL": "Nível ",
+    "NEXTBUTTON": "Próximo",
+    "OUTPUT": "Houve um erro no seu código. Por favor, use F12 para verificar o output no console.",
+    "PRIVACYBUTTON": "Privacidade",
+    "RECIPETITLE": "Receita",
+    "STARTBUTTON": "Jogar"
+  },
+  "EXERCISES": {
+    "DISTINCT": {
+      "RECIPEDESCRIPTION": "<p><b>Dica:</b> Pressione a tecla F12 e use o console nas ferramentas de desenvolvedor do navegador para depuração.</p>\n<p>Cada fruta deve ser misturada apenas uma vez. (Nota: use distinct)</p></p>"
+    },
+    "DISTINCTUNTILCHANGED": {
+      "RECIPEDESCRIPTION": "Nenhuma fruta deve ser misturada duas vezes seguidas. (Nota: use distinctUntilChanged)"
+    },
+    "EXERCISETITLE": "Exercício",
+    "FILTER": {
+      "RECIPEDESCRIPTION": "Todas as maçãs e bananas frescas devem ser misturadas. (Nota: use filter)"
+    },
+    "FILTER-MAP-TAKE": {
+      "RECIPEDESCRIPTION": "<p><b>Dica:</b> Pressione a tecla F12 e use o console nas ferramentas de desenvolvedor do navegador para depuração.</p>\n<p>Adicione apenas as frutas que estão especificadas na receita. (Nota: use filter, map e take)</p>"
+    },
+    "FORK-JOIN": {
+      "RECIPEDESCRIPTION": "<p>Use concatMap como você fez antes</p>"
+    },
+    "MAP": {
+      "RECIPEDESCRIPTION": "Todas as maçãs e bananas devem ser limpas de sujeira. (Nota: use map)"
+    },
+    "MERGE": {
+      "RECIPEDESCRIPTION": "<p><b>Dica:</b> Substitua o Observable EMPTY pela função merge.</p>\n<p>Adicione apenas as frutas que estão especificadas na receita. (Nota: use merge e filter)</p>"
+    },
+    "REPEAT": {
+      "RECIPEDESCRIPTION": "Adicione apenas as frutas que estão especificadas na receita. (Nota: use repeat)"
+    },
+    "SKIP": {
+      "RECIPEDESCRIPTION": "Adicione apenas as frutas que estão especificadas na receita. (Nota: use skip)"
+    },
+    "SKIP-LAST": {
+      "RECIPEDESCRIPTION": "Adicione apenas as frutas que estão especificadas na receita. (Nota: use skipLast)"
+    },
+    "SKIP-TAKE-MAP": {
+      "RECIPEDESCRIPTION": "<p><b>Dica:</b> Pressione a tecla F12 e use o console nas ferramentas de desenvolvedor do navegador para depuração.</p>\n<p>Adicione apenas as frutas que estão especificadas na receita. (Nota: use skip, take e map)</p>"
+    },
+    "SKIPLAST-SKIP-MERGE": {
+      "RECIPEDESCRIPTION": "<p><b>Dica:</b> Substitua o Observable EMPTY pela função merge.</p>\n<p><b>Dica:</b> Pressione a tecla F12 e use o console nas ferramentas de desenvolvedor do navegador para depuração.</p>\n<p>Adicione apenas as frutas que estão especificadas na receita. (Nota: use skipLast, skip, merge e map)</p>"
+    },
+    "SUBSCRIBE": {
+      "RECIPEDESCRIPTION": "No código-fonte, temos um Observable vazio sem dados esperados. <p><b>Mova a esteira</b> assinando o Observable vazio com a função subscribe e clique no botão iniciar.</p>"
+    },
+    "SUBSCRIBE-NEXT": {
+      "RECIPEDESCRIPTION": "Assine o Observable e coloque cada fruta na esteira com a função <b>toConveyorBelt</b>.\n\n<p>Adicione apenas as frutas que estão especificadas na receita. (Nota: use subscribe com next)</p>"
+    },
+    "TAKE": {
+      "RECIPEDESCRIPTION": "Apenas duas bananas devem ser misturadas. (Nota: use take)"
+    },
+    "TAKE-LAST": {
+      "RECIPEDESCRIPTION": "Apenas as três últimas frutas devem ser misturadas (Nota: use takeLast)"
+    },
+    "ZIP-CONCATMAP": {
+      "RECIPEDESCRIPTION": "<p><b>Dica:</b> Substitua o Observable EMPTY pela função zip.</p>\n<p><b>Dica:</b> Pressione a tecla F12 e use o console nas ferramentas de desenvolvedor do navegador para depuração.</p>\n<p>Cada fruta deve ser misturada alternadamente.(Nota: Use zip e concatMap)</p>"
+    }
+  }
+}

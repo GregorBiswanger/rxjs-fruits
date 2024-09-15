@@ -26,6 +26,10 @@ export class LanguagePipe implements PipeTransform {
       return '中文-简体';
     }
 
+    if (value === 'pt') {
+      return 'Português';
+    }
+
     return '';
   }
 
